@@ -1,0 +1,22 @@
+<template>
+    <c-example-wrapper
+        icon-name="standard:account"
+        lwc="viewRecordWithParentRecordData"
+        title="View Record with Parent Record Data"
+        visualforce="viewRecordWithParentRecordData"
+        record-id={recordId}
+        visualforce-height="180px"
+    >
+        <c-view-record-with-parent-record-data
+            record-id={recordId}
+            slot="lwc"
+        ></c-view-record-with-parent-record-data>
+
+        <!-- prettier-ignore -->
+        <p>
+            Combine <a target="_blank" href="https://developer.salesforce.com/docs/component-library/documentation/lwc/data_load_record">
+            base form components</a> with the <a target="_blank" href="https://developer.salesforce.com/docs/component-library/documentation/lwc/reference_wire_adapters_record.html">
+            getRecord</a> LDS wire adapter to read single records and include parent record data.
+        </p>
+    </c-example-wrapper>
+</template>

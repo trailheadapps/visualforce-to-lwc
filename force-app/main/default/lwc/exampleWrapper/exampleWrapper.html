@@ -1,0 +1,35 @@
+<template>
+    <lightning-card title={title} icon-name={iconName}>
+        <lightning-layout multiple-rows="true" vertical-align="center">
+            <lightning-layout-item
+                padding="horizontal-medium"
+                size="6"
+                small-device-size="12"
+                medium-device-size="12"
+                large-device-size="6"
+            >
+                <iframe
+                    src={visualforceUrl}
+                    width="100%"
+                    height={visualforceHeight}
+                ></iframe>
+            </lightning-layout-item>
+            <lightning-layout-item
+                padding="horizontal-medium"
+                size="6"
+                small-device-size="12"
+                medium-device-size="12"
+                large-device-size="6"
+            >
+                <slot name="lwc"></slot>
+            </lightning-layout-item>
+        </lightning-layout>
+        <c-view-vf-lwc-source
+            visualforce-source={visualforceSource}
+            lwc-source={lwcSource}
+            slot="footer"
+        >
+            <slot></slot>
+        </c-view-vf-lwc-source>
+    </lightning-card>
+</template>

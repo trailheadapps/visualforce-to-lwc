@@ -1,0 +1,33 @@
+<?xml version="1.0" encoding="UTF-8" ?>
+<FlexiPage xmlns="http://soap.sforce.com/2006/04/metadata">
+    <flexiPageRegions>
+        <componentInstances>
+            <componentName>listRecordLinksWrapper</componentName>
+        </componentInstances>
+        <componentInstances>
+            <componentName>listWithParentRecordDataWrapper</componentName>
+        </componentInstances>
+        <componentInstances>
+            <componentName>editableListWrapper</componentName>
+        </componentInstances>
+        <componentInstances>
+            <componentName>listInfiniteScrollingWrapper</componentName>
+        </componentInstances>
+        <componentInstances>
+            <componentName>paginatedListWrapper</componentName>
+        </componentInstances>
+        <componentInstances>
+            <componentName>basicListGetListUiWrapper</componentName>
+        </componentInstances>
+        <componentInstances>
+            <componentName>listInfiniteScrollingGetListUiWrapper</componentName>
+        </componentInstances>
+        <name>main</name>
+        <type>Region</type>
+    </flexiPageRegions>
+    <masterLabel>Lists and Tables</masterLabel>
+    <template>
+        <name>flexipage:defaultAppHomeTemplate</name>
+    </template>
+    <type>AppPage</type>
+</FlexiPage>

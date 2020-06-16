@@ -1,0 +1,4 @@
+div {
+    border: var(--lwc-borderWidthThin, 1px) dashed black;
+    padding: 10px;
+}

@@ -1,0 +1,3 @@
+.table-container {
+    height: var(--lwc-sizeMedium, 320px);
+}

@@ -1,0 +1,23 @@
+<template>
+    <div class="slds-color__text_gray-9 slds-var-m-bottom_small">
+        <slot></slot>
+    </div>
+    <lightning-layout>
+        <lightning-layout-item>
+            <lightning-formatted-url
+                value={visualforceSourceURL}
+                label="View Visualforce source"
+            >
+            </lightning-formatted-url>
+        </lightning-layout-item>
+        <template if:true={lwcSource}>
+            <lightning-layout-item alignment-bump="left">
+                <lightning-formatted-url
+                    value={lwcSourceURL}
+                    label="View LWC source"
+                >
+                </lightning-formatted-url>
+            </lightning-layout-item>
+        </template>
+    </lightning-layout>
+</template>

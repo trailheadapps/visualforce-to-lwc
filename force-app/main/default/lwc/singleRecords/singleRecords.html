@@ -1,0 +1,23 @@
+<template>
+    <lightning-card title="Single Records" icon-name="custom:custom37">
+        <template if:true={account.data}>
+            <div class="slds-var-m-around_medium slds-text-align_center">
+                Check examples on how to implement single record patterns on the
+                Account record page.
+                <p class="slds-var-m-around_medium">
+                    <lightning-button
+                        label="Take me there!"
+                        onclick={handleButtonClick}
+                    ></lightning-button>
+                </p>
+                <!-- prettier-ignore -->
+                <p>
+                    (You can also select an account in the <strong>Accounts</strong> tab)
+                </p>
+            </div>
+        </template>
+        <template if:true={account.error}>
+            <c-error-panel errors={account.error}></c-error-panel>
+        </template>
+    </lightning-card>
+</template>

@@ -1,0 +1,45 @@
+<template>
+    <template if:true={showPopover}>
+        <section
+            style="position: absolute; left: -50%; bottom: 150%;"
+            aria-describedby="dialog-body-id-5"
+            aria-labelledby="dialog-heading-id-2"
+            class="slds-var-popover slds-var-popover_error slds-nubbin_bottom-left"
+            role="dialog"
+        >
+            <div class="slds-float_right slds-var-popover__close">
+                <lightning-button-icon
+                    variant="bare"
+                    icon-class="slds-button_icon-inverse"
+                    size="small"
+                    icon-name="utility:close"
+                    alternative-text="Close dialog"
+                    onclick={handleCloseButtonIconClick}
+                ></lightning-button-icon>
+            </div>
+            <header class="slds-var-popover__header">
+                <div
+                    class="slds-var-media slds-var-media_center slds-has-flexi-truncate"
+                >
+                    <lightning-icon
+                        variant="inverse"
+                        class="slds-var-m-right_x-small"
+                        size="x-small"
+                        icon-name="utility:error"
+                        alternative-text="Error"
+                    ></lightning-icon>
+                    <h2
+                        class="slds-truncate slds-text-heading_medium"
+                        id="dialog-heading-id-2"
+                        title="Resolve error"
+                    >
+                        Resolve error
+                    </h2>
+                </div>
+            </header>
+            <div class="slds-var-popover__body" id="dialog-body-id-5">
+                {errors}
+            </div>
+        </section>
+    </template>
+</template>

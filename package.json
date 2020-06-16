@@ -1,0 +1,56 @@
+{
+    "name": "visualforce-to-lwc",
+    "version": "1.0.0",
+    "private": true,
+    "description": "Visualforce to LWC Sample App",
+    "devDependencies": {
+        "@prettier/plugin-xml": "^0.7.2",
+        "@salesforce/eslint-config-lwc": "^0.7.0",
+        "@salesforce/sfdx-lwc-jest": "^0.7.1",
+        "eslint": "^6.8.0",
+        "husky": "^4.2.5",
+        "lint-staged": "^10.2.8",
+        "prettier": "^2.0.5",
+        "prettier-plugin-apex": "1.5.0",
+        "semver": "^7.3.2"
+    },
+    "scripts": {
+        "lint": "npm run lint:lwc && npm run lint:aura",
+        "lint:lwc": "eslint **/lwc/**",
+        "lint:aura": "sfdx force:lightning:lint **/aura/** --exit",
+        "test": "npm run lint && npm run test:unit",
+        "test:unit": "sfdx-lwc-jest",
+        "test:unit:watch": "sfdx-lwc-jest --watch",
+        "test:unit:debug": "sfdx-lwc-jest --debug",
+        "prettier": "prettier --write \"**/*.{cls,cmp,component,css,html,js,json,md,page,trigger,xml,yaml,yml}\"",
+        "prettier:verify": "prettier --list-different \"**/*.{cls,cmp,component,css,html,js,json,md,page,trigger,xml,yaml,yml}\"",
+        "postinstall": "node bin/check-version.js"
+    },
+    "repository": {
+        "type": "git",
+        "url": "git+https://github.com/trailheadapps/visualforce-to-visualforce-to-lwc.git"
+    },
+    "engines": {
+        "node": ">= 10.13.0",
+        "npm": ">= 6.5.0"
+    },
+    "husky": {
+        "hooks": {
+            "pre-commit": "lint-staged && npm run lint:aura"
+        }
+    },
+    "lint-staged": {
+        "**/*.{cls,cmp,component,css,html,js,json,md,page,trigger,xml,yaml,yml}": [
+            "prettier --write"
+        ],
+        "**/lwc/**": [
+            "eslint"
+        ]
+    },
+    "author": "salesforce.com",
+    "license": "CC0-1.0",
+    "bugs": {
+        "url": "https://github.com/trailheadapps/visualforce-to-visualforce-to-lwc/issues"
+    },
+    "homepage": "https://github.com/trailheadapps/visualforce-to-visualforce-to-lwc#readme"
+}

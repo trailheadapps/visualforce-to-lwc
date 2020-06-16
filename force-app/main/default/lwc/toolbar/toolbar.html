@@ -1,0 +1,31 @@
+<template>
+    <div class="slds-var-page-header">
+        <lightning-layout vertical-align="center" multiple-rows="true">
+            <lightning-layout-item>
+                <ul
+                    class="slds-list_horizontal slds-has-dividers_left slds-has-block-links"
+                >
+                    <template for:each={links} for:item="link">
+                        <li class="slds-item" key={link.value}>
+                            <lightning-formatted-url
+                                value={link.value}
+                                label={link.label}
+                            >
+                            </lightning-formatted-url>
+                        </li>
+                    </template>
+                </ul>
+            </lightning-layout-item>
+            <lightning-layout-item alignment-bump="left">
+                <lightning-input
+                    label="Search"
+                    type="search"
+                    variant="label-hidden"
+                    placeholder="Search..."
+                    onchange={handleInputChange}
+                >
+                </lightning-input>
+            </lightning-layout-item>
+        </lightning-layout>
+    </div>
+</template>

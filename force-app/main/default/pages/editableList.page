@@ -1,0 +1,25 @@
+<apex:page standardController="Account" recordSetVar="Accounts">
+    <apex:form>
+        <apex:pageblock>
+            <apex:pageMessages />
+            <apex:pageBlockButtons>
+                <apex:commandButton value="Save" action="{!save}" />
+                <apex:commandButton value="Cancel" action="{!cancel}" />
+            </apex:pageBlockButtons>
+            <apex:pageBlockTable value="{!accounts}" var="account">
+                <apex:column headerValue="Name">
+                    <apex:inputField value="{!account.Name}" />
+                </apex:column>
+                <apex:column headerValue="Type">
+                    <apex:inputField value="{!account.Type}" />
+                </apex:column>
+                <apex:column headerValue="Phone">
+                    <apex:inputField value="{!account.Phone}" />
+                </apex:column>
+                <apex:column headerValue="Employees">
+                    <apex:inputField value="{!account.NumberOfEmployees}" />
+                </apex:column>
+            </apex:pageBlockTable>
+        </apex:pageblock>
+    </apex:form>
+</apex:page>

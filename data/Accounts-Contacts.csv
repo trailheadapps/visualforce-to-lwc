@@ -1,0 +1,31 @@
+Account: Account Name,Account: Type,Account: Phone,Account: Website,Account: Employees,Contact: First Name,Contact: Last Name,Contact: Phone,Contact: Email,Contact: Title
+Alpha Dynamics,Technology Partner,3362227000,https://alpha.com,1000,Amy,Taylor,4152568563,amy@alpha.net,VP of Engineering
+Alpha Dynamics,Technology Partner,3362227000,https://alpha.com,1000,Michael,Jones,4158526633,michael@alpha.net,VP of Sales
+Alpha Dynamics,Technology Partner,3362227000,https://alpha.com,1000,Jennifer,Wu,4158521463,jennifer@alpha.net,CEO
+Madison Investments,Customer - Direct,7227003362,https://madison-investments.com,200,Anup,Gupta,4158526398,anup@madison.net,VP of Products
+Madison Investments,Customer - Direct,7227003362,https://madison-investments.com,200,Caroline,Kingsley,4158753654,caroline@madison.net,VP of Technology
+Madison Investments,Customer - Direct,7227003362,https://madison-investments.com,200,Jonathan,Bradley,4158885522,jonathan@madison.net,VP of Operations
+Burlington Textiles,Customer - Direct,6179658855,https://burlington.com,10,Juan,Johson,4158685522,juan@burlington.com,Developer
+Burlington Textiles,Customer - Direct,6179658855,https://burlington.com,10,Peter,Pingman,4258685522,pp@burlington.com,VP of Operations
+Burlington Textiles,Customer - Direct,6179658855,https://burlington.com,10,Maria,Jones,4138685522,maria@burlington.com,CTO
+GenePoint,Customer - Direct,7819662255,https://genepoint.com,3500,Sarah,James,4158685532,james@genepoint.com,Developer
+GenePoint,Customer - Direct,7819662255,https://genepoint.com,3500,Louis,Peter,4258685566,louis@genepoint.com,VP of Operations
+GenePoint,Customer - Direct,7819662255,https://genepoint.com,3500,Jessy,Ankor,4138654522,jessy@genepoint.com,CTO
+OpenFloor Furniture,Customer - Direct,9782554185,https://openfloor.com,20000,Nika,Rinder,4158685511,nika@openfloor.com,Developer
+OpenFloor Furniture,Customer - Direct,9782554185,https://openfloor.com,20000,Pim,Grant,4258686666,pim@openfloor.com,VP of Operations
+OpenFloor Furniture,Customer - Direct,9782554185,https://openfloor.com,20000,Antonny,Hans,4138612342,hans@openfloor.com,CTO
+Express Logistics,Customer - Direct,6175289966,https://express-logistics.com,47,Chris,Brown,4134583432,cb@express.com,Developer
+Express Logistics,Customer - Direct,6175289966,https://express-logistics.com,47,Christi,Parker,4234684566,parker@express.com,VP of Operations
+Express Logistics,Customer - Direct,6175289966,https://express-logistics.com,47,Leslie,Jones,4175676522,leslie@express.com,CTO
+Jefferson Management,Customer - Direct,6179658877,https://jefferson-management.com,152,Beatriz,Lake,4111185532,beatriz@jefferson.com,Developer
+Jefferson Management,Customer - Direct,6179658877,https://jefferson-management.com,152,Naveed,Guthrie,4253335566,naveed@jefferson.com,VP of Operations
+Jefferson Management,Customer - Direct,6179658877,https://jefferson-management.com,152,Kelsie,Carpenter,4138651112,kelsie@jefferson.com,CTO
+Northern Trail Travel,Customer - Direct,9782551474,https://northern-trail-travel.com,10200,Rehan,Hogan,4158600032,rehan@northerntrail.com,Developer
+Northern Trail Travel,Customer - Direct,9782551474,https://northern-trail-travel.com,10200,Maizie,Bassett,4000685566,maizie@northerntrail.com,VP of Operations
+Northern Trail Travel,Customer - Direct,9782551474,https://northern-trail-travel.com,10200,Ramone,Acevedo,4138651112,ramone@northerntrail.com,CTO
+United Productions,Customer - Direct,6178524569,https://united-productions.com,25000,Augustus,Curtis,4158689872,curtis@unitedproductions.com,Developer
+United Productions,Customer - Direct,6178524569,https://united-productions.com,25000,Anwar,Pitt,4258683456,pitt@unitedproductions.com,VP of Operations
+United Productions,Customer - Direct,6178524569,https://united-productions.com,25000,Cherie,Bains,4138653452,cherie@unitedproductions.com,CTO
+Edge Communications,Customer - Direct,4158563255,https://edge-communications.com,300,Mohamed,Rangel,4158683332,mr@edge.com,Developer
+Edge Communications,Customer - Direct,4158563255,https://edge-communications.com,300,Arian,Ortiz,4258681116,arian@edge.com,VP of Operations
+Edge Communications,Customer - Direct,4158563255,https://edge-communications.com,300,Kimberly,Rennie,4134564522,kim@edge.com,CTO

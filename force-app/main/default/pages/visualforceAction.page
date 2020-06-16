@@ -1,0 +1,10 @@
+<apex:page standardController="Contact">
+    <apex:slds />
+    <div class="slds-scope">
+        <h1
+            class="slds-text-heading_medium slds-align_absolute-center slds-var-m-top_large"
+        >
+            This is a Visualforce Page!
+        </h1>
+    </div>
+</apex:page>

@@ -1,0 +1,24 @@
+<template>
+    <div class="slds-var-m-around_x-small">
+        <lightning-input
+            label="Contact First Name"
+            value={contactFirstName}
+            onchange={handleContactFirstNameInputChange}
+        ></lightning-input>
+        <lightning-input
+            label="Contact Last Name"
+            value={contactLastName}
+            onchange={handleContactLastNameInputChange}
+        ></lightning-input>
+        <lightning-input
+            label="Opportunity Name"
+            value={opportunityName}
+            onchange={handleOpportunityNameInputChange}
+        ></lightning-input>
+    </div>
+    <lightning-button
+        onclick={handleButtonClick}
+        label="Create Contact and Opportunity"
+        class="slds-var-m-left_xx-small"
+    ></lightning-button>
+</template>

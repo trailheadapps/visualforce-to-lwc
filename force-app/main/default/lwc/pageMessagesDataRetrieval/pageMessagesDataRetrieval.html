@@ -1,0 +1,8 @@
+<template>
+    <template if:true={accounts.data}>
+        {accounts.data}
+    </template>
+    <template if:true={accounts.error}>
+        <c-error-panel errors={accounts.error}></c-error-panel>
+    </template>
+</template>

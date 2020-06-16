@@ -1,0 +1,15 @@
+<template>
+    <template if:true={accounts.data}>
+        <div class="table-container">
+            <c-datatable-with-custom-types
+                key-field="Id"
+                data={accounts.data}
+                columns={columns}
+            >
+            </c-datatable-with-custom-types>
+        </div>
+    </template>
+    <template if:true={accounts.error}>
+        <c-error-panel errors={accounts.error}></c-error-panel>
+    </template>
+</template>

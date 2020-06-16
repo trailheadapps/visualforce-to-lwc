@@ -1,0 +1,32 @@
+<apex:page controller="CreateMixedRecordsApexController" docType="html-5.0">
+    <apex:form>
+        <apex:pageBlock title="Records To Create" mode="edit">
+            <apex:pageBlockButtons>
+                <apex:commandButton
+                    action="{!createContactAndOpportunity}"
+                    oncomplete="alert('Contact & Opportunity created correctly');"
+                    value="Create Contact and Opportunity"
+                />
+            </apex:pageBlockButtons>
+            <apex:pageBlockSection title="New Contact">
+                <apex:inputText
+                    value="{!contactFirstName}"
+                    label="First Name"
+                    required="true"
+                />
+                <apex:inputText
+                    value="{!contactLastName}"
+                    label="Last Name"
+                    required="true"
+                />
+            </apex:pageBlockSection>
+            <apex:pageBlockSection title="New Opportunity">
+                <apex:inputText
+                    value="{!opportunityName}"
+                    label="Name"
+                    required="true"
+                />
+            </apex:pageBlockSection>
+        </apex:pageBlock>
+    </apex:form>
+</apex:page>

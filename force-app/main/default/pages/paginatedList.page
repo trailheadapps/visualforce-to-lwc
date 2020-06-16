@@ -1,0 +1,25 @@
+<apex:page
+    standardController="Account"
+    recordSetVar="Accounts"
+    extensions="PaginatedListController"
+>
+    <apex:form>
+        <apex:pageblock>
+            <apex:pageMessages />
+            <apex:pageBlockTable value="{!accounts}" var="account">
+                <apex:column value="{!account.Name}" />
+                <apex:column value="{!account.Type}" />
+                <apex:column value="{!account.Phone}" />
+                <apex:column value="{!account.NumberOfEmployees}" />
+            </apex:pageBlockTable>
+            <apex:panelGrid columns="4">
+                <apex:commandLink action="{!first}">First</apex:commandLink>
+                <apex:commandLink action="{!previous}"
+                    >Previous</apex:commandLink
+                >
+                <apex:commandLink action="{!next}">Next</apex:commandLink>
+                <apex:commandLink action="{!last}">Last</apex:commandLink>
+            </apex:panelGrid>
+        </apex:pageblock>
+    </apex:form>
+</apex:page>

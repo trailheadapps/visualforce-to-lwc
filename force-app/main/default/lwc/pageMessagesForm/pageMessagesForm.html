@@ -1,0 +1,32 @@
+<template>
+    <lightning-input
+        label="Enter City Name:"
+        onchange={handleInputChange}
+        value={cityName}
+    ></lightning-input>
+    <div class="slds-align_absolute-center slds-var-p-around_medium">
+        <template if:true={errors}>
+            <div style="position: relative;">
+                <lightning-button-icon
+                    icon-class="slds-button_icon-error"
+                    variant="bare"
+                    size="large"
+                    icon-name="utility:error"
+                    alternative-text="Resolve Error"
+                    onclick={handleErrorButtonIconClick}
+                ></lightning-button-icon>
+                <c-error-popover errors={errors}></c-error-popover>
+            </div>
+        </template>
+        <lightning-button
+            onclick={handleCancelButtonClick}
+            label="Cancel"
+        ></lightning-button>
+        <lightning-button
+            class="slds-var-m-left_x-small"
+            onclick={handleSaveButtonClick}
+            label="Save"
+            variant="brand"
+        ></lightning-button>
+    </div>
+</template>

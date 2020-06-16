@@ -1,0 +1,9 @@
+<apex:page>
+    <apex:tabPanel switchType="client" selectedTab="tab2">
+        <apex:tab label="Irrigation systems" name="tab1"
+            >5 days, 1000 USD.</apex:tab
+        >
+        <apex:tab label="Organic crops" name="tab2">7 days, 1200 USD.</apex:tab>
+        <apex:tab label="Soils" name="tab3">2 days, 500 USD.</apex:tab>
+    </apex:tabPanel>
+</apex:page>

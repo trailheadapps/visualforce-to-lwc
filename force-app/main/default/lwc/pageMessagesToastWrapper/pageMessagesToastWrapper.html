@@ -1,0 +1,18 @@
+<template>
+    <c-example-wrapper
+        icon-name="custom:custom86"
+        lwc="pageMessagesToast"
+        title="Toast Error Message"
+        visualforce="pageMessages"
+        visualforce-height="70px"
+    >
+        <c-page-messages-toast slot="lwc"></c-page-messages-toast>
+
+        <!-- prettier-ignore -->
+        <p>
+            Let exceptions propagate instead of using apex:pageMessages.
+            Fire a <a target="_blank" href="https://developer.salesforce.com/docs/component-library/bundle/lightning-platform-show-toast-event/documentation">
+            lightning-platform-show-toast-event</a> to show an error toast message.
+        </p>
+    </c-example-wrapper>
+</template>

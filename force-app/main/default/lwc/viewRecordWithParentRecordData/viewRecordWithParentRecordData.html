@@ -1,0 +1,30 @@
+<template>
+    <lightning-record-view-form
+        record-id={recordId}
+        object-api-name={accountObject}
+    >
+        <div class="slds-grid slds-wrap">
+            <div class="slds-col slds-size_1-of-2">
+                <lightning-output-field field-name={accountNameField}>
+                </lightning-output-field>
+            </div>
+            <div class="slds-col slds-size_1-of-2">
+                <lightning-output-field field-name={accountTypeField}>
+                </lightning-output-field>
+            </div>
+            <div class="slds-col slds-size_1-of-2">
+                <lightning-output-field field-name={accountPhoneField}>
+                </lightning-output-field>
+            </div>
+            <div class="slds-col slds-size_1-of-2">
+                <div class="slds-form-element">
+                    <span class="slds-form-element__label">Owner Name</span>
+                    <div class="slds-form-element__control">
+                        <lightning-formatted-text value={ownerNameValue}>
+                        </lightning-formatted-text>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </lightning-record-view-form>
+</template>

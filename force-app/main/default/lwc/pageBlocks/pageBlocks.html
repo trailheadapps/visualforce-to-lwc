@@ -1,0 +1,47 @@
+<template>
+    <lightning-card title="Course Details">
+        <lightning-accordion
+            allow-multiple-sections-open
+            active-section-name={activeSections}
+        >
+            <lightning-accordion-section name="A" label="Contents">
+                <lightning-layout multiple-rows="true">
+                    <lightning-layout-item size="6">
+                        Irrigation systems
+                    </lightning-layout-item>
+
+                    <lightning-layout-item size="6">
+                        Soils
+                    </lightning-layout-item>
+
+                    <lightning-layout-item size="6">
+                        Organic crops
+                    </lightning-layout-item>
+
+                    <lightning-layout-item size="6">
+                        Sustainable pest control
+                    </lightning-layout-item>
+                </lightning-layout>
+            </lightning-accordion-section>
+            <lightning-accordion-section name="B" label="Instructors">
+                <lightning-layout multiple-rows="true">
+                    <lightning-layout-item size="6">
+                        Anna Perez
+                    </lightning-layout-item>
+
+                    <lightning-layout-item size="6">
+                        Mark Kingston
+                    </lightning-layout-item>
+
+                    <lightning-layout-item size="6">
+                        Tom Davis
+                    </lightning-layout-item>
+
+                    <lightning-layout-item size="6">
+                        Rachel Morris
+                    </lightning-layout-item>
+                </lightning-layout>
+            </lightning-accordion-section>
+        </lightning-accordion>
+    </lightning-card>
+</template>

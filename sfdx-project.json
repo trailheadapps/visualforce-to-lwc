@@ -1,0 +1,17 @@
+{
+    "packageDirectories": [
+        {
+            "path": "force-app",
+            "default": true,
+            "package": "vf2lwc",
+            "versionName": "Spring '20",
+            "versionNumber": "0.1.0.NEXT"
+        }
+    ],
+    "namespace": "",
+    "sourceApiVersion": "48.0",
+    "packageAliases": {
+        "vf2lwc": "0Ho3h000000CaiBCAS",
+        "vf2lwc@0.1.0-4": "04t3h000002YsygAAC"
+    }
+}

@@ -1,0 +1,20 @@
+<template>
+    <c-example-wrapper
+        icon-name="custom:custom86"
+        lwc="pageMessagesForm"
+        title="Form Error Message"
+        visualforce="pageMessagesForm"
+        visualforce-height="155px"
+    >
+        <c-page-messages-form slot="lwc"></c-page-messages-form>
+        <!-- prettier-ignore -->
+        <p>
+            Let exceptions propagate instead of using apex:pageMessages. Show
+            error messages after a form submission using 
+            a <a target="_blank" href="https://www.lightningdesignsystem.com/components/popovers/">
+            popover</a> and optionally highlight the field with
+            an <a target="_blank" href="https://www.lightningdesignsystem.com/guidelines/messaging/components/inline-text/#flavor-variants-state">
+            error state</a>.
+        </p>
+    </c-example-wrapper>
+</template>

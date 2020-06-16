@@ -1,0 +1,20 @@
+<template>
+    <c-example-wrapper
+        icon-name="standard:account"
+        lwc="viewRecord"
+        title="View Record"
+        visualforce="viewRecord"
+        record-id={recordId}
+        visualforce-height="170px"
+    >
+        <c-view-record record-id={recordId} slot="lwc"></c-view-record>
+
+        <!-- prettier-ignore -->
+        <p>
+            Use <a target="_blank" href="https://developer.salesforce.com/docs/component-library/bundle/lightning-record-form">
+            lightning-record-form</a>  in view mode to read records as first option.
+            Use <a target="_blank" href="https://developer.salesforce.com/docs/component-library/bundle/lightning-record-view-form">
+            lightning-record-view-form</a> if you want to use a custom layout.
+        </p>
+    </c-example-wrapper>
+</template>

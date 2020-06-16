@@ -1,0 +1,33 @@
+<?xml version="1.0" encoding="UTF-8" ?>
+<CustomApplication xmlns="http://soap.sforce.com/2006/04/metadata">
+    <actionOverrides>
+        <actionName>View</actionName>
+        <comment
+        >Action override created by Lightning App Builder during activation.</comment>
+        <content>Account_Record_Page</content>
+        <formFactor>Large</formFactor>
+        <skipRecordTypeSelect>false</skipRecordTypeSelect>
+        <type>Flexipage</type>
+        <pageOrSobjectType>Account</pageOrSobjectType>
+    </actionOverrides>
+    <brand>
+        <headerColor>#16325C</headerColor>
+        <logo>VFtoLWCLogo</logo>
+        <logoVersion>1</logoVersion>
+        <shouldOverrideOrgTheme>false</shouldOverrideOrgTheme>
+    </brand>
+    <description
+    >A collection of code examples to help you move from Visualforce to LWC.</description>
+    <formFactors>Large</formFactors>
+    <isNavAutoTempTabsDisabled>false</isNavAutoTempTabsDisabled>
+    <isNavPersonalizationDisabled>false</isNavPersonalizationDisabled>
+    <label>Visualforce to LWC</label>
+    <navType>Standard</navType>
+    <tabs>Layout</tabs>
+    <tabs>Single_Records</tabs>
+    <tabs>standard-Account</tabs>
+    <tabs>Mixed_Records</tabs>
+    <tabs>Record_Lists</tabs>
+    <tabs>Error_Handling</tabs>
+    <uiType>Lightning</uiType>
+</CustomApplication>

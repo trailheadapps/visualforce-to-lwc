@@ -1,0 +1,20 @@
+<template>
+    <c-example-wrapper
+        icon-name="custom:custom86"
+        lwc="pageMessagesDataRetrieval"
+        title="Data Retrieval Error Message"
+        visualforce="pageMessagesDataRetrieval"
+        visualforce-height="120px"
+    >
+        <c-page-messages-data-retrieval
+            slot="lwc"
+        ></c-page-messages-data-retrieval>
+        <!-- prettier-ignore -->
+        <p>
+            Let exceptions propagate instead of using apex:pageMessages. Show
+            error messages if no data is found by using
+            a <a target="_blank" href="https://www.lightningdesignsystem.com/components/illustration/#No-Data">
+            no data</a> error panel.
+        </p>
+    </c-example-wrapper>
+</template>

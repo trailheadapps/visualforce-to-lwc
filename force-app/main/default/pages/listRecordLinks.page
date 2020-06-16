@@ -1,0 +1,16 @@
+<apex:page standardController="Account" recordSetVar="Accounts">
+    <apex:form>
+        <apex:pageblock>
+            <apex:pageBlockTable value="{!accounts}" var="account">
+                <apex:column headerValue="Name">
+                    <apex:outputLink value="/{!account.Id}"
+                        >{!account.Name}</apex:outputLink
+                    >
+                </apex:column>
+                <apex:column value="{!account.Type}" />
+                <apex:column value="{!account.Phone}" />
+                <apex:column value="{!account.NumberOfEmployees}" />
+            </apex:pageBlockTable>
+        </apex:pageblock>
+    </apex:form>
+</apex:page>

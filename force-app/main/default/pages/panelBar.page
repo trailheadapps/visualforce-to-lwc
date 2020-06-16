@@ -1,0 +1,11 @@
+<apex:page>
+    <apex:panelBar>
+        <apex:panelBarItem label="Anna Perez">London, UK.</apex:panelBarItem>
+        <apex:panelBarItem label="Mark Kingston"
+            >Madrid, Spain.</apex:panelBarItem
+        >
+        <apex:panelBarItem label="Tom Davis"
+            >San Francisco, USA.</apex:panelBarItem
+        >
+    </apex:panelBar>
+</apex:page>

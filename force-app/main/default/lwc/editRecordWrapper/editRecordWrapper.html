@@ -1,0 +1,26 @@
+<template>
+    <c-example-wrapper
+        icon-name="standard:account"
+        lwc="editRecord"
+        title="Edit Record"
+        visualforce="editRecord"
+        record-id={recordId}
+        visualforce-height="230px"
+    >
+        <c-edit-record record-id={recordId} slot="lwc"></c-edit-record>
+
+        <!-- prettier-ignore -->
+        <p>
+            Use <a target="_blank" href="https://developer.salesforce.com/docs/component-library/bundle/lightning-record-form">
+            lightning-record-form</a> in edit mode to create or edit records as first option.
+            Use <a target="_blank" href="https://developer.salesforce.com/docs/component-library/bundle/lightning-record-edit-form">
+            lightning-record-edit-form</a> if you want to prepopulate fields or use a custom layout.
+        </p>
+        <!-- prettier-ignore -->
+        <p>
+            <b>Note: </b>
+            You can use the <a target="_blank" href="https://developer.salesforce.com/docs/component-library/documentation/lwc/lwc.use_navigate">
+            Navigation Service </a> to redirect to record page after save.
+        </p>
+    </c-example-wrapper>
+</template>

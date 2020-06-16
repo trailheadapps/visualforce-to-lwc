@@ -1,0 +1,25 @@
+<template>
+    <c-example-wrapper
+        icon-name="custom:custom96"
+        lwc="createMixedRecordsApex"
+        title="Create Mixed Records via Apex"
+        visualforce="createMixedRecords"
+        visualforce-height="260px"
+    >
+        <c-create-mixed-records-apex
+            record-id={recordId}
+            slot="lwc"
+        ></c-create-mixed-records-apex>
+
+        <!-- prettier-ignore -->
+        <p>
+            <a target="_blank" href="https://developer.salesforce.com/docs/component-library/documentation/lwc/lwc.apex">
+            Call Apex imperatively </a> to perform mixed record or complex operations to create, 
+            update or delete or read data. In this example, the mixed operation is transactional.
+        </p>
+        <p>
+            <b>Note:</b> Consider using base components forms or LDS functions
+            first.
+        </p>
+    </c-example-wrapper>
+</template>
