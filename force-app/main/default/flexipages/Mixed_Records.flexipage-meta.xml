@@ -1,17 +1,21 @@
 <?xml version="1.0" encoding="UTF-8" ?>
 <FlexiPage xmlns="http://soap.sforce.com/2006/04/metadata">
     <flexiPageRegions>
-        <componentInstances>
-            <componentName
-            >createMixedRecordsWireFunctionsWrapper</componentName>
-        </componentInstances>
+        <itemInstances>
+            <componentInstance>
+                <componentName
+                >createMixedRecordsWireFunctionsWrapper</componentName>
+            </componentInstance>
+        </itemInstances>
         <name>column1</name>
         <type>Region</type>
     </flexiPageRegions>
     <flexiPageRegions>
-        <componentInstances>
-            <componentName>createMixedRecordsApexWrapper</componentName>
-        </componentInstances>
+        <itemInstances>
+            <componentInstance>
+                <componentName>createMixedRecordsApexWrapper</componentName>
+            </componentInstance>
+        </itemInstances>
         <name>column2</name>
         <type>Region</type>
     </flexiPageRegions>

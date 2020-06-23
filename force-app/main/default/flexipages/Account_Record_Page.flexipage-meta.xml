@@ -5,23 +5,32 @@
         <type>Region</type>
     </flexiPageRegions>
     <flexiPageRegions>
-        <componentInstances>
-            <componentName>viewRecordWrapper</componentName>
-        </componentInstances>
-        <componentInstances>
-            <componentName>viewRecordWithParentRecordDataWrapper</componentName>
-        </componentInstances>
+        <itemInstances>
+            <componentInstance>
+                <componentName>viewRecordWrapper</componentName>
+            </componentInstance>
+        </itemInstances>
+        <itemInstances>
+            <componentInstance>
+                <componentName
+                >viewRecordWithParentRecordDataWrapper</componentName>
+            </componentInstance>
+        </itemInstances>
         <name>leftcol</name>
         <type>Region</type>
     </flexiPageRegions>
     <flexiPageRegions>
-        <componentInstances>
-            <componentName>editRecordWrapper</componentName>
-        </componentInstances>
-        <componentInstances>
-            <componentName
-            >createRecordWithPrepopulatedValuesWrapper</componentName>
-        </componentInstances>
+        <itemInstances>
+            <componentInstance>
+                <componentName>editRecordWrapper</componentName>
+            </componentInstance>
+        </itemInstances>
+        <itemInstances>
+            <componentInstance>
+                <componentName
+                >createRecordWithPrepopulatedValuesWrapper</componentName>
+            </componentInstance>
+        </itemInstances>
         <name>rightcol</name>
         <type>Region</type>
     </flexiPageRegions>
