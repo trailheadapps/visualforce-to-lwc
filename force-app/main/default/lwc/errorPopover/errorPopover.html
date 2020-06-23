@@ -4,10 +4,10 @@
             style="position: absolute; left: -50%; bottom: 150%;"
             aria-describedby="dialog-body-id-5"
             aria-labelledby="dialog-heading-id-2"
-            class="slds-var-popover slds-var-popover_error slds-nubbin_bottom-left"
+            class="slds-popover slds-popover_error slds-nubbin_bottom-left"
             role="dialog"
         >
-            <div class="slds-float_right slds-var-popover__close">
+            <div class="slds-float_right slds-popover__close">
                 <lightning-button-icon
                     variant="bare"
                     icon-class="slds-button_icon-inverse"
@@ -17,9 +17,9 @@
                     onclick={handleCloseButtonIconClick}
                 ></lightning-button-icon>
             </div>
-            <header class="slds-var-popover__header">
+            <header class="slds-popover__header">
                 <div
-                    class="slds-var-media slds-var-media_center slds-has-flexi-truncate"
+                    class="slds-media slds-media_center slds-has-flexi-truncate"
                 >
                     <lightning-icon
                         variant="inverse"
@@ -37,7 +37,7 @@
                     </h2>
                 </div>
             </header>
-            <div class="slds-var-popover__body" id="dialog-body-id-5">
+            <div class="slds-popover__body" id="dialog-body-id-5">
                 {errors}
             </div>
         </section>
