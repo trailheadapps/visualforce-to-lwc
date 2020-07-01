@@ -1,6 +1,6 @@
 # Visualforce to LWC
 
-[![Github Workflow](<https://github.com/trailheadapps/visualforce-to-lwc/workflows/Salesforce%20DX%20(scratch%20org)/badge.svg?branch=master>)](https://github.com/trailheadapps/visualforce-to-lwc/actions?query=workflow%3A%22Salesforce+DX+%28scratch+org%29%22)
+[![Github Workflow](<https://github.com/trailheadapps/visualforce-to-lwc/workflows/Salesforce%20DX%20(scratch%20org)/badge.svg?branch=master>)](https://github.com/trailheadapps/visualforce-to-lwc/actions?query=workflow%3A%22Salesforce+DX+%28scratch+org%29%22) [![codecov](https://codecov.io/gh/trailheadapps/visualforce-to-lwc/branch/master/graph/badge.svg)](https://codecov.io/gh/trailheadapps/visualforce-to-lwc)
 
 ![Visualforce to LWC logo](vf-to-lwc-logo.png)
 
