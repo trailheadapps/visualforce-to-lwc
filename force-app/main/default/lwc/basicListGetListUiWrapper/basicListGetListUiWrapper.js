@@ -1,3 +1,3 @@
 import { LightningElement } from 'lwc';
 
-export default class BasicListWrapper extends LightningElement {}
+export default class BasicListGetListUiWrapper extends LightningElement {}
