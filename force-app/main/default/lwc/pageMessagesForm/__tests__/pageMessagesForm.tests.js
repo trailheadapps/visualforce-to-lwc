@@ -88,7 +88,7 @@ describe('c-page-messages-form', () => {
         });
     });
 
-    describe('createCity apex calls', () => {
+    describe('createCity Apex calls', () => {
         it('creates city when save button clicked', () => {
             // Create initial element
             const element = createElement('c-page-messages-form', {
