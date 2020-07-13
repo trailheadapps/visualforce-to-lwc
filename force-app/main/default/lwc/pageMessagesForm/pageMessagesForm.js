@@ -7,7 +7,7 @@ export default class PageMessagesForm extends LightningElement {
     cityName;
 
     handleSaveButtonClick() {
-        createCity({ cityname: this.cityName })
+        createCity({ cityName: this.cityName })
             .then(() => {
                 // Handle successful result
             })
