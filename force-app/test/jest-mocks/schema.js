@@ -1,5 +1,5 @@
 export const Account = {
-    objectApiName = 'Account',
+    objectApiName: 'Account',
     Name: { fieldApiName: 'Name' },
     Type: { fieldApiName: 'Type' },
     Type: { fieldApiName: 'Phone' },
