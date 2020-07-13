@@ -2,9 +2,7 @@ import { createElement } from 'lwc';
 import BasicListGetListUiWrapper from 'c/basicListGetListUiWrapper';
 
 // Mock inner component, as it uses a wire adapter and crashes
-jest.mock('../../basicListGetListUi/basicListGetListUi', () =>
-    require('../../basicListGetListUi/__mocks__/basicListGetListUi')
-);
+jest.mock('../../basicListGetListUi/basicListGetListUi');
 
 describe('c-basic-list-get-list-ui-wrapper', () => {
     afterEach(() => {
