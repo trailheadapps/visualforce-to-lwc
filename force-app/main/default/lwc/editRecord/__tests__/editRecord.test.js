@@ -37,7 +37,7 @@ describe('c-edit-record', () => {
         ]);
     });
 
-    describe('show success toast message', () => {
+    describe('shows success toast message', () => {
         it('when a record is created successfully', () => {
             // Create initial element
             const element = createElement('c-edit-record', {
@@ -102,7 +102,7 @@ describe('c-edit-record', () => {
         });
     });
 
-    describe('show error toast message', () => {
+    describe('shows error toast message', () => {
         it('when there is an error creating a record', () => {
             // Create initial element
             const element = createElement('c-edit-record', {
