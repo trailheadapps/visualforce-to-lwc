@@ -7,6 +7,8 @@ import ACCOUNT_PHONE_FIELD from '@salesforce/schema/Account.Phone';
 import ACCOUNT_EMPLOYEES_FIELD from '@salesforce/schema/Account.NumberOfEmployees';
 import { ShowToastEventName } from 'lightning/platformShowToastEvent';
 
+const RECORD_ID = '0019A00000E8zAWQAZ';
+
 describe('c-edit-record', () => {
     afterEach(() => {
         // The jsdom instance is shared across test cases in a single file so reset the DOM
@@ -19,7 +21,7 @@ describe('c-edit-record', () => {
         const element = createElement('c-edit-record', {
             is: EditRecord
         });
-        element.recordId = '0019A00000E8zAWQAZ';
+        element.recordId = RECORD_ID;
         document.body.appendChild(element);
 
         const recordForm = element.shadowRoot.querySelector(
@@ -35,129 +37,133 @@ describe('c-edit-record', () => {
         ]);
     });
 
-    it('displays the correct success toast message when a record is created successfully', () => {
-        // Create initial element
-        const element = createElement('c-edit-record', {
-            is: EditRecord
-        });
-        document.body.appendChild(element);
+    describe('show success toast message', () => {
+        it('when a record is created successfully', () => {
+            // Create initial element
+            const element = createElement('c-edit-record', {
+                is: EditRecord
+            });
+            document.body.appendChild(element);
 
-        // Mock handler for toast event
-        const handler = jest.fn();
-        // Add event listener to catch toast event
-        element.addEventListener(ShowToastEventName, handler);
+            // Mock handler for toast event
+            const handler = jest.fn();
+            // Add event listener to catch toast event
+            element.addEventListener(ShowToastEventName, handler);
 
-        // Make lightning-record-form dispatch a success event
-        const recordForm = element.shadowRoot.querySelector(
-            'lightning-record-form'
-        );
-        recordForm.dispatchEvent(new CustomEvent('success'));
-
-        // Return a promise to wait for any asynchronous DOM updates. Jest
-        // will automatically wait for the Promise chain to complete before
-        // ending the test and fail the test if the promise rejects.
-        return Promise.resolve().then(() => {
-            // Check if toast event has been fired
-            expect(handler).toHaveBeenCalled();
-            expect(handler.mock.calls[0][0].detail.variant).toBe('success');
-            expect(handler.mock.calls[0][0].detail.message).toBe(
-                'Account created'
+            // Make lightning-record-form dispatch a success event
+            const recordForm = element.shadowRoot.querySelector(
+                'lightning-record-form'
             );
+            recordForm.dispatchEvent(new CustomEvent('success'));
+
+            // Return a promise to wait for any asynchronous DOM updates. Jest
+            // will automatically wait for the Promise chain to complete before
+            // ending the test and fail the test if the promise rejects.
+            return Promise.resolve().then(() => {
+                // Check if toast event has been fired
+                expect(handler).toHaveBeenCalled();
+                expect(handler.mock.calls[0][0].detail.variant).toBe('success');
+                expect(handler.mock.calls[0][0].detail.message).toBe(
+                    'Account created'
+                );
+            });
+        });
+
+        it('when a record is updated successfully', () => {
+            // Create initial element
+            const element = createElement('c-edit-record', {
+                is: EditRecord
+            });
+            element.recordId = RECORD_ID;
+            document.body.appendChild(element);
+
+            // Mock handler for toast event
+            const handler = jest.fn();
+            // Add event listener to catch toast event
+            element.addEventListener(ShowToastEventName, handler);
+
+            // Make lightning-record-form dispatch a success event
+            const recordForm = element.shadowRoot.querySelector(
+                'lightning-record-form'
+            );
+            recordForm.dispatchEvent(new CustomEvent('success'));
+
+            // Return a promise to wait for any asynchronous DOM updates. Jest
+            // will automatically wait for the Promise chain to complete before
+            // ending the test and fail the test if the promise rejects.
+            return Promise.resolve().then(() => {
+                // Check if toast event has been fired
+                expect(handler).toHaveBeenCalled();
+                expect(handler.mock.calls[0][0].detail.variant).toBe('success');
+                expect(handler.mock.calls[0][0].detail.message).toBe(
+                    'Account updated'
+                );
+            });
         });
     });
 
-    it('displays the correct error toast message when there is an error creating a record', () => {
-        // Create initial element
-        const element = createElement('c-edit-record', {
-            is: EditRecord
-        });
-        document.body.appendChild(element);
+    describe('show error toast message', () => {
+        it('when there is an error creating a record', () => {
+            // Create initial element
+            const element = createElement('c-edit-record', {
+                is: EditRecord
+            });
+            document.body.appendChild(element);
 
-        // Mock handler for toast event
-        const handler = jest.fn();
-        // Add event listener to catch toast event
-        element.addEventListener(ShowToastEventName, handler);
+            // Mock handler for toast event
+            const handler = jest.fn();
+            // Add event listener to catch toast event
+            element.addEventListener(ShowToastEventName, handler);
 
-        // Make lightning-record-form dispatch a success event
-        const recordForm = element.shadowRoot.querySelector(
-            'lightning-record-form'
-        );
-        recordForm.dispatchEvent(new CustomEvent('error'));
-
-        // Return a promise to wait for any asynchronous DOM updates. Jest
-        // will automatically wait for the Promise chain to complete before
-        // ending the test and fail the test if the promise rejects.
-        return Promise.resolve().then(() => {
-            // Check if toast event has been fired
-            expect(handler).toHaveBeenCalled();
-            expect(handler.mock.calls[0][0].detail.variant).toBe('error');
-            expect(handler.mock.calls[0][0].detail.message).toBe(
-                'Error creating Account'
+            // Make lightning-record-form dispatch a success event
+            const recordForm = element.shadowRoot.querySelector(
+                'lightning-record-form'
             );
+            recordForm.dispatchEvent(new CustomEvent('error'));
+
+            // Return a promise to wait for any asynchronous DOM updates. Jest
+            // will automatically wait for the Promise chain to complete before
+            // ending the test and fail the test if the promise rejects.
+            return Promise.resolve().then(() => {
+                // Check if toast event has been fired
+                expect(handler).toHaveBeenCalled();
+                expect(handler.mock.calls[0][0].detail.variant).toBe('error');
+                expect(handler.mock.calls[0][0].detail.message).toBe(
+                    'Error creating Account'
+                );
+            });
         });
-    });
 
-    it('displays the correct success toast message when a record is updated successfully', () => {
-        // Create initial element
-        const element = createElement('c-edit-record', {
-            is: EditRecord
-        });
-        element.recordId = '0019A00000E8zAWQAZ';
-        document.body.appendChild(element);
+        it('when there is an error updating a record', () => {
+            // Create initial element
+            const element = createElement('c-edit-record', {
+                is: EditRecord
+            });
+            element.recordId = RECORD_ID;
+            document.body.appendChild(element);
 
-        // Mock handler for toast event
-        const handler = jest.fn();
-        // Add event listener to catch toast event
-        element.addEventListener(ShowToastEventName, handler);
+            // Mock handler for toast event
+            const handler = jest.fn();
+            // Add event listener to catch toast event
+            element.addEventListener(ShowToastEventName, handler);
 
-        // Make lightning-record-form dispatch a success event
-        const recordForm = element.shadowRoot.querySelector(
-            'lightning-record-form'
-        );
-        recordForm.dispatchEvent(new CustomEvent('success'));
-
-        // Return a promise to wait for any asynchronous DOM updates. Jest
-        // will automatically wait for the Promise chain to complete before
-        // ending the test and fail the test if the promise rejects.
-        return Promise.resolve().then(() => {
-            // Check if toast event has been fired
-            expect(handler).toHaveBeenCalled();
-            expect(handler.mock.calls[0][0].detail.variant).toBe('success');
-            expect(handler.mock.calls[0][0].detail.message).toBe(
-                'Account updated'
+            // Make lightning-record-form dispatch a success event
+            const recordForm = element.shadowRoot.querySelector(
+                'lightning-record-form'
             );
-        });
-    });
+            recordForm.dispatchEvent(new CustomEvent('error'));
 
-    it('displays the correct error toast message when there is an error updating a record', () => {
-        // Create initial element
-        const element = createElement('c-edit-record', {
-            is: EditRecord
-        });
-        element.recordId = '0019A00000E8zAWQAZ';
-        document.body.appendChild(element);
-
-        // Mock handler for toast event
-        const handler = jest.fn();
-        // Add event listener to catch toast event
-        element.addEventListener(ShowToastEventName, handler);
-
-        // Make lightning-record-form dispatch a success event
-        const recordForm = element.shadowRoot.querySelector(
-            'lightning-record-form'
-        );
-        recordForm.dispatchEvent(new CustomEvent('error'));
-
-        // Return a promise to wait for any asynchronous DOM updates. Jest
-        // will automatically wait for the Promise chain to complete before
-        // ending the test and fail the test if the promise rejects.
-        return Promise.resolve().then(() => {
-            // Check if toast event has been fired
-            expect(handler).toHaveBeenCalled();
-            expect(handler.mock.calls[0][0].detail.variant).toBe('error');
-            expect(handler.mock.calls[0][0].detail.message).toBe(
-                'Error updating Account'
-            );
+            // Return a promise to wait for any asynchronous DOM updates. Jest
+            // will automatically wait for the Promise chain to complete before
+            // ending the test and fail the test if the promise rejects.
+            return Promise.resolve().then(() => {
+                // Check if toast event has been fired
+                expect(handler).toHaveBeenCalled();
+                expect(handler.mock.calls[0][0].detail.variant).toBe('error');
+                expect(handler.mock.calls[0][0].detail.message).toBe(
+                    'Error updating Account'
+                );
+            });
         });
     });
 });
