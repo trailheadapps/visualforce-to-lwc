@@ -4,12 +4,6 @@ import { formatApexSObjects } from 'c/apexUtils';
 const soqlData = require('./data/soqlData.json');
 
 describe('c-apex-utils', () => {
-    afterEach(() => {
-        // The jsdom instance is shared across test cases in a single file so reset the DOM
-        while (document.body.firstChild) {
-            document.body.removeChild(document.body.firstChild);
-        }
-    });
     it('flattens apex sobjects', () => {
         // Create initial element
         const result = formatApexSObjects(soqlData);
