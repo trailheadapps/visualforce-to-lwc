@@ -1,0 +1,72 @@
+[
+  {
+    "Name": "Alpha Dynamics",
+    "Type": "Technology Partner",
+    "Phone": "3362227000",
+    "NumberOfEmployees": 1000,
+    "Id": "0019A00000E8zAWQAZ"
+  },
+  {
+    "Name": "Burlington Textiles",
+    "Type": "Customer - Direct",
+    "Phone": "6179658855",
+    "NumberOfEmployees": 10,
+    "Id": "0019A00000E8zAYQAZ"
+  },
+  {
+    "Name": "Edge Communications",
+    "Type": "Customer - Direct",
+    "Phone": "4158563255",
+    "NumberOfEmployees": 300,
+    "Id": "0019A00000E8zAfQAJ"
+  },
+  {
+    "Name": "Express Logistics",
+    "Type": "Customer - Direct",
+    "Phone": "6175289966",
+    "NumberOfEmployees": 47,
+    "Id": "0019A00000E8zAbQAJ"
+  },
+  {
+    "Name": "GenePoint",
+    "Type": "Customer - Direct",
+    "Phone": "7819662255",
+    "NumberOfEmployees": 3500,
+    "Id": "0019A00000E8zAZQAZ"
+  },
+  {
+    "Name": "Jefferson Management",
+    "Type": "Customer - Direct",
+    "Phone": "6179658877",
+    "NumberOfEmployees": 152,
+    "Id": "0019A00000E8zAcQAJ"
+  },
+  {
+    "Name": "Madison Investments",
+    "Type": "Customer - Direct",
+    "Phone": "7227003362",
+    "NumberOfEmployees": 200,
+    "Id": "0019A00000E8zAXQAZ"
+  },
+  {
+    "Name": "Northern Trail Travel",
+    "Type": "Customer - Direct",
+    "Phone": "9782551474",
+    "NumberOfEmployees": 10200,
+    "Id": "0019A00000E8zAdQAJ"
+  },
+  {
+    "Name": "OpenFloor Furniture",
+    "Type": "Customer - Direct",
+    "Phone": "9782554185",
+    "NumberOfEmployees": 20000,
+    "Id": "0019A00000E8zAaQAJ"
+  },
+  {
+    "Name": "United Productions",
+    "Type": "Customer - Direct",
+    "Phone": "6178524569",
+    "NumberOfEmployees": 25000,
+    "Id": "0019A00000E8zAeQAJ"
+  }
+]
