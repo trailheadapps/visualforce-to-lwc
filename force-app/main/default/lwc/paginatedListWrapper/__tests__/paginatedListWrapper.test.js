@@ -9,7 +9,7 @@ describe('c-page-messages-toast-wrapper', () => {
         }
     });
 
-    it('shows inner component using c-paginated-list-wrapper', () => {
+    it('shows inner component using c-example-wrapper', () => {
         // Create initial element
         const element = createElement('c-paginated-list-wrapper', {
             is: PaginatedListWrapper

@@ -9,7 +9,7 @@ describe('c-page-blocks-wrapper', () => {
         }
     });
 
-    it('shows inner component using c-page-blocks-wrapper', () => {
+    it('shows inner component using c-example-wrapper', () => {
         // Create initial element
         const element = createElement('c-page-blocks-wrapper', {
             is: PageBlocksWrapper
