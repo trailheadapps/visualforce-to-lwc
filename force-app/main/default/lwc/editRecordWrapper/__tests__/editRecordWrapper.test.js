@@ -21,6 +21,7 @@ describe('c-edit-record-wrapper', () => {
             'c-example-wrapper'
         );
         expect(exampleCmp).not.toBeNull();
+        expect(exampleCmp.recordId).toBe(RECORD_ID);
 
         const innerCmp = exampleCmp.querySelector('c-edit-record');
         expect(innerCmp).not.toBeNull();
