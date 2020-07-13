@@ -8,6 +8,7 @@ describe('c-edit-record-wrapper', () => {
             document.body.removeChild(document.body.firstChild);
         }
     });
+
     it('shows inner component using c-example-wrapper', () => {
         const RECORD_ID = '0019A00000E8zAWQAZ';
         // Create initial element
