@@ -1,0 +1,567 @@
+{
+  "info": {
+    "cloneable": true,
+    "createable": true,
+    "deletable": true,
+    "displayColumns": [
+      {
+        "fieldApiName": "Name",
+        "label": "Account Name",
+        "sortable": true
+      },
+      {
+        "fieldApiName": "Type",
+        "label": "Type",
+        "sortable": true
+      },
+      {
+        "fieldApiName": "Phone",
+        "label": "Phone",
+        "sortable": true
+      },
+      {
+        "fieldApiName": "NumberOfEmployees",
+        "label": "Employees",
+        "sortable": true
+      }
+    ],
+    "filterLogicString": null,
+    "filteredByInfo": [],
+    "label": "All Accounts",
+    "listReference": {
+      "id": "00B9A000002i4vAUAQ",
+      "listViewApiName": "All_Accounts",
+      "objectApiName": "Account",
+      "type": "listView"
+    },
+    "orderedByInfo": [
+      {
+        "fieldApiName": "Name",
+        "isAscending": true,
+        "label": "Account Name"
+      }
+    ],
+    "updateable": true,
+    "userPreferences": {
+      "columnWidths": {
+        "Type": -1,
+        "Phone": -1,
+        "NumberOfEmployees": -1,
+        "Name": -1
+      },
+      "columnWrap": {
+        "Type": false,
+        "Phone": false,
+        "NumberOfEmployees": false,
+        "Name": false
+      }
+    },
+    "visibility": "Public",
+    "visibilityEditable": true
+  },
+  "records": {
+    "records": [
+      {
+        "apiName": "Account",
+        "childRelationships": {},
+        "id": "0019A00000E8zAWQAZ",
+        "lastModifiedById": "0059A000002n8mpQAA",
+        "lastModifiedDate": "2020-07-13T07:17:48.000Z",
+        "recordTypeId": "012000000000000AAA",
+        "recordTypeInfo": null,
+        "systemModstamp": "2020-07-13T07:17:48.000Z",
+        "fields": {
+          "Name": {
+            "displayValue": null,
+            "value": "Alpha Dynamics"
+          },
+          "NumberOfEmployees": {
+            "displayValue": null,
+            "value": 1000
+          },
+          "Phone": {
+            "displayValue": null,
+            "value": "3362227000"
+          },
+          "Type": {
+            "displayValue": "Technology Partner",
+            "value": "Technology Partner"
+          },
+          "CreatedDate": {
+            "displayValue": null,
+            "value": "2020-07-13T07:17:48.000Z"
+          },
+          "Id": {
+            "displayValue": null,
+            "value": "0019A00000E8zAWQAZ"
+          },
+          "LastModifiedById": {
+            "displayValue": null,
+            "value": "0059A000002n8mpQAA"
+          },
+          "LastModifiedDate": {
+            "displayValue": null,
+            "value": "2020-07-13T07:17:48.000Z"
+          },
+          "SystemModstamp": {
+            "displayValue": null,
+            "value": "2020-07-13T07:17:48.000Z"
+          }
+        }
+      },
+      {
+        "apiName": "Account",
+        "childRelationships": {},
+        "id": "0019A00000E8zAYQAZ",
+        "lastModifiedById": "0059A000002n8mpQAA",
+        "lastModifiedDate": "2020-07-13T07:17:48.000Z",
+        "recordTypeId": "012000000000000AAA",
+        "recordTypeInfo": null,
+        "systemModstamp": "2020-07-13T07:17:48.000Z",
+        "fields": {
+          "Name": {
+            "displayValue": null,
+            "value": "Burlington Textiles"
+          },
+          "NumberOfEmployees": {
+            "displayValue": null,
+            "value": 10
+          },
+          "Phone": {
+            "displayValue": null,
+            "value": "6179658855"
+          },
+          "Type": {
+            "displayValue": "Customer - Direct",
+            "value": "Customer - Direct"
+          },
+          "CreatedDate": {
+            "displayValue": null,
+            "value": "2020-07-13T07:17:48.000Z"
+          },
+          "Id": {
+            "displayValue": null,
+            "value": "0019A00000E8zAYQAZ"
+          },
+          "LastModifiedById": {
+            "displayValue": null,
+            "value": "0059A000002n8mpQAA"
+          },
+          "LastModifiedDate": {
+            "displayValue": null,
+            "value": "2020-07-13T07:17:48.000Z"
+          },
+          "SystemModstamp": {
+            "displayValue": null,
+            "value": "2020-07-13T07:17:48.000Z"
+          }
+        }
+      },
+      {
+        "apiName": "Account",
+        "childRelationships": {},
+        "id": "0019A00000E8zAfQAJ",
+        "lastModifiedById": "0059A000002n8mpQAA",
+        "lastModifiedDate": "2020-07-13T11:58:29.000Z",
+        "recordTypeId": "012000000000000AAA",
+        "recordTypeInfo": null,
+        "systemModstamp": "2020-07-13T11:58:29.000Z",
+        "fields": {
+          "Name": {
+            "displayValue": null,
+            "value": "Edge Communications"
+          },
+          "NumberOfEmployees": {
+            "displayValue": null,
+            "value": 300
+          },
+          "Phone": {
+            "displayValue": null,
+            "value": "4158563255"
+          },
+          "Type": {
+            "displayValue": "Customer - Direct",
+            "value": "Customer - Direct"
+          },
+          "CreatedDate": {
+            "displayValue": null,
+            "value": "2020-07-13T07:17:48.000Z"
+          },
+          "Id": {
+            "displayValue": null,
+            "value": "0019A00000E8zAfQAJ"
+          },
+          "LastModifiedById": {
+            "displayValue": null,
+            "value": "0059A000002n8mpQAA"
+          },
+          "LastModifiedDate": {
+            "displayValue": null,
+            "value": "2020-07-13T11:58:29.000Z"
+          },
+          "SystemModstamp": {
+            "displayValue": null,
+            "value": "2020-07-13T11:58:29.000Z"
+          }
+        }
+      },
+      {
+        "apiName": "Account",
+        "childRelationships": {},
+        "id": "0019A00000E8zAbQAJ",
+        "lastModifiedById": "0059A000002n8mpQAA",
+        "lastModifiedDate": "2020-07-13T07:17:48.000Z",
+        "recordTypeId": "012000000000000AAA",
+        "recordTypeInfo": null,
+        "systemModstamp": "2020-07-13T07:17:48.000Z",
+        "fields": {
+          "Name": {
+            "displayValue": null,
+            "value": "Express Logistics"
+          },
+          "NumberOfEmployees": {
+            "displayValue": null,
+            "value": 47
+          },
+          "Phone": {
+            "displayValue": null,
+            "value": "6175289966"
+          },
+          "Type": {
+            "displayValue": "Customer - Direct",
+            "value": "Customer - Direct"
+          },
+          "CreatedDate": {
+            "displayValue": null,
+            "value": "2020-07-13T07:17:48.000Z"
+          },
+          "Id": {
+            "displayValue": null,
+            "value": "0019A00000E8zAbQAJ"
+          },
+          "LastModifiedById": {
+            "displayValue": null,
+            "value": "0059A000002n8mpQAA"
+          },
+          "LastModifiedDate": {
+            "displayValue": null,
+            "value": "2020-07-13T07:17:48.000Z"
+          },
+          "SystemModstamp": {
+            "displayValue": null,
+            "value": "2020-07-13T07:17:48.000Z"
+          }
+        }
+      },
+      {
+        "apiName": "Account",
+        "childRelationships": {},
+        "id": "0019A00000E8zAZQAZ",
+        "lastModifiedById": "0059A000002n8mpQAA",
+        "lastModifiedDate": "2020-07-13T07:17:48.000Z",
+        "recordTypeId": "012000000000000AAA",
+        "recordTypeInfo": null,
+        "systemModstamp": "2020-07-13T07:17:48.000Z",
+        "fields": {
+          "Name": {
+            "displayValue": null,
+            "value": "GenePoint"
+          },
+          "NumberOfEmployees": {
+            "displayValue": null,
+            "value": 3500
+          },
+          "Phone": {
+            "displayValue": null,
+            "value": "7819662255"
+          },
+          "Type": {
+            "displayValue": "Customer - Direct",
+            "value": "Customer - Direct"
+          },
+          "CreatedDate": {
+            "displayValue": null,
+            "value": "2020-07-13T07:17:48.000Z"
+          },
+          "Id": {
+            "displayValue": null,
+            "value": "0019A00000E8zAZQAZ"
+          },
+          "LastModifiedById": {
+            "displayValue": null,
+            "value": "0059A000002n8mpQAA"
+          },
+          "LastModifiedDate": {
+            "displayValue": null,
+            "value": "2020-07-13T07:17:48.000Z"
+          },
+          "SystemModstamp": {
+            "displayValue": null,
+            "value": "2020-07-13T07:17:48.000Z"
+          }
+        }
+      },
+      {
+        "apiName": "Account",
+        "childRelationships": {},
+        "id": "0019A00000E8zAcQAJ",
+        "lastModifiedById": "0059A000002n8mpQAA",
+        "lastModifiedDate": "2020-07-13T07:17:48.000Z",
+        "recordTypeId": "012000000000000AAA",
+        "recordTypeInfo": null,
+        "systemModstamp": "2020-07-13T07:17:48.000Z",
+        "fields": {
+          "Name": {
+            "displayValue": null,
+            "value": "Jefferson Management"
+          },
+          "NumberOfEmployees": {
+            "displayValue": null,
+            "value": 152
+          },
+          "Phone": {
+            "displayValue": null,
+            "value": "6179658877"
+          },
+          "Type": {
+            "displayValue": "Customer - Direct",
+            "value": "Customer - Direct"
+          },
+          "CreatedDate": {
+            "displayValue": null,
+            "value": "2020-07-13T07:17:48.000Z"
+          },
+          "Id": {
+            "displayValue": null,
+            "value": "0019A00000E8zAcQAJ"
+          },
+          "LastModifiedById": {
+            "displayValue": null,
+            "value": "0059A000002n8mpQAA"
+          },
+          "LastModifiedDate": {
+            "displayValue": null,
+            "value": "2020-07-13T07:17:48.000Z"
+          },
+          "SystemModstamp": {
+            "displayValue": null,
+            "value": "2020-07-13T07:17:48.000Z"
+          }
+        }
+      },
+      {
+        "apiName": "Account",
+        "childRelationships": {},
+        "id": "0019A00000E8zAXQAZ",
+        "lastModifiedById": "0059A000002n8mpQAA",
+        "lastModifiedDate": "2020-07-13T07:17:48.000Z",
+        "recordTypeId": "012000000000000AAA",
+        "recordTypeInfo": null,
+        "systemModstamp": "2020-07-13T07:17:48.000Z",
+        "fields": {
+          "Name": {
+            "displayValue": null,
+            "value": "Madison Investments"
+          },
+          "NumberOfEmployees": {
+            "displayValue": null,
+            "value": 200
+          },
+          "Phone": {
+            "displayValue": null,
+            "value": "7227003362"
+          },
+          "Type": {
+            "displayValue": "Customer - Direct",
+            "value": "Customer - Direct"
+          },
+          "CreatedDate": {
+            "displayValue": null,
+            "value": "2020-07-13T07:17:48.000Z"
+          },
+          "Id": {
+            "displayValue": null,
+            "value": "0019A00000E8zAXQAZ"
+          },
+          "LastModifiedById": {
+            "displayValue": null,
+            "value": "0059A000002n8mpQAA"
+          },
+          "LastModifiedDate": {
+            "displayValue": null,
+            "value": "2020-07-13T07:17:48.000Z"
+          },
+          "SystemModstamp": {
+            "displayValue": null,
+            "value": "2020-07-13T07:17:48.000Z"
+          }
+        }
+      },
+      {
+        "apiName": "Account",
+        "childRelationships": {},
+        "id": "0019A00000E8zAdQAJ",
+        "lastModifiedById": "0059A000002n8mpQAA",
+        "lastModifiedDate": "2020-07-13T07:17:48.000Z",
+        "recordTypeId": "012000000000000AAA",
+        "recordTypeInfo": null,
+        "systemModstamp": "2020-07-13T07:17:48.000Z",
+        "fields": {
+          "Name": {
+            "displayValue": null,
+            "value": "Northern Trail Travel"
+          },
+          "NumberOfEmployees": {
+            "displayValue": null,
+            "value": 10200
+          },
+          "Phone": {
+            "displayValue": null,
+            "value": "9782551474"
+          },
+          "Type": {
+            "displayValue": "Customer - Direct",
+            "value": "Customer - Direct"
+          },
+          "CreatedDate": {
+            "displayValue": null,
+            "value": "2020-07-13T07:17:48.000Z"
+          },
+          "Id": {
+            "displayValue": null,
+            "value": "0019A00000E8zAdQAJ"
+          },
+          "LastModifiedById": {
+            "displayValue": null,
+            "value": "0059A000002n8mpQAA"
+          },
+          "LastModifiedDate": {
+            "displayValue": null,
+            "value": "2020-07-13T07:17:48.000Z"
+          },
+          "SystemModstamp": {
+            "displayValue": null,
+            "value": "2020-07-13T07:17:48.000Z"
+          }
+        }
+      },
+      {
+        "apiName": "Account",
+        "childRelationships": {},
+        "id": "0019A00000E8zAaQAJ",
+        "lastModifiedById": "0059A000002n8mpQAA",
+        "lastModifiedDate": "2020-07-13T07:17:48.000Z",
+        "recordTypeId": "012000000000000AAA",
+        "recordTypeInfo": null,
+        "systemModstamp": "2020-07-13T07:17:48.000Z",
+        "fields": {
+          "Name": {
+            "displayValue": null,
+            "value": "OpenFloor Furniture"
+          },
+          "NumberOfEmployees": {
+            "displayValue": null,
+            "value": 20000
+          },
+          "Phone": {
+            "displayValue": null,
+            "value": "9782554185"
+          },
+          "Type": {
+            "displayValue": "Customer - Direct",
+            "value": "Customer - Direct"
+          },
+          "CreatedDate": {
+            "displayValue": null,
+            "value": "2020-07-13T07:17:48.000Z"
+          },
+          "Id": {
+            "displayValue": null,
+            "value": "0019A00000E8zAaQAJ"
+          },
+          "LastModifiedById": {
+            "displayValue": null,
+            "value": "0059A000002n8mpQAA"
+          },
+          "LastModifiedDate": {
+            "displayValue": null,
+            "value": "2020-07-13T07:17:48.000Z"
+          },
+          "SystemModstamp": {
+            "displayValue": null,
+            "value": "2020-07-13T07:17:48.000Z"
+          }
+        }
+      },
+      {
+        "apiName": "Account",
+        "childRelationships": {},
+        "id": "0019A00000E8zAeQAJ",
+        "lastModifiedById": "0059A000002n8mpQAA",
+        "lastModifiedDate": "2020-07-13T07:17:48.000Z",
+        "recordTypeId": "012000000000000AAA",
+        "recordTypeInfo": null,
+        "systemModstamp": "2020-07-13T07:17:48.000Z",
+        "fields": {
+          "Name": {
+            "displayValue": null,
+            "value": "United Productions"
+          },
+          "NumberOfEmployees": {
+            "displayValue": null,
+            "value": 25000
+          },
+          "Phone": {
+            "displayValue": null,
+            "value": "6178524569"
+          },
+          "Type": {
+            "displayValue": "Customer - Direct",
+            "value": "Customer - Direct"
+          },
+          "CreatedDate": {
+            "displayValue": null,
+            "value": "2020-07-13T07:17:48.000Z"
+          },
+          "Id": {
+            "displayValue": null,
+            "value": "0019A00000E8zAeQAJ"
+          },
+          "LastModifiedById": {
+            "displayValue": null,
+            "value": "0059A000002n8mpQAA"
+          },
+          "LastModifiedDate": {
+            "displayValue": null,
+            "value": "2020-07-13T07:17:48.000Z"
+          },
+          "SystemModstamp": {
+            "displayValue": null,
+            "value": "2020-07-13T07:17:48.000Z"
+          }
+        }
+      }
+    ],
+    "count": 10,
+    "currentPageToken": "0",
+    "currentPageUrl": "/services/data/v49.0/ui-api/list-records/Account/All_Accounts?pageSize=50&pageToken=0",
+    "nextPageToken": null,
+    "nextPageUrl": null,
+    "previousPageToken": null,
+    "previousPageUrl": null,
+    "fields": [],
+    "listInfoETag": "c9baf993ca35e316b9f2b5813bf7681f",
+    "listReference": {
+      "id": "00B9A000002i4vAUAQ",
+      "listViewApiName": "All_Accounts",
+      "objectApiName": "Account",
+      "type": "listView"
+    },
+    "optionalFields": [],
+    "pageSize": 50,
+    "sortBy": [
+      "Name",
+      "Id"
+    ]
+  }
+}
