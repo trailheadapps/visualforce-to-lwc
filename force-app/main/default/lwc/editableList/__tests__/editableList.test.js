@@ -47,6 +47,7 @@ describe('c-editable-list', () => {
             document.body.removeChild(document.body.firstChild);
         }
     });
+
     it('renders lightning-datatable when there is data', () => {
         // Create initial element
         const element = createElement('c-editable-list', {
@@ -62,7 +63,7 @@ describe('c-editable-list', () => {
         // ending the test and fail the test if the promise rejects.
         return Promise.resolve().then(() => {
             const datatableEl = element.shadowRoot.querySelector(
-                'div.table-container > lightning-datatable'
+                'lightning-datatable'
             );
             expect(datatableEl).not.toBeNull();
             expect(datatableEl.data).toStrictEqual(mockGetAccounts);
