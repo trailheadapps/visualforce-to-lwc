@@ -18,12 +18,10 @@ describe('c-editable-list-wrapper', () => {
         });
         document.body.appendChild(element);
 
-        const exampleCmp = element.shadowRoot.querySelector(
-            'c-example-wrapper'
-        );
-        expect(exampleCmp).not.toBeNull();
+        const exampleEl = element.shadowRoot.querySelector('c-example-wrapper');
+        expect(exampleEl).not.toBeNull();
 
-        const innerCmp = exampleCmp.querySelector('c-editable-list');
-        expect(innerCmp).not.toBeNull();
+        const innerEl = exampleEl.querySelector('c-editable-list');
+        expect(innerEl).not.toBeNull();
     });
 });

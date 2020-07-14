@@ -18,14 +18,12 @@ describe('c-edit-record-wrapper', () => {
         element.recordId = RECORD_ID;
         document.body.appendChild(element);
 
-        const exampleCmp = element.shadowRoot.querySelector(
-            'c-example-wrapper'
-        );
-        expect(exampleCmp).not.toBeNull();
-        expect(exampleCmp.recordId).toBe(RECORD_ID);
+        const exampleEl = element.shadowRoot.querySelector('c-example-wrapper');
+        expect(exampleEl).not.toBeNull();
+        expect(exampleEl.recordId).toBe(RECORD_ID);
 
-        const innerCmp = exampleCmp.querySelector('c-edit-record');
-        expect(innerCmp).not.toBeNull();
-        expect(innerCmp.recordId).toBe(RECORD_ID);
+        const innerEl = exampleEl.querySelector('c-edit-record');
+        expect(innerEl).not.toBeNull();
+        expect(innerEl.recordId).toBe(RECORD_ID);
     });
 });

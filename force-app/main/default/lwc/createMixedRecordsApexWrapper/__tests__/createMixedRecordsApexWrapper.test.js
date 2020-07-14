@@ -15,14 +15,10 @@ describe('c-create-mixed-records-apex-wrapper', () => {
         });
         document.body.appendChild(element);
 
-        const exampleCmp = element.shadowRoot.querySelector(
-            'c-example-wrapper'
-        );
-        expect(exampleCmp).not.toBeNull();
+        const exampleEl = element.shadowRoot.querySelector('c-example-wrapper');
+        expect(exampleEl).not.toBeNull();
 
-        const innerCmp = exampleCmp.querySelector(
-            'c-create-mixed-records-apex'
-        );
-        expect(innerCmp).not.toBeNull();
+        const innerEl = exampleEl.querySelector('c-create-mixed-records-apex');
+        expect(innerEl).not.toBeNull();
     });
 });

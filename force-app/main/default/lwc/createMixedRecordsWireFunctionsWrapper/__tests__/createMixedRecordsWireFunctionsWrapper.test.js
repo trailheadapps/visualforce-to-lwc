@@ -18,14 +18,12 @@ describe('c-create-mixed-records-wire-functions-wrapper', () => {
         );
         document.body.appendChild(element);
 
-        const exampleCmp = element.shadowRoot.querySelector(
-            'c-example-wrapper'
-        );
-        expect(exampleCmp).not.toBeNull();
+        const exampleEl = element.shadowRoot.querySelector('c-example-wrapper');
+        expect(exampleEl).not.toBeNull();
 
-        const innerCmp = exampleCmp.querySelector(
+        const innerEl = exampleEl.querySelector(
             'c-create-mixed-records-wire-functions'
         );
-        expect(innerCmp).not.toBeNull();
+        expect(innerEl).not.toBeNull();
     });
 });
