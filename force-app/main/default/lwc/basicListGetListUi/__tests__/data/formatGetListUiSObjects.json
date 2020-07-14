@@ -1,0 +1,112 @@
+[
+    {
+        "Name": "Alpha Dynamics",
+        "NumberOfEmployees": 1000,
+        "Phone": "3362227000",
+        "Type": "Technology Partner",
+        "CreatedDate": "2020-07-13T07:17:48.000Z",
+        "Id": "0019A00000E8zAWQAZ",
+        "LastModifiedById": "0059A000002n8mpQAA",
+        "LastModifiedDate": "2020-07-13T07:17:48.000Z",
+        "SystemModstamp": "2020-07-13T07:17:48.000Z"
+    },
+    {
+        "Name": "Burlington Textiles",
+        "NumberOfEmployees": 10,
+        "Phone": "6179658855",
+        "Type": "Customer - Direct",
+        "CreatedDate": "2020-07-13T07:17:48.000Z",
+        "Id": "0019A00000E8zAYQAZ",
+        "LastModifiedById": "0059A000002n8mpQAA",
+        "LastModifiedDate": "2020-07-13T07:17:48.000Z",
+        "SystemModstamp": "2020-07-13T07:17:48.000Z"
+    },
+    {
+        "Name": "Edge Communications",
+        "NumberOfEmployees": 300,
+        "Phone": "4158563255",
+        "Type": "Customer - Direct",
+        "CreatedDate": "2020-07-13T07:17:48.000Z",
+        "Id": "0019A00000E8zAfQAJ",
+        "LastModifiedById": "0059A000002n8mpQAA",
+        "LastModifiedDate": "2020-07-13T11:58:29.000Z",
+        "SystemModstamp": "2020-07-13T11:58:29.000Z"
+    },
+    {
+        "Name": "Express Logistics",
+        "NumberOfEmployees": 47,
+        "Phone": "6175289966",
+        "Type": "Customer - Direct",
+        "CreatedDate": "2020-07-13T07:17:48.000Z",
+        "Id": "0019A00000E8zAbQAJ",
+        "LastModifiedById": "0059A000002n8mpQAA",
+        "LastModifiedDate": "2020-07-13T07:17:48.000Z",
+        "SystemModstamp": "2020-07-13T07:17:48.000Z"
+    },
+    {
+        "Name": "GenePoint",
+        "NumberOfEmployees": 3500,
+        "Phone": "7819662255",
+        "Type": "Customer - Direct",
+        "CreatedDate": "2020-07-13T07:17:48.000Z",
+        "Id": "0019A00000E8zAZQAZ",
+        "LastModifiedById": "0059A000002n8mpQAA",
+        "LastModifiedDate": "2020-07-13T07:17:48.000Z",
+        "SystemModstamp": "2020-07-13T07:17:48.000Z"
+    },
+    {
+        "Name": "Jefferson Management",
+        "NumberOfEmployees": 152,
+        "Phone": "6179658877",
+        "Type": "Customer - Direct",
+        "CreatedDate": "2020-07-13T07:17:48.000Z",
+        "Id": "0019A00000E8zAcQAJ",
+        "LastModifiedById": "0059A000002n8mpQAA",
+        "LastModifiedDate": "2020-07-13T07:17:48.000Z",
+        "SystemModstamp": "2020-07-13T07:17:48.000Z"
+    },
+    {
+        "Name": "Madison Investments",
+        "NumberOfEmployees": 200,
+        "Phone": "7227003362",
+        "Type": "Customer - Direct",
+        "CreatedDate": "2020-07-13T07:17:48.000Z",
+        "Id": "0019A00000E8zAXQAZ",
+        "LastModifiedById": "0059A000002n8mpQAA",
+        "LastModifiedDate": "2020-07-13T07:17:48.000Z",
+        "SystemModstamp": "2020-07-13T07:17:48.000Z"
+    },
+    {
+        "Name": "Northern Trail Travel",
+        "NumberOfEmployees": 10200,
+        "Phone": "9782551474",
+        "Type": "Customer - Direct",
+        "CreatedDate": "2020-07-13T07:17:48.000Z",
+        "Id": "0019A00000E8zAdQAJ",
+        "LastModifiedById": "0059A000002n8mpQAA",
+        "LastModifiedDate": "2020-07-13T07:17:48.000Z",
+        "SystemModstamp": "2020-07-13T07:17:48.000Z"
+    },
+    {
+        "Name": "OpenFloor Furniture",
+        "NumberOfEmployees": 20000,
+        "Phone": "9782554185",
+        "Type": "Customer - Direct",
+        "CreatedDate": "2020-07-13T07:17:48.000Z",
+        "Id": "0019A00000E8zAaQAJ",
+        "LastModifiedById": "0059A000002n8mpQAA",
+        "LastModifiedDate": "2020-07-13T07:17:48.000Z",
+        "SystemModstamp": "2020-07-13T07:17:48.000Z"
+    },
+    {
+        "Name": "United Productions",
+        "NumberOfEmployees": 25000,
+        "Phone": "6178524569",
+        "Type": "Customer - Direct",
+        "CreatedDate": "2020-07-13T07:17:48.000Z",
+        "Id": "0019A00000E8zAeQAJ",
+        "LastModifiedById": "0059A000002n8mpQAA",
+        "LastModifiedDate": "2020-07-13T07:17:48.000Z",
+        "SystemModstamp": "2020-07-13T07:17:48.000Z"
+    }
+]
