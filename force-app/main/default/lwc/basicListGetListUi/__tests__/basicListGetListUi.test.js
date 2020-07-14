@@ -47,6 +47,7 @@ describe('c-basic-list-get-list-ui', () => {
         // Prevent data saved on mocks from leaking between tests
         jest.clearAllMocks();
     });
+
     it('renders lightning-datatable when there is data', () => {
         // Create initial element
         const element = createElement('c-basic-list-get-list-ui', {
