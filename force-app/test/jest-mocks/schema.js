@@ -5,3 +5,16 @@ export const Account = {
     Type: { fieldApiName: 'Phone' },
     NumberOfEmployees: { fieldApiName: 'NumberOfEmployees' }
 };
+
+export const Contact = {
+    objectApiName: 'Contact',
+    FirstName: { fieldApiName: 'FirstName' },
+    LastName: { fieldApiName: 'LastName' }
+};
+
+export const Opportunity = {
+    objectApiName: 'Opportunity',
+    Name: { fieldApiName: 'Name' },
+    StageName: { fieldApiName: 'StageName' },
+    ClosedDate: { fieldApiName: 'ClosedDate' }
+};

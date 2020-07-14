@@ -1,0 +1,161 @@
+{
+    "apiName": "Opportunity",
+    "childRelationships": {},
+    "id": "0069A000009sN6vQAE",
+    "lastModifiedById": "0059A000002n8mpQAA",
+    "lastModifiedDate": "2020-07-14T09:56:00.000Z",
+    "recordTypeId": "012000000000000AAA",
+    "recordTypeInfo": null,
+    "systemModstamp": "2020-07-14T09:56:00.000Z",
+    "fields": {
+        "Account": {
+            "displayValue": null,
+            "value": null
+        },
+        "AccountId": {
+            "displayValue": null,
+            "value": null
+        },
+        "Amount": {
+            "displayValue": null,
+            "value": null
+        },
+        "Campaign": {
+            "displayValue": null,
+            "value": null
+        },
+        "CampaignId": {
+            "displayValue": null,
+            "value": null
+        },
+        "CloseDate": {
+            "displayValue": "1/31/2025",
+            "value": "2025-01-31"
+        },
+        "CreatedBy": {
+            "displayValue": "User User",
+            "value": {
+                "apiName": "User",
+                "childRelationships": {},
+                "id": "0059A000002n8mpQAA",
+                "lastModifiedById": "0059A000002n8mpQAA",
+                "lastModifiedDate": "2020-07-13T07:18:03.000Z",
+                "recordTypeId": null,
+                "recordTypeInfo": null,
+                "systemModstamp": "2020-07-13T07:18:03.000Z",
+                "fields": {
+                    "Id": {
+                        "displayValue": null,
+                        "value": "0059A000002n8mpQAA"
+                    },
+                    "Name": {
+                        "displayValue": null,
+                        "value": "User User"
+                    }
+                }
+            }
+        },
+        "CreatedById": {
+            "displayValue": null,
+            "value": "0059A000002n8mpQAA"
+        },
+        "CreatedDate": {
+            "displayValue": "7/14/2020, 2:56 AM",
+            "value": "2020-07-14T09:56:00.000Z"
+        },
+        "Description": {
+            "displayValue": null,
+            "value": null
+        },
+        "ExpectedRevenue": {
+            "displayValue": null,
+            "value": null
+        },
+        "IsPrivate": {
+            "displayValue": null,
+            "value": false
+        },
+        "LastModifiedBy": {
+            "displayValue": "User User",
+            "value": {
+                "apiName": "User",
+                "childRelationships": {},
+                "id": "0059A000002n8mpQAA",
+                "lastModifiedById": "0059A000002n8mpQAA",
+                "lastModifiedDate": "2020-07-13T07:18:03.000Z",
+                "recordTypeId": null,
+                "recordTypeInfo": null,
+                "systemModstamp": "2020-07-13T07:18:03.000Z",
+                "fields": {
+                    "Id": {
+                        "displayValue": null,
+                        "value": "0059A000002n8mpQAA"
+                    },
+                    "Name": {
+                        "displayValue": null,
+                        "value": "User User"
+                    }
+                }
+            }
+        },
+        "LastModifiedById": {
+            "displayValue": null,
+            "value": "0059A000002n8mpQAA"
+        },
+        "LastModifiedDate": {
+            "displayValue": "7/14/2020, 2:56 AM",
+            "value": "2020-07-14T09:56:00.000Z"
+        },
+        "LeadSource": {
+            "displayValue": null,
+            "value": null
+        },
+        "Name": {
+            "displayValue": null,
+            "value": "Possible deal"
+        },
+        "NextStep": {
+            "displayValue": null,
+            "value": null
+        },
+        "Owner": {
+            "displayValue": "User User",
+            "value": {
+                "apiName": "User",
+                "childRelationships": {},
+                "id": "0059A000002n8mpQAA",
+                "lastModifiedById": "0059A000002n8mpQAA",
+                "lastModifiedDate": "2020-07-13T07:18:03.000Z",
+                "recordTypeId": null,
+                "recordTypeInfo": null,
+                "systemModstamp": "2020-07-13T07:18:03.000Z",
+                "fields": {
+                    "Id": {
+                        "displayValue": null,
+                        "value": "0059A000002n8mpQAA"
+                    },
+                    "Name": {
+                        "displayValue": null,
+                        "value": "User User"
+                    }
+                }
+            }
+        },
+        "OwnerId": {
+            "displayValue": null,
+            "value": "0059A000002n8mpQAA"
+        },
+        "Probability": {
+            "displayValue": null,
+            "value": 10
+        },
+        "StageName": {
+            "displayValue": "Prospecting",
+            "value": "Prospecting"
+        },
+        "Type": {
+            "displayValue": null,
+            "value": null
+        }
+    }
+}
