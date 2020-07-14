@@ -18,12 +18,10 @@ describe('c-basic-list-get-list-ui-wrapper', () => {
         });
         document.body.appendChild(element);
 
-        const exampleCmp = element.shadowRoot.querySelector(
-            'c-example-wrapper'
-        );
-        expect(exampleCmp).not.toBeNull();
+        const exampleEl = element.shadowRoot.querySelector('c-example-wrapper');
+        expect(exampleEl).not.toBeNull();
 
-        const innerCmp = exampleCmp.querySelector('c-basic-list-get-list-ui');
-        expect(innerCmp).not.toBeNull();
+        const innerEl = exampleEl.querySelector('c-basic-list-get-list-ui');
+        expect(innerEl).not.toBeNull();
     });
 });

@@ -116,7 +116,7 @@ describe('c-page-messages-form', () => {
                 })
                 .then(() => {
                     // Validate parameters of mocked Apex call
-                    expect(createCity).toBeCalledWith({
+                    expect(createCity).toHaveBeenCalledWith({
                         cityName: MOCK_CITY_NAME
                     });
                 });
