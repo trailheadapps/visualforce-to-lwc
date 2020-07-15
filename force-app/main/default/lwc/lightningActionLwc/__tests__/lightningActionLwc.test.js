@@ -1,5 +1,5 @@
 import { createElement } from 'lwc';
-import lightningActionLwc from 'c/lightningActionLwc';
+import LightningActionLwc from 'c/lightningActionLwc';
 
 describe('c-lightning-action-lwc', () => {
     afterEach(() => {
@@ -10,13 +10,13 @@ describe('c-lightning-action-lwc', () => {
     });
 
     it('displays text', () => {
-        //Create element
+        // Create element
         const element = createElement('c-lightning-action-lwc', {
-            is: lightningActionLwc
+            is: LightningActionLwc
         });
         document.body.appendChild(element);
 
-        //Verify that the Lightning Web Component has text
+        // Verify that the Lightning Web Component has text
         const div = element.shadowRoot.querySelector('div');
         expect(div.textContent).toBe('This is a Lightning Web Component!');
     });
