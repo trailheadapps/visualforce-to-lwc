@@ -9,14 +9,14 @@ describe('c-example-wrapper', () => {
         }
     });
 
-    it('renders c-example-wrapper component', () => {
-        const TITLE = 'example';
-        const ICON_NAME = 'utility:error';
-        const RECORD_ID = '0019A00000E8zAWQAZ';
-        const LWC = 'c-example';
-        const VISUALFORCE = 'example';
-        const VF_HEIGHT = '400';
+    const TITLE = 'example';
+    const ICON_NAME = 'utility:error';
+    const RECORD_ID = '0019A00000E8zAWQAZ';
+    const LWC = 'c-example';
+    const VISUALFORCE = 'example';
+    const VF_HEIGHT = '400';
 
+    it('renders c-example-wrapper component', () => {
         const element = createElement('c-example-wrapper', {
             is: ExampleWrapper
         });
@@ -35,31 +35,14 @@ describe('c-example-wrapper', () => {
         expect(lightningCardEl.title).toBe(TITLE);
         expect(lightningCardEl.iconName).toBe(ICON_NAME);
 
-        //check lightning layout element exists
-        const lightningLayoutEl = element.shadowRoot.querySelector(
-            'lightning-layout'
-        );
-        expect(lightningLayoutEl).not.toBeNull();
-
-        // check for the lightning layout item element
-        const lightningLayoutItemEls = element.shadowRoot.querySelectorAll(
-            'lightning-layout-item'
-        );
-        expect(lightningLayoutItemEls[0]).not.toBeNull();
-        expect(lightningLayoutItemEls[0].size).toBe('6');
-        expect(lightningLayoutItemEls[0].largeDeviceSize).toBe('6');
-        expect(lightningLayoutItemEls[0].mediumDeviceSize).toBe('12');
-        expect(lightningLayoutItemEls[0].smallDeviceSize).toBe('12');
-        expect(lightningLayoutItemEls[0].padding).toBe('horizontal-medium');
-
         // check if iframe exists
-        const iframeEl = element.shadowRoot.querySelector('iframe');
+        const iframeEl = lightningCardEl.querySelector('iframe');
         expect(iframeEl).not.toBeNull();
         expect(iframeEl.src).toContain(`/apex/${VISUALFORCE}?id=${RECORD_ID}`);
         expect(iframeEl.height).toBe(VF_HEIGHT);
 
         // check if vf-lwc-source is rendered
-        const vfLwcSourceEl = element.shadowRoot.querySelector(
+        const vfLwcSourceEl = lightningCardEl.querySelector(
             'c-view-vf-lwc-source'
         );
         expect(vfLwcSourceEl).not.toBeNull();
@@ -70,12 +53,6 @@ describe('c-example-wrapper', () => {
     });
 
     it('renders visualforce url without recordId', () => {
-        const TITLE = 'example';
-        const ICON_NAME = 'utility:error';
-        const LWC = 'c-example';
-        const VISUALFORCE = 'example';
-        const VF_HEIGHT = '400';
-
         const element = createElement('c-example-wrapper', {
             is: ExampleWrapper
         });
