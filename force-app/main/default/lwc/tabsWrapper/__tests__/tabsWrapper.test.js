@@ -9,7 +9,7 @@ describe('c-tabs-wrapper', () => {
         }
     });
 
-    it('shows inner component using c-tabs-wrapper', () => {
+    it('shows inner component using c-example-wrapper', () => {
         const element = createElement('c-tabs-wrapper', {
             is: TabsWrapper
         });
