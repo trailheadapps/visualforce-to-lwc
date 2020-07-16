@@ -73,13 +73,15 @@ describe('c-list-infinite-scrolling-get-list-ui', () => {
                 expect(getListUiAdapter.getLastConfig().pageToken).toBe(0);
             })
             .then(() => {
-                // Toggle checkbox to show details
+                // Run the event load more to simulate scrolling
                 const dataTableEl = element.shadowRoot.querySelector(
                     'lightning-datatable'
                 );
                 dataTableEl.dispatchEvent(new CustomEvent('loadmore'));
             })
             .then(() => {
+                // If the scroll worked, our new pageToken should have updated from
+                // 0 to 5.
                 expect(getListUiAdapter.getLastConfig().pageToken).toBe(5);
             });
     });
