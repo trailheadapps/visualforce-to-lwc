@@ -9,7 +9,7 @@ describe('c-toolbar-wrapper', () => {
         }
     });
 
-    it('shows inner component using c-toolbar-wrapper', () => {
+    it('shows inner component using c-example-wrapper', () => {
         const element = createElement('c-toolbar-wrapper', {
             is: ToolbarWrapper
         });
