@@ -20,15 +20,9 @@ describe('c-panel-bar-wrapper', () => {
             'c-example-wrapper'
         );
         expect(exampleWrapperEl).not.toBeNull();
-        expect(exampleWrapperEl.iconName).toBe('custom:custom44');
-        expect(exampleWrapperEl.lwc).toBe('panelBar');
-        expect(exampleWrapperEl.title).toBe('Panel Bar');
-        expect(exampleWrapperEl.visualforce).toBe('panelBar');
-        expect(exampleWrapperEl.visualforceHeight).toBe('90px');
 
         // check if panel bar component exists
-        const panelBarEl = element.shadowRoot.querySelector('c-panel-bar');
+        const panelBarEl = exampleWrapperEl.querySelector('c-panel-bar');
         expect(panelBarEl).not.toBeNull();
-        expect(panelBarEl.slot).toBe('lwc');
     });
 });
