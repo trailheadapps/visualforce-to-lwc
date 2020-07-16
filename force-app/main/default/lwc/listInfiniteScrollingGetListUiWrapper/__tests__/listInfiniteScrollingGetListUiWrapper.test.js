@@ -1,11 +1,6 @@
 import { createElement } from 'lwc';
 import ListInfiniteScrollingGetListUiWrapper from 'c/listInfiniteScrollingGetListUiWrapper';
 
-// Mock inner component, as it uses a wire adapter and crashes
-jest.mock(
-    '../../listInfiniteScrollingGetListUi/listInfiniteScrollingGetListUi'
-);
-
 describe('c-list-infinite-scrolling-get-list-ui-wrapper', () => {
     afterEach(() => {
         // The jsdom instance is shared across test cases in a single file so reset the DOM
