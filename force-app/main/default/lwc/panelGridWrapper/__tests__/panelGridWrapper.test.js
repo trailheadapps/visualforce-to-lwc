@@ -20,15 +20,9 @@ describe('c-panel-grid-wrapper', () => {
             'c-example-wrapper'
         );
         expect(exampleWrapperEl).not.toBeNull();
-        expect(exampleWrapperEl.iconName).toBe('custom:custom44');
-        expect(exampleWrapperEl.lwc).toBe('panelGrid');
-        expect(exampleWrapperEl.title).toBe('Panel Grid');
-        expect(exampleWrapperEl.visualforce).toBe('panelGrid');
-        expect(exampleWrapperEl.visualforceHeight).toBe('40px');
 
         // check if panel grid component exists
-        const panelBarEl = element.shadowRoot.querySelector('c-panel-grid');
+        const panelBarEl = exampleWrapperEl.querySelector('c-panel-grid');
         expect(panelBarEl).not.toBeNull();
-        expect(panelBarEl.slot).toBe('lwc');
     });
 });
