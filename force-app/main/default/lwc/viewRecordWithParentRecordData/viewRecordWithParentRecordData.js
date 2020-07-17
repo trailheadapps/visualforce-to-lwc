@@ -9,8 +9,6 @@ import ACCOUNT_OWNER_NAME_FIELD from '@salesforce/schema/Account.Owner.Name';
 export default class ViewRecordWithParentRecordData extends LightningElement {
     @api recordId;
 
-    fields = [ACCOUNT_NAME_FIELD, ACCOUNT_TYPE_FIELD, ACCOUNT_PHONE_FIELD];
-
     accountObject = ACCOUNT_OBJECT;
     accountNameField = ACCOUNT_NAME_FIELD;
     accountTypeField = ACCOUNT_TYPE_FIELD;
@@ -23,7 +21,7 @@ export default class ViewRecordWithParentRecordData extends LightningElement {
     record;
 
     get ownerNameValue() {
-        return this.record.data
+        return this.record && this.record.data
             ? getFieldValue(this.record.data, ACCOUNT_OWNER_NAME_FIELD)
             : '';
     }
