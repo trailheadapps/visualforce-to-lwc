@@ -65,9 +65,9 @@ describe('c-lds-utils', () => {
 
     describe('formatGetListUiSObjects', () => {
         it('formats records', () => {
-            const formated = formatGetListUiSObjects(mockGetListUi);
+            const formatted = formatGetListUiSObjects(mockGetListUi);
 
-            expect(formated).toStrictEqual(mockFormatGetListUiSObjects);
+            expect(formatted).toStrictEqual(mockFormatGetListUiSObjects);
         });
     });
 });
