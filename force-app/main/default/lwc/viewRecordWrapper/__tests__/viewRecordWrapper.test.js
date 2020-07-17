@@ -11,7 +11,7 @@ describe('c-view-record-wrapper', () => {
         }
     });
 
-    it('passes recordId to c-example-wrapper component c-view-record component with correct recordId value', () => {
+    it('passes recordId to c-example-wrapper component c-view-record component', () => {
         // Create initial element
         const element = createElement('c-view-record-wrapper', {
             is: ViewRecordWrapper
