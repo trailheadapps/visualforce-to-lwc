@@ -9,23 +9,22 @@ export default class CreateMixedRecordsApex extends LightningElement {
     opportunityName = 'Possible deal';
 
     handleContactFirstNameInputChange(event) {
-        this.contactFirstName = event.detail.value;
+        this.contactFirstName = event.target.value;
     }
 
     handleContactLastNameInputChange(event) {
-        this.contactLastName = event.detail.value;
+        this.contactLastName = event.target.value;
     }
 
     handleOpportunityNameInputChange(event) {
-        this.opportunityName = event.detail.value;
+        this.opportunityName = event.target.value;
     }
 
     handleButtonClick() {
         createContactAndOpportunity({
             contactFirstName: this.contactFirstName,
             contactLastName: this.contactLastName,
-            opportunityName: this.opportunityName,
-            accountId: this.recordId
+            opportunityName: this.opportunityName
         })
             .then(() => {
                 const evt = new ShowToastEvent({
