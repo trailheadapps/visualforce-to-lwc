@@ -1,5 +1,5 @@
 import { createElement } from 'lwc';
-import ViewRecordWithParentRecordDataWrapper from 'c/viewRecordWrapper';
+import ViewRecordWithParentRecordDataWrapper from 'c/ViewRecordWithParentRecordDataWrapper';
 
 const RECORD_ID = '0019A00000E8zAWQAZ';
 
@@ -41,10 +41,13 @@ describe('c-view-record-with-parent-record-data-wrapper', () => {
         document.body.appendChild(element);
 
         // Verify c-view-record-with-parent-record-data component exists, and that recordId is passed to its attribute
-        const viewRecordParentEl = element.shadowRoot.querySelector(
-            'c-example-wrapper > c-view-record-with-parent-record-data'
+        const exampleEl = element.shadowRoot.querySelector('c-example-wrapper');
+        expect(exampleEl).not.toBeNull();
+
+        const innerEl = exampleEl.querySelector(
+            'c-view-record-with-parent-record-data'
         );
-        expect(viewRecordParentEl).not.toBeNull();
-        expect(viewRecordParentEl.recordId).toBe(RECORD_ID);
+        expect(innerEl).not.toBeNull();
+        expect(innerEl.recordId).toBe(RECORD_ID);
     });
 });
