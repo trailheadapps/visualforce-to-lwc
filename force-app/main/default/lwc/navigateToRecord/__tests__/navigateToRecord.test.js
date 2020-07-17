@@ -9,6 +9,7 @@ describe('c-navigate-to-record', () => {
             document.body.removeChild(document.body.firstChild);
         }
     });
+
     it('navigates to record view by ID', () => {
         const element = createElement('c-navigate-to-record', {
             is: NavigateToRecord
@@ -31,7 +32,7 @@ describe('c-navigate-to-record', () => {
         });
     });
 
-    it('creates an anchor element with a blank target, # href and label', () => {
+    it('creates an anchor element with the right label', () => {
         const element = createElement('c-navigate-to-record', {
             is: NavigateToRecord
         });
@@ -43,8 +44,6 @@ describe('c-navigate-to-record', () => {
             const anchorEl = element.shadowRoot.querySelector('a');
             expect(anchorEl).not.toBeNull();
             expect(anchorEl.textContent).toEqual(element.label);
-            expect.stringMatching(anchorEl.href, /#$/);
-            expect(anchorEl.target).toEqual('_blank');
         });
     });
 });
