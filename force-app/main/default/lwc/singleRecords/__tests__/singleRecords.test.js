@@ -82,6 +82,8 @@ describe('c-single-records', () => {
 
     describe('getSingleContact @wire error', () => {
         it('shows error panel element', () => {
+            const ERROR = { message: 'An error message' };
+            
             // Create initial element
             const element = createElement('c-single-records', {
                 is: SingleRecords
@@ -89,7 +91,7 @@ describe('c-single-records', () => {
             document.body.appendChild(element);
 
             // Emit error from @wire
-            getSingleAccountViaSOQLAdapter.error();
+            getSingleAccountViaSOQLAdapter.error(ERROR);
 
             // Return a promise to wait for any asynchronous DOM updates. Jest
             // will automatically wait for the Promise chain to complete before
@@ -100,6 +102,7 @@ describe('c-single-records', () => {
                 );
                 // Ensure the error panel appears when there is an error state
                 expect(errorPanelEl).not.toBeNull();
+                expect(errorPanelEl.errors.body).toStrictEqual(ERROR);
             });
         });
     });
