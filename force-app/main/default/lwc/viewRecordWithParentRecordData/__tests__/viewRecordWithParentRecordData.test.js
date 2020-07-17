@@ -82,6 +82,8 @@ describe('c-view-record-with-parent-record-data', () => {
                     is: ViewRecordWithParentRecordDataWrapper
                 }
             );
+
+            element.recordId = RECORD_ID;
             document.body.appendChild(element);
 
             // Emit data from @wire
