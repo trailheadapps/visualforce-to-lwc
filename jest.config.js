@@ -4,6 +4,8 @@ module.exports = {
     moduleNameMapper: {
         '^@salesforce/schema$': '<rootDir>/force-app/test/jest-mocks/schema',
         '^lightning/platformShowToastEvent$':
-            '<rootDir>/force-app/test/jest-mocks/lightning/platformShowToastEvent'
+            '<rootDir>/force-app/test/jest-mocks/lightning/platformShowToastEvent',
+        '^lightning/navigation$':
+            '<rootDir>/force-app/test/jest-mocks/lightning/navigation'
     }
 };
