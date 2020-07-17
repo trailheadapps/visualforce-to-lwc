@@ -83,7 +83,7 @@ describe('c-single-records', () => {
     describe('getSingleContact @wire error', () => {
         it('shows error panel element', () => {
             const ERROR = { message: 'An error message' };
-            
+
             // Create initial element
             const element = createElement('c-single-records', {
                 is: SingleRecords
