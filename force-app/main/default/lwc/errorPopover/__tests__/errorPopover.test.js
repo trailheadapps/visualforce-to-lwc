@@ -25,7 +25,7 @@ describe('c-error-popover', () => {
             );
             expect(reRenderedSectionEl).not.toBeNull();
             const popoverDivEl = reRenderedSectionEl.querySelector(
-                'div.slds-var-popover__body'
+                '.slds-var-popover__body'
             );
             expect(popoverDivEl.textContent).toBe(ERROR_MESSAGE_INPUT);
         });
