@@ -19,7 +19,7 @@ describe('c-view-record-wrapper', () => {
         element.recordId = RECORD_ID;
         document.body.appendChild(element);
 
-        // Verify example component exists, and that recordId is passed to it's attribute
+        // Verify example component exists, and that recordId is passed to its attribute
         const exampleEl = element.shadowRoot.querySelector('c-example-wrapper');
         expect(exampleEl).not.toBeNull();
         expect(exampleEl.recordId).toBe(RECORD_ID);
@@ -33,7 +33,7 @@ describe('c-view-record-wrapper', () => {
         element.recordId = RECORD_ID;
         document.body.appendChild(element);
 
-        // Verify c-view-record component exists, and that recordId is passed to it's attribute
+        // Verify c-view-record component exists, and that recordId is passed to its attribute
         const viewRecordEl = element.shadowRoot.querySelector(
             'c-example-wrapper > c-view-record'
         );
