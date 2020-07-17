@@ -2,6 +2,7 @@ import { createElement } from 'lwc';
 import PageMessagesToast from 'c/pageMessagesToast';
 import { ShowToastEventName } from 'lightning/platformShowToastEvent';
 import callApex from '@salesforce/apex/PageMessagesControllerLwc.callApex';
+import { reduceErrors } from 'c/ldsUtils';
 
 // Mocking imperative Apex method call
 jest.mock(
@@ -80,7 +81,7 @@ describe('c-page-messages-toast', () => {
             expect(handler).toHaveBeenCalled();
             expect(handler.mock.calls[0][0].detail.title).toBe('Error');
             expect(handler.mock.calls[0][0].detail.message).toBe(
-                ERROR_OBJECT.message
+                reduceErrors(ERROR_OBJECT).join(', ')
             );
             expect(handler.mock.calls[0][0].detail.variant).toBe('error');
         });
