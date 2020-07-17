@@ -20,7 +20,11 @@ describe('c-error-popover', () => {
 
         //check for errors in final div
         return Promise.resolve().then(() => {
-            const popoverDivEl = element.shadowRoot.querySelector(
+            const reRenderedSectionEl = element.shadowRoot.querySelector(
+                'section'
+            );
+            expect(reRenderedSectionEl).not.toBeNull();
+            const popoverDivEl = reRenderedSectionEl.querySelector(
                 'div.slds-var-popover__body'
             );
             expect(popoverDivEl.textContent).toBe(ERROR_MESSAGE_INPUT);
