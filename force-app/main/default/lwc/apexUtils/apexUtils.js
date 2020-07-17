@@ -4,7 +4,11 @@
  * @return {Object[]} formattedObjects, ready to use by lightning-datatable
  */
 export function formatApexSObjects(sObjects) {
-    return sObjects.map(formatApexSObject);
+    try {
+        return sObjects.map(formatApexSObject);
+    } catch (err) {
+        return [];
+    }
 }
 
 function formatApexSObject(sObject) {
