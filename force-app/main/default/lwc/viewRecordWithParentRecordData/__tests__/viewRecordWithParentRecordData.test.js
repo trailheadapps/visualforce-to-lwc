@@ -137,6 +137,9 @@ describe('c-view-record-with-parent-record-data', () => {
             // Emit data from @wire
             getRecordAdapter.error();
 
+            // Return a promise to wait for any asynchronous DOM updates. Jest
+            // will automatically wait for the Promise chain to complete before
+            // ending the test and fail the test if the promise rejects.
             return Promise.resolve().then(() => {
                 const textEl = element.shadowRoot.querySelector(
                     'lightning-formatted-text'
