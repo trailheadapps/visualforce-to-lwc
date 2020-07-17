@@ -50,6 +50,8 @@ export default class ListInfiniteScrollingGetListUi extends LightningElement {
     }
 
     loadMoreData() {
-        if (this._nextPageToken) this._currentPageToken = this._nextPageToken;
+        if (this._nextPageToken) {
+            this._currentPageToken = this._nextPageToken;
+        }
     }
 }
