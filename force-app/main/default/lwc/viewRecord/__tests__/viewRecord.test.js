@@ -6,6 +6,7 @@ import ACCOUNT_TYPE_FIELD from '@salesforce/schema/Account.Type';
 import ACCOUNT_PHONE_FIELD from '@salesforce/schema/Account.Phone';
 import ACCOUNT_EMPLOYEES_FIELD from '@salesforce/schema/Account.NumberOfEmployees';
 
+// Simulated recordId for initializing component
 const RECORD_ID_INPUT = '0019A00000E8zAWQAZ';
 
 describe('c-view-record', () => {
@@ -25,7 +26,8 @@ describe('c-view-record', () => {
         element.recordId = RECORD_ID_INPUT;
         document.body.appendChild(element);
 
-        // Validate if correct parameters have been passed to base components
+        // Retrieve from from DOM and validate if correct parameters
+        // have been passed to base component
         const formEl = element.shadowRoot.querySelector(
             'lightning-record-form'
         );
