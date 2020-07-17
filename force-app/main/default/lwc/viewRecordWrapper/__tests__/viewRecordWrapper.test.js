@@ -11,7 +11,7 @@ describe('c-view-record-wrapper', () => {
         }
     });
 
-    it('passes recordId to c-example-wrapper component c-view-record component', () => {
+    it('passes recordId to c-example-wrapper component', () => {
         // Create initial element
         const element = createElement('c-view-record-wrapper', {
             is: ViewRecordWrapper
@@ -34,9 +34,7 @@ describe('c-view-record-wrapper', () => {
         document.body.appendChild(element);
 
         // Verify c-view-record component exists, and that recordId is passed to its attribute
-        const viewRecordEl = element.shadowRoot.querySelector(
-            'c-example-wrapper > c-view-record'
-        );
+        const viewRecordEl = element.shadowRoot.querySelector('c-view-record');
         expect(viewRecordEl).not.toBeNull();
         expect(viewRecordEl.recordId).toBe(RECORD_ID);
     });
