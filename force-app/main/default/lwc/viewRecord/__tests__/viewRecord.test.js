@@ -6,7 +6,7 @@ import ACCOUNT_TYPE_FIELD from '@salesforce/schema/Account.Type';
 import ACCOUNT_PHONE_FIELD from '@salesforce/schema/Account.Phone';
 import ACCOUNT_EMPLOYEES_FIELD from '@salesforce/schema/Account.NumberOfEmployees';
 
-// Simulated recordId for initializing component
+// Simulated recordId to initialize component
 const RECORD_ID_INPUT = '0019A00000E8zAWQAZ';
 
 describe('c-view-record', () => {
