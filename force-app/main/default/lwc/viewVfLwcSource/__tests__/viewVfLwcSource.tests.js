@@ -34,19 +34,6 @@ describe('c-view-vf-lwc-source', () => {
         expect(urlEl.label).toBe(LABEL);
     });
 
-    it('does not show the repository LWC URL when no LWC source is provided', () => {
-        // Create initial element
-        const element = createElement('c-view-vf-lwc-source', {
-            is: ViewVfLwcSource
-        });
-        document.body.appendChild(element);
-
-        const urlEls = element.shadowRoot.querySelectorAll(
-            'lightning-formatted-url'
-        );
-        expect(urlEls.length).toBe(1);
-    });
-
     it('shows the repository LWC URL with label when a LWC source is provided', () => {
         const LWC_URL = '/somelwcurl';
         const FULL_URL = BASE_URL + LWC_URL;
