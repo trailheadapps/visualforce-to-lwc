@@ -2,6 +2,7 @@ export const Account = {
     objectApiName: 'Account',
     Name: { fieldApiName: 'Name' },
     Type: { fieldApiName: 'Type' },
-    Type: { fieldApiName: 'Phone' },
-    NumberOfEmployees: { fieldApiName: 'NumberOfEmployees' }
+    Phone: { fieldApiName: 'Phone' },
+    NumberOfEmployees: { fieldApiName: 'NumberOfEmployees' },
+    Owner: { fieldApiName: 'Owner', Name: { fieldApiName: 'Name' } }
 };
