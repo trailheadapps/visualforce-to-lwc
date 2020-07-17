@@ -1,5 +1,5 @@
 import { createElement } from 'lwc';
-import ViewRecordWithParentRecordDataWrapper from 'c/ViewRecordWithParentRecordDataWrapper';
+import ViewRecordWithParentRecordDataWrapper from 'c/viewRecordWithParentRecordDataWrapper';
 
 const RECORD_ID = '0019A00000E8zAWQAZ';
 
