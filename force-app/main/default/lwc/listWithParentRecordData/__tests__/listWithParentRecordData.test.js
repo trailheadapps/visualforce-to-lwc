@@ -42,14 +42,24 @@ describe('c-list-with-parent-record-data', () => {
             is: ListWithParentRecordData
         });
         document.body.appendChild(element);
+
+        const errorObj = {
+            body:
+                'An error has occured. Have you tried turning it off and on again?',
+            ok: false,
+            status: '400',
+            statusText: 'Bad Request, No Donuts'
+        };
+
         // By having this return an empty object, we're emulating a case where there are no accounts
-        getAccountsAdapter.error();
+        getAccountsAdapter.error(errorObj);
 
         return Promise.resolve().then(() => {
             const errorPanelEl = element.shadowRoot.querySelector(
                 'c-error-panel'
             );
             expect(errorPanelEl).not.toBeNull();
+            expect(errorPanelEl.errors.body).toStrictEqual(errorObj);
 
             const dataTableEl = element.shadowRoot.querySelector(
                 'lightning-datatable'
