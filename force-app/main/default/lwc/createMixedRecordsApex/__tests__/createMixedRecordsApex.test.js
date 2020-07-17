@@ -49,12 +49,13 @@ describe('c-create-mixed-records-apex', () => {
         });
         document.body.appendChild(element);
 
-        const inputsEl = element.shadowRoot.querySelectorAll('lightning-input');
+        const DEFAULT_VALUES = ['Yan', 'Khang', 'Possible deal'];
 
-        expect(inputsEl.length).toBe(3);
-        expect(inputsEl[0].value).toBe('Yan');
-        expect(inputsEl[1].value).toBe('Khang');
-        expect(inputsEl[2].value).toBe('Possible deal');
+        const actualValues = Array.from(
+            element.shadowRoot.querySelectorAll('lightning-input')
+        ).map((input) => input.value);
+
+        expect(actualValues).toEqual(DEFAULT_VALUES);
     });
 
     it('passes the user input to the Apex method correctly', () => {
