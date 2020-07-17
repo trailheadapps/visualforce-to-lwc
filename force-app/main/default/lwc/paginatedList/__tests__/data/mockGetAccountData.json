@@ -1,0 +1,356 @@
+{
+    "info": {
+        "cloneable": true,
+        "createable": true,
+        "deletable": true,
+        "displayColumns": [
+            {
+                "fieldApiName": "Name",
+                "label": "Account Name",
+                "sortable": true
+            },
+            {
+                "fieldApiName": "Type",
+                "label": "Type",
+                "sortable": true
+            },
+            {
+                "fieldApiName": "Phone",
+                "label": "Phone",
+                "sortable": true
+            },
+            {
+                "fieldApiName": "NumberOfEmployees",
+                "label": "Employees",
+                "sortable": true
+            }
+        ],
+        "filterLogicString": null,
+        "filteredByInfo": [],
+        "label": "All Accounts",
+        "listReference": {
+            "id": "00B0U000001GYrJUAW",
+            "listViewApiName": "All_Accounts",
+            "objectApiName": "Account",
+            "type": "listView"
+        },
+        "orderedByInfo": [
+            {
+                "fieldApiName": "Name",
+                "isAscending": true,
+                "label": "Account Name"
+            }
+        ],
+        "updateable": true,
+        "userPreferences": {
+            "columnWidths": {
+                "Name": -1,
+                "NumberOfEmployees": -1,
+                "Phone": -1,
+                "Type": -1
+            },
+            "columnWrap": {
+                "Name": false,
+                "NumberOfEmployees": false,
+                "Phone": false,
+                "Type": false
+            }
+        },
+        "visibility": "Public",
+        "visibilityEditable": true
+    },
+
+    "records": {
+        "count": 5,
+        "currentPageToken": "0",
+        "currentPageUrl": "/services/data/v45.0/ui-api/list-records/Account/All_Accounts?pageSize=5&pageToken=0",
+        "listInfoETag": "d96d3a0680d3757043a4b9e1ad15cfa6",
+        "nextPageToken": null,
+        "nextPageUrl": null,
+        "previousPageToken": null,
+        "previousPageUrl": null,
+        "records": [
+            {
+                "apiName": "Account",
+                "childRelationships": {},
+                "fields": {
+                    "CreatedDate": {
+                        "displayValue": null,
+                        "value": "2020-07-16T13:16:01.000Z"
+                    },
+
+                    "Id": {
+                        "displayValue": null,
+                        "value": "0010U000013FYwNQAW"
+                    },
+
+                    "LastModifiedById": {
+                        "displayValue": null,
+                        "value": "0050U000003TeSKQA0"
+                    },
+
+                    "LastModifiedDate": {
+                        "displayValue": null,
+                        "value": "2020-07-16T13:16:01.000Z"
+                    },
+
+                    "Name": {
+                        "displayValue": null,
+                        "value": "Jefferson Management"
+                    },
+
+                    "NumberOfEmployees": {
+                        "displayValue": null,
+                        "value": 152
+                    },
+
+                    "Phone": {
+                        "displayValue": null,
+                        "value": "6179658877"
+                    },
+
+                    "SystemModstamp": {
+                        "displayValue": null,
+                        "value": "2020-07-16T13:16:01.000Z"
+                    },
+                    "Type": {
+                        "displayValue": "Customer - Direct",
+                        "value": "Customer - Direct"
+                    }
+                },
+
+                "id": "0010U000013FYwNQAW",
+                "lastModifiedById": "0050U000003TeSKQA0",
+                "lastModifiedDate": "2020-07-16T13:16:01.000Z",
+                "recordTypeId": "012000000000000AAA",
+                "recordTypeInfo": null,
+                "systemModstamp": "2020-07-16T13:16:01.000Z"
+            },
+            {
+                "apiName": "Account",
+                "childRelationships": {},
+                "fields": {
+                    "CreatedDate": {
+                        "displayValue": null,
+                        "value": "2020-07-16T13:16:01.000Z"
+                    },
+
+                    "Id": {
+                        "displayValue": null,
+                        "value": "0010U000013FYwNQAB"
+                    },
+
+                    "LastModifiedById": {
+                        "displayValue": null,
+                        "value": "0050U000003TeSKQA0"
+                    },
+
+                    "LastModifiedDate": {
+                        "displayValue": null,
+                        "value": "2020-07-16T13:16:01.000Z"
+                    },
+
+                    "Name": {
+                        "displayValue": null,
+                        "value": "Jefferson Management 2"
+                    },
+
+                    "NumberOfEmployees": {
+                        "displayValue": null,
+                        "value": 152
+                    },
+
+                    "Phone": {
+                        "displayValue": null,
+                        "value": "6179658877"
+                    },
+
+                    "SystemModstamp": {
+                        "displayValue": null,
+                        "value": "2020-07-16T13:16:01.000Z"
+                    },
+                    "Type": {
+                        "displayValue": "Customer - Direct",
+                        "value": "Customer - Direct"
+                    }
+                },
+
+                "id": "0010U000013FYwNQAB",
+                "lastModifiedById": "0050U000003TeSKQA0",
+                "lastModifiedDate": "2020-07-16T13:16:01.000Z",
+                "recordTypeId": "012000000000000AAA",
+                "recordTypeInfo": null,
+                "systemModstamp": "2020-07-16T13:16:01.000Z"
+            },
+            {
+                "apiName": "Account",
+                "childRelationships": {},
+                "fields": {
+                    "CreatedDate": {
+                        "displayValue": null,
+                        "value": "2020-07-16T13:16:01.000Z"
+                    },
+
+                    "Id": {
+                        "displayValue": null,
+                        "value": "0010U000013FYwNQAC"
+                    },
+
+                    "LastModifiedById": {
+                        "displayValue": null,
+                        "value": "0050U000003TeSKQA0"
+                    },
+
+                    "LastModifiedDate": {
+                        "displayValue": null,
+                        "value": "2020-07-16T13:16:01.000Z"
+                    },
+
+                    "Name": {
+                        "displayValue": null,
+                        "value": "Jefferson Management 3"
+                    },
+
+                    "NumberOfEmployees": {
+                        "displayValue": null,
+                        "value": 152
+                    },
+
+                    "Phone": {
+                        "displayValue": null,
+                        "value": "6179658877"
+                    },
+
+                    "SystemModstamp": {
+                        "displayValue": null,
+                        "value": "2020-07-16T13:16:01.000Z"
+                    },
+                    "Type": {
+                        "displayValue": "Customer - Direct",
+                        "value": "Customer - Direct"
+                    }
+                },
+
+                "id": "0010U000013FYwNQAC",
+                "lastModifiedById": "0050U000003TeSKQA0",
+                "lastModifiedDate": "2020-07-16T13:16:01.000Z",
+                "recordTypeId": "012000000000000AAA",
+                "recordTypeInfo": null,
+                "systemModstamp": "2020-07-16T13:16:01.000Z"
+            },
+            {
+                "apiName": "Account",
+                "childRelationships": {},
+                "fields": {
+                    "CreatedDate": {
+                        "displayValue": null,
+                        "value": "2020-07-16T13:16:01.000Z"
+                    },
+
+                    "Id": {
+                        "displayValue": null,
+                        "value": "0010U000013FYwNQAD"
+                    },
+
+                    "LastModifiedById": {
+                        "displayValue": null,
+                        "value": "0050U000003TeSKQA0"
+                    },
+
+                    "LastModifiedDate": {
+                        "displayValue": null,
+                        "value": "2020-07-16T13:16:01.000Z"
+                    },
+
+                    "Name": {
+                        "displayValue": null,
+                        "value": "Jefferson Management 4"
+                    },
+
+                    "NumberOfEmployees": {
+                        "displayValue": null,
+                        "value": 152
+                    },
+
+                    "Phone": {
+                        "displayValue": null,
+                        "value": "6179658877"
+                    },
+
+                    "SystemModstamp": {
+                        "displayValue": null,
+                        "value": "2020-07-16T13:16:01.000Z"
+                    },
+                    "Type": {
+                        "displayValue": "Customer - Direct",
+                        "value": "Customer - Direct"
+                    }
+                },
+
+                "id": "0010U000013FYwNQAD",
+                "lastModifiedById": "0050U000003TeSKQA0",
+                "lastModifiedDate": "2020-07-16T13:16:01.000Z",
+                "recordTypeId": "012000000000000AAA",
+                "recordTypeInfo": null,
+                "systemModstamp": "2020-07-16T13:16:01.000Z"
+            },
+            {
+                "apiName": "Account",
+                "childRelationships": {},
+                "fields": {
+                    "CreatedDate": {
+                        "displayValue": null,
+                        "value": "2020-07-16T13:16:01.000Z"
+                    },
+
+                    "Id": {
+                        "displayValue": null,
+                        "value": "0010U000013FYwNQAE"
+                    },
+
+                    "LastModifiedById": {
+                        "displayValue": null,
+                        "value": "0050U000003TeSKQA0"
+                    },
+
+                    "LastModifiedDate": {
+                        "displayValue": null,
+                        "value": "2020-07-16T13:16:01.000Z"
+                    },
+
+                    "Name": {
+                        "displayValue": null,
+                        "value": "Jefferson Management 5"
+                    },
+
+                    "NumberOfEmployees": {
+                        "displayValue": null,
+                        "value": 152
+                    },
+
+                    "Phone": {
+                        "displayValue": null,
+                        "value": "6179658877"
+                    },
+
+                    "SystemModstamp": {
+                        "displayValue": null,
+                        "value": "2020-07-16T13:16:01.000Z"
+                    },
+                    "Type": {
+                        "displayValue": "Customer - Direct",
+                        "value": "Customer - Direct"
+                    }
+                },
+
+                "id": "0010U000013FYwNQAE",
+                "lastModifiedById": "0050U000003TeSKQA0",
+                "lastModifiedDate": "2020-07-16T13:16:01.000Z",
+                "recordTypeId": "012000000000000AAA",
+                "recordTypeInfo": null,
+                "systemModstamp": "2020-07-16T13:16:01.000Z"
+            }
+        ]
+    },
+    "nextPageToken": 5
+}
