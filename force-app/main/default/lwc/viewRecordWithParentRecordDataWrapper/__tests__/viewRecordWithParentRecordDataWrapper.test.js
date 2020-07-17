@@ -42,7 +42,7 @@ describe('c-view-record-with-parent-record-data-wrapper', () => {
 
         // Verify c-view-record-with-parent-record-data component exists, and that recordId is passed to its attribute
         const viewRecordParentEl = element.shadowRoot.querySelector(
-            'c-view-record-with-parent-record-data'
+            'c-example-wrapper > c-view-record-with-parent-record-data'
         );
         expect(viewRecordParentEl).not.toBeNull();
         expect(viewRecordParentEl.recordId).toBe(RECORD_ID);
