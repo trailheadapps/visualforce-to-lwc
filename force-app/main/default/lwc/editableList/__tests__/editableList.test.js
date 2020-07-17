@@ -72,6 +72,13 @@ describe('c-editable-list', () => {
     });
 
     it('renders error panel when there is error', () => {
+        const APEX_ERROR = {
+            body: 'Error retrieving records',
+            ok: false,
+            status: '400',
+            statusText: 'Bad Request'
+        };
+
         // Create initial element
         const element = createElement('c-editable-list', {
             is: EditableList
@@ -79,7 +86,11 @@ describe('c-editable-list', () => {
         document.body.appendChild(element);
 
         // Emit data from @wire
-        getAccountsAdapter.error();
+        getAccountsAdapter.error(
+            APEX_ERROR.body,
+            APEX_ERROR.status,
+            APEX_ERROR.statusText
+        );
 
         // Return a promise to wait for any asynchronous DOM updates. Jest
         // will automatically wait for the Promise chain to complete before
@@ -89,7 +100,7 @@ describe('c-editable-list', () => {
                 'c-error-panel'
             );
             expect(errorPanelEl).not.toBeNull();
-            expect(errorPanelEl.errors).toBeTruthy();
+            expect(errorPanelEl.errors).toStrictEqual(APEX_ERROR);
         });
     });
 });
