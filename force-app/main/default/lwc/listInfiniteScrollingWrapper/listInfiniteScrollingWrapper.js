@@ -1,3 +1,3 @@
 import { LightningElement } from 'lwc';
 
-export default class ListInfiniteScrollingGetListUiWrapper extends LightningElement {}
+export default class ListInfiniteScrollingWrapper extends LightningElement {}

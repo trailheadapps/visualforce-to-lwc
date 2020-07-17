@@ -1,0 +1,28 @@
+{
+    "apiName": "Account",
+    "childRelationships": {},
+    "id": "0012100000rZPJFAA4",
+    "lastModifiedById": "005210000057sOxAAI",
+    "lastModifiedDate": "2020-07-17T03:16:26.000Z",
+    "recordTypeId": "012000000000000AAA",
+    "recordTypeInfo": null,
+    "systemModstamp": "2020-07-17T03:16:26.000Z",
+    "fields": {
+        "Owner": {
+            "displayValue": "User User",
+            "value": {
+                "apiName": "User",
+                "childRelationships": {},
+                "id": "005210000057sOxAAI",
+                "lastModifiedById": "005210000057sOxAAI",
+                "lastModifiedDate": "2020-07-17T03:16:26.000Z",
+                "recordTypeId": null,
+                "recordTypeInfo": null,
+                "systemModstamp": "2020-07-17T07:47:39.000Z",
+                "fields": {
+                    "Name": { "displayValue": null, "value": "User User" }
+                }
+            }
+        }
+    }
+}
