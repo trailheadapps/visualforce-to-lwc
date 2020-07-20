@@ -5,10 +5,8 @@ import { reduceErrors } from 'c/ldsUtils';
 import CONTACT_OBJECT from '@salesforce/schema/Contact';
 import CONTACT_FIRST_NAME_FIELD from '@salesforce/schema/Contact.FirstName';
 import CONTACT_LAST_NAME_FIELD from '@salesforce/schema/Contact.LastName';
-import CONTACT_ACCOUNTID_FIELD from '@salesforce/schema/Contact.AccountId';
 import OPPORTUNITY_OBJECT from '@salesforce/schema/Opportunity';
 import OPPORTUNITY_NAME_FIELD from '@salesforce/schema/Opportunity.Name';
-import OPPORTUNITY_ACCOUNTID_FIELD from '@salesforce/schema/Opportunity.AccountId';
 import OPPORTUNITY_STAGENAME_FIELD from '@salesforce/schema/Opportunity.StageName';
 import OPPORTUNITY_CLOSEDATE_FIELD from '@salesforce/schema/Opportunity.CloseDate';
 
@@ -17,16 +15,16 @@ export default class CreateMixedRecordsWireFunctions extends LightningElement {
     contactLastName = 'Khang';
     opportunityName = 'Possible deal';
 
-    handlecontactFirstNameInputChange(event) {
-        this.contactFirstName = event.detail.value;
+    handleContactFirstNameInputChange(event) {
+        this.contactFirstName = event.target.value;
     }
 
     handleContactLastNameInputChange(event) {
-        this.contactLastName = event.detail.value;
+        this.contactLastName = event.target.value;
     }
 
     handleOpportunityNameInputChange(event) {
-        this.opportunityName = event.detail.value;
+        this.opportunityName = event.target.value;
     }
 
     handleButtonClick() {
@@ -38,13 +36,12 @@ export default class CreateMixedRecordsWireFunctions extends LightningElement {
         // Note: In this example we generate the record input structure from scratch for simplicity.
         // Consider to use the generateRecordInputForCreate() function instead.
         // The function will create the record input for you, including only fields that are createable.
-        // Check https://developer.salesforce.com/docs/component-library/documentation/en/48.0/lwc/reference_generate_record_input_update
+        // Check https://developer.salesforce.com/docs/component-library/documentation/en/49.0/lwc/reference_generate_record_input_update
         const recordInput = {
             apiName: CONTACT_OBJECT.objectApiName,
             fields: {
                 [CONTACT_FIRST_NAME_FIELD.fieldApiName]: this.contactFirstName,
-                [CONTACT_LAST_NAME_FIELD.fieldApiName]: this.contactLastName,
-                [CONTACT_ACCOUNTID_FIELD.fieldApiName]: this.recordId
+                [CONTACT_LAST_NAME_FIELD.fieldApiName]: this.contactLastName
             }
         };
 
@@ -57,14 +54,13 @@ export default class CreateMixedRecordsWireFunctions extends LightningElement {
         // Note: In this example we generate the record input structure from scratch for simplicity.
         // Consider to use the generateRecordInputForCreate() function instead.
         // The function will create the record input for you, including only fields that are createable.
-        // Check https://developer.salesforce.com/docs/component-library/documentation/en/48.0/lwc/reference_generate_record_input_update
+        // Check https://developer.salesforce.com/docs/component-library/documentation/en/49.0/lwc/reference_generate_record_input_update
         const recordInput = {
             apiName: OPPORTUNITY_OBJECT.objectApiName,
             fields: {
                 [OPPORTUNITY_NAME_FIELD.fieldApiName]: this.opportunityName,
-                [OPPORTUNITY_ACCOUNTID_FIELD.fieldApiName]: this.recordId,
                 [OPPORTUNITY_STAGENAME_FIELD.fieldApiName]: 'Prospecting',
-                [OPPORTUNITY_CLOSEDATE_FIELD.fieldApiName]: new Date()
+                [OPPORTUNITY_CLOSEDATE_FIELD.fieldApiName]: new Date(2025, 1, 1)
             }
         };
 

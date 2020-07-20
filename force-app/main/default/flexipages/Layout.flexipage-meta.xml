@@ -5,25 +5,35 @@
         <type>Region</type>
     </flexiPageRegions>
     <flexiPageRegions>
-        <componentInstances>
-            <componentName>pageBlocksWrapper</componentName>
-        </componentInstances>
-        <componentInstances>
-            <componentName>panelGridWrapper</componentName>
-        </componentInstances>
-        <componentInstances>
-            <componentName>toolbarWrapper</componentName>
-        </componentInstances>
+        <itemInstances>
+            <componentInstance>
+                <componentName>pageBlocksWrapper</componentName>
+            </componentInstance>
+        </itemInstances>
+        <itemInstances>
+            <componentInstance>
+                <componentName>panelGridWrapper</componentName>
+            </componentInstance>
+        </itemInstances>
+        <itemInstances>
+            <componentInstance>
+                <componentName>toolbarWrapper</componentName>
+            </componentInstance>
+        </itemInstances>
         <name>region2</name>
         <type>Region</type>
     </flexiPageRegions>
     <flexiPageRegions>
-        <componentInstances>
-            <componentName>panelBarWrapper</componentName>
-        </componentInstances>
-        <componentInstances>
-            <componentName>tabsWrapper</componentName>
-        </componentInstances>
+        <itemInstances>
+            <componentInstance>
+                <componentName>panelBarWrapper</componentName>
+            </componentInstance>
+        </itemInstances>
+        <itemInstances>
+            <componentInstance>
+                <componentName>tabsWrapper</componentName>
+            </componentInstance>
+        </itemInstances>
         <name>region3</name>
         <type>Region</type>
     </flexiPageRegions>

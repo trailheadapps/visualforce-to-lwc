@@ -2,7 +2,7 @@ import { LightningElement, wire } from 'lwc';
 import getAccountsPaginated from '@salesforce/apex/PaginatedListControllerLwc.getAccountsPaginated';
 import ACCOUNT_NAME_FIELD from '@salesforce/schema/Account.Name';
 import ACCOUNT_TYPE_FIELD from '@salesforce/schema/Account.Type';
-import ACCOUNT_PHONE_FIELD from '@salesforce/schema/Account.Phone';
+import ACCOUNT_PHONE_FIELD from '@salesforce/schema/Account.Type';
 import ACCOUNT_EMPLOYEES_FIELD from '@salesforce/schema/Account.NumberOfEmployees';
 
 const COLUMNS = [

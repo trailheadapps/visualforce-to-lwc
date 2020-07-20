@@ -1,0 +1,221 @@
+{
+    "apiName": "Contact",
+    "childRelationships": {},
+    "id": "0039A00000A9jMVQAZ",
+    "lastModifiedById": "0059A000002n8mpQAA",
+    "lastModifiedDate": "2020-07-14T09:56:00.000Z",
+    "recordTypeId": "012000000000000AAA",
+    "recordTypeInfo": null,
+    "systemModstamp": "2020-07-14T09:56:00.000Z",
+    "fields": {
+        "Account": {
+            "displayValue": null,
+            "value": null
+        },
+        "AccountId": {
+            "displayValue": null,
+            "value": null
+        },
+        "AssistantName": {
+            "displayValue": null,
+            "value": null
+        },
+        "AssistantPhone": {
+            "displayValue": null,
+            "value": null
+        },
+        "Birthdate": {
+            "displayValue": null,
+            "value": null
+        },
+        "CreatedBy": {
+            "displayValue": "User User",
+            "value": {
+                "apiName": "User",
+                "childRelationships": {},
+                "id": "0059A000002n8mpQAA",
+                "lastModifiedById": "0059A000002n8mpQAA",
+                "lastModifiedDate": "2020-07-13T07:18:03.000Z",
+                "recordTypeId": null,
+                "recordTypeInfo": null,
+                "systemModstamp": "2020-07-13T07:18:03.000Z",
+                "fields": {
+                    "Id": {
+                        "displayValue": null,
+                        "value": "0059A000002n8mpQAA"
+                    },
+                    "Name": {
+                        "displayValue": null,
+                        "value": "User User"
+                    }
+                }
+            }
+        },
+        "CreatedById": {
+            "displayValue": null,
+            "value": "0059A000002n8mpQAA"
+        },
+        "CreatedDate": {
+            "displayValue": "7/14/2020, 2:56 AM",
+            "value": "2020-07-14T09:56:00.000Z"
+        },
+        "Department": {
+            "displayValue": null,
+            "value": null
+        },
+        "Description": {
+            "displayValue": null,
+            "value": null
+        },
+        "Email": {
+            "displayValue": null,
+            "value": null
+        },
+        "Fax": {
+            "displayValue": null,
+            "value": null
+        },
+        "FirstName": {
+            "displayValue": null,
+            "value": "Yan"
+        },
+        "HomePhone": {
+            "displayValue": null,
+            "value": null
+        },
+        "LastModifiedBy": {
+            "displayValue": "User User",
+            "value": {
+                "apiName": "User",
+                "childRelationships": {},
+                "id": "0059A000002n8mpQAA",
+                "lastModifiedById": "0059A000002n8mpQAA",
+                "lastModifiedDate": "2020-07-13T07:18:03.000Z",
+                "recordTypeId": null,
+                "recordTypeInfo": null,
+                "systemModstamp": "2020-07-13T07:18:03.000Z",
+                "fields": {
+                    "Id": {
+                        "displayValue": null,
+                        "value": "0059A000002n8mpQAA"
+                    },
+                    "Name": {
+                        "displayValue": null,
+                        "value": "User User"
+                    }
+                }
+            }
+        },
+        "LastModifiedById": {
+            "displayValue": null,
+            "value": "0059A000002n8mpQAA"
+        },
+        "LastModifiedDate": {
+            "displayValue": "7/14/2020, 2:56 AM",
+            "value": "2020-07-14T09:56:00.000Z"
+        },
+        "LastName": {
+            "displayValue": null,
+            "value": "Khang"
+        },
+        "LeadSource": {
+            "displayValue": null,
+            "value": null
+        },
+        "MailingCity": {
+            "displayValue": null,
+            "value": null
+        },
+        "MailingCountry": {
+            "displayValue": null,
+            "value": null
+        },
+        "MailingPostalCode": {
+            "displayValue": null,
+            "value": null
+        },
+        "MailingState": {
+            "displayValue": null,
+            "value": null
+        },
+        "MailingStreet": {
+            "displayValue": null,
+            "value": null
+        },
+        "MobilePhone": {
+            "displayValue": null,
+            "value": null
+        },
+        "OtherCity": {
+            "displayValue": null,
+            "value": null
+        },
+        "OtherCountry": {
+            "displayValue": null,
+            "value": null
+        },
+        "OtherPhone": {
+            "displayValue": null,
+            "value": null
+        },
+        "OtherPostalCode": {
+            "displayValue": null,
+            "value": null
+        },
+        "OtherState": {
+            "displayValue": null,
+            "value": null
+        },
+        "OtherStreet": {
+            "displayValue": null,
+            "value": null
+        },
+        "Owner": {
+            "displayValue": "User User",
+            "value": {
+                "apiName": "User",
+                "childRelationships": {},
+                "id": "0059A000002n8mpQAA",
+                "lastModifiedById": "0059A000002n8mpQAA",
+                "lastModifiedDate": "2020-07-13T07:18:03.000Z",
+                "recordTypeId": null,
+                "recordTypeInfo": null,
+                "systemModstamp": "2020-07-13T07:18:03.000Z",
+                "fields": {
+                    "Id": {
+                        "displayValue": null,
+                        "value": "0059A000002n8mpQAA"
+                    },
+                    "Name": {
+                        "displayValue": null,
+                        "value": "User User"
+                    }
+                }
+            }
+        },
+        "OwnerId": {
+            "displayValue": null,
+            "value": "0059A000002n8mpQAA"
+        },
+        "Phone": {
+            "displayValue": null,
+            "value": null
+        },
+        "ReportsTo": {
+            "displayValue": null,
+            "value": null
+        },
+        "ReportsToId": {
+            "displayValue": null,
+            "value": null
+        },
+        "Salutation": {
+            "displayValue": null,
+            "value": null
+        },
+        "Title": {
+            "displayValue": null,
+            "value": null
+        }
+    }
+}
