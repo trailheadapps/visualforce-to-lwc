@@ -19,10 +19,12 @@ describe('c-error-popover', () => {
         document.body.appendChild(element);
 
         // Check for errors in body
-        const popoverDivEl = element.shadowRoot.querySelector(
-            '.slds-var-popover__body'
-        );
-        expect(popoverDivEl.textContent).toBe(ERROR_MESSAGE_INPUT);
+        return Promise.resolve().then(() => {
+            const popoverDivEl = element.shadowRoot.querySelector(
+                '.slds-popover__body'
+            );
+            expect(popoverDivEl.textContent).toBe(ERROR_MESSAGE_INPUT);
+        });
     });
 
     it('hides dialog when close button is clicked', () => {
