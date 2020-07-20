@@ -136,7 +136,7 @@ describe('c-page-messages-form', () => {
             // wait for any asynchronous DOM updates. Jest will automatically wait
             // for the Promise chain to complete before ending the test and fail
             // the test if the promise ends in the rejected state.
-            return Promise.resolve()
+            return flushPromises()
                 .then(() => {
                     // Click the save button
                     element.shadowRoot.querySelector('.save').click();
