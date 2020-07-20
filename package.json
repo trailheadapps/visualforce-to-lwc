@@ -7,7 +7,7 @@
         "@prettier/plugin-xml": "^0.8.0",
         "@salesforce/eslint-config-lwc": "^0.7.0",
         "@salesforce/sfdx-lwc-jest": "^0.9.1",
-        "eslint": "^7.4.0",
+        "eslint": "^7.5.0",
         "husky": "^4.2.5",
         "lint-staged": "^10.2.11",
         "prettier": "^2.0.5",
