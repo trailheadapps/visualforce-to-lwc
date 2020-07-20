@@ -46,6 +46,8 @@ describe('c-editable-list', () => {
         while (document.body.firstChild) {
             document.body.removeChild(document.body.firstChild);
         }
+
+        jest.clearAllMocks();
     });
 
     it('renders lightning-datatable when there is data', () => {

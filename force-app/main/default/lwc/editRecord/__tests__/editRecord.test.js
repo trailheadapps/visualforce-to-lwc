@@ -15,6 +15,8 @@ describe('c-edit-record', () => {
         while (document.body.firstChild) {
             document.body.removeChild(document.body.firstChild);
         }
+
+        jest.clearAllMocks();
     });
     it('shows a lightning-record-form initialized', () => {
         // Create initial element

@@ -34,6 +34,8 @@ describe('c-paginated-list', () => {
         while (document.body.firstChild) {
             document.body.removeChild(document.body.firstChild);
         }
+
+        jest.clearAllMocks();
     });
 
     it('renders table with records fetched from wire', () => {

@@ -14,6 +14,8 @@ describe('c-list-infinite-scrolling-get-list-ui', () => {
         while (document.body.firstChild) {
             document.body.removeChild(document.body.firstChild);
         }
+
+        jest.clearAllMocks();
     });
 
     it('displays a data table when records is true', () => {

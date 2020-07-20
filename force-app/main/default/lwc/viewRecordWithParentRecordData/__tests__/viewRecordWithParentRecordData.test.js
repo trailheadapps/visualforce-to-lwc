@@ -20,6 +20,8 @@ describe('c-view-record-with-parent-record-data', () => {
         while (document.body.firstChild) {
             document.body.removeChild(document.body.firstChild);
         }
+
+        jest.clearAllMocks();
     });
 
     it('contains one lightning-record-view-form with three lightning-output-fields and one lightning-formatted-text', () => {
