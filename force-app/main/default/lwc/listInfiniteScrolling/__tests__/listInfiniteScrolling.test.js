@@ -36,7 +36,7 @@ describe('c-list-infinite-scrolling', () => {
         });
     });
 
-    it('does not display a data table when @wire returns error', () => {
+    it('displays the error panel when @wire returns error', () => {
         const MESSAGE = 'Error with @wire';
         const element = createElement('c-list-infinite-scrolling', {
             is: ListInfiniteScrolling
@@ -51,6 +51,22 @@ describe('c-list-infinite-scrolling', () => {
 
             expect(errorPanelEl).not.toBeNull();
             expect(errorPanelEl.errors.body).toBe(MESSAGE);
+        });
+    });
+
+    it('does not display a data table when @wire returns error', () => {
+        const element = createElement('c-list-infinite-scrolling', {
+            is: ListInfiniteScrolling
+        });
+        document.body.appendChild(element);
+        getAccountsPaginatedAdapter.error();
+
+        return Promise.resolve().then(() => {
+            const dataTableEl = element.shadowRoot.querySelector(
+                'lightning-datatable'
+            );
+
+            expect(dataTableEl).toBeNull();
         });
     });
 
@@ -77,7 +93,6 @@ describe('c-list-infinite-scrolling', () => {
                 ).toBe(0);
             })
             .then(() => {
-                // Toggle checkbox to show details
                 const dataTableEl = element.shadowRoot.querySelector(
                     'lightning-datatable'
                 );
