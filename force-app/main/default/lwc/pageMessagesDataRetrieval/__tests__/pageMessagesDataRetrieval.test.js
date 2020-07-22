@@ -2,8 +2,8 @@ import { createElement } from 'lwc';
 import PagePageMessagesDataRetrieval from 'c/pageMessagesDataRetrieval';
 import { registerApexTestWireAdapter } from '@salesforce/sfdx-lwc-jest';
 import getAccounts from '@salesforce/apex/PageMessagesDataRetrievalControllerLwc.getAccounts';
-import ConsumptionSchedule from '@salesforce/schema/ConsumptionRate.ConsumptionSchedule';
 
+// Register as an LDS wire adapter. Some tests verify the provisioned values trigger desired behavior.
 const getAccountsAdapter = registerApexTestWireAdapter(getAccounts);
 
 describe('c-page-messages-data-retrieval', () => {
@@ -15,22 +15,26 @@ describe('c-page-messages-data-retrieval', () => {
     });
 
     it('displays the account.errors in an error panel when accounts.error is true', () => {
+        const ERROR_MESSAGE = 'Error Message';
+
+        // Create initial element
         const element = createElement('c-page-messages-data-retrieval', {
             is: PagePageMessagesDataRetrieval
         });
         document.body.appendChild(element);
-        getAccountsAdapter.error('Error Message');
+
+        // Emit error from @wire
+        getAccountsAdapter.error(ERROR_MESSAGE);
+
+        // Return a promise to wait for any asynchronous DOM updates. Jest
+        // will automatically wait for the Promise chain to complete before
+        // ending the test and fail the test if the promise rejects.
         return Promise.resolve().then(() => {
             const errorPanelEl = element.shadowRoot.querySelector(
                 'c-error-panel'
             );
             expect(errorPanelEl).not.toBeNull();
-            expect(errorPanelEl.errors).toStrictEqual({
-                body: 'Error Message',
-                ok: false,
-                status: 400,
-                statusText: 'Bad Request'
-            });
+            expect(errorPanelEl.errors.body).toBe(ERROR_MESSAGE);
         });
     });
 });
