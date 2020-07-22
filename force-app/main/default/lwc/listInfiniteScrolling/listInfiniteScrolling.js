@@ -40,10 +40,15 @@ export default class ListInfiniteScrolling extends LightningElement {
         if (data) {
             this.records = this.records.concat(data.records);
             this._nextPageToken = data.nextPageToken;
-        } else if (error) this.error = error;
+        } else if (error) {
+            this.records = null;
+            this.error = error;
+        }
     }
 
     loadMoreData() {
-        if (this._nextPageToken) this._currentPageToken = this._nextPageToken;
+        if (this._nextPageToken) {
+            this._currentPageToken = this._nextPageToken;
+        }
     }
 }

@@ -1,0 +1,90 @@
+{
+    "records": [
+        {
+            "attributes": {
+                "type": "Account",
+                "url": "/services/data/v48.0/sobjects/Account/001P000001gkH2fIAE"
+            },
+            "Name": "Alpha Dynamics",
+            "Type": "Technology Partner",
+            "Phone": "3362227000",
+            "NumberOfEmployees": 1000,
+            "Owner": {
+                "attributes": {
+                    "type": "User",
+                    "url": "/services/data/v48.0/sobjects/User/005P0000005AEMBIA4"
+                },
+                "Name": "User User"
+            }
+        },
+        {
+            "attributes": {
+                "type": "Account",
+                "url": "/services/data/v48.0/sobjects/Account/001P000001gkH2gIAE"
+            },
+            "Name": "Madison Investments",
+            "Type": "Customer - Direct",
+            "Phone": "7227003362",
+            "NumberOfEmployees": 200,
+            "Owner": {
+                "attributes": {
+                    "type": "User",
+                    "url": "/services/data/v48.0/sobjects/User/005P0000005AEMBIA4"
+                },
+                "Name": "User User"
+            }
+        },
+        {
+            "attributes": {
+                "type": "Account",
+                "url": "/services/data/v48.0/sobjects/Account/001P000001gkH2hIAE"
+            },
+            "Name": "Burlington Textiles",
+            "Type": "Customer - Direct",
+            "Phone": "6179658855",
+            "NumberOfEmployees": 10,
+            "Owner": {
+                "attributes": {
+                    "type": "User",
+                    "url": "/services/data/v48.0/sobjects/User/005P0000005AEMBIA4"
+                },
+                "Name": "User User"
+            }
+        },
+        {
+            "attributes": {
+                "type": "Account",
+                "url": "/services/data/v48.0/sobjects/Account/001P000001gkH2iIAE"
+            },
+            "Name": "GenePoint",
+            "Type": "Customer - Direct",
+            "Phone": "7819662255",
+            "NumberOfEmployees": 3500,
+            "Owner": {
+                "attributes": {
+                    "type": "User",
+                    "url": "/services/data/v48.0/sobjects/User/005P0000005AEMBIA4"
+                },
+                "Name": "User User"
+            }
+        },
+        {
+            "attributes": {
+                "type": "Account",
+                "url": "/services/data/v48.0/sobjects/Account/001P000001gkH2jIAE"
+            },
+            "Name": "OpenFloor Furniture",
+            "Type": "Customer - Direct",
+            "Phone": "9782554185",
+            "NumberOfEmployees": 20000,
+            "Owner": {
+                "attributes": {
+                    "type": "User",
+                    "url": "/services/data/v48.0/sobjects/User/005P0000005AEMBIA4"
+                },
+                "Name": "User User"
+            }
+        }
+    ],
+    "nextPageToken": 5
+}
