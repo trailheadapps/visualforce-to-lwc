@@ -7,7 +7,7 @@
 A collection of code examples to help you move from Visualforce to LWC. Each example shows a typical Visualforce pattern and its equivalent implementation in LWC. On each example, there's a link that takes you right to the Visualforce or LWC code in GitHub. Heavy usage of base components and features as Lightning Data Service.
 
 <div>
-    <img src="https://res.cloudinary.com/hy4kyit2a/f_auto,fl_lossy,q_70,,w_50/learn/projects/quick-start-explore-the-visualforce-to-lwc-sample-app/9e3d54bf2af4e57a3581ed6c2386b473_badge.png" align="left" alt="Trailhead Badge"/>
+    <img src="https://res.cloudinary.com/hy4kyit2a/f_auto,fl_lossy,q_70,w_50/learn/projects/quick-start-explore-the-visualforce-to-lwc-sample-app/9e3d54bf2af4e57a3581ed6c2386b473_badge.png" align="left" alt="Trailhead Badge"/>
     Learn more about this app by completing the <a href="https://trailhead.salesforce.com/en/content/learn/projects/quick-start-explore-the-visualforce-to-lwc-sample-app">Quick Start: Explore the Visualforce to LWC Sample App</a> Trailhead project.
     <br/>
     <br/>
