@@ -104,12 +104,12 @@ Make sure to start from a brand-new environment to avoid conflicts with previous
     - Drag the **Accounts-Contacts.csv** file you just saved to the upload area.
     - Click **Next**, **Next**, and **Start Import**.
 
-1. Assign the `Visualforce_to_LWC` permission set to your user.
+1. If you're attempting the [Trailhead Quick Start](https://trailhead.salesforce.com/en/content/learn/projects/quick-start-visualforce-to-lwc-sample-app), this step is required, but otherwise, skip:
 
-    - In **Setup**, type **Users** in the Quick Find box and click **Users**.
-    - Find your user, and **click on the record** to open it.
-    - Click on **Permission Set Assignments**, and then on **Edit Assignments**.
-    - Assign the **Visualforce to LWC** permission set to your user and click **Save**.
+    - Go to **Setup > Users > Permission Sets**.
+    - Click **Visualforce_to_LWC**.
+    - Click **Manage Assignments**.
+    - Check your user and click **Add Assignments**.
 
 1. In **Setup**, under **Themes and Branding**, activate the **Visualforce to LWC** theme.
 
