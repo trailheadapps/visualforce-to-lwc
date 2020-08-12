@@ -104,7 +104,7 @@ Make sure to start from a brand-new environment to avoid conflicts with previous
     - Drag the **Accounts-Contacts.csv** file you just saved to the upload area.
     - Click **Next**, **Next**, and **Start Import**.
 
-1. If you're attempting the [Trailhead Quick Start](https://trailhead.salesforce.com/en/content/learn/projects/quick-start-visualforce-to-lwc-sample-app), this step is required, but otherwise, skip:
+1. If you're attempting the [Quick Start](https://trailhead.salesforce.com/en/content/learn/projects/quick-start-visualforce-to-lwc-sample-app) on Trailhead, this step is required, but otherwise, skip:
 
     - Go to **Setup > Users > Permission Sets**.
     - Click **Visualforce_to_LWC**.
