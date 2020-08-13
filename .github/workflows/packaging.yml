@@ -77,10 +77,6 @@ jobs:
                   newPackageLink="https://login.salesforce.com/packaging/installPackage.apexp?p0=${packageVersionId}"
                   sed -E -i "s,${packageLinkRegex},${newPackageLink}," README.md
 
-            # Promote package version
-            - name: Promote package version
-              run: sfdx force:package:version:promote -p ${{ steps.createPackageVersion.outputs.packageVersionId }} -n
-
             # Create PR for new package version
             - name: 'Create PR for new package version'
               id: create-pr
