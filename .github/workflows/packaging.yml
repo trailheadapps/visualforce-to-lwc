@@ -96,6 +96,12 @@ jobs:
                   github-token: ${{ secrets.GITHUB_TOKEN }}
                   number: ${{ steps.create-pr.outputs.pull-request-number }}
 
+            # Wait for CI to be skipped on pull request
+            - name: Wait for CI to be skipped on pull request
+              uses: maddox/actions/sleep@master
+              with:
+                  args: 60
+
             # Merge pull request
             - name: 'Merge pull request'
               uses: juliangruber/merge-pull-request-action@v1
