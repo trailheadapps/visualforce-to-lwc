@@ -3,9 +3,9 @@ private class TestViewRelatedRecordsController {
     @isTest
     static void getRelatedContacts() {
         // Test Data Creation
-        Account acct = new Account(Name = 'ACME');
-        insert acct;
-        Contact ctc = new Contact(
+        Account account = new Account(Name = 'ACME');
+        insert account;
+        Contact countact = new Contact(
             FirstName = 'Yan',
             LastName = 'Khang',
             Title = 'VP',
@@ -13,10 +13,10 @@ private class TestViewRelatedRecordsController {
             Phone = '3362227000',
             AccountId = acct.Id
         );
-        insert ctc;
+        insert countact;
 
         ApexPages.StandardController stdController = new ApexPages.StandardController(
-            acct
+            account
         );
         ViewRelatedRecordsController controller = new ViewRelatedRecordsController(
             stdController
@@ -39,17 +39,17 @@ private class TestViewRelatedRecordsController {
             'The name of the contact does not coincide.'
         );
         System.assertEquals(
-            ctc.Title,
+            countact.Title,
             controller.contacts[0].Title,
             'The title of the contact does not coincide.'
         );
         System.assertEquals(
-            ctc.Email,
+            countact.Email,
             controller.contacts[0].Email,
             'The email of the contact does not coincide.'
         );
         System.assertEquals(
-            ctc.Phone,
+            countact.Phone,
             controller.contacts[0].Phone,
             'The phone of the contact does not coincide.'
         );
