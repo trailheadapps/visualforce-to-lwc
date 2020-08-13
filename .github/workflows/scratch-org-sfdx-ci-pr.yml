@@ -14,8 +14,8 @@ on:
 jobs:
     # Dummy job used to skip CI run on automated PRs
     skip-ci:
-        runs-on: ubuntu-latest
         if: "github.actor == 'trailheadapps-bot'"
+        runs-on: ubuntu-latest
         steps:
             - name: Noop
               run: |
