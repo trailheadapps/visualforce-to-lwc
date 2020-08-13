@@ -12,7 +12,7 @@ private class TestCreateMixedRecordsApexController {
 
         // Assertions
         Contact contact = [SELECT FirstName, LastName FROM Contact];
-        Opportunity oppty = [
+        Opportunity opportunity = [
             SELECT Name, StageName, CloseDate
             FROM Opportunity
         ];
@@ -28,17 +28,17 @@ private class TestCreateMixedRecordsApexController {
         );
         System.assertEquals(
             controller.opportunityName,
-            oppty.Name,
+            opportunity.Name,
             'The created opportunity has an incorrect Name.'
         );
         System.assertEquals(
             'Prospecting',
-            oppty.StageName,
+            opportunity.StageName,
             'The created opportunity has an incorrect StageName.'
         );
         System.assertEquals(
             System.today(),
-            oppty.CloseDate,
+            opportunity.CloseDate,
             'The created opportunity has an incorrect CloseDate.'
         );
     }
