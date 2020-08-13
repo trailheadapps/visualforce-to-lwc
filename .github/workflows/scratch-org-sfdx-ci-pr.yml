@@ -12,6 +12,15 @@ on:
 
 # Jobs to be executed
 jobs:
+    # Dummy job used to skip CI run on automated PRs
+    skip-ci:
+        runs-on: ubuntu-latest
+        if: "github.actor == 'trailheadapps-bot'"
+        steps:
+            - name: Noop
+              run: |
+                  echo "Skipping CI run for automated PRs."
+
     # Formatting and linting only runs on human-submitted PRs
     formatting-and-linting:
         if: "github.actor != 'trailheadapps-bot'"
@@ -110,12 +119,3 @@ jobs:
             - name: 'Delete scratch org'
               if: always()
               run: 'sfdx force:org:delete -p -u scratch-org'
-
-    skip-ci:
-        # Dummy job used to skip CI run on automated PRs
-        runs-on: ubuntu-latest
-        if: "github.actor == 'trailheadapps-bot'"
-        steps:
-            - name: Noop
-              run: |
-                  echo "Skipping CI run for automated PRs."
