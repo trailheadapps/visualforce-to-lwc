@@ -5,15 +5,15 @@ private class TestViewRelatedRecordsController {
         // Test Data Creation
         Account account = new Account(Name = 'ACME');
         insert account;
-        Contact countact = new Contact(
+        Contact contact = new Contact(
             FirstName = 'Yan',
             LastName = 'Khang',
             Title = 'VP',
             Email = 'yan@khang.com',
             Phone = '3362227000',
-            AccountId = acct.Id
+            AccountId = account.Id
         );
-        insert countact;
+        insert contact;
 
         ApexPages.StandardController stdController = new ApexPages.StandardController(
             account
@@ -39,17 +39,17 @@ private class TestViewRelatedRecordsController {
             'The name of the contact does not coincide.'
         );
         System.assertEquals(
-            countact.Title,
+            contact.Title,
             controller.contacts[0].Title,
             'The title of the contact does not coincide.'
         );
         System.assertEquals(
-            countact.Email,
+            contact.Email,
             controller.contacts[0].Email,
             'The email of the contact does not coincide.'
         );
         System.assertEquals(
-            countact.Phone,
+            contact.Phone,
             controller.contacts[0].Phone,
             'The phone of the contact does not coincide.'
         );
