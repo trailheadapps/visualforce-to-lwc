@@ -90,7 +90,7 @@ jobs:
                   token: ${{ secrets.BOT_ACCESS_TOKEN }}
 
             # Approve pull request
-            - name: 'Approve Pull Request'
+            - name: 'Approve pull request'
               uses: juliangruber/approve-pull-request-action@v1
               with:
                   github-token: ${{ secrets.GITHUB_TOKEN }}
