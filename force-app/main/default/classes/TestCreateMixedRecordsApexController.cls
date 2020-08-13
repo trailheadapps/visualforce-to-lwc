@@ -11,34 +11,34 @@ private class TestCreateMixedRecordsApexController {
         Test.stopTest();
 
         // Assertions
-        Contact ctc = [SELECT FirstName, LastName FROM Contact];
-        Opportunity oppty = [
+        Contact contact = [SELECT FirstName, LastName FROM Contact];
+        Opportunity opportunity = [
             SELECT Name, StageName, CloseDate
             FROM Opportunity
         ];
         System.assertEquals(
             controller.contactFirstName,
-            ctc.FirstName,
+            contact.FirstName,
             'The created contact has an incorrect FirstName.'
         );
         System.assertEquals(
             controller.contactLastName,
-            ctc.LastName,
+            contact.LastName,
             'The created contact has an incorrect LastName.'
         );
         System.assertEquals(
             controller.opportunityName,
-            oppty.Name,
+            opportunity.Name,
             'The created opportunity has an incorrect Name.'
         );
         System.assertEquals(
             'Prospecting',
-            oppty.StageName,
+            opportunity.StageName,
             'The created opportunity has an incorrect StageName.'
         );
         System.assertEquals(
             System.today(),
-            oppty.CloseDate,
+            opportunity.CloseDate,
             'The created opportunity has an incorrect CloseDate.'
         );
     }
