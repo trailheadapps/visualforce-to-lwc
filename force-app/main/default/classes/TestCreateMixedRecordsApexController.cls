@@ -11,19 +11,19 @@ private class TestCreateMixedRecordsApexController {
         Test.stopTest();
 
         // Assertions
-        Contact ctc = [SELECT FirstName, LastName FROM Contact];
+        Contact contact = [SELECT FirstName, LastName FROM Contact];
         Opportunity oppty = [
             SELECT Name, StageName, CloseDate
             FROM Opportunity
         ];
         System.assertEquals(
             controller.contactFirstName,
-            ctc.FirstName,
+            contact.FirstName,
             'The created contact has an incorrect FirstName.'
         );
         System.assertEquals(
             controller.contactLastName,
-            ctc.LastName,
+            contact.LastName,
             'The created contact has an incorrect LastName.'
         );
         System.assertEquals(
