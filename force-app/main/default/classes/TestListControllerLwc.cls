@@ -3,12 +3,12 @@ private class TestListControllerLwc {
     @isTest
     static void getAccounts() {
         // Test Data Creation
-        Account acct = new Account();
-        acct.Name = 'ACME';
-        acct.Type = 'Technology Partner';
-        acct.Phone = '3362227000';
-        acct.NumberOfEmployees = 1000;
-        insert acct;
+        Account account = new Account();
+        account.Name = 'ACME';
+        account.Type = 'Technology Partner';
+        account.Phone = '3362227000';
+        account.NumberOfEmployees = 1000;
+        insert account;
 
         // Method Being Tested
         Test.startTest();
