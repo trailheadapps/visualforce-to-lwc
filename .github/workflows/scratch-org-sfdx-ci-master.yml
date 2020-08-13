@@ -6,8 +6,6 @@ on:
     push:
         branches:
             - master
-        branches-ignore:
-            - auto/release-package-version
         paths-ignore:
             - 'sfdx-project.json'
             - 'README.md'
