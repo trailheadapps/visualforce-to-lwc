@@ -15,7 +15,7 @@ private class TestPageMessagesControllerLwc {
                     .contains(
                         'An exception occurred while launching the process.'
                     ),
-                'Expected exception message not received.' + e.getMessage()
+                'Expected exception message not received: ' + e.getMessage()
             );
         }
     }

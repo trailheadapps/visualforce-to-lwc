@@ -1,6 +1,6 @@
 # Visualforce to LWC
 
-[![Github Workflow](<https://github.com/trailheadapps/visualforce-to-lwc/workflows/Salesforce%20DX%20(scratch%20org)/badge.svg?branch=master>)](https://github.com/trailheadapps/visualforce-to-lwc/actions?query=workflow%3A%22Salesforce+DX+%28scratch+org%29%22) [![codecov](https://codecov.io/gh/trailheadapps/visualforce-to-lwc/branch/master/graph/badge.svg)](https://codecov.io/gh/trailheadapps/visualforce-to-lwc)
+[![Github Workflow](<https://github.com/trailheadapps/visualforce-to-lwc/workflows/Salesforce%20DX%20(scratch%20org)/badge.svg?branch=master>)](https://github.com/trailheadapps/visualforce-to-lwc/actions?query=workflow%3A%22Salesforce+DX+%28scratch+org%29%22) [![Github Workflow](https://github.com/trailheadapps/visualforce-to-lwc/workflows/Packaging/badge.svg?branch=master)](https://github.com/trailheadapps/visualforce-to-lwc/actions?query=workflow%3A%22Packaging%22) [![codecov](https://codecov.io/gh/trailheadapps/visualforce-to-lwc/branch/master/graph/badge.svg)](https://codecov.io/gh/trailheadapps/visualforce-to-lwc)
 
 ![Visualforce to LWC logo](vf-to-lwc-logo.png)
 
@@ -104,7 +104,7 @@ Make sure to start from a brand-new environment to avoid conflicts with previous
     - Click on the **_Start Walkthrough Trial_**.
     - Click on **_Submit_**.
 
-1. Click [this link](https://login.salesforce.com/packaging/installPackage.apexp?p0=04t3h000004jkY3AAI) to install the Visualforce to LWC unlocked package in your org.
+1. Click [this link](https://login.salesforce.com/packaging/installPackage.apexp?p0=04t3h000004RZuLAAW) to install the Visualforce to LWC unlocked package in your org.
 
 1. Select **Install for All Users**
 

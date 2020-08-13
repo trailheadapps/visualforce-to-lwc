@@ -3,38 +3,38 @@ private class TestListControllerLwc {
     @isTest
     static void getAccounts() {
         // Test Data Creation
-        Account acct = new Account();
-        acct.Name = 'ACME';
-        acct.Type = 'Technology Partner';
-        acct.Phone = '3362227000';
-        acct.NumberOfEmployees = 1000;
-        insert acct;
+        Account account = new Account();
+        account.Name = 'ACME';
+        account.Type = 'Technology Partner';
+        account.Phone = '3362227000';
+        account.NumberOfEmployees = 1000;
+        insert account;
 
         // Method Being Tested
         Test.startTest();
-        List<Account> accts = ListControllerLwc.getAccounts();
+        List<Account> accounts = ListControllerLwc.getAccounts();
         Test.stopTest();
 
         // Assertions
-        System.assertEquals(1, accts.size(), 'One account was expected.');
+        System.assertEquals(1, accounts.size(), 'One account was expected.');
         System.assertEquals(
             'ACME',
-            accts[0].Name,
+            accounts[0].Name,
             'The account Name is incorrect.'
         );
         System.assertEquals(
             'Technology Partner',
-            accts[0].Type,
+            accounts[0].Type,
             'The account Type is incorrect.'
         );
         System.assertEquals(
             '3362227000',
-            accts[0].Phone,
+            accounts[0].Phone,
             'The account Phone is incorrect.'
         );
         System.assertEquals(
             1000,
-            accts[0].NumberOfEmployees,
+            accounts[0].NumberOfEmployees,
             'The account NumberOfEmployees is incorrect.'
         );
     }

@@ -9,6 +9,7 @@ on:
             - prerelease/spring[2-9][0-9]
             - prerelease/summer[2-9][0-9]
             - prerelease/winter[2-9][0-9]
+            - auto/release-package-version
 
 # Jobs to be executed
 jobs:
@@ -77,10 +78,6 @@ jobs:
             # Authenticate dev hub
             - name: 'Authenticate Dev Hub'
               run: 'sfdx force:auth:sfdxurl:store -f ./DEVHUB_SFDX_URL.txt -a devhub -d'
-
-            # Lint Aura components
-            - name: 'Lint Aura components'
-              run: 'sfdx force:lightning:lint force-app/main/default/aura --exit'
 
             # Create scratch org
             - name: 'Create scratch org'
