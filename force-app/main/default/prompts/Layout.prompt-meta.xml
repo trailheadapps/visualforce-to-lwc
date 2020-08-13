@@ -1,0 +1,105 @@
+<?xml version="1.0" encoding="UTF-8" ?>
+<Prompt xmlns="http://soap.sforce.com/2006/04/metadata">
+    <masterLabel>Layout</masterLabel>
+    <promptVersions>
+        <body
+        >Welcome to the Visualforce to LWC sample app. The app contains a collection of code examples to help you move from Visualforce to LWC.</body>
+        <delayDays>1</delayDays>
+        <dismissButtonLabel>Close</dismissButtonLabel>
+        <displayPosition>BottomCenter</displayPosition>
+        <displayType>FloatingPanel</displayType>
+        <isPublished>true</isPublished>
+        <masterLabel>Layout Step 1</masterLabel>
+        <publishedDate>2020-08-12</publishedDate>
+        <shouldDisplayActionButton>false</shouldDisplayActionButton>
+        <shouldIgnoreGlobalDelay>false</shouldIgnoreGlobalDelay>
+        <startDate>2020-08-12</startDate>
+        <stepNumber>1</stepNumber>
+        <targetAppDeveloperName>Visualforce_to_LWC</targetAppDeveloperName>
+        <targetPageKey1>Layout</targetPageKey1>
+        <targetPageType>standard__navItemPage</targetPageType>
+        <timesToDisplay>1</timesToDisplay>
+        <title>Welcome!</title>
+        <userAccess>Everyone</userAccess>
+        <userProfileAccess>Everyone</userProfileAccess>
+        <versionNumber>1</versionNumber>
+    </promptVersions>
+    <promptVersions>
+        <body
+        >The tabs above ☝️ identify the features explored on each tab. This tab contains examples that show how to build layouts. You&#39;ll find other walk throughs in other tabs.</body>
+        <dismissButtonLabel>Close</dismissButtonLabel>
+        <displayPosition>BottomCenter</displayPosition>
+        <displayType>FloatingPanel</displayType>
+        <isPublished>false</isPublished>
+        <masterLabel>Layout Step 3</masterLabel>
+        <shouldDisplayActionButton>false</shouldDisplayActionButton>
+        <shouldIgnoreGlobalDelay>false</shouldIgnoreGlobalDelay>
+        <stepNumber>2</stepNumber>
+        <targetAppDeveloperName>Visualforce_to_LWC</targetAppDeveloperName>
+        <targetPageKey1>Layout</targetPageKey1>
+        <targetPageType>standard__navItemPage</targetPageType>
+        <title>App Tabs</title>
+        <userAccess>Everyone</userAccess>
+        <userProfileAccess>Everyone</userProfileAccess>
+        <versionNumber>1</versionNumber>
+    </promptVersions>
+    <promptVersions>
+        <body
+        >Each example is implemented in Visualforce and in LWC. Take a look at the Page Blocks card. The Visualforce implementation lays on the left, and the LWC implementation on the right.</body>
+        <dismissButtonLabel>Close</dismissButtonLabel>
+        <displayPosition>BottomCenter</displayPosition>
+        <displayType>FloatingPanel</displayType>
+        <isPublished>false</isPublished>
+        <masterLabel>Layout Step 2</masterLabel>
+        <shouldDisplayActionButton>false</shouldDisplayActionButton>
+        <shouldIgnoreGlobalDelay>false</shouldIgnoreGlobalDelay>
+        <stepNumber>3</stepNumber>
+        <targetAppDeveloperName>Visualforce_to_LWC</targetAppDeveloperName>
+        <targetPageKey1>Layout</targetPageKey1>
+        <targetPageType>standard__navItemPage</targetPageType>
+        <title>Examples Structure</title>
+        <userAccess>Everyone</userAccess>
+        <userProfileAccess>Everyone</userProfileAccess>
+        <versionNumber>1</versionNumber>
+    </promptVersions>
+    <promptVersions>
+        <body
+        >Since the app contains code samples, finding the code is simple. Click the &quot;View Visualforce Source&quot; or the &quot;View LWC Source&quot; links on any card and you will be taken to its location on GitHub. (Just don&#39;t forget to come back!)</body>
+        <dismissButtonLabel>Close</dismissButtonLabel>
+        <displayPosition>BottomCenter</displayPosition>
+        <displayType>FloatingPanel</displayType>
+        <isPublished>false</isPublished>
+        <masterLabel>Layout Step 4</masterLabel>
+        <shouldDisplayActionButton>false</shouldDisplayActionButton>
+        <shouldIgnoreGlobalDelay>false</shouldIgnoreGlobalDelay>
+        <stepNumber>4</stepNumber>
+        <targetAppDeveloperName>Visualforce_to_LWC</targetAppDeveloperName>
+        <targetPageKey1>Layout</targetPageKey1>
+        <targetPageType>standard__navItemPage</targetPageType>
+        <title>Easy Access to Source</title>
+        <userAccess>Everyone</userAccess>
+        <userProfileAccess>Everyone</userProfileAccess>
+        <versionNumber>1</versionNumber>
+    </promptVersions>
+    <promptVersions>
+        <actionButtonLabel>Next Tour</actionButtonLabel>
+        <actionButtonLink>/lightning/n/Single_Records</actionButtonLink>
+        <body
+        >Congrat&#39;s You&#39;ve finished the first walkthrough tour of &lt;b&gt;Visualforce to LWC&lt;/b&gt;. If you want to learn more about the examples in this app, you can click &quot;Next Tour&quot; below, and you&#39;ll move on to another.</body>
+        <dismissButtonLabel>Close</dismissButtonLabel>
+        <displayPosition>BottomCenter</displayPosition>
+        <displayType>FloatingPanel</displayType>
+        <isPublished>false</isPublished>
+        <masterLabel>Layout Step 5</masterLabel>
+        <shouldDisplayActionButton>true</shouldDisplayActionButton>
+        <shouldIgnoreGlobalDelay>false</shouldIgnoreGlobalDelay>
+        <stepNumber>5</stepNumber>
+        <targetAppDeveloperName>Visualforce_to_LWC</targetAppDeveloperName>
+        <targetPageKey1>Layout</targetPageKey1>
+        <targetPageType>standard__navItemPage</targetPageType>
+        <title>Next Tour</title>
+        <userAccess>Everyone</userAccess>
+        <userProfileAccess>Everyone</userProfileAccess>
+        <versionNumber>1</versionNumber>
+    </promptVersions>
+</Prompt>

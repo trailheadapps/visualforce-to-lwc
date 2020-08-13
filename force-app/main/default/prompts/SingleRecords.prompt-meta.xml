@@ -1,0 +1,90 @@
+<?xml version="1.0" encoding="UTF-8" ?>
+<Prompt xmlns="http://soap.sforce.com/2006/04/metadata">
+    <masterLabel>Single Records</masterLabel>
+    <promptVersions>
+        <body
+        >In this tab you can find examples of how to use lightning-record-form, lightning-record-edit-form and lightning-record-view-form to implement single record forms.</body>
+        <delayDays>1</delayDays>
+        <dismissButtonLabel>Close</dismissButtonLabel>
+        <displayPosition>BottomCenter</displayPosition>
+        <displayType>FloatingPanel</displayType>
+        <isPublished>true</isPublished>
+        <masterLabel>Single Records Step 1</masterLabel>
+        <publishedDate>2020-08-13</publishedDate>
+        <shouldDisplayActionButton>false</shouldDisplayActionButton>
+        <shouldIgnoreGlobalDelay>false</shouldIgnoreGlobalDelay>
+        <startDate>2020-08-12</startDate>
+        <stepNumber>1</stepNumber>
+        <targetAppDeveloperName>Visualforce_to_LWC</targetAppDeveloperName>
+        <targetPageKey1>Account</targetPageKey1>
+        <targetPageKey2>view</targetPageKey2>
+        <targetPageType>standard__recordPage</targetPageType>
+        <timesToDisplay>1</timesToDisplay>
+        <title>Single Record Forms</title>
+        <userAccess>Everyone</userAccess>
+        <userProfileAccess>Everyone</userProfileAccess>
+        <versionNumber>1</versionNumber>
+    </promptVersions>
+    <promptVersions>
+        <body
+        >The base form components use Lightning Data Service (LDS) under the hood, leveraging its caching and synchronization capabilities. They are very easy to use and require just a few lines of code.</body>
+        <dismissButtonLabel>Close</dismissButtonLabel>
+        <displayPosition>BottomCenter</displayPosition>
+        <displayType>FloatingPanel</displayType>
+        <isPublished>false</isPublished>
+        <masterLabel>Single Records Step 2</masterLabel>
+        <shouldDisplayActionButton>false</shouldDisplayActionButton>
+        <shouldIgnoreGlobalDelay>false</shouldIgnoreGlobalDelay>
+        <stepNumber>2</stepNumber>
+        <targetAppDeveloperName>Visualforce_to_LWC</targetAppDeveloperName>
+        <targetPageKey1>Account</targetPageKey1>
+        <targetPageKey2>view</targetPageKey2>
+        <targetPageType>standard__recordPage</targetPageType>
+        <title>Base Form Components</title>
+        <userAccess>Everyone</userAccess>
+        <userProfileAccess>Everyone</userProfileAccess>
+        <versionNumber>1</versionNumber>
+    </promptVersions>
+    <promptVersions>
+        <body
+        >lightning-record-form is the simplest one to use. lightning-record-edit-form and lightning-record-view-form allow for more customization. Explore the different examples in this page to know how to use them.</body>
+        <dismissButtonLabel>Close</dismissButtonLabel>
+        <displayPosition>BottomCenter</displayPosition>
+        <displayType>FloatingPanel</displayType>
+        <isPublished>false</isPublished>
+        <masterLabel>Single Records Step 3</masterLabel>
+        <shouldDisplayActionButton>false</shouldDisplayActionButton>
+        <shouldIgnoreGlobalDelay>false</shouldIgnoreGlobalDelay>
+        <stepNumber>3</stepNumber>
+        <targetAppDeveloperName>Visualforce_to_LWC</targetAppDeveloperName>
+        <targetPageKey1>Account</targetPageKey1>
+        <targetPageKey2>view</targetPageKey2>
+        <targetPageType>standard__recordPage</targetPageType>
+        <title>Which Form Component Should I Use?</title>
+        <userAccess>Everyone</userAccess>
+        <userProfileAccess>Everyone</userProfileAccess>
+        <versionNumber>1</versionNumber>
+    </promptVersions>
+    <promptVersions>
+        <actionButtonLabel>Next Tour</actionButtonLabel>
+        <actionButtonLink>/lightning/n/Mixed_Records</actionButtonLink>
+        <body
+        >You can retrieve Salesforce data in JavaScript using LDS wire adapters. The &quot;View Record with Parent Record Data&quot; example uses getRecord to retrieve fields from a related record. Continue learning about data access in the next tour.</body>
+        <dismissButtonLabel>Close</dismissButtonLabel>
+        <displayPosition>BottomCenter</displayPosition>
+        <displayType>FloatingPanel</displayType>
+        <isPublished>false</isPublished>
+        <masterLabel>Single Records Step 4</masterLabel>
+        <shouldDisplayActionButton>true</shouldDisplayActionButton>
+        <shouldIgnoreGlobalDelay>false</shouldIgnoreGlobalDelay>
+        <stepNumber>4</stepNumber>
+        <targetAppDeveloperName>Visualforce_to_LWC</targetAppDeveloperName>
+        <targetPageKey1>Account</targetPageKey1>
+        <targetPageKey2>view</targetPageKey2>
+        <targetPageType>standard__recordPage</targetPageType>
+        <title>LDS Wire Adapters</title>
+        <userAccess>Everyone</userAccess>
+        <userProfileAccess>Everyone</userProfileAccess>
+        <versionNumber>1</versionNumber>
+    </promptVersions>
+</Prompt>
