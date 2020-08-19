@@ -1,0 +1,60 @@
+{
+  "title": "Record Lists",
+  "steps": [
+    {
+      "file": "force-app/main/default/lwc/listWithParentRecordData/listWithParentRecordData.html",
+      "line": 4,
+      "description": "The \"List with Parent Record Data\" example shows how to use a lightning-datatable to show a list of accounts, including a column that shows a field from a related parent object, its owner. We start by including lightning-datatable in the markup."
+    },
+    {
+      "file": "force-app/main/default/lwc/listWithParentRecordData/listWithParentRecordData.js",
+      "line": 9,
+      "description": "We import references to field names at the top, and define the table columns properties."
+    },
+    {
+      "file": "force-app/main/default/classes/ListWithParentRecordDataControllerLwc.cls",
+      "line": 5,
+      "description": "To retrieve the records, we define an Apex method. Note that the method returns fields for accounts, but also their related owners names. As it's a read operation, we make it cacheable. A cacheable method will store the records in the LDS cache when possible, and read them from there in subsequent operations. "
+    },
+    {
+      "file": "force-app/main/default/lwc/listWithParentRecordData/listWithParentRecordData.js",
+      "line": 3,
+      "description": "We import the Apex method at the top."
+    },
+    {
+      "file": "force-app/main/default/lwc/listWithParentRecordData/listWithParentRecordData.js",
+      "line": 31,
+      "description": "As the method is cacheable, we can call it with @wire. The wire service will provide new values under certain circumstances, for example, when the records in the LDS cache change."
+    },
+    {
+      "file": "force-app/main/default/lwc/listWithParentRecordData/listWithParentRecordData.js",
+      "line": 36,
+      "description": "When an Apex method returns parent records fields, the result needs to be transformed into the format lightning-datatable expects. We do that by calling the formatApexSObjects function that we import at the top of the file."
+    },
+    {
+      "file": "force-app/main/default/lwc/apexUtils/apexUtils.js",
+      "line": 36,
+      "description": "We defined the formatApexSObjects function in this apexUtils module. Feel free to copy it!"
+    },
+    {
+      "file": "force-app/main/default/lwc/basicListGetListUi/basicListGetListUi.js",
+      "line": 2,
+      "description": "Let's take a look at another example, \"Basic List using getListUi (beta)\". getListUi is a wire adapter that you can use to retrieve records from a listview. First, we import the wire adapter at the top."
+    },
+    {
+      "file": "force-app/main/default/lwc/basicListGetListUi/basicListGetListUi.js",
+      "line": 34,
+      "description": "Next, we call the adapter with @wire, specifying the object API name, and the listview name. Remember the wire adapter uses the LDS cache, and the wire service will provide new values when needed."
+    },
+    {
+      "file": "force-app/main/default/lwc/basicListGetListUi/basicListGetListUi.js",
+      "line": 40,
+      "description": "Finally, we transform the returned value to the format lightning-datatable expects using formatGetListUiSObjects, that was imported at the top."
+    },
+    {
+      "file": "force-app/main/default/lwc/ldsUtils/ldsUtils.js",
+      "line": 45,
+      "description": "We defined the formatGetListUiSObjects function in this ldsUtils module. Copy it when you need it!"
+    }
+  ]
+}

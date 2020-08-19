@@ -1,0 +1,35 @@
+{
+  "title": "Mixed Records",
+  "steps": [
+    {
+      "file": "force-app/main/default/lwc/createMixedRecordsWireFunctions/createMixedRecordsWireFunctions.js",
+      "line": 3,
+      "description": "The \"Create Mixed Records Wire Functions\" example shows how to use a LDS function to create mixed single records. LDS functions operations are reflected in the LDS cache. We start by importing the function at the top."
+    },
+    {
+      "file": "force-app/main/default/lwc/createMixedRecordsWireFunctions/createMixedRecordsWireFunctions.js",
+      "line": 30,
+      "description": "We'll create a contact and an opportunity, by calling createRecord twice."
+    },
+    {
+      "file": "force-app/main/default/lwc/createMixedRecordsWireFunctions/createMixedRecordsWireFunctions.js",
+      "line": 48,
+      "description": "createRecord receives a recordInput as a parameter. A recordInput represents the record to be created. LDS functions must be invoked imperatively, and they return a promise. The promise will be fulfilled, in case of success, or rejected, in case of error."
+    },
+    {
+      "file": "force-app/main/default/lwc/createMixedRecordsWireFunctions/createMixedRecordsWireFunctions.js",
+      "line": 67,
+      "description": "In this case, the two createRecord operations are independent and run in different transactions. One operation may fail, and the other one succeed."
+    },
+    {
+      "file": "force-app/main/default/lwc/createMixedRecordsApex/createMixedRecordsApex.js",
+      "line": 4,
+      "description": "To perform transactional operations, it's recommended to use Apex instead. That's what we do in the \"Create Mixed Records Apex\" example. Here at the top we import an Apex method that will create both the contact and the opportunity in a transactional way."
+    },
+    {
+      "file": "force-app/main/default/lwc/createMixedRecordsApex/createMixedRecordsApex.js",
+      "line": 24,
+      "description": "When using Apex for create, update or delete operations, you must invoke it imperatively. Again, a promise will be returned. If both the contact and the opportunity were created successfully, the promise will be fulfilled. If there was an error, it will be rejected. Note that in this case, the new records won't be automatically included in the LDS cache, as it happened when using LDS functions."
+    }
+  ]
+}

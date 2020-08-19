@@ -1,0 +1,50 @@
+{
+  "title": "Single Records",
+  "steps": [
+    {
+      "file": "force-app/main/default/lwc/viewRecord/viewRecord.html",
+      "line": 2,
+      "description": "The \"View Record\" example shows how to use lightning-record-form to view a record in read-only mode. The available modes are view, edit and readonly."
+    },
+    {
+      "file": "force-app/main/default/lwc/viewRecordWithParentRecordData/viewRecordWithParentRecordData.html",
+      "line": 2,
+      "description": "The \"View Record with Parent Record Data\" example shows an account record, together with some fields that belong to its owner (a parent related record). First, we use lightning-record-view-form to surface account fields."
+    },
+    {
+      "file": "force-app/main/default/lwc/viewRecordWithParentRecordData/viewRecordWithParentRecordData.html",
+      "line": 8,
+      "description": "When using lightning-record-view-form, you can surface record fields by using lightning-output-field and indicating the name of the field to show."
+    },
+    {
+      "file": "force-app/main/default/lwc/viewRecordWithParentRecordData/viewRecordWithParentRecordData.js",
+      "line": 13,
+      "description": "Instead of hardcoding field names, we import references to them (take a look at the import statement at the top). This way, the platform knows that the field is being used in code, and some actions, as deletion of the field, will be prevented."
+    },
+    {
+      "file": "force-app/main/default/lwc/viewRecordWithParentRecordData/viewRecordWithParentRecordData.js",
+      "line": 17,
+      "description": "Next, we retrieve the wanted account's owner fields using the getRecord LDS wire adapter. Note the adapter has been imported at the top.",
+      "selection": {
+        "start": {
+          "line": 17,
+          "character": 13
+        },
+        "end": {
+          "line": 17,
+          "character": 20
+        }
+      }
+    },
+    {
+      "file": "force-app/main/default/lwc/viewRecordWithParentRecordData/viewRecordWithParentRecordData.js",
+      "line": 23,
+      "description": "We create a getter for each account's owner field we want to reference in the markup. In this case, the owner name."
+    },
+    {
+      "file": "force-app/main/default/lwc/viewRecordWithParentRecordData/viewRecordWithParentRecordData.html",
+      "line": 23,
+      "description": "Finally, we extend lightning-record-view-form body to include the account's owner name field."
+    }
+  ]
+}
