@@ -1,25 +1,25 @@
 {
-  "title": "Error Handling",
-  "steps": [
-    {
-      "file": "force-app/main/default/lwc/pageMessagesToast/pageMessagesToast.js",
-      "line": 2,
-      "description": "There are several ways in which you can surface errors in LWC. The best way to learn about them is to take a look at the error use cases defined in the SLDS guide. Let's take a look at one of these use cases. Let's say that you want to show a general page level error message after performing an operation. You can do that by showing a toast. The \"Toast Error Message\" example does that. First, we import the ShowToastEvent event from the lightning/platformShowToastEvent module at the top."
-    },
-    {
-      "file": "force-app/main/default/lwc/pageMessagesToast/pageMessagesToast.js",
-      "line": 18,
-      "description": "Next, we instantiate and dispatch the event when needed. Note that we use a reduceErrors function to create the message. This is recommended when using LDS functions, wire adapters or calling Apex. You can copy that function from the ldsUtils module. \n\nCongratulations! You have arrived to the end of the app code tours. In you want to know more, we recommend you to activate the in-app guidance in your org to get more tips while navigating the app. Happy coding!",
-      "selection": {
-        "start": {
-          "line": 15,
-          "character": 30
+    "title": "5- Error Handling Examples",
+    "steps": [
+        {
+            "file": "force-app/main/default/lwc/pageMessagesToast/pageMessagesToast.js",
+            "line": 2,
+            "description": "There are several ways in which you can surface errors in LWC. The best way to learn about them is to take a look at the error use cases defined in the SLDS guide. Let's take a look at one of these use cases. Let's say that you want to show a general page level error message after performing an operation. You can do that by showing a toast. The \"Toast Error Message\" example does that. First, we import the ShowToastEvent event from the lightning/platformShowToastEvent module at the top."
         },
-        "end": {
-          "line": 15,
-          "character": 42
+        {
+            "file": "force-app/main/default/lwc/pageMessagesToast/pageMessagesToast.js",
+            "line": 18,
+            "description": "Next, we instantiate and dispatch the event when needed. Note that we use a reduceErrors function to create the message. This is recommended when using LDS functions, wire adapters or calling Apex. You can copy that function from the ldsUtils module. \n\nCongratulations! You have arrived to the end of the app code tours. In you want to know more, we recommend you to activate the in-app guidance in your org to get more tips while navigating the app. Happy coding!",
+            "selection": {
+                "start": {
+                    "line": 15,
+                    "character": 30
+                },
+                "end": {
+                    "line": 15,
+                    "character": 42
+                }
+            }
         }
-      }
-    }
-  ]
+    ]
 }

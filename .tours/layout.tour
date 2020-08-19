@@ -1,5 +1,5 @@
 {
-    "title": "Layout",
+    "title": "1- Welcome to Visualforce to LWC Sample App",
     "steps": [
         {
             "file": "force-app/main/default/lwc/exampleWrapper/exampleWrapper.html",
