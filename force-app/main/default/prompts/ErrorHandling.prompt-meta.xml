@@ -12,7 +12,7 @@
         <masterLabel>Error Handling Step 1</masterLabel>
         <publishedDate>2020-08-13</publishedDate>
         <shouldDisplayActionButton>false</shouldDisplayActionButton>
-        <shouldIgnoreGlobalDelay>false</shouldIgnoreGlobalDelay>
+        <shouldIgnoreGlobalDelay>true</shouldIgnoreGlobalDelay>
         <startDate>2020-08-13</startDate>
         <stepNumber>1</stepNumber>
         <targetAppDeveloperName>Visualforce_to_LWC</targetAppDeveloperName>
@@ -36,7 +36,7 @@
         <isPublished>false</isPublished>
         <masterLabel>Error Handling Step 2</masterLabel>
         <shouldDisplayActionButton>true</shouldDisplayActionButton>
-        <shouldIgnoreGlobalDelay>false</shouldIgnoreGlobalDelay>
+        <shouldIgnoreGlobalDelay>true</shouldIgnoreGlobalDelay>
         <stepNumber>2</stepNumber>
         <targetAppDeveloperName>Visualforce_to_LWC</targetAppDeveloperName>
         <targetPageKey1>Error_Handling</targetPageKey1>
