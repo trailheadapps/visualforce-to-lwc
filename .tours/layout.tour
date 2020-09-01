@@ -1,20 +1,20 @@
 {
-    "title": "1- Welcome to Visualforce to LWC Sample App",
-    "steps": [
-        {
-            "file": "force-app/main/default/lwc/exampleWrapper/exampleWrapper.html",
-            "line": 11,
-            "description": "Each example contains two implemented solutions, one in Visualforce and another one in LWC. The Visualforce implementation is embedded in the example card using an iframe."
-        },
-        {
-            "file": "force-app/main/default/pages/pageBlocks.page",
-            "line": 1,
-            "description": "The Visualforce implementation of each example is enclosed in a single page. When you click on \"View Visualforce Source\" you open the page in github."
-        },
-        {
-            "file": "force-app/main/default/lwc/pageBlocks/pageBlocks.html",
-            "line": 1,
-            "description": "The LWC implementation of each example is enclosed in a single LWC. When you click on \"View LWC Source\" you open the component folder in github."
-        }
-    ]
+  "title": "1- Welcome to Visualforce to LWC Sample App",
+  "steps": [
+    {
+      "file": "force-app/main/default/lwc/exampleWrapper/exampleWrapper.html",
+      "description": "Each example in this sample app contains two implemented solutions, one in Visualforce and another one in LWC. The Visualforce implementation is embedded in the example card using an iframe.",
+      "line": 11
+    },
+    {
+      "file": "force-app/main/default/pages/pageBlocks.page",
+      "line": 1,
+      "description": "The Visualforce implementation is enclosed in a single visualforce page. When you click on \"View Visualforce Source\" the page will open in github."
+    },
+    {
+      "file": "force-app/main/default/lwc/pageBlocks/pageBlocks.html",
+      "line": 1,
+      "description": "The LWC implementation is enclosed in a single LWC. When you click on \"View LWC Source\" the component folder will open in github."
+    }
+  ]
 }
