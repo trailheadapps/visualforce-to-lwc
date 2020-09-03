@@ -1,0 +1,20 @@
+import { createElement } from 'lwc';
+import ListRecordLinks from 'c/listRecordLinks';
+
+describe('c-list-record-links', () => {
+    afterEach(() => {
+        // The jsdom instance is shared across test cases in a single file so reset the DOM
+        while (document.body.firstChild) {
+            document.body.removeChild(document.body.firstChild);
+        }
+    });
+
+    it('is accessible', () => {
+        const element = createElement('c-list-record-links', {
+            is: ListRecordLinks
+        });
+        document.body.appendChild(element);
+
+        return Promise.resolve().then(() => expect(element).toBeAccessible());
+    });
+});
