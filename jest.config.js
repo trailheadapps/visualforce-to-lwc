@@ -10,5 +10,5 @@ module.exports = {
         '^lightning/navigation$':
             '<rootDir>/force-app/test/jest-mocks/lightning/navigation'
     },
-    setupFilesAfterEnv: ['<rootDir>/jest-a11y-setup.js']
+    setupFilesAfterEnv: ['<rootDir>/jest-sa11y-setup.js']
 };
