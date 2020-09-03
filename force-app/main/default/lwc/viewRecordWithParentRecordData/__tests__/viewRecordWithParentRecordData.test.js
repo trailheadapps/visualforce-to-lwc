@@ -1,5 +1,5 @@
 import { createElement } from 'lwc';
-import ViewRecordWithParentRecordDataWrapper from 'c/viewRecordWithParentRecordData';
+import ViewRecordWithParentRecordData from 'c/viewRecordWithParentRecordData';
 import { getRecord } from 'lightning/uiRecordApi';
 import { registerLdsTestWireAdapter } from '@salesforce/sfdx-lwc-jest';
 import ACCOUNT_OBJECT from '@salesforce/schema/Account';
@@ -27,7 +27,7 @@ describe('c-view-record-with-parent-record-data', () => {
     it('contains one lightning-record-view-form with three lightning-output-fields and one lightning-formatted-text', () => {
         // Create initial element
         const element = createElement('c-view-record-with-parent-record-data', {
-            is: ViewRecordWithParentRecordDataWrapper
+            is: ViewRecordWithParentRecordData
         });
         document.body.appendChild(element);
 
@@ -55,7 +55,7 @@ describe('c-view-record-with-parent-record-data', () => {
 
         // Create initial element
         const element = createElement('c-view-record-with-parent-record-data', {
-            is: ViewRecordWithParentRecordDataWrapper
+            is: ViewRecordWithParentRecordData
         });
         document.body.appendChild(element);
 
@@ -81,7 +81,7 @@ describe('c-view-record-with-parent-record-data', () => {
             const element = createElement(
                 'c-view-record-with-parent-record-data',
                 {
-                    is: ViewRecordWithParentRecordDataWrapper
+                    is: ViewRecordWithParentRecordData
                 }
             );
 
@@ -107,7 +107,7 @@ describe('c-view-record-with-parent-record-data', () => {
             const element = createElement(
                 'c-view-record-with-parent-record-data',
                 {
-                    is: ViewRecordWithParentRecordDataWrapper
+                    is: ViewRecordWithParentRecordData
                 }
             );
             document.body.appendChild(element);
@@ -133,7 +133,7 @@ describe('c-view-record-with-parent-record-data', () => {
             const element = createElement(
                 'c-view-record-with-parent-record-data',
                 {
-                    is: ViewRecordWithParentRecordDataWrapper
+                    is: ViewRecordWithParentRecordData
                 }
             );
             document.body.appendChild(element);

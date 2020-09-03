@@ -30,9 +30,12 @@ describe('c-page-messages-data-retrieval-wrapper', () => {
     });
 
     it('is accessible', () => {
-        const element = createElement('c-page-message-data-messages-retrieval-wrapper', {
-            is: PageMessageDataMessagesRetrievalWrapper
-        });
+        const element = createElement(
+            'c-page-message-data-messages-retrieval-wrapper',
+            {
+                is: PageMessagesDataRetrievalWrapper
+            }
+        );
 
         document.body.appendChild(element);
 

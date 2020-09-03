@@ -1,5 +1,5 @@
 import { createElement } from 'lwc';
-import PagePageMessagesDataRetrieval from 'c/pageMessagesDataRetrieval';
+import PageMessagesDataRetrieval from 'c/pageMessagesDataRetrieval';
 import { registerApexTestWireAdapter } from '@salesforce/sfdx-lwc-jest';
 import getAccounts from '@salesforce/apex/PageMessagesDataRetrievalControllerLwc.getAccounts';
 
@@ -15,7 +15,7 @@ describe('c-page-messages-data-retrieval', () => {
 
     it('displays the account.errors in an error panel when accounts.error is true', () => {
         const element = createElement('c-page-messages-data-retrieval', {
-            is: PagePageMessagesDataRetrieval
+            is: PageMessagesDataRetrieval
         });
         document.body.appendChild(element);
         getAccountsAdapter.error('Error Message');
@@ -35,7 +35,7 @@ describe('c-page-messages-data-retrieval', () => {
 
     it('displays the account.data in a sub-template when accounts.data is true', () => {
         const element = createElement('c-page-messages-data-retrieval', {
-            is: PagePageMessagesDataRetrieval
+            is: PageMessagesDataRetrieval
         });
         document.body.appendChild(element);
         getAccountsAdapter.emit({ data: 'hello world' });
