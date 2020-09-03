@@ -26,4 +26,14 @@ describe('c-edit-record-wrapper', () => {
         expect(innerEl).not.toBeNull();
         expect(innerEl.recordId).toBe(RECORD_ID);
     });
+
+    it('is accessible', () => {
+        const element = createElement('c-edit-record-wrapper', {
+            is: EditRecordWrapper
+        });
+
+        document.body.appendChild(element);
+
+        return Promise.resolve().then(() => expect(element).toBeAccessible());
+    });
 });

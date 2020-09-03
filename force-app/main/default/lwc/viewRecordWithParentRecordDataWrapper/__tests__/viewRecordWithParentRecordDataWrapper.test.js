@@ -50,4 +50,14 @@ describe('c-view-record-with-parent-record-data-wrapper', () => {
         expect(innerEl).not.toBeNull();
         expect(innerEl.recordId).toBe(RECORD_ID);
     });
+
+    it('is accessible', () => {
+        const element = createElement('c-view-record-with-parent-record-data-wrapper', {
+            is: ViewRecordWithParentRecordDataWrapper
+        });
+
+        document.body.appendChild(element);
+
+        return Promise.resolve().then(() => expect(element).toBeAccessible());
+    });
 });

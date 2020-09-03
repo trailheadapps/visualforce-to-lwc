@@ -21,4 +21,14 @@ describe('c-create-mixed-records-apex-wrapper', () => {
         const innerEl = exampleEl.querySelector('c-create-mixed-records-apex');
         expect(innerEl).not.toBeNull();
     });
+
+    it('is accessible', () => {
+        const element = createElement('c-create-mixed-records-apex-wrapper', {
+            is: CreateMixedRecordsApexWrapper
+        });
+
+        document.body.appendChild(element);
+
+        return Promise.resolve().then(() => expect(element).toBeAccessible());
+    });
 });

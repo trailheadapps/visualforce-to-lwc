@@ -106,4 +106,14 @@ describe('c-single-records', () => {
             });
         });
     });
+
+    it('is accessible', () => {
+        const element = createElement('c-single-records', {
+            is: SingleRecords
+        });
+
+        document.body.appendChild(element);
+
+        return Promise.resolve().then(() => expect(element).toBeAccessible());
+    });
 });

@@ -96,4 +96,14 @@ describe('c-basic-list-get-list-ui', () => {
             expect(errorPanelEl.errors).toBeTruthy();
         });
     });
+
+    it('is accessible', () => {
+        const element = createElement('c-basic-list-get-list-ui', {
+            is: BasicListGetListUi
+        });
+
+        document.body.appendChild(element);
+
+        return Promise.resolve().then(() => expect(element).toBeAccessible());
+    });
 });

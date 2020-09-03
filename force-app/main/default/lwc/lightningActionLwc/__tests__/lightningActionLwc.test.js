@@ -20,4 +20,14 @@ describe('c-lightning-action-lwc', () => {
         const div = element.shadowRoot.querySelector('div');
         expect(div.textContent).toBe('This is a Lightning Web Component!');
     });
+
+    it('is accessible', () => {
+        const element = createElement('c-lightning-action-lwc', {
+            is: LightningActionLwc
+        });
+
+        document.body.appendChild(element);
+
+        return Promise.resolve().then(() => expect(element).toBeAccessible());
+    });
 });

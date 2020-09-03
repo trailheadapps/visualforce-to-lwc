@@ -25,4 +25,14 @@ describe('c-panel-grid-wrapper', () => {
         const panelBarEl = exampleWrapperEl.querySelector('c-panel-grid');
         expect(panelBarEl).not.toBeNull();
     });
+
+    it('is accessible', () => {
+        const element = createElement('c-panel-grid-wrapper', {
+            is: PanelGridWrapper
+        });
+
+        document.body.appendChild(element);
+
+        return Promise.resolve().then(() => expect(element).toBeAccessible());
+    });
 });

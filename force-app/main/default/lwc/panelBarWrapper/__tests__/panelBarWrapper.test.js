@@ -25,4 +25,14 @@ describe('c-panel-bar-wrapper', () => {
         const panelBarEl = exampleWrapperEl.querySelector('c-panel-bar');
         expect(panelBarEl).not.toBeNull();
     });
+
+    it('is accessible', () => {
+        const element = createElement('c-panel-bar-wrapper', {
+            is: PanelBarWrapper
+        });
+
+        document.body.appendChild(element);
+
+        return Promise.resolve().then(() => expect(element).toBeAccessible());
+    });
 });

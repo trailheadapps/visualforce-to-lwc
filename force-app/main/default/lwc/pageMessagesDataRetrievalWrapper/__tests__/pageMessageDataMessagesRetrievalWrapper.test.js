@@ -28,4 +28,14 @@ describe('c-page-messages-data-retrieval-wrapper', () => {
         );
         expect(innerEl).not.toBeNull();
     });
+
+    it('is accessible', () => {
+        const element = createElement('c-page-message-data-messages-retrieval-wrapper', {
+            is: PageMessageDataMessagesRetrievalWrapper
+        });
+
+        document.body.appendChild(element);
+
+        return Promise.resolve().then(() => expect(element).toBeAccessible());
+    });
 });

@@ -67,4 +67,14 @@ describe('c-error-popover', () => {
             expect(reRenderedSectionEl).toBeNull();
         });
     });
+
+    it('is accessible', () => {
+        const element = createElement('c-error-popover', {
+            is: ErrorPopover
+        });
+
+        document.body.appendChild(element);
+
+        return Promise.resolve().then(() => expect(element).toBeAccessible());
+    });
 });

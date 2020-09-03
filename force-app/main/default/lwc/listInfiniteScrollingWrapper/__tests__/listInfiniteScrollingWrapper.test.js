@@ -21,4 +21,14 @@ describe('c-list-infinite-scrolling-wrapper', () => {
         const innerEl = exampleEl.querySelector('c-list-infinite-scrolling');
         expect(innerEl).not.toBeNull();
     });
+
+    it('is accessible', () => {
+        const element = createElement('c-list-infinite-scrolling-wrapper', {
+            is: ListInfiniteScrollingWrapper
+        });
+
+        document.body.appendChild(element);
+
+        return Promise.resolve().then(() => expect(element).toBeAccessible());
+    });
 });

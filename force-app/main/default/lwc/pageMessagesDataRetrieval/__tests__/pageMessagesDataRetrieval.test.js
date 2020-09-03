@@ -45,4 +45,14 @@ describe('c-page-messages-data-retrieval', () => {
             expect(paragraphEl.textContent).not.toBeNull();
         });
     });
+
+    it('is accessible', () => {
+        const element = createElement('c-page-messages-data-retrieval', {
+            is: PageMessagesDataRetrieval
+        });
+
+        document.body.appendChild(element);
+
+        return Promise.resolve().then(() => expect(element).toBeAccessible());
+    });
 });

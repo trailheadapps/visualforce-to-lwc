@@ -70,4 +70,14 @@ describe('c-lds-utils', () => {
             expect(formatted).toStrictEqual(mockFormatGetListUiSObjects);
         });
     });
+
+    it('is accessible', () => {
+        const element = createElement('c-lds-utils', {
+            is: LdsUtils
+        });
+
+        document.body.appendChild(element);
+
+        return Promise.resolve().then(() => expect(element).toBeAccessible());
+    });
 });

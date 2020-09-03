@@ -28,4 +28,14 @@ describe('c-list-with-parent-record-data-wrapper', () => {
         );
         expect(innerEl).not.toBeNull();
     });
+
+    it('is accessible', () => {
+        const element = createElement('c-list-with-parent-record-data-wrapper', {
+            is: ListWithParentRecordDataWrapper
+        });
+
+        document.body.appendChild(element);
+
+        return Promise.resolve().then(() => expect(element).toBeAccessible());
+    });
 });

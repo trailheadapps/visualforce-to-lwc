@@ -38,4 +38,14 @@ describe('c-view-record-wrapper', () => {
         expect(viewRecordEl).not.toBeNull();
         expect(viewRecordEl.recordId).toBe(RECORD_ID);
     });
+
+    it('is accessible', () => {
+        const element = createElement('c-view-record-wrapper', {
+            is: ViewRecordWrapper
+        });
+
+        document.body.appendChild(element);
+
+        return Promise.resolve().then(() => expect(element).toBeAccessible());
+    });
 });

@@ -22,4 +22,14 @@ describe('c-page-messages-form-wrapper', () => {
         const innerEl = exampleEl.querySelector('c-page-messages-form');
         expect(innerEl).not.toBeNull();
     });
+
+    it('is accessible', () => {
+        const element = createElement('c-page-messages-form-wrapper', {
+            is: PageMessagesFormWrapper
+        });
+
+        document.body.appendChild(element);
+
+        return Promise.resolve().then(() => expect(element).toBeAccessible());
+    });
 });

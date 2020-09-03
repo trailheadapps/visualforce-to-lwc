@@ -105,4 +105,14 @@ describe('c-editable-list', () => {
             expect(errorPanelEl.errors).toStrictEqual(APEX_ERROR);
         });
     });
+
+    it('is accessible', () => {
+        const element = createElement('c-editable-list', {
+            is: EditableList
+        });
+
+        document.body.appendChild(element);
+
+        return Promise.resolve().then(() => expect(element).toBeAccessible());
+    });
 });

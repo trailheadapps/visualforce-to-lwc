@@ -88,4 +88,14 @@ describe('c-page-messages-toast', () => {
             expect(handler.mock.calls[0][0].detail.variant).toBe('error');
         });
     });
+
+    it('is accessible', () => {
+        const element = createElement('c-page-messages-toast', {
+            is: PageMessagesToast
+        });
+
+        document.body.appendChild(element);
+
+        return Promise.resolve().then(() => expect(element).toBeAccessible());
+    });
 });

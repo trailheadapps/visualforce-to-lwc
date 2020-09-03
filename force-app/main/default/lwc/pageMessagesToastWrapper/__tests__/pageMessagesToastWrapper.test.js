@@ -22,4 +22,14 @@ describe('c-page-messages-toast-wrapper', () => {
         const innerEl = exampleEl.querySelector('c-page-messages-toast');
         expect(innerEl).not.toBeNull();
     });
+
+    it('is accessible', () => {
+        const element = createElement('c-page-messages-toast-wrapper', {
+            is: PageMessagesToastWrapper
+        });
+
+        document.body.appendChild(element);
+
+        return Promise.resolve().then(() => expect(element).toBeAccessible());
+    });
 });

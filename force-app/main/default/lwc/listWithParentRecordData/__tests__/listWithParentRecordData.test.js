@@ -95,4 +95,14 @@ describe('c-list-with-parent-record-data', () => {
             ]);
         });
     });
+
+    it('is accessible', () => {
+        const element = createElement('c-list-with-parent-record-data', {
+            is: ListWithParentRecordData
+        });
+
+        document.body.appendChild(element);
+
+        return Promise.resolve().then(() => expect(element).toBeAccessible());
+    });
 });

@@ -46,4 +46,14 @@ describe('c-navigate-to-record', () => {
             expect(anchorEl.textContent).toEqual(element.label);
         });
     });
+
+    it('is accessible', () => {
+        const element = createElement('c-navigate-to-record', {
+            is: NavigateToRecord
+        });
+
+        document.body.appendChild(element);
+
+        return Promise.resolve().then(() => expect(element).toBeAccessible());
+    });
 });

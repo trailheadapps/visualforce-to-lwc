@@ -24,4 +24,14 @@ describe('c-editable-list-wrapper', () => {
         const innerEl = exampleEl.querySelector('c-editable-list');
         expect(innerEl).not.toBeNull();
     });
+
+    it('is accessible', () => {
+        const element = createElement('c-editable-list-wrapper', {
+            is: EditableListWrapper
+        });
+
+        document.body.appendChild(element);
+
+        return Promise.resolve().then(() => expect(element).toBeAccessible());
+    });
 });

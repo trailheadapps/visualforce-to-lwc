@@ -23,4 +23,14 @@ describe('c-list-record-links-wrapper', () => {
         const innerEl = exampleEl.querySelector('c-list-record-links');
         expect(innerEl).not.toBeNull();
     });
+
+    it('is accessible', () => {
+        const element = createElement('c-list-record-links-wrapper', {
+            is: ListRecordLinksWrapper
+        });
+
+        document.body.appendChild(element);
+
+        return Promise.resolve().then(() => expect(element).toBeAccessible());
+    });
 });

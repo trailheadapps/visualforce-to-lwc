@@ -187,4 +187,14 @@ describe('c-paginated-list', () => {
             expect(errorPanelEl.errors.body).toStrictEqual(ERROR);
         });
     });
+
+    it('is accessible', () => {
+        const element = createElement('c-paginated-list', {
+            is: PaginatedList
+        });
+
+        document.body.appendChild(element);
+
+        return Promise.resolve().then(() => expect(element).toBeAccessible());
+    });
 });

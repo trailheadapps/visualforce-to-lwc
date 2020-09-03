@@ -68,4 +68,14 @@ describe('c-example-wrapper', () => {
         expect(iframeEl).not.toBeNull();
         expect(iframeEl.src).toContain(`/apex/${VISUALFORCE}`);
     });
+
+    it('is accessible', () => {
+        const element = createElement('c-example-wrapper', {
+            is: ExampleWrapper
+        });
+
+        document.body.appendChild(element);
+
+        return Promise.resolve().then(() => expect(element).toBeAccessible());
+    });
 });

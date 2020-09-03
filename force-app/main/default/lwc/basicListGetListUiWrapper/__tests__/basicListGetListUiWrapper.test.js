@@ -24,4 +24,14 @@ describe('c-basic-list-get-list-ui-wrapper', () => {
         const innerEl = exampleEl.querySelector('c-basic-list-get-list-ui');
         expect(innerEl).not.toBeNull();
     });
+
+    it('is accessible', () => {
+        const element = createElement('c-basic-list-get-list-ui-wrapper', {
+            is: BasicListGetListUiWrapper
+        });
+
+        document.body.appendChild(element);
+
+        return Promise.resolve().then(() => expect(element).toBeAccessible());
+    });
 });

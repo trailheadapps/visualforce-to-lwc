@@ -158,4 +158,14 @@ describe('c-page-messages-form', () => {
                 });
         });
     });
+
+    it('is accessible', () => {
+        const element = createElement('c-page-messages-form', {
+            is: PageMessagesForm
+        });
+
+        document.body.appendChild(element);
+
+        return Promise.resolve().then(() => expect(element).toBeAccessible());
+    });
 });

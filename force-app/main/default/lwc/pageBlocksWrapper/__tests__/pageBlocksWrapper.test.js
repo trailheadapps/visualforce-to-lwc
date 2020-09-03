@@ -22,4 +22,14 @@ describe('c-page-blocks-wrapper', () => {
         const innerEl = exampleEl.querySelector('c-page-blocks');
         expect(innerEl).not.toBeNull();
     });
+
+    it('is accessible', () => {
+        const element = createElement('c-page-blocks-wrapper', {
+            is: PageBlocksWrapper
+        });
+
+        document.body.appendChild(element);
+
+        return Promise.resolve().then(() => expect(element).toBeAccessible());
+    });
 });

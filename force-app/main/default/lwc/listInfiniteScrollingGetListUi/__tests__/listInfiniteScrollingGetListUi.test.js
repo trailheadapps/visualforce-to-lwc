@@ -87,4 +87,14 @@ describe('c-list-infinite-scrolling-get-list-ui', () => {
                 expect(getListUiAdapter.getLastConfig().pageToken).toBe(5);
             });
     });
+
+    it('is accessible', () => {
+        const element = createElement('c-list-infinite-scrolling-get-list-ui', {
+            is: ListInfiniteScrollingGetListUi
+        });
+
+        document.body.appendChild(element);
+
+        return Promise.resolve().then(() => expect(element).toBeAccessible());
+    });
 });

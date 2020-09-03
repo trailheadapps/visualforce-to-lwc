@@ -19,4 +19,14 @@ describe('c-datatable-with-custom-types', () => {
                 .typeAttributes[1]
         ).toBe('label');
     });
+
+    it('is accessible', () => {
+        const element = createElement('c-datatable-with-custom-types', {
+            is: DatatableWithCustomTypes
+        });
+
+        document.body.appendChild(element);
+
+        return Promise.resolve().then(() => expect(element).toBeAccessible());
+    });
 });

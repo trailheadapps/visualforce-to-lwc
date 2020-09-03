@@ -40,4 +40,14 @@ describe('c-view-record', () => {
             ACCOUNT_EMPLOYEES_FIELD
         ]);
     });
+
+    it('is accessible', () => {
+        const element = createElement('c-view-record', {
+            is: ViewRecord
+        });
+
+        document.body.appendChild(element);
+
+        return Promise.resolve().then(() => expect(element).toBeAccessible());
+    });
 });

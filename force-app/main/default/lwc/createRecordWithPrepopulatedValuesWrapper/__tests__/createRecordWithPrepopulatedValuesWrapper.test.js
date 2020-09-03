@@ -26,4 +26,14 @@ describe('c-create-record-with-prepopulated-values-wrapper', () => {
         );
         expect(innerEl).not.toBeNull();
     });
+
+    it('is accessible', () => {
+        const element = createElement('c-create-record-with-prepopulated-values-wrapper', {
+            is: CreateRecordWithPrepopulatedValuesWrapper
+        });
+
+        document.body.appendChild(element);
+
+        return Promise.resolve().then(() => expect(element).toBeAccessible());
+    });
 });

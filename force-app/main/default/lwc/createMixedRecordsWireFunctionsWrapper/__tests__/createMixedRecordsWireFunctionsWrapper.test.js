@@ -26,4 +26,14 @@ describe('c-create-mixed-records-wire-functions-wrapper', () => {
         );
         expect(innerEl).not.toBeNull();
     });
+
+    it('is accessible', () => {
+        const element = createElement('c-create-mixed-records-wire-functions-wrapper', {
+            is: CreateMixedRecordsWireFunctionsWrapper
+        });
+
+        document.body.appendChild(element);
+
+        return Promise.resolve().then(() => expect(element).toBeAccessible());
+    });
 });

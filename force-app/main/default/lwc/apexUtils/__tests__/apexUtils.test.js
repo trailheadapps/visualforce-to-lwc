@@ -16,4 +16,14 @@ describe('c-apex-utils', () => {
             expect(record['Owner.Name']).toBe(soqlData[index].Owner.Name);
         });
     });
+
+    it('is accessible', () => {
+        const element = createElement('c-apex-utils', {
+            is: ApexUtils
+        });
+
+        document.body.appendChild(element);
+
+        return Promise.resolve().then(() => expect(element).toBeAccessible());
+    });
 });

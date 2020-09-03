@@ -22,4 +22,14 @@ describe('c-page-messages-toast-wrapper', () => {
         const innerEl = exampleEl.querySelector('c-paginated-list');
         expect(innerEl).not.toBeNull();
     });
+
+    it('is accessible', () => {
+        const element = createElement('c-paginated-list-wrapper', {
+            is: PaginatedListWrapper
+        });
+
+        document.body.appendChild(element);
+
+        return Promise.resolve().then(() => expect(element).toBeAccessible());
+    });
 });
