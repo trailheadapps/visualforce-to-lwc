@@ -28,12 +28,17 @@ describe('c-list-infinite-scrolling-get-list-ui-wrapper', () => {
     });
 
     it('is accessible', () => {
-        const element = createElement('c-list-infinite-scrolling-get-list-ui-wrapper', {
-            is: ListInfiniteScrollingGetListUiWrapper
-        });
+        const element = createElement(
+            'c-list-infinite-scrolling-get-list-ui-wrapper',
+            {
+                is: ListInfiniteScrollingGetListUiWrapper
+            }
+        );
 
         document.body.appendChild(element);
 
-        return Promise.resolve().then(() => expect(element).toBeAccessible());
+        return Promise.resolve().then(() => {
+            expect(element).toBeAccessible();
+        });
     });
 });

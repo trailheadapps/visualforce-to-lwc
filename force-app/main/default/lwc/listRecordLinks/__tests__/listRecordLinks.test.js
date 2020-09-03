@@ -24,6 +24,8 @@ describe('c-list-record-links', () => {
 
         getAccountsAdapter.emit(mockAccountData);
 
-        return Promise.resolve().then(() => expect(element).toBeAccessible());
+        return Promise.resolve().then(() => {
+            expect(element).toBeAccessible();
+        });
     });
 });

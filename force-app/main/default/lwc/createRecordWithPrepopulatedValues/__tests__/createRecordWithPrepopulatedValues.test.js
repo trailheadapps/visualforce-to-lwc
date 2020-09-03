@@ -18,6 +18,8 @@ describe('c-create-record-with-prepopulated-values', () => {
         );
         document.body.appendChild(element);
 
-        return Promise.resolve().then(() => expect(element).toBeAccessible());
+        return Promise.resolve().then(() => {
+            expect(element).toBeAccessible();
+        });
     });
 });

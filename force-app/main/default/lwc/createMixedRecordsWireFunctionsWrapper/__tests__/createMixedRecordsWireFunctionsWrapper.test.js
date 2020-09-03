@@ -28,12 +28,17 @@ describe('c-create-mixed-records-wire-functions-wrapper', () => {
     });
 
     it('is accessible', () => {
-        const element = createElement('c-create-mixed-records-wire-functions-wrapper', {
-            is: CreateMixedRecordsWireFunctionsWrapper
-        });
+        const element = createElement(
+            'c-create-mixed-records-wire-functions-wrapper',
+            {
+                is: CreateMixedRecordsWireFunctionsWrapper
+            }
+        );
 
         document.body.appendChild(element);
 
-        return Promise.resolve().then(() => expect(element).toBeAccessible());
+        return Promise.resolve().then(() => {
+            expect(element).toBeAccessible();
+        });
     });
 });

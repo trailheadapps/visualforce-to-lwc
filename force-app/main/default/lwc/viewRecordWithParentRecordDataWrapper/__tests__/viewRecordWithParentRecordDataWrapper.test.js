@@ -52,12 +52,17 @@ describe('c-view-record-with-parent-record-data-wrapper', () => {
     });
 
     it('is accessible', () => {
-        const element = createElement('c-view-record-with-parent-record-data-wrapper', {
-            is: ViewRecordWithParentRecordDataWrapper
-        });
+        const element = createElement(
+            'c-view-record-with-parent-record-data-wrapper',
+            {
+                is: ViewRecordWithParentRecordDataWrapper
+            }
+        );
 
         document.body.appendChild(element);
 
-        return Promise.resolve().then(() => expect(element).toBeAccessible());
+        return Promise.resolve().then(() => {
+            expect(element).toBeAccessible();
+        });
     });
 });

@@ -28,12 +28,17 @@ describe('c-create-record-with-prepopulated-values-wrapper', () => {
     });
 
     it('is accessible', () => {
-        const element = createElement('c-create-record-with-prepopulated-values-wrapper', {
-            is: CreateRecordWithPrepopulatedValuesWrapper
-        });
+        const element = createElement(
+            'c-create-record-with-prepopulated-values-wrapper',
+            {
+                is: CreateRecordWithPrepopulatedValuesWrapper
+            }
+        );
 
         document.body.appendChild(element);
 
-        return Promise.resolve().then(() => expect(element).toBeAccessible());
+        return Promise.resolve().then(() => {
+            expect(element).toBeAccessible();
+        });
     });
 });

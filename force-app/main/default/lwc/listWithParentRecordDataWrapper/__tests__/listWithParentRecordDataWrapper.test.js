@@ -30,12 +30,17 @@ describe('c-list-with-parent-record-data-wrapper', () => {
     });
 
     it('is accessible', () => {
-        const element = createElement('c-list-with-parent-record-data-wrapper', {
-            is: ListWithParentRecordDataWrapper
-        });
+        const element = createElement(
+            'c-list-with-parent-record-data-wrapper',
+            {
+                is: ListWithParentRecordDataWrapper
+            }
+        );
 
         document.body.appendChild(element);
 
-        return Promise.resolve().then(() => expect(element).toBeAccessible());
+        return Promise.resolve().then(() => {
+            expect(element).toBeAccessible();
+        });
     });
 });
