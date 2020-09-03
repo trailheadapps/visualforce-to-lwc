@@ -22,4 +22,13 @@ describe('c-toolbar-wrapper', () => {
         const innerEl = exampleEl.querySelector('c-toolbar');
         expect(innerEl).not.toBeNull();
     });
+
+    it('is accessible', () => {
+        const element = createElement('c-toolbar-wrapper', {
+            is: ToolbarWrapper
+        });
+        document.body.appendChild(element);
+
+        return Promise.resolve().then(() => expect(element).toBeAccessible());
+    });
 });

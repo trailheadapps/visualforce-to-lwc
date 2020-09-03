@@ -9,5 +9,6 @@ module.exports = {
             '<rootDir>/force-app/test/jest-mocks/lightning/platformShowToastEvent',
         '^lightning/navigation$':
             '<rootDir>/force-app/test/jest-mocks/lightning/navigation'
-    }
+    },
+    setupFilesAfterEnv: ['<rootDir>/jest-a11y-setup.js']
 };
