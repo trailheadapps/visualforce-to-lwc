@@ -37,8 +37,6 @@ describe('c-list-infinite-scrolling-get-list-ui-wrapper', () => {
 
         document.body.appendChild(element);
 
-        return Promise.resolve().then(() => {
-            expect(element).toBeAccessible();
-        });
+        return Promise.resolve().then(() => expect(element).toBeAccessible());
     });
 });
