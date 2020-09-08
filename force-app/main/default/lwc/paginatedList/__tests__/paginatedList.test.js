@@ -188,12 +188,30 @@ describe('c-paginated-list', () => {
         });
     });
 
-    it('is accessible', () => {
+    it('is accessible when data is returned', () => {
+        // Create initial element
         const element = createElement('c-paginated-list', {
             is: PaginatedList
         });
-
         document.body.appendChild(element);
+
+        // Emit mock data
+        getAccountsPaginatedAdapter.emit(mockGetAccountData);
+
+        return Promise.resolve().then(() => expect(element).toBeAccessible());
+    });
+
+    it('is accessible when error is returned', () => {
+        const ERROR = { message: 'An error message' };
+
+        // Create initial element
+        const element = createElement('c-paginated-list', {
+            is: PaginatedList
+        });
+        document.body.appendChild(element);
+
+        // Emit error from @wire
+        getAccountsPaginatedAdapter.error(ERROR);
 
         return Promise.resolve().then(() => expect(element).toBeAccessible());
     });

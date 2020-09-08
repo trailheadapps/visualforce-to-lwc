@@ -73,6 +73,7 @@ describe('c-error-popover', () => {
             is: ErrorPopover
         });
 
+        element.showPopover = true;
         document.body.appendChild(element);
 
         return Promise.resolve().then(() => expect(element).toBeAccessible());

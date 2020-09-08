@@ -160,11 +160,14 @@ describe('c-page-messages-form', () => {
     });
 
     it('is accessible', () => {
+        // Create initial element
         const element = createElement('c-page-messages-form', {
             is: PageMessagesForm
         });
-
         document.body.appendChild(element);
+
+        // Mock create city Apex error
+        createCity.mockRejectedValue(MOCK_ERROR);
 
         return Promise.resolve().then(() => expect(element).toBeAccessible());
     });

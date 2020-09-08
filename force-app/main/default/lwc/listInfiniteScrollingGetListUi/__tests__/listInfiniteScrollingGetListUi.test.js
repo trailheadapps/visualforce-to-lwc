@@ -25,8 +25,7 @@ describe('c-list-infinite-scrolling-get-list-ui', () => {
         });
         document.body.appendChild(element);
 
-        // Verify that the data table exsists
-        // and has our mock data
+        // Mock returned data
         getListUiAdapter.emit(mockGetAccountData);
 
         return Promise.resolve().then(() => {
@@ -48,7 +47,7 @@ describe('c-list-infinite-scrolling-get-list-ui', () => {
         });
         document.body.appendChild(element);
 
-        // Emit data from wire adapter
+        // Emit error from wire adapter
         getListUiAdapter.error(MESSAGE);
 
         return Promise.resolve().then(() => {
@@ -88,12 +87,30 @@ describe('c-list-infinite-scrolling-get-list-ui', () => {
             });
     });
 
-    it('is accessible', () => {
+    it('is accessible when data is returned', () => {
+        // Create element
         const element = createElement('c-list-infinite-scrolling-get-list-ui', {
             is: ListInfiniteScrollingGetListUi
         });
-
         document.body.appendChild(element);
+
+        // Mock returned data
+        getListUiAdapter.emit(mockGetAccountData);
+
+        return Promise.resolve().then(() => expect(element).toBeAccessible());
+    });
+
+    it('is accessible when error is returned', () => {
+        const MESSAGE = 'Error retrieving data';
+
+        // Create element
+        const element = createElement('c-list-infinite-scrolling-get-list-ui', {
+            is: ListInfiniteScrollingGetListUi
+        });
+        document.body.appendChild(element);
+
+        // Emit error from wire adapter
+        getListUiAdapter.error(MESSAGE);
 
         return Promise.resolve().then(() => expect(element).toBeAccessible());
     });

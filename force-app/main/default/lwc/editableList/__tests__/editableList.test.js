@@ -106,12 +106,39 @@ describe('c-editable-list', () => {
         });
     });
 
-    it('is accessible', () => {
+    it('is accessible when data is returned', () => {
+        // Create initial element
         const element = createElement('c-editable-list', {
             is: EditableList
         });
-
         document.body.appendChild(element);
+
+        // Emit data from @wire
+        getAccountsAdapter.emit(mockGetAccounts);
+
+        return Promise.resolve().then(() => expect(element).toBeAccessible());
+    });
+
+    it('is accessible when error is returned', () => {
+        const APEX_ERROR = {
+            body: 'Error retrieving records',
+            ok: false,
+            status: '400',
+            statusText: 'Bad Request'
+        };
+
+        // Create initial element
+        const element = createElement('c-editable-list', {
+            is: EditableList
+        });
+        document.body.appendChild(element);
+
+        // Emit data from @wire
+        getAccountsAdapter.error(
+            APEX_ERROR.body,
+            APEX_ERROR.status,
+            APEX_ERROR.statusText
+        );
 
         return Promise.resolve().then(() => expect(element).toBeAccessible());
     });

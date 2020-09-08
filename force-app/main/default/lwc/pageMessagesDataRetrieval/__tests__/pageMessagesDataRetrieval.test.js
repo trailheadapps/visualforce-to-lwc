@@ -46,12 +46,26 @@ describe('c-page-messages-data-retrieval', () => {
         });
     });
 
-    it('is accessible', () => {
+    it('is accessible when data is returned', () => {
         const element = createElement('c-page-messages-data-retrieval', {
             is: PageMessagesDataRetrieval
         });
 
         document.body.appendChild(element);
+
+        getAccountsAdapter.emit({ data: 'hello world' });
+
+        return Promise.resolve().then(() => expect(element).toBeAccessible());
+    });
+
+    it('is accessible when error is returned', () => {
+        const element = createElement('c-page-messages-data-retrieval', {
+            is: PageMessagesDataRetrieval
+        });
+
+        document.body.appendChild(element);
+
+        getAccountsAdapter.error('Error Message');
 
         return Promise.resolve().then(() => expect(element).toBeAccessible());
     });

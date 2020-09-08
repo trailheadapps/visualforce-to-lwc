@@ -105,12 +105,26 @@ describe('c-list-infinite-scrolling', () => {
             });
     });
 
-    it('is accessible', () => {
+    it('is accessible when data is returned', () => {
         const element = createElement('c-list-infinite-scrolling', {
             is: ListInfiniteScrolling
         });
 
         document.body.appendChild(element);
+
+        getAccountsPaginatedAdapter.emit(mockGetAccountsPaginatedRecords);
+
+        return Promise.resolve().then(() => expect(element).toBeAccessible());
+    });
+
+    it('is accessible when error is returned', () => {
+        const element = createElement('c-list-infinite-scrolling', {
+            is: ListInfiniteScrolling
+        });
+
+        document.body.appendChild(element);
+
+        getAccountsPaginatedAdapter.error();
 
         return Promise.resolve().then(() => expect(element).toBeAccessible());
     });
