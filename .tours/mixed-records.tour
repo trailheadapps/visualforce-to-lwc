@@ -4,7 +4,7 @@
         {
             "file": "force-app/main/default/lwc/createMixedRecordsWireFunctions/createMixedRecordsWireFunctions.js",
             "line": 3,
-            "description": "The \"Create Mixed Records Wire Functions\" example shows how to use the [createRecord](https://developer.salesforce.com/docs/component-library/documentation/en/lwc/lwc.data_salesforce_write) LDS function to create mixed single records. LDS functions operations are reflected in the LDS cache. We start by importing the createRecord function at the top."
+            "description": "The \"Create Mixed Records Wire Functions\" example shows how to use the [createRecord](https://developer.salesforce.com/docs/component-library/documentation/en/lwc/lwc.data_salesforce_write) LDS function to create mixed single records. LDS functions operation are reflected in the LDS cache. We start by importing the createRecord function at the top."
         },
         {
             "file": "force-app/main/default/lwc/createMixedRecordsWireFunctions/createMixedRecordsWireFunctions.js",
