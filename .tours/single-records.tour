@@ -1,0 +1,35 @@
+{
+    "title": "2- Single Records Examples",
+    "steps": [
+        {
+            "file": "force-app/main/default/lwc/viewRecordWithParentRecordData/viewRecordWithParentRecordData.html",
+            "line": 2,
+            "description": "The \"View Record with Parent Record Data\" example shows an account record, together with some fields that belong to its owner (a parent related record). First, we use [lightning-record-view-form](https://developer.salesforce.com/docs/component-library/bundle/lightning-record-view-form/documentation) and [lightning-output-field](https://developer.salesforce.com/docs/component-library/bundle/lightning-output-field/documentation) to surface account fields."
+        },
+        {
+            "file": "force-app/main/default/lwc/viewRecordWithParentRecordData/viewRecordWithParentRecordData.js",
+            "line": 17,
+            "description": "Next, we retrieve the owner data using the [getRecord](https://developer.salesforce.com/docs/component-library/documentation/en/lwc/reference_wire_adapters_record) Lightning Data Service (LDS) wire adapter. Note the adapter and the field references have been imported at the top.",
+            "selection": {
+                "start": {
+                    "line": 17,
+                    "character": 13
+                },
+                "end": {
+                    "line": 17,
+                    "character": 20
+                }
+            }
+        },
+        {
+            "file": "force-app/main/default/lwc/viewRecordWithParentRecordData/viewRecordWithParentRecordData.js",
+            "line": 23,
+            "description": "Next, we create a getter for each owner field that we want to reference in the markup, using [getFieldValue](https://developer.salesforce.com/docs/component-library/documentation/en/lwc/reference_get_field_value). In this case, just the owner name."
+        },
+        {
+            "file": "force-app/main/default/lwc/viewRecordWithParentRecordData/viewRecordWithParentRecordData.html",
+            "line": 23,
+            "description": "Finally, we extend lightning-record-view-form body to include the account's owner name field using [lightning-formatted-text](https://developer.salesforce.com/docs/component-library/bundle/lightning-formatted-text/example)."
+        }
+    ]
+}
