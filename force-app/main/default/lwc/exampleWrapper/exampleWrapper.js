@@ -21,4 +21,8 @@ export default class ExampleWrapper extends LightningElement {
             return `/apex/${this.visualforce}?id=${this.recordId}`;
         return `/apex/${this.visualforce}`;
     }
+
+    get visualforceIframeTitle() {
+        return `Wrapper for ${this.visualforce} page`;
+    }
 }
