@@ -1,6 +1,9 @@
 import { createElement } from 'lwc';
 import ToolbarWrapper from 'c/toolbarWrapper';
 
+// Mock exampleWrapper component so that accessibility tests don't expect the visualforce iframe to load
+jest.mock('../../exampleWrapper/exampleWrapper');
+
 describe('c-toolbar-wrapper', () => {
     afterEach(() => {
         // The jsdom instance is shared across test cases in a single file so reset the DOM

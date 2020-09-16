@@ -1,6 +1,9 @@
 import { createElement } from 'lwc';
 import CreateMixedRecordsApexWrapper from 'c/createMixedRecordsApexWrapper';
 
+// Mock exampleWrapper component so that accessibility tests don't expect the visualforce iframe to load
+jest.mock('../../exampleWrapper/exampleWrapper');
+
 describe('c-create-mixed-records-apex-wrapper', () => {
     afterEach(() => {
         // The jsdom instance is shared across test cases in a single file so reset the DOM

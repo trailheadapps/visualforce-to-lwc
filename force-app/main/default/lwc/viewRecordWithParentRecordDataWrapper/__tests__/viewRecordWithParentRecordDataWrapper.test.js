@@ -3,6 +3,9 @@ import ViewRecordWithParentRecordDataWrapper from 'c/viewRecordWithParentRecordD
 
 const RECORD_ID = '0019A00000E8zAWQAZ';
 
+// Mock exampleWrapper component so that accessibility tests don't expect the visualforce iframe to load
+jest.mock('../../exampleWrapper/exampleWrapper');
+
 describe('c-view-record-with-parent-record-data-wrapper', () => {
     afterEach(() => {
         // The jsdom instance is shared across test cases in a single file so reset the DOM
