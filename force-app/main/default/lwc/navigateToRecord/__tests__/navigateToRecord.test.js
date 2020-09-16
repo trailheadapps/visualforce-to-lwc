@@ -52,6 +52,8 @@ describe('c-navigate-to-record', () => {
             is: NavigateToRecord
         });
 
+        element.label = 'foo';
+        element.recordId = '0031700000pJRRTAA4';
         document.body.appendChild(element);
 
         return Promise.resolve().then(() => expect(element).toBeAccessible());
