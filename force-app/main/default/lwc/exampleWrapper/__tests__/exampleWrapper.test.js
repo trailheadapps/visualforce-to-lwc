@@ -77,7 +77,7 @@ describe('c-example-wrapper', () => {
         document.body.appendChild(element);
 
         // Remove iframe so that it is not tested by axe
-        let iframeEl = element.shadowRoot.querySelector('iframe');
+        const iframeEl = element.shadowRoot.querySelector('iframe');
         iframeEl.remove();
 
         return Promise.resolve().then(() => expect(element).toBeAccessible());
