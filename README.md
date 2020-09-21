@@ -24,6 +24,8 @@ A collection of code examples to help you move from Visualforce to LWC. Each exa
 
 -   [Optional installation instructions](#optional-installation-instructions)
 
+-   [Code tours](#code-tours)
+
 ## Installing the app using a Scratch Org
 
 1. Set up your environment. Follow the steps in the [Quick Start: Lightning Web Components](https://trailhead.salesforce.com/content/learn/projects/quick-start-lightning-web-components/) Trailhead project. The steps include:
@@ -104,7 +106,7 @@ Make sure to start from a brand-new environment to avoid conflicts with previous
     - Click on the **_Start Walkthrough Trial_**.
     - Click on **_Submit_**.
 
-1. Click [this link](https://login.salesforce.com/packaging/installPackage.apexp?p0=04t3h000004RZupAAG) to install the Visualforce to LWC unlocked package in your org.
+1. Click [this link](https://login.salesforce.com/packaging/installPackage.apexp?p0=04t3h000004RbMuAAK) to install the Visualforce to LWC unlocked package in your org.
 
 1. Select **Install for All Users**
 
@@ -214,3 +216,7 @@ Prettier and ESLint will now run automatically every time you commit changes. Th
 npm run lint:lwc
 npm run prettier
 ```
+
+## Code Tours
+
+Code Tours are guided walkthroughs that will help you understand the app code better. To be able to run them, install the [CodeTour VSCode extension](https://marketplace.visualstudio.com/items?itemName=vsls-contrib.codetour).
