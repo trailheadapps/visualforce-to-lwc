@@ -5,9 +5,7 @@
                 Irrigation systems
             </apex:pageBlockSectionItem>
 
-            <apex:pageBlockSectionItem>
-                Soils
-            </apex:pageBlockSectionItem>
+            <apex:pageBlockSectionItem> Soils </apex:pageBlockSectionItem>
 
             <apex:pageBlockSectionItem>
                 Organic crops
@@ -18,17 +16,13 @@
             </apex:pageBlockSectionItem>
         </apex:pageBlockSection>
         <apex:pageBlockSection title="Instructors">
-            <apex:pageBlockSectionItem>
-                Anna Perez
-            </apex:pageBlockSectionItem>
+            <apex:pageBlockSectionItem> Anna Perez </apex:pageBlockSectionItem>
 
             <apex:pageBlockSectionItem>
                 Mark Kingston
             </apex:pageBlockSectionItem>
 
-            <apex:pageBlockSectionItem>
-                Tom Davis
-            </apex:pageBlockSectionItem>
+            <apex:pageBlockSectionItem> Tom Davis </apex:pageBlockSectionItem>
 
             <apex:pageBlockSectionItem>
                 Rachel Morris
