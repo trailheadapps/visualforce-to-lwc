@@ -8,10 +8,7 @@
             </apex:pageBlockButtons>
             <apex:pageBlockSection title="Account fields">
                 <apex:inputField value="{!account.Name}" />
-                <apex:inputField
-                    value="{!account.Type}"
-                    style="width: 130px;"
-                />
+                <apex:inputField value="{!account.Type}" style="width: 130px" />
                 <apex:inputField value="{!account.Phone}" />
                 <apex:inputField value="{!account.NumberOfEmployees}" />
             </apex:pageBlockSection>
