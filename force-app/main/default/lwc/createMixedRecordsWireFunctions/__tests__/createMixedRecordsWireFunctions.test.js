@@ -198,4 +198,14 @@ describe('c-create-mixed-records-wire-functions', () => {
             );
         });
     });
+
+    it('is accessible', () => {
+        const element = createElement('c-create-mixed-records-wire-functions', {
+            is: CreateMixedRecordsWireFunctions
+        });
+
+        document.body.appendChild(element);
+
+        return Promise.resolve().then(() => expect(element).toBeAccessible());
+    });
 });

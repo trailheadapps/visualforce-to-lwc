@@ -1,10 +1,37 @@
 import { createElement } from 'lwc';
 import ListWithParentRecordData from 'c/listWithParentRecordData';
 import { registerApexTestWireAdapter } from '@salesforce/sfdx-lwc-jest';
+import ACCOUNT_NAME_FIELD from '@salesforce/schema/Account.Name';
+import ACCOUNT_TYPE_FIELD from '@salesforce/schema/Account.Type';
+import ACCOUNT_PHONE_FIELD from '@salesforce/schema/Account.Phone';
+import ACCOUNT_OWNER_NAME_FIELD from '@salesforce/schema/Account.Owner.Name';
 import getAccounts from '@salesforce/apex/ListWithParentRecordDataControllerLwc.getAccounts';
+import { formatApexSObjects } from 'c/apexUtils';
 
+const COLUMNS = [
+    {
+        label: 'Account Name',
+        fieldName: ACCOUNT_NAME_FIELD.fieldApiName,
+        type: 'text'
+    },
+    { label: 'Type', fieldName: ACCOUNT_TYPE_FIELD.fieldApiName, type: 'text' },
+    {
+        label: 'Phone',
+        fieldName: ACCOUNT_PHONE_FIELD.fieldApiName,
+        type: 'phone'
+    },
+    {
+        label: 'Owner Name',
+        fieldName: ACCOUNT_OWNER_NAME_FIELD.fieldApiName,
+        type: 'text'
+    }
+];
+
+// Realistic data with a list of accounts
+const mockGetAccounts = require('./data/getAccounts.json');
+
+// Register as Apex wire adapter. Some tests verify that provisioned values trigger desired behavior.
 const getAccountsAdapter = registerApexTestWireAdapter(getAccounts);
-const mockAccountData = require('./data/mockAccountData.json');
 
 describe('c-list-with-parent-record-data', () => {
     afterEach(() => {
@@ -16,83 +43,98 @@ describe('c-list-with-parent-record-data', () => {
         jest.clearAllMocks();
     });
 
-    it('Does not render a datatable when the wire service returns nothing.', () => {
+    it('renders lightning-datatable with parent record fields formatted when there is data', () => {
         // Create initial element
         const element = createElement('c-list-with-parent-record-data', {
             is: ListWithParentRecordData
         });
         document.body.appendChild(element);
 
-        return Promise.resolve().then(() => {
-            const errorPanelEl = element.shadowRoot.querySelector(
-                'c-error-panel'
-            );
-            expect(errorPanelEl).toBeNull();
+        // Emit data from @wire
+        getAccountsAdapter.emit(mockGetAccounts);
 
-            const dataTableEl = element.shadowRoot.querySelector(
+        // Return a promise to wait for any asynchronous DOM updates. Jest
+        // will automatically wait for the Promise chain to complete before
+        // ending the test and fail the test if the promise rejects.
+        return Promise.resolve().then(() => {
+            const datatableEl = element.shadowRoot.querySelector(
                 'lightning-datatable'
             );
-            expect(dataTableEl).toBeNull();
+            expect(datatableEl).not.toBeNull();
+            expect(datatableEl.data).toStrictEqual(
+                formatApexSObjects(mockGetAccounts)
+            );
+            expect(datatableEl.columns).toStrictEqual(COLUMNS);
         });
     });
 
-    it('renders the error pannel when @wire returns an error', () => {
+    it('renders error panel when there is error', () => {
+        const APEX_ERROR = {
+            body: 'Error retrieving records',
+            ok: false,
+            status: '400',
+            statusText: 'Bad Request'
+        };
+
         // Create initial element
         const element = createElement('c-list-with-parent-record-data', {
             is: ListWithParentRecordData
         });
         document.body.appendChild(element);
 
-        const errorObj = {
-            body:
-                'An error has occured. Have you tried turning it off and on again?',
-            ok: false,
-            status: '400',
-            statusText: 'Bad Request, No Donuts'
-        };
+        // Emit data from @wire
+        getAccountsAdapter.error(
+            APEX_ERROR.body,
+            APEX_ERROR.status,
+            APEX_ERROR.statusText
+        );
 
-        // By having this return an empty object, we're emulating a case where there are no accounts
-        getAccountsAdapter.error(errorObj);
-
+        // Return a promise to wait for any asynchronous DOM updates. Jest
+        // will automatically wait for the Promise chain to complete before
+        // ending the test and fail the test if the promise rejects.
         return Promise.resolve().then(() => {
             const errorPanelEl = element.shadowRoot.querySelector(
                 'c-error-panel'
             );
             expect(errorPanelEl).not.toBeNull();
-            expect(errorPanelEl.errors.body).toStrictEqual(errorObj);
-
-            const dataTableEl = element.shadowRoot.querySelector(
-                'lightning-datatable'
-            );
-            expect(dataTableEl).toBeNull();
+            expect(errorPanelEl.errors).toStrictEqual(APEX_ERROR);
         });
     });
 
-    it('renders the dataTable when account data is returned', () => {
+    it('is accessible when data is returned', () => {
         // Create initial element
         const element = createElement('c-list-with-parent-record-data', {
             is: ListWithParentRecordData
         });
         document.body.appendChild(element);
-        getAccountsAdapter.emit(mockAccountData);
 
-        return Promise.resolve().then(() => {
-            const errorPanelEl = element.shadowRoot.querySelector(
-                'c-error-panel'
-            );
-            expect(errorPanelEl).toBeNull();
+        // Emit data from @wire
+        getAccountsAdapter.emit(mockGetAccounts);
 
-            const dataTableEl = element.shadowRoot.querySelector(
-                'lightning-datatable'
-            );
-            expect(dataTableEl).not.toBeNull();
-            expect(dataTableEl.data).not.toBeNull();
-            expect(dataTableEl.columns).toMatchObject([
-                { label: 'Account Name', fieldName: 'Name', type: 'text' },
-                { label: 'Type', fieldName: 'Type', type: 'text' },
-                { label: 'Phone', fieldName: 'Phone', type: 'phone' },
-                { label: 'Owner Name', fieldName: 'Owner.Name', type: 'text' }
-            ]);
+        return Promise.resolve().then(() => expect(element).toBeAccessible());
+    });
+
+    it('is accessible when error is returned', () => {
+        const APEX_ERROR = {
+            body: 'Error retrieving records',
+            ok: false,
+            status: '400',
+            statusText: 'Bad Request'
+        };
+
+        // Create initial element
+        const element = createElement('c-list-with-parent-record-data', {
+            is: ListWithParentRecordData
         });
+        document.body.appendChild(element);
+
+        // Emit data from @wire
+        getAccountsAdapter.error(
+            APEX_ERROR.body,
+            APEX_ERROR.status,
+            APEX_ERROR.statusText
+        );
+
+        return Promise.resolve().then(() => expect(element).toBeAccessible());
     });
 });

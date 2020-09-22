@@ -22,4 +22,13 @@ describe('c-page-block', () => {
             expect(accordionEl.activeSectionName).toStrictEqual(['A', 'B']);
         });
     });
+
+    it('is accessible', () => {
+        const element = createElement('c-page-blocks', {
+            is: PageBlocks
+        });
+        document.body.appendChild(element);
+
+        return Promise.resolve().then(() => expect(element).toBeAccessible());
+    });
 });

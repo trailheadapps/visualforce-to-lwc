@@ -1,6 +1,9 @@
 import { createElement } from 'lwc';
 import TabsWrapper from 'c/tabsWrapper';
 
+// Mock exampleWrapper component so that accessibility tests don't expect the visualforce iframe to load
+jest.mock('../../exampleWrapper/exampleWrapper');
+
 describe('c-tabs-wrapper', () => {
     afterEach(() => {
         // The jsdom instance is shared across test cases in a single file so reset the DOM
@@ -21,5 +24,15 @@ describe('c-tabs-wrapper', () => {
 
         const innerEl = exampleEl.querySelector('c-tabs');
         expect(innerEl).not.toBeNull();
+    });
+
+    it('is accessible', () => {
+        const element = createElement('c-tabs-wrapper', {
+            is: TabsWrapper
+        });
+
+        document.body.appendChild(element);
+
+        return Promise.resolve().then(() => expect(element).toBeAccessible());
     });
 });

@@ -178,4 +178,14 @@ describe('c-create-mixed-records-apex', () => {
             );
         });
     });
+
+    it('is accessible', () => {
+        const element = createElement('c-create-mixed-records-apex', {
+            is: CreateMixedRecordsApex
+        });
+
+        document.body.appendChild(element);
+
+        return Promise.resolve().then(() => expect(element).toBeAccessible());
+    });
 });
