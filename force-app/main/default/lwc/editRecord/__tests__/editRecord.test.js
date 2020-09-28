@@ -168,4 +168,14 @@ describe('c-edit-record', () => {
             });
         });
     });
+
+    it('is accessible', () => {
+        const element = createElement('c-edit-record', {
+            is: EditRecord
+        });
+
+        document.body.appendChild(element);
+
+        return Promise.resolve().then(() => expect(element).toBeAccessible());
+    });
 });

@@ -98,4 +98,14 @@ describe('c-paginator', () => {
             expect(prevButtonEl.disabled).toBeTruthy();
         });
     });
+
+    it('is accessible', () => {
+        const element = createElement('c-paginator', {
+            is: Paginator
+        });
+
+        document.body.appendChild(element);
+
+        return Promise.resolve().then(() => expect(element).toBeAccessible());
+    });
 });

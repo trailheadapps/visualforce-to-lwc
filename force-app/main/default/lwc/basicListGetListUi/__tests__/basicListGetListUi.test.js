@@ -96,4 +96,33 @@ describe('c-basic-list-get-list-ui', () => {
             expect(errorPanelEl.errors).toBeTruthy();
         });
     });
+
+    it('is accessible when data is returned', () => {
+        // Create initial element
+        const element = createElement('c-basic-list-get-list-ui', {
+            is: BasicListGetListUi
+        });
+        document.body.appendChild(element);
+
+        // Mock formatGetListUiSObjects return value
+        formatGetListUiSObjects.mockReturnValue(mockFormatGetListUiSObjects);
+
+        // Emit data from @wire
+        getListUiAdapter.emit(mockGetListUi);
+
+        return Promise.resolve().then(() => expect(element).toBeAccessible());
+    });
+
+    it('is accessible when error is returned', () => {
+        // Create initial element
+        const element = createElement('c-basic-list-get-list-ui', {
+            is: BasicListGetListUi
+        });
+        document.body.appendChild(element);
+
+        // Emit data from @wire
+        getListUiAdapter.error();
+
+        return Promise.resolve().then(() => expect(element).toBeAccessible());
+    });
 });

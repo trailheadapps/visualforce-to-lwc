@@ -1,6 +1,9 @@
 import { createElement } from 'lwc';
 import CreateMixedRecordsWireFunctionsWrapper from 'c/createMixedRecordsWireFunctionsWrapper';
 
+// Mock exampleWrapper component so that accessibility tests don't expect the visualforce iframe to load
+jest.mock('../../exampleWrapper/exampleWrapper');
+
 describe('c-create-mixed-records-wire-functions-wrapper', () => {
     afterEach(() => {
         // The jsdom instance is shared across test cases in a single file so reset the DOM
@@ -25,5 +28,18 @@ describe('c-create-mixed-records-wire-functions-wrapper', () => {
             'c-create-mixed-records-wire-functions'
         );
         expect(innerEl).not.toBeNull();
+    });
+
+    it('is accessible', () => {
+        const element = createElement(
+            'c-create-mixed-records-wire-functions-wrapper',
+            {
+                is: CreateMixedRecordsWireFunctionsWrapper
+            }
+        );
+
+        document.body.appendChild(element);
+
+        return Promise.resolve().then(() => expect(element).toBeAccessible());
     });
 });

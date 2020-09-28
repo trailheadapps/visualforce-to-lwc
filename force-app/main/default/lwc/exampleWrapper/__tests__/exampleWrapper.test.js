@@ -68,4 +68,18 @@ describe('c-example-wrapper', () => {
         expect(iframeEl).not.toBeNull();
         expect(iframeEl.src).toContain(`/apex/${VISUALFORCE}`);
     });
+
+    it('is accessible', () => {
+        const element = createElement('c-example-wrapper', {
+            is: ExampleWrapper
+        });
+
+        document.body.appendChild(element);
+
+        // Remove iframe so that it is not tested by axe
+        const iframeEl = element.shadowRoot.querySelector('iframe');
+        iframeEl.remove();
+
+        return Promise.resolve().then(() => expect(element).toBeAccessible());
+    });
 });

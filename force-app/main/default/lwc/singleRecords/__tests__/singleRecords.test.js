@@ -106,4 +106,35 @@ describe('c-single-records', () => {
             });
         });
     });
+
+    it('is accessible when data is returned', () => {
+        // Create initial element
+        const element = createElement('c-single-records', {
+            is: SingleRecords
+        });
+        document.body.appendChild(element);
+
+        // Emit record from @wire adapter to make it available to the component
+        getSingleAccountViaSOQLAdapter.emit(mockGetSingleAccountViaSOQL);
+
+        return Promise.resolve().then(() => expect(element).toBeAccessible());
+    });
+
+    it('is accessible when error is returned', () => {
+        const ERROR = { message: 'An error message' };
+
+        // Create initial element
+        const element = createElement('c-single-records', {
+            is: SingleRecords
+        });
+        document.body.appendChild(element);
+
+        // Emit error from @wire
+        getSingleAccountViaSOQLAdapter.error(ERROR);
+
+        // Emit record from @wire adapter to make it available to the component
+        getSingleAccountViaSOQLAdapter.emit(mockGetSingleAccountViaSOQL);
+
+        return Promise.resolve().then(() => expect(element).toBeAccessible());
+    });
 });

@@ -1,7 +1,7 @@
 <template>
     <template if:true={showPopover}>
         <section
-            style="position: absolute; left: -50%; bottom: 150%;"
+            style="position: absolute; left: -50%; bottom: 150%"
             aria-describedby="dialog-body-id-5"
             aria-labelledby="dialog-heading-id-2"
             class="slds-popover slds-popover_error slds-nubbin_bottom-left"
@@ -37,9 +37,7 @@
                     </h2>
                 </div>
             </header>
-            <div class="slds-popover__body" id="dialog-body-id-5">
-                {errors}
-            </div>
+            <div class="slds-popover__body" id="dialog-body-id-5">{errors}</div>
         </section>
     </template>
 </template>

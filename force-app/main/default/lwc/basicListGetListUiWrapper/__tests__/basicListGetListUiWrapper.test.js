@@ -4,6 +4,9 @@ import BasicListGetListUiWrapper from 'c/basicListGetListUiWrapper';
 // Mock inner component, as it uses a wire adapter and crashes
 jest.mock('../../basicListGetListUi/basicListGetListUi');
 
+// Mock exampleWrapper component so that accessibility tests don't expect the visualforce iframe to load
+jest.mock('../../exampleWrapper/exampleWrapper');
+
 describe('c-basic-list-get-list-ui-wrapper', () => {
     afterEach(() => {
         // The jsdom instance is shared across test cases in a single file so reset the DOM
@@ -23,5 +26,15 @@ describe('c-basic-list-get-list-ui-wrapper', () => {
 
         const innerEl = exampleEl.querySelector('c-basic-list-get-list-ui');
         expect(innerEl).not.toBeNull();
+    });
+
+    it('is accessible', () => {
+        const element = createElement('c-basic-list-get-list-ui-wrapper', {
+            is: BasicListGetListUiWrapper
+        });
+
+        document.body.appendChild(element);
+
+        return Promise.resolve().then(() => expect(element).toBeAccessible());
     });
 });
