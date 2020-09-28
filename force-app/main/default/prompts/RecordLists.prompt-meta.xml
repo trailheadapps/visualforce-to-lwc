@@ -1,0 +1,67 @@
+<?xml version="1.0" encoding="UTF-8" ?>
+<Prompt xmlns="http://soap.sforce.com/2006/04/metadata">
+    <masterLabel>Record Lists</masterLabel>
+    <promptVersions>
+        <body
+        >To display lists of records, use lightning-datatable base component. It provides advanced features as inline editing, infinite scrolling, head and row level actions, and much more.</body>
+        <delayDays>1</delayDays>
+        <dismissButtonLabel>Close</dismissButtonLabel>
+        <displayPosition>TopCenter</displayPosition>
+        <displayType>FloatingPanel</displayType>
+        <isPublished>true</isPublished>
+        <masterLabel>Record Lists Step 1</masterLabel>
+        <publishedDate>2020-08-13</publishedDate>
+        <shouldDisplayActionButton>false</shouldDisplayActionButton>
+        <shouldIgnoreGlobalDelay>true</shouldIgnoreGlobalDelay>
+        <startDate>2020-08-13</startDate>
+        <stepNumber>1</stepNumber>
+        <targetAppDeveloperName>Visualforce_to_LWC</targetAppDeveloperName>
+        <targetPageKey1>Record_Lists</targetPageKey1>
+        <targetPageType>standard__navItemPage</targetPageType>
+        <timesToDisplay>1</timesToDisplay>
+        <title>Records Lists in lightning-datatable</title>
+        <userAccess>Everyone</userAccess>
+        <userProfileAccess>Everyone</userProfileAccess>
+        <versionNumber>1</versionNumber>
+    </promptVersions>
+    <promptVersions>
+        <body
+        >The first examples in this page showcase how to use lightning-datatable in combination with Apex to solve some typical record lists use cases.</body>
+        <dismissButtonLabel>Close</dismissButtonLabel>
+        <displayPosition>TopCenter</displayPosition>
+        <displayType>FloatingPanel</displayType>
+        <isPublished>false</isPublished>
+        <masterLabel>Record Lists Step 2</masterLabel>
+        <shouldDisplayActionButton>false</shouldDisplayActionButton>
+        <shouldIgnoreGlobalDelay>true</shouldIgnoreGlobalDelay>
+        <stepNumber>2</stepNumber>
+        <targetAppDeveloperName>Visualforce_to_LWC</targetAppDeveloperName>
+        <targetPageKey1>Record_Lists</targetPageKey1>
+        <targetPageType>standard__navItemPage</targetPageType>
+        <title>Retrieving Records with Apex</title>
+        <userAccess>Everyone</userAccess>
+        <userProfileAccess>Everyone</userProfileAccess>
+        <versionNumber>1</versionNumber>
+    </promptVersions>
+    <promptVersions>
+        <actionButtonLabel>Next Tour</actionButtonLabel>
+        <actionButtonLink>/lightning/n/Error_Handling</actionButtonLink>
+        <body
+        >At the bottom of the page, you can find some examples that have been reimplemented to use a LDS wire adapter, getListUi. getListUi allows to retrieve records from a specified listview. Note that this adapter is in beta.</body>
+        <dismissButtonLabel>Close</dismissButtonLabel>
+        <displayPosition>BottomCenter</displayPosition>
+        <displayType>FloatingPanel</displayType>
+        <isPublished>false</isPublished>
+        <masterLabel>Record Lists Step 3</masterLabel>
+        <shouldDisplayActionButton>true</shouldDisplayActionButton>
+        <shouldIgnoreGlobalDelay>true</shouldIgnoreGlobalDelay>
+        <stepNumber>3</stepNumber>
+        <targetAppDeveloperName>Visualforce_to_LWC</targetAppDeveloperName>
+        <targetPageKey1>Record_Lists</targetPageKey1>
+        <targetPageType>standard__navItemPage</targetPageType>
+        <title>Using getListUi(beta) Wire Adapter</title>
+        <userAccess>Everyone</userAccess>
+        <userProfileAccess>Everyone</userProfileAccess>
+        <versionNumber>1</versionNumber>
+    </promptVersions>
+</Prompt>

@@ -1,0 +1,49 @@
+<?xml version="1.0" encoding="UTF-8" ?>
+<Prompt xmlns="http://soap.sforce.com/2006/04/metadata">
+    <masterLabel>Error Handling</masterLabel>
+    <promptVersions>
+        <body
+        >In the last years user experience patterns have evolved a lot. For that reason, our Lightning Design System suggest surfacing errors in LWC in different ways. Pick the best solution depending on your use case.</body>
+        <delayDays>1</delayDays>
+        <dismissButtonLabel>Close</dismissButtonLabel>
+        <displayPosition>TopCenter</displayPosition>
+        <displayType>FloatingPanel</displayType>
+        <isPublished>true</isPublished>
+        <masterLabel>Error Handling Step 1</masterLabel>
+        <publishedDate>2020-08-13</publishedDate>
+        <shouldDisplayActionButton>false</shouldDisplayActionButton>
+        <shouldIgnoreGlobalDelay>true</shouldIgnoreGlobalDelay>
+        <startDate>2020-08-13</startDate>
+        <stepNumber>1</stepNumber>
+        <targetAppDeveloperName>Visualforce_to_LWC</targetAppDeveloperName>
+        <targetPageKey1>Error_Handling</targetPageKey1>
+        <targetPageType>standard__navItemPage</targetPageType>
+        <timesToDisplay>1</timesToDisplay>
+        <title>Error Handling Patterns</title>
+        <userAccess>Everyone</userAccess>
+        <userProfileAccess>Everyone</userProfileAccess>
+        <versionNumber>1</versionNumber>
+    </promptVersions>
+    <promptVersions>
+        <actionButtonLabel>Code Tours</actionButtonLabel>
+        <actionButtonLink
+        >https://github.com/trailheadapps/visualforce-to-lwc#code-tours</actionButtonLink>
+        <body
+        >You&#39;ve now completed the Visualforce to LWC sample app tour. &lt;b&gt;We hope you enjoyed the trip and that you feel empowered to move from Visualforce to LWC.&lt;/b&gt; Take a look at VSCode code tours to learn more about the app code.</body>
+        <dismissButtonLabel>Close</dismissButtonLabel>
+        <displayPosition>TopCenter</displayPosition>
+        <displayType>FloatingPanel</displayType>
+        <isPublished>false</isPublished>
+        <masterLabel>Error Handling Step 2</masterLabel>
+        <shouldDisplayActionButton>true</shouldDisplayActionButton>
+        <shouldIgnoreGlobalDelay>true</shouldIgnoreGlobalDelay>
+        <stepNumber>2</stepNumber>
+        <targetAppDeveloperName>Visualforce_to_LWC</targetAppDeveloperName>
+        <targetPageKey1>Error_Handling</targetPageKey1>
+        <targetPageType>standard__navItemPage</targetPageType>
+        <title>Wrapping It Up</title>
+        <userAccess>Everyone</userAccess>
+        <userProfileAccess>Everyone</userProfileAccess>
+        <versionNumber>1</versionNumber>
+    </promptVersions>
+</Prompt>

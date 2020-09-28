@@ -66,6 +66,14 @@ A collection of code examples to help you move from Visualforce to LWC. Each exa
     sfdx force:user:permset:assign -n Visualforce_to_LWC
     ```
 
+1. (Optional) Assign the `Walkthroughs` permission set to the default user.
+
+> Note: this will enable In App Guidance Walkthroughs, allowing you to be taken through a guided tour of the sample app.
+
+    ```
+    sfdx force:user:permset:assign -n Walkthroughs
+    ```
+
 1. Import sample data:
 
     ```
@@ -92,7 +100,13 @@ Make sure to start from a brand-new environment to avoid conflicts with previous
 
 1. If you are setting up a Developer Edition: go to **Setup**, under **My Domain**, [register a My Domain](https://help.salesforce.com/articleView?id=domain_name_setup.htm&type=5).
 
-1. Click [this link](https://login.salesforce.com/packaging/installPackage.apexp?p0=04t3h000004RblVAAS) to install the Visualforce to LWC unlocked package in your org.
+1. Start an In-App Guidance trial
+
+    - In Setup, navigate to **_User Engagement > In-App Guidance_**.
+    - Click on the **_Start Walkthrough Trial_**.
+    - Click on **_Submit_**.
+
+1. Click [this link](https://login.salesforce.com/packaging/installPackage.apexp?p0=04t3h000004RbMuAAK) to install the Visualforce to LWC unlocked package in your org.
 
 1. Select **Install for All Users**
 
@@ -138,6 +152,12 @@ Make sure to start from a brand-new environment to avoid conflicts with previous
     ```
 
 1. If you are setting up a Developer Edition: go to **Setup**, under **My Domain**, [register a My Domain](https://help.salesforce.com/articleView?id=domain_name_setup.htm&type=5).
+
+1. Start an In-App Guidance trial
+
+    - In Setup, navigate to **_User Engagement > In-App Guidance_**.
+    - Click on the **_Start Walkthrough Trial_**.
+    - Click on **_Submit_**.
 
 1. Run this command in a terminal to deploy the app.
 
