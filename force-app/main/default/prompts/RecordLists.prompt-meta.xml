@@ -6,7 +6,7 @@
         >To display lists of records, use lightning-datatable base component. It provides advanced features as inline editing, infinite scrolling, head and row level actions, and much more.</body>
         <delayDays>1</delayDays>
         <dismissButtonLabel>Close</dismissButtonLabel>
-        <displayPosition>BottomCenter</displayPosition>
+        <displayPosition>TopCenter</displayPosition>
         <displayType>FloatingPanel</displayType>
         <isPublished>true</isPublished>
         <masterLabel>Record Lists Step 1</masterLabel>
@@ -28,7 +28,7 @@
         <body
         >The first examples in this page showcase how to use lightning-datatable in combination with Apex to solve some typical record lists use cases.</body>
         <dismissButtonLabel>Close</dismissButtonLabel>
-        <displayPosition>BottomCenter</displayPosition>
+        <displayPosition>TopCenter</displayPosition>
         <displayType>FloatingPanel</displayType>
         <isPublished>false</isPublished>
         <masterLabel>Record Lists Step 2</masterLabel>
@@ -47,7 +47,7 @@
         <actionButtonLabel>Next Tour</actionButtonLabel>
         <actionButtonLink>/lightning/n/Error_Handling</actionButtonLink>
         <body
-        >At the bottom of the page, you can find some examples that have been reimplemented to use a LDS wire adapter, getListUi. getListUi allows to retrieve records from a specified listview. Beware this adapter is in beta.</body>
+        >At the bottom of the page, you can find some examples that have been reimplemented to use a LDS wire adapter, getListUi. getListUi allows to retrieve records from a specified listview. Note that this adapter is in beta.</body>
         <dismissButtonLabel>Close</dismissButtonLabel>
         <displayPosition>BottomCenter</displayPosition>
         <displayType>FloatingPanel</displayType>

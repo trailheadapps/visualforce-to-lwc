@@ -6,7 +6,7 @@
         >Welcome to the Visualforce to LWC sample app. The app contains a collection of code examples to help you move from Visualforce to LWC.</body>
         <delayDays>1</delayDays>
         <dismissButtonLabel>Close</dismissButtonLabel>
-        <displayPosition>BottomCenter</displayPosition>
+        <displayPosition>TopCenter</displayPosition>
         <displayType>FloatingPanel</displayType>
         <isPublished>true</isPublished>
         <masterLabel>Layout Step 1</masterLabel>
@@ -28,7 +28,7 @@
         <body
         >The tabs above ☝️ identify the features explored on each tab. This tab contains examples that show how to build layouts. You&#39;ll find other walk throughs in other tabs.</body>
         <dismissButtonLabel>Close</dismissButtonLabel>
-        <displayPosition>BottomCenter</displayPosition>
+        <displayPosition>TopCenter</displayPosition>
         <displayType>FloatingPanel</displayType>
         <isPublished>false</isPublished>
         <masterLabel>Layout Step 3</masterLabel>
@@ -47,7 +47,7 @@
         <body
         >Each example is implemented in Visualforce and in LWC. Take a look at the Page Blocks card. The Visualforce implementation lays on the left, and the LWC implementation on the right.</body>
         <dismissButtonLabel>Close</dismissButtonLabel>
-        <displayPosition>BottomCenter</displayPosition>
+        <displayPosition>TopCenter</displayPosition>
         <displayType>FloatingPanel</displayType>
         <isPublished>false</isPublished>
         <masterLabel>Layout Step 2</masterLabel>
@@ -66,7 +66,7 @@
         <body
         >Since the app contains code samples, finding the code is simple. Click the &quot;View Visualforce Source&quot; or the &quot;View LWC Source&quot; links on any card and you will be taken to its location on GitHub. (Just don&#39;t forget to come back!)</body>
         <dismissButtonLabel>Close</dismissButtonLabel>
-        <displayPosition>BottomCenter</displayPosition>
+        <displayPosition>TopCenter</displayPosition>
         <displayType>FloatingPanel</displayType>
         <isPublished>false</isPublished>
         <masterLabel>Layout Step 4</masterLabel>
@@ -85,9 +85,9 @@
         <actionButtonLabel>Next Tour</actionButtonLabel>
         <actionButtonLink>/lightning/n/Single_Records</actionButtonLink>
         <body
-        >Congrat&#39;s You&#39;ve finished the first walkthrough tour of &lt;b&gt;Visualforce to LWC&lt;/b&gt;. If you want to learn more about the examples in this app, you can click &quot;Next Tour&quot; below, and you&#39;ll move on to another.</body>
+        >Congrat&#39;s You&#39;ve finished the first walkthrough tour of &lt;b&gt;Visualforce to LWC&lt;/b&gt;. If you want to learn more about the examples in this app, you can click &quot;Next Tour&quot; below. Then click &quot;Take Me there!&quot; to find the next tour.</body>
         <dismissButtonLabel>Close</dismissButtonLabel>
-        <displayPosition>BottomCenter</displayPosition>
+        <displayPosition>TopCenter</displayPosition>
         <displayType>FloatingPanel</displayType>
         <isPublished>false</isPublished>
         <masterLabel>Layout Step 5</masterLabel>

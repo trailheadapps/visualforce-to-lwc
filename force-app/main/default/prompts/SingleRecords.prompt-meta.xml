@@ -6,7 +6,7 @@
         >In this tab you can find examples of how to use lightning-record-form, lightning-record-edit-form and lightning-record-view-form to implement single record forms.</body>
         <delayDays>1</delayDays>
         <dismissButtonLabel>Close</dismissButtonLabel>
-        <displayPosition>BottomCenter</displayPosition>
+        <displayPosition>TopCenter</displayPosition>
         <displayType>FloatingPanel</displayType>
         <isPublished>true</isPublished>
         <masterLabel>Single Records Step 1</masterLabel>
@@ -29,7 +29,7 @@
         <body
         >The base form components use Lightning Data Service (LDS) under the hood, leveraging its caching and synchronization capabilities. They are very easy to use and require just a few lines of code.</body>
         <dismissButtonLabel>Close</dismissButtonLabel>
-        <displayPosition>BottomCenter</displayPosition>
+        <displayPosition>TopCenter</displayPosition>
         <displayType>FloatingPanel</displayType>
         <isPublished>false</isPublished>
         <masterLabel>Single Records Step 2</masterLabel>
@@ -49,7 +49,7 @@
         <body
         >lightning-record-form is the simplest one to use. lightning-record-edit-form and lightning-record-view-form allow for more customization. Explore the different examples in this page to know how to use them.</body>
         <dismissButtonLabel>Close</dismissButtonLabel>
-        <displayPosition>BottomCenter</displayPosition>
+        <displayPosition>TopCenter</displayPosition>
         <displayType>FloatingPanel</displayType>
         <isPublished>false</isPublished>
         <masterLabel>Single Records Step 3</masterLabel>
@@ -71,7 +71,7 @@
         <body
         >You can retrieve Salesforce data in JavaScript using LDS wire adapters. The &quot;View Record with Parent Record Data&quot; example uses getRecord to retrieve fields from a related record. Continue learning about data access in the next tour.</body>
         <dismissButtonLabel>Close</dismissButtonLabel>
-        <displayPosition>BottomCenter</displayPosition>
+        <displayPosition>BottomLeft</displayPosition>
         <displayType>FloatingPanel</displayType>
         <isPublished>false</isPublished>
         <masterLabel>Single Records Step 4</masterLabel>

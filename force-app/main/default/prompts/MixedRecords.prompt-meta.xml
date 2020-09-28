@@ -28,7 +28,7 @@
         <actionButtonLabel>Next Tour</actionButtonLabel>
         <actionButtonLink>/lightning/n/Record_Lists</actionButtonLink>
         <body
-        >To perform more customized transactional operations, call Apex methods. Apex methods can make use the LDS cache, but you&#39;ll have to implement your own synchronization mechanisms, if you need them. Explore the second example of this page.</body>
+        >To perform more customized transactional operations, call Apex methods. Apex methods can make use of the LDS cache, but you&#39;ll have to implement your own synchronization mechanisms, if you need them. Explore the second example of this page.</body>
         <dismissButtonLabel>Close</dismissButtonLabel>
         <displayPosition>BottomCenter</displayPosition>
         <displayType>FloatingPanel</displayType>
