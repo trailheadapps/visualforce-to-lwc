@@ -27,4 +27,22 @@ private class TestPageMessagesFormController {
             'The message should contain the correct text.'
         );
     }
+
+    @isTest
+    static void cancel() {
+        // Test Data Creation
+        PageMessagesFormController controller = new PageMessagesFormController();
+
+        // Method Being Tested
+        Test.startTest();
+        PageReference pageRef = controller.cancel();
+        Test.stopTest();
+
+        // Assertions
+        System.assertEquals(
+            ApexPages.currentPage(),
+            pageRef,
+            'The current page reference should have been returned.'
+        );
+    }
 }
