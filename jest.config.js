@@ -1,4 +1,8 @@
 const { jestConfig } = require('@salesforce/sfdx-lwc-jest/config');
+
+const setupFilesAfterEnv = jestConfig.setupFilesAfterEnv || [];
+setupFilesAfterEnv.push('<rootDir>/jest-sa11y-setup.js');
+
 module.exports = {
     ...jestConfig,
     moduleNameMapper: {
@@ -6,9 +10,7 @@ module.exports = {
         '^lightning/navigation$':
             '<rootDir>/force-app/test/jest-mocks/lightning/navigation',
         '^lightning/platformShowToastEvent$':
-            '<rootDir>/force-app/test/jest-mocks/lightning/platformShowToastEvent',
-        '^lightning/navigation$':
-            '<rootDir>/force-app/test/jest-mocks/lightning/navigation'
+            '<rootDir>/force-app/test/jest-mocks/lightning/platformShowToastEvent'
     },
-    setupFilesAfterEnv: ['<rootDir>/jest-sa11y-setup.js']
+    setupFilesAfterEnv
 };
