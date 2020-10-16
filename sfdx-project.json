@@ -4,19 +4,13 @@
             "path": "force-app",
             "default": true,
             "package": "vf2lwc",
-            "versionName": "Summer '20",
-            "versionNumber": "0.2.0.NEXT"
+            "versionName": "Winter '22",
+            "versionNumber": "50.0.0.NEXT"
         }
     ],
     "namespace": "",
     "sourceApiVersion": "50.0",
     "packageAliases": {
-        "vf2lwc": "0Ho3h000000CaiBCAS",
-        "vf2lwc@0.2.0-2": "04t3h000004RZuLAAW",
-        "vf2lwc@0.2.0-6": "04t3h000004RZupAAG",
-        "vf2lwc@0.2.0-11": "04t3h000004RbMuAAK",
-        "vf2lwc@0.2.0-17": "04t3h000004RblLAAS",
-        "vf2lwc@0.2.0-18": "04t3h000004RblVAAS",
-        "vf2lwc@0.2.0-20": "04t3h000004RbrjAAC"
+        "vf2lwc": "0Ho3h000000CaiBCAS"
     }
 }
