@@ -208,7 +208,7 @@
         ],
         "count": 10,
         "currentPageToken": "0",
-        "currentPageUrl": "/services/data/v49.0/ui-api/list-records/Account/All_Accounts?pageSize=50&pageToken=0",
+        "currentPageUrl": "/services/data/v50.0/ui-api/list-records/Account/All_Accounts?pageSize=50&pageToken=0",
         "nextPageToken": null,
         "nextPageUrl": null,
         "previousPageToken": null,

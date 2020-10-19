@@ -43,4 +43,25 @@ private class TestCreateMixedRecordsApexControllerLwc {
             'The created opportunity has an incorrect CloseDate.'
         );
     }
+
+    @isTest
+    static void exceptionCase() {
+        // Method Being Tested
+        try {
+            Test.startTest();
+            CreateMixedRecordsApexControllerLwc.createContactAndOpportunity(
+                null,
+                null,
+                null
+            );
+            Test.stopTest();
+            System.assert(false, 'Exception should have happened');
+        } catch (Exception e) {
+            // Assertions
+            System.assert(
+                e instanceof MyException,
+                'Expected to receive a custom MyException.'
+            );
+        }
+    }
 }

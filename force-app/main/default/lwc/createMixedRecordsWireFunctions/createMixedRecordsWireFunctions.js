@@ -36,7 +36,7 @@ export default class CreateMixedRecordsWireFunctions extends LightningElement {
         // Note: In this example we generate the record input structure from scratch for simplicity.
         // Consider to use the generateRecordInputForCreate() function instead.
         // The function will create the record input for you, including only fields that are createable.
-        // Check https://developer.salesforce.com/docs/component-library/documentation/en/49.0/lwc/reference_generate_record_input_update
+        // Check https://developer.salesforce.com/docs/component-library/documentation/en/50.0/lwc/reference_generate_record_input_update
         const recordInput = {
             apiName: CONTACT_OBJECT.objectApiName,
             fields: {
@@ -54,7 +54,7 @@ export default class CreateMixedRecordsWireFunctions extends LightningElement {
         // Note: In this example we generate the record input structure from scratch for simplicity.
         // Consider to use the generateRecordInputForCreate() function instead.
         // The function will create the record input for you, including only fields that are createable.
-        // Check https://developer.salesforce.com/docs/component-library/documentation/en/49.0/lwc/reference_generate_record_input_update
+        // Check https://developer.salesforce.com/docs/component-library/documentation/en/50.0/lwc/reference_generate_record_input_update
         const recordInput = {
             apiName: OPPORTUNITY_OBJECT.objectApiName,
             fields: {
