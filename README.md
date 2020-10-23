@@ -68,7 +68,7 @@ A collection of code examples to help you move from Visualforce to LWC. Each exa
 
 1. (Optional) Assign the `Walkthroughs` permission set to the default user.
 
-> Note: this will enable In App Guidance Walkthroughs, allowing you to be taken through a guided tour of the sample app.
+> Note: this will enable your user to use In-App Guidance Walkthroughs, allowing you to be taken through a guided tour of the sample app. The Walkthroughs permission set gets auto-created with In-App guidance activation.
 
     ```
     sfdx force:user:permset:assign -n Walkthroughs
