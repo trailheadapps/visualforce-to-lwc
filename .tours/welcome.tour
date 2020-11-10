@@ -2,26 +2,31 @@
     "title": "1- Welcome to Visualforce to LWC Sample App",
     "steps": [
         {
+            "title" : "Welcome",
             "file": "force-app/main/default/lwc/pageBlocksWrapper/pageBlocksWrapper.html",
             "description": "Welcome to Visualforce to LWC Code Tours! Let's first take a look at how each example is structured. The code for each example is defined in a wrapper component. For instance, this is the wrapper component for the Page blocks example.",
             "line": 2
         },
         {
+            "title":"Wrapper Structure",
             "file": "force-app/main/default/lwc/pageBlocksWrapper/pageBlocksWrapper.html",
             "description": "Each wrapper references the example's Visualforce and LWC implementations. Each Visualforce implementation is enclosed in a Visualforce page.",
             "line": 6
         },
         {
+            "title": "Visualforce",
             "file": "force-app/main/default/pages/pageBlocks.page",
             "line": 1,
             "description": "For instance, this is the Visualforce page for the Page Blocks example. When you click on \"View ... Source\" on the app, this is the file that will open in github."
         },
         {
+            "title": "LWC",
             "file": "force-app/main/default/lwc/pageBlocksWrapper/pageBlocksWrapper.html",
             "description": "Each example's LWC solution is implemented in a Lightning web component.",
             "line": 4
         },
         {
+            "title": "View Source",
             "file": "force-app/main/default/lwc/pageBlocks/pageBlocks.html",
             "line": 1,
             "description": "This is the Lightning web component for the Page Blocks example. When you click on \"View LWC Source\" on the app, this is the component folder that will open in github. Continue with the next code tours to learn more about some of the examples."

@@ -2,16 +2,19 @@
     "title": "3- Mixed Records Examples",
     "steps": [
         {
+            "title": "Creating a record",
             "file": "force-app/main/default/lwc/createMixedRecordsWireFunctions/createMixedRecordsWireFunctions.js",
             "line": 3,
             "description": "The \"Create Mixed Records Wire Functions\" example shows how to use the [createRecord](https://developer.salesforce.com/docs/component-library/documentation/en/lwc/lwc.data_salesforce_write) LDS function to create mixed single records. LDS functions operation are reflected in the LDS cache. We start by importing the createRecord function at the top."
         },
         {
+            "title": "Independence of transactions",
             "file": "force-app/main/default/lwc/createMixedRecordsWireFunctions/createMixedRecordsWireFunctions.js",
             "line": 30,
             "description": "We'll create a contact and an opportunity by calling createRecord twice. The two createRecord operations are independent and run in different transactions. One operation may fail, and the other one succeed."
         },
         {
+            "title": "Apex for transactional operations",
             "file": "force-app/main/default/lwc/createMixedRecordsApex/createMixedRecordsApex.js",
             "line": 4,
             "description": "To perform transactional operations, we recommended to use Apex instead. That's what we do in the \"Create Mixed Records Apex\" example. Here at the top we import an Apex method that will create both a contact and an opportunity in a transactional way. Learn more about LWC & Apex [here](https://developer.salesforce.com/docs/component-library/documentation/en/lwc/lwc.apex)."
