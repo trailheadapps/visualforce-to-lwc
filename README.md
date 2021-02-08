@@ -146,7 +146,7 @@ Make sure to start from a brand-new environment to avoid conflicts with previous
 1. Authorize with your Trailhead Playground or Developer org and provide it with an alias (**mydevorg** in the command below):
 
     ```
-    sfdx force:auth:web:login -s -a mydevorg
+    sfdx auth:web:login -s -a mydevorg
     ```
 
 1. Start an In-App Guidance trial
