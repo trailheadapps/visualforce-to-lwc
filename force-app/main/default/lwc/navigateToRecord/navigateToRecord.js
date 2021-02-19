@@ -7,7 +7,8 @@ export default class NavigateToRecord extends NavigationMixin(
     @api recordId;
     @api label;
 
-    navigate() {
+    navigate(event) {
+        event.preventDefault();
         this[NavigationMixin.Navigate]({
             type: 'standard__recordPage',
             attributes: {
