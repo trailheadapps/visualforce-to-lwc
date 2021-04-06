@@ -1,6 +1,6 @@
 # Visualforce to LWC
 
-[![CI Workflow](https://github.com/trailheadapps/visualforce-to-lwc/workflows/CI/badge.svg)](https://github.com/trailheadapps/visualforce-to-lwc/actions?query=workflow%3ACI) [![Packaging Workflow](https://github.com/trailheadapps/visualforce-to-lwc/workflows/Packaging/badge.svg)](https://github.com/trailheadapps/visualforce-to-lwc/actions?query=workflow%3APackaging) [![codecov](https://codecov.io/gh/trailheadapps/visualforce-to-lwc/branch/master/graph/badge.svg)](https://codecov.io/gh/trailheadapps/visualforce-to-lwc)
+[![CI Workflow](https://github.com/trailheadapps/visualforce-to-lwc/workflows/CI/badge.svg)](https://github.com/trailheadapps/visualforce-to-lwc/actions?query=workflow%3ACI) [![Packaging Workflow](https://github.com/trailheadapps/visualforce-to-lwc/workflows/Packaging/badge.svg)](https://github.com/trailheadapps/visualforce-to-lwc/actions?query=workflow%3APackaging) [![codecov](https://codecov.io/gh/trailheadapps/visualforce-to-lwc/branch/main/graph/badge.svg)](https://codecov.io/gh/trailheadapps/visualforce-to-lwc)
 
 ![Visualforce to LWC logo](vf-to-lwc-logo.png)
 
@@ -110,7 +110,7 @@ Make sure to start from a brand-new environment to avoid conflicts with previous
 
 1. Import Account and Contacts data:
 
-    - Click [here](https://raw.githubusercontent.com/trailheadapps/visualforce-to-lwc/master/data/Accounts-Contacts.csv) to acccess the **Accounts-Contacts.csv** file. Right click in the browser window and save the file as **Accounts-Contacts.csv**.
+    - Click [here](https://raw.githubusercontent.com/trailheadapps/visualforce-to-lwc/main/data/Accounts-Contacts.csv) to acccess the **Accounts-Contacts.csv** file. Right click in the browser window and save the file as **Accounts-Contacts.csv**.
     - In **Setup**, type **Data Import** in the Quick Find box and click **Data Import Wizard**.
     - Click **Launch Wizard**.
     - Click **Accounts and Contacts**, and click **Add New Records**.
