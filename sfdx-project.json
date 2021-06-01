@@ -4,8 +4,8 @@
             "path": "force-app",
             "default": true,
             "package": "vf2lwc",
-            "versionName": "Spring '21",
-            "versionNumber": "51.0.0.NEXT"
+            "versionName": "Summer '21",
+            "versionNumber": "52.0.0.NEXT"
         }
     ],
     "namespace": "",
