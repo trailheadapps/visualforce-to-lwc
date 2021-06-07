@@ -151,9 +151,8 @@ describe('c-page-messages-form', () => {
                         'lightning-button-icon'
                     );
                     expect(errorButtonIconEl).not.toBeNull();
-                    const errorPopoverEl = element.shadowRoot.querySelector(
-                        'c-error-popover'
-                    );
+                    const errorPopoverEl =
+                        element.shadowRoot.querySelector('c-error-popover');
                     expect(errorPopoverEl).not.toBeNull();
                 });
         });

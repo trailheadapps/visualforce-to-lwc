@@ -3,9 +3,8 @@ import PaginatedList from 'c/paginatedList';
 import getAccountsPaginated from '@salesforce/apex/PaginatedListControllerLwc.getAccountsPaginated';
 import { registerLdsTestWireAdapter } from '@salesforce/sfdx-lwc-jest';
 
-const getAccountsPaginatedAdapter = registerLdsTestWireAdapter(
-    getAccountsPaginated
-);
+const getAccountsPaginatedAdapter =
+    registerLdsTestWireAdapter(getAccountsPaginated);
 
 const mockGetAccountData = require('./data/mockGetAccountData.json');
 
@@ -122,9 +121,8 @@ describe('c-paginated-list', () => {
         return Promise.resolve()
             .then(() => {
                 // Request next page
-                const paginatorEl = element.shadowRoot.querySelector(
-                    'c-paginator'
-                );
+                const paginatorEl =
+                    element.shadowRoot.querySelector('c-paginator');
                 paginatorEl.dispatchEvent(new CustomEvent('next'));
             })
             .then(() => {
@@ -151,9 +149,8 @@ describe('c-paginated-list', () => {
         return Promise.resolve()
             .then(() => {
                 // Request previous page
-                const paginatorEl = element.shadowRoot.querySelector(
-                    'c-paginator'
-                );
+                const paginatorEl =
+                    element.shadowRoot.querySelector('c-paginator');
                 paginatorEl.dispatchEvent(new CustomEvent('previous'));
             })
             .then(() => {
@@ -180,9 +177,8 @@ describe('c-paginated-list', () => {
         // will automatically wait for the Promise chain to complete before
         // ending the test and fail the test if the promise rejects.
         return Promise.resolve().then(() => {
-            const errorPanelEl = element.shadowRoot.querySelector(
-                'c-error-panel'
-            );
+            const errorPanelEl =
+                element.shadowRoot.querySelector('c-error-panel');
             expect(errorPanelEl).not.toBeNull();
             expect(errorPanelEl.errors.body).toStrictEqual(ERROR);
         });

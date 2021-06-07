@@ -36,9 +36,8 @@ describe('c-single-records', () => {
         // ending the test and fail the test if the promise rejects.
         return Promise.resolve().then(() => {
             // Select elements for validation
-            const buttonEl = element.shadowRoot.querySelector(
-                'lightning-button'
-            );
+            const buttonEl =
+                element.shadowRoot.querySelector('lightning-button');
             expect(buttonEl).not.toBeNull();
         });
     });
@@ -64,9 +63,8 @@ describe('c-single-records', () => {
         // ending the test and fail the test if the promise rejects.
         return Promise.resolve().then(() => {
             // Get button from the DOM and simulate user click
-            const buttonEl = element.shadowRoot.querySelector(
-                'lightning-button'
-            );
+            const buttonEl =
+                element.shadowRoot.querySelector('lightning-button');
             buttonEl.click();
 
             const { pageReference } = getNavigateCalledWith();
@@ -97,9 +95,8 @@ describe('c-single-records', () => {
             // will automatically wait for the Promise chain to complete before
             // ending the test and fail the test if the promise rejects.
             return Promise.resolve().then(() => {
-                const errorPanelEl = element.shadowRoot.querySelector(
-                    'c-error-panel'
-                );
+                const errorPanelEl =
+                    element.shadowRoot.querySelector('c-error-panel');
                 // Ensure the error panel appears when there is an error state
                 expect(errorPanelEl).not.toBeNull();
                 expect(errorPanelEl.errors.body).toStrictEqual(ERROR);

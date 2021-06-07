@@ -51,9 +51,8 @@ describe('c-list-infinite-scrolling-get-list-ui', () => {
         getListUiAdapter.error(MESSAGE);
 
         return Promise.resolve().then(() => {
-            const errorPanelEl = element.shadowRoot.querySelector(
-                'c-error-panel'
-            );
+            const errorPanelEl =
+                element.shadowRoot.querySelector('c-error-panel');
             expect(errorPanelEl.errors.body).toBe(MESSAGE);
         });
     });
