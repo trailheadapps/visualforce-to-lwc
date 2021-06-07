@@ -26,14 +26,13 @@ describe('c-page-messages-form', () => {
         jest.clearAllMocks();
     });
 
-    // Helper function to wait until the microtask queue is empty. This is needed for promise
-    // timing when calling imperative Apex.
-    function flushPromises() {
-        // eslint-disable-next-line no-undef
-        return new Promise((resolve) => setImmediate(resolve));
+    // Helper function to wait until the microtask queue is empty.
+    // Used to wait for asynchronous DOM updates.
+    async function flushPromises() {
+        return Promise.resolve();
     }
 
-    it('displays no error by default', () => {
+    it('displays no error by default', async () => {
         // Create initial element
         const element = createElement('c-page-messages-form', {
             is: PageMessagesForm
@@ -45,7 +44,7 @@ describe('c-page-messages-form', () => {
         expect(listEl).toBeNull();
     });
 
-    it('updates city name when input changes', () => {
+    it('updates city name when input changes', async () => {
         // Create initial element
         const element = createElement('c-page-messages-form', {
             is: PageMessagesForm
@@ -58,15 +57,13 @@ describe('c-page-messages-form', () => {
             new CustomEvent('change', { detail: { value: MOCK_CITY_NAME } })
         );
 
-        // Return a promise to wait for any asynchronous DOM updates. Jest
-        // will automatically wait for the Promise chain to complete before
-        // ending the test and fail the test if the promise rejects.
-        return Promise.resolve().then(() => {
-            expect(inputEl.value).toBe(MOCK_CITY_NAME);
-        });
+        // Wait for any asynchronous DOM updates
+        await flushPromises();
+
+        expect(inputEl.value).toBe(MOCK_CITY_NAME);
     });
 
-    it('clears city name when cancel button clicked', () => {
+    it('clears city name when cancel button clicked', async () => {
         // Create initial element
         const element = createElement('c-page-messages-form', {
             is: PageMessagesForm
@@ -80,16 +77,14 @@ describe('c-page-messages-form', () => {
         // Click the cancel button
         element.shadowRoot.querySelector('.cancel').click();
 
-        // Return a promise to wait for any asynchronous DOM updates. Jest
-        // will automatically wait for the Promise chain to complete before
-        // ending the test and fail the test if the promise rejects.
-        return Promise.resolve().then(() => {
-            expect(inputEl.value).toBe('');
-        });
+        // Wait for any asynchronous DOM updates
+        await flushPromises();
+
+        expect(inputEl.value).toBe('');
     });
 
     describe('createCity Apex calls', () => {
-        it('creates city when save button clicked', () => {
+        it('creates city when save button clicked', async () => {
             // Create initial element
             const element = createElement('c-page-messages-form', {
                 is: PageMessagesForm
@@ -105,24 +100,22 @@ describe('c-page-messages-form', () => {
             // Mock create city Apex call result
             createCity.mockResolvedValue(null);
 
-            // Return an immediate flushed promise (after the Apex call) to then
-            // wait for any asynchronous DOM updates. Jest will automatically wait
-            // for the Promise chain to complete before ending the test and fail
-            // the test if the promise ends in the rejected state.
-            return Promise.resolve()
-                .then(() => {
-                    // Click the save button
-                    element.shadowRoot.querySelector('.save').click();
-                })
-                .then(() => {
-                    // Validate parameters of mocked Apex call
-                    expect(createCity).toHaveBeenCalledWith({
-                        cityName: MOCK_CITY_NAME
-                    });
-                });
+            // Wait for any asynchronous DOM updates
+            await flushPromises();
+
+            // Click the save button
+            element.shadowRoot.querySelector('.save').click();
+
+            // Wait for any asynchronous DOM updates
+            await flushPromises();
+
+            // Validate parameters of mocked Apex call
+            expect(createCity).toHaveBeenCalledWith({
+                cityName: MOCK_CITY_NAME
+            });
         });
 
-        it('displays errors when create city fails', () => {
+        it('displays errors when create city fails', async () => {
             // Create initial element
             const element = createElement('c-page-messages-form', {
                 is: PageMessagesForm
@@ -132,33 +125,28 @@ describe('c-page-messages-form', () => {
             // Mock create city Apex error
             createCity.mockRejectedValue(MOCK_ERROR);
 
-            // Return an immediate flushed promise (after the Apex call) to then
-            // wait for any asynchronous DOM updates. Jest will automatically wait
-            // for the Promise chain to complete before ending the test and fail
-            // the test if the promise ends in the rejected state.
-            return flushPromises()
-                .then(() => {
-                    // Click the save button
-                    element.shadowRoot.querySelector('.save').click();
-                })
-                .then(() => {
-                    // Wait Apex call to resolve and for rerender
-                    return flushPromises();
-                })
-                .then(() => {
-                    // Validate that error is showing up
-                    const errorButtonIconEl = element.shadowRoot.querySelector(
-                        'lightning-button-icon'
-                    );
-                    expect(errorButtonIconEl).not.toBeNull();
-                    const errorPopoverEl =
-                        element.shadowRoot.querySelector('c-error-popover');
-                    expect(errorPopoverEl).not.toBeNull();
-                });
+            // Wait for any asynchronous DOM updates
+            await flushPromises();
+
+            // Click the save button
+            element.shadowRoot.querySelector('.save').click();
+
+            // Wait for any asynchronous DOM updates
+            await flushPromises();
+
+            // Validate that error is showing up
+            const errorButtonIconEl = element.shadowRoot.querySelector(
+                'lightning-button-icon'
+            );
+            expect(errorButtonIconEl).not.toBeNull();
+
+            const errorPopoverEl =
+                element.shadowRoot.querySelector('c-error-popover');
+            expect(errorPopoverEl).not.toBeNull();
         });
     });
 
-    it('is accessible', () => {
+    it('is accessible', async () => {
         // Create initial element
         const element = createElement('c-page-messages-form', {
             is: PageMessagesForm
@@ -168,6 +156,9 @@ describe('c-page-messages-form', () => {
         // Mock create city Apex error
         createCity.mockRejectedValue(MOCK_ERROR);
 
-        return Promise.resolve().then(() => expect(element).toBeAccessible());
+        // Wait for any asynchronous DOM updates
+        await flushPromises();
+
+        await expect(element).toBeAccessible();
     });
 });

@@ -32,7 +32,7 @@ describe('c-page-messages-data-retrieval-wrapper', () => {
         expect(innerEl).not.toBeNull();
     });
 
-    it('is accessible', () => {
+    it('is accessible', async () => {
         const element = createElement(
             'c-page-message-data-messages-retrieval-wrapper',
             {
@@ -42,6 +42,6 @@ describe('c-page-messages-data-retrieval-wrapper', () => {
 
         document.body.appendChild(element);
 
-        return Promise.resolve().then(() => expect(element).toBeAccessible());
+        await expect(element).toBeAccessible();
     });
 });

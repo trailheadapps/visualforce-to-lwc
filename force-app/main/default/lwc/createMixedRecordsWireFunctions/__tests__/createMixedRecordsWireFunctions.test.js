@@ -26,11 +26,10 @@ describe('c-create-mixed-records-wire-functions', () => {
         jest.clearAllMocks();
     });
 
-    // Helper function to wait until the microtask queue is empty. This is needed for promise
-    // timing when calling createRecord.
-    function flushPromises() {
-        // eslint-disable-next-line no-undef
-        return new Promise((resolve) => setImmediate(resolve));
+    // Helper function to wait until the microtask queue is empty.
+    // Used to wait for asynchronous DOM updates.
+    async function flushPromises() {
+        return Promise.resolve();
     }
 
     it('initializes lightning-input values correctly', () => {
@@ -48,7 +47,7 @@ describe('c-create-mixed-records-wire-functions', () => {
         expect(actualValues).toEqual(DEFAULT_VALUES);
     });
 
-    it('passes the user input to the createRecord LDS function correctly', () => {
+    it('passes the user input to the createRecord LDS function correctly', async () => {
         const CONTACT_FIRST_NAME = 'John';
         const CONTACT_LAST_NAME = 'Taylor';
         const OPPORTUNITY_NAME = 'Big deal!';
@@ -105,22 +104,18 @@ describe('c-create-mixed-records-wire-functions', () => {
         const buttonEl = element.shadowRoot.querySelector('lightning-button');
         buttonEl.click();
 
-        // Return a promise to wait for any asynchronous DOM updates. Jest
-        // will automatically wait for the Promise chain to complete before
-        // ending the test and fail the test if the promise rejects.
-        return Promise.resolve().then(() => {
-            // Validate createRecord calls
-            expect(createRecord).toHaveBeenCalledTimes(2);
-            expect(createRecord.mock.calls[0]).toEqual(
-                CREATE_CONTACT_PARAMETERS
-            );
-            expect(createRecord.mock.calls[1]).toEqual(
-                CREATE_OPPORTUNITY_PARAMETERS
-            );
-        });
+        // Wait for any asynchronous DOM updates
+        await flushPromises();
+
+        // Validate createRecord calls
+        expect(createRecord).toHaveBeenCalledTimes(2);
+        expect(createRecord.mock.calls[0]).toEqual(CREATE_CONTACT_PARAMETERS);
+        expect(createRecord.mock.calls[1]).toEqual(
+            CREATE_OPPORTUNITY_PARAMETERS
+        );
     });
 
-    it('shows success toast message when records created successfully', () => {
+    it('shows success toast message when records created successfully', async () => {
         // Assign mock value for resolved createRecord promise
         createRecord.mockResolvedValueOnce(mockCreateRecordContact);
         createRecord.mockResolvedValueOnce(mockCreateRecordOpportunity);
@@ -140,25 +135,22 @@ describe('c-create-mixed-records-wire-functions', () => {
         const buttonEl = element.shadowRoot.querySelector('lightning-button');
         buttonEl.click();
 
-        // Return an immediate flushed promise (after the Apex call) to then
-        // wait for any asynchronous DOM updates. Jest will automatically wait
-        // for the Promise chain to complete before ending the test and fail
-        // the test if the promise ends in the rejected state.
-        return flushPromises().then(() => {
-            // Check if toast event has been fired
-            expect(handler).toHaveBeenCalledTimes(2);
-            expect(handler.mock.calls[0][0].detail.variant).toBe('success');
-            expect(handler.mock.calls[0][0].detail.message).toBe(
-                `Contact created with Id: ${mockCreateRecordContact.id}`
-            );
-            expect(handler.mock.calls[1][0].detail.variant).toBe('success');
-            expect(handler.mock.calls[1][0].detail.message).toBe(
-                `Opportunity created with Id: ${mockCreateRecordOpportunity.id}`
-            );
-        });
+        // Wait for any asynchronous DOM updates
+        await flushPromises();
+
+        // Check if toast event has been fired
+        expect(handler).toHaveBeenCalledTimes(2);
+        expect(handler.mock.calls[0][0].detail.variant).toBe('success');
+        expect(handler.mock.calls[0][0].detail.message).toBe(
+            `Contact created with Id: ${mockCreateRecordContact.id}`
+        );
+        expect(handler.mock.calls[1][0].detail.variant).toBe('success');
+        expect(handler.mock.calls[1][0].detail.message).toBe(
+            `Opportunity created with Id: ${mockCreateRecordOpportunity.id}`
+        );
     });
 
-    it('shows error toast message when there is an error', () => {
+    it('shows error toast message when there is an error', async () => {
         const LDS_OPERATION_ERROR = new Error('Error creating record.');
 
         // Assign mock value for rejected Apex promise
@@ -179,33 +171,29 @@ describe('c-create-mixed-records-wire-functions', () => {
         const buttonEl = element.shadowRoot.querySelector('lightning-button');
         buttonEl.click();
 
-        // Return an immediate flushed promise (after the Apex call) to then
-        // wait for any asynchronous DOM updates. Jest will automatically wait
-        // for the Promise chain to complete before ending the test and fail
-        // the test if the promise ends in the rejected state.
-        return flushPromises().then(() => {
-            // Check if toast event has been fired
-            expect(handler).toHaveBeenCalledTimes(2);
-            expect(handler.mock.calls[0][0].detail.variant).toBe('error');
-            expect(handler.mock.calls[0][0].detail.message).toBe(
-                'Error creating records: ' +
-                    reduceErrors(LDS_OPERATION_ERROR).join(', ')
-            );
-            expect(handler.mock.calls[1][0].detail.variant).toBe('error');
-            expect(handler.mock.calls[1][0].detail.message).toBe(
-                'Error creating records: ' +
-                    reduceErrors(LDS_OPERATION_ERROR).join(', ')
-            );
-        });
+        // Wait for any asynchronous DOM updates
+        await flushPromises();
+        // Check if toast event has been fired
+        expect(handler).toHaveBeenCalledTimes(2);
+        expect(handler.mock.calls[0][0].detail.variant).toBe('error');
+        expect(handler.mock.calls[0][0].detail.message).toBe(
+            'Error creating records: ' +
+                reduceErrors(LDS_OPERATION_ERROR).join(', ')
+        );
+        expect(handler.mock.calls[1][0].detail.variant).toBe('error');
+        expect(handler.mock.calls[1][0].detail.message).toBe(
+            'Error creating records: ' +
+                reduceErrors(LDS_OPERATION_ERROR).join(', ')
+        );
     });
 
-    it('is accessible', () => {
+    it('is accessible', async () => {
         const element = createElement('c-create-mixed-records-wire-functions', {
             is: CreateMixedRecordsWireFunctions
         });
 
         document.body.appendChild(element);
 
-        return Promise.resolve().then(() => expect(element).toBeAccessible());
+        await expect(element).toBeAccessible();
     });
 });

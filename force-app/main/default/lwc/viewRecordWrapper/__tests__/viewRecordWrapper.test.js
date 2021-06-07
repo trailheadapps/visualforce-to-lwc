@@ -42,13 +42,13 @@ describe('c-view-record-wrapper', () => {
         expect(viewRecordEl.recordId).toBe(RECORD_ID);
     });
 
-    it('is accessible', () => {
+    it('is accessible', async () => {
         const element = createElement('c-view-record-wrapper', {
             is: ViewRecordWrapper
         });
 
         document.body.appendChild(element);
 
-        return Promise.resolve().then(() => expect(element).toBeAccessible());
+        await expect(element).toBeAccessible();
     });
 });

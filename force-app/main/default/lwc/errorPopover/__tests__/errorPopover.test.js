@@ -9,7 +9,13 @@ describe('c-error-popover', () => {
         }
     });
 
-    it('renders c-error-popover element', () => {
+    // Helper function to wait until the microtask queue is empty.
+    // Used to wait for asynchronous DOM updates.
+    async function flushPromises() {
+        return Promise.resolve();
+    }
+
+    it('renders c-error-popover element', async () => {
         const ERROR_MESSAGE_INPUT = 'Friendly Error Message';
 
         const element = createElement('c-error-popover', {
@@ -17,17 +23,18 @@ describe('c-error-popover', () => {
         });
         element.errors = ERROR_MESSAGE_INPUT;
         document.body.appendChild(element);
+
+        // Wait for any asynchronous DOM updates
+        await flushPromises();
 
         // Check for errors in body
-        return Promise.resolve().then(() => {
-            const popoverDivEl = element.shadowRoot.querySelector(
-                '.slds-popover__body'
-            );
-            expect(popoverDivEl.textContent).toBe(ERROR_MESSAGE_INPUT);
-        });
+        const popoverDivEl = element.shadowRoot.querySelector(
+            '.slds-popover__body'
+        );
+        expect(popoverDivEl.textContent).toBe(ERROR_MESSAGE_INPUT);
     });
 
-    it('hides dialog when close button is clicked', () => {
+    it('hides dialog when close button is clicked', async () => {
         const ERROR_MESSAGE_INPUT = 'Friendly Error Message';
 
         const element = createElement('c-error-popover', {
@@ -36,18 +43,18 @@ describe('c-error-popover', () => {
         element.errors = ERROR_MESSAGE_INPUT;
         document.body.appendChild(element);
 
-        // click lightning button element
+        // Click lightning button element
         element.shadowRoot.querySelector('lightning-button-icon').click();
 
-        return Promise.resolve().then(() => {
-            // check that the section is not rendered once close dialog button is clicked.
-            const reRenderedSectionEl =
-                element.shadowRoot.querySelector('section');
-            expect(reRenderedSectionEl).toBeNull();
-        });
+        // Wait for any asynchronous DOM updates
+        await flushPromises();
+
+        // Check that the section is not rendered once close dialog button is clicked.
+        const reRenderedSectionEl = element.shadowRoot.querySelector('section');
+        expect(reRenderedSectionEl).toBeNull();
     });
 
-    it('toggles c-error-popover', () => {
+    it('toggles c-error-popover', async () => {
         const ERROR_MESSAGE_INPUT = 'Friendly Error Message';
 
         const element = createElement('c-error-popover', {
@@ -58,15 +65,15 @@ describe('c-error-popover', () => {
 
         element.toggle();
 
-        return Promise.resolve().then(() => {
-            // check that the section that previously rendered no more renders once toggled.
-            const reRenderedSectionEl =
-                element.shadowRoot.querySelector('section');
-            expect(reRenderedSectionEl).toBeNull();
-        });
+        // Wait for any asynchronous DOM updates
+        await flushPromises();
+
+        // Check that the section that previously rendered no more renders once toggled.
+        const reRenderedSectionEl = element.shadowRoot.querySelector('section');
+        expect(reRenderedSectionEl).toBeNull();
     });
 
-    it('is accessible', () => {
+    it('is accessible', async () => {
         const element = createElement('c-error-popover', {
             is: ErrorPopover
         });
@@ -74,6 +81,6 @@ describe('c-error-popover', () => {
         element.showPopover = true;
         document.body.appendChild(element);
 
-        return Promise.resolve().then(() => expect(element).toBeAccessible());
+        await expect(element).toBeAccessible();
     });
 });

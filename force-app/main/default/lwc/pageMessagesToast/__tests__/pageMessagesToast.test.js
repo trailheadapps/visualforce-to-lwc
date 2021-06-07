@@ -25,8 +25,8 @@ describe('c-page-messages-toast', () => {
         jest.clearAllMocks();
     });
 
-    // Helper function to wait until the microtask queue is empty. This is needed for promise
-    // timing when calling imperative Apex.
+    // Helper function to wait until the microtask queue is empty.
+    // Used to wait for asynchronous DOM updates.
     function flushPromises() {
         // eslint-disable-next-line no-undef
         return new Promise((resolve) => setImmediate(resolve));
@@ -89,13 +89,13 @@ describe('c-page-messages-toast', () => {
         });
     });
 
-    it('is accessible', () => {
+    it('is accessible', async () => {
         const element = createElement('c-page-messages-toast', {
             is: PageMessagesToast
         });
 
         document.body.appendChild(element);
 
-        return Promise.resolve().then(() => expect(element).toBeAccessible());
+        await expect(element).toBeAccessible();
     });
 });

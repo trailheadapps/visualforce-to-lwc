@@ -9,7 +9,7 @@ describe('c-create-record-with-prepopulated-values', () => {
         }
     });
 
-    it('is accessible', () => {
+    it('is accessible', async () => {
         const element = createElement(
             'c-create-record-with-prepopulated-values',
             {
@@ -18,6 +18,6 @@ describe('c-create-record-with-prepopulated-values', () => {
         );
         document.body.appendChild(element);
 
-        return Promise.resolve().then(() => expect(element).toBeAccessible());
+        await expect(element).toBeAccessible();
     });
 });

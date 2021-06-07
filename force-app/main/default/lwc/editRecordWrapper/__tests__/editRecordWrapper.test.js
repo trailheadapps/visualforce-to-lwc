@@ -30,13 +30,13 @@ describe('c-edit-record-wrapper', () => {
         expect(innerEl.recordId).toBe(RECORD_ID);
     });
 
-    it('is accessible', () => {
+    it('is accessible', async () => {
         const element = createElement('c-edit-record-wrapper', {
             is: EditRecordWrapper
         });
 
         document.body.appendChild(element);
 
-        return Promise.resolve().then(() => expect(element).toBeAccessible());
+        await expect(element).toBeAccessible();
     });
 });

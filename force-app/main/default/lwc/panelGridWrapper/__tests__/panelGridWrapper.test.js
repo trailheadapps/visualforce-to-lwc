@@ -28,13 +28,13 @@ describe('c-panel-grid-wrapper', () => {
         expect(panelBarEl).not.toBeNull();
     });
 
-    it('is accessible', () => {
+    it('is accessible', async () => {
         const element = createElement('c-panel-grid-wrapper', {
             is: PanelGridWrapper
         });
 
         document.body.appendChild(element);
 
-        return Promise.resolve().then(() => expect(element).toBeAccessible());
+        await expect(element).toBeAccessible();
     });
 });
