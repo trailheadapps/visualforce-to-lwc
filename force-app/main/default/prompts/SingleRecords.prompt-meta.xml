@@ -69,7 +69,7 @@
         <actionButtonLabel>Next Tour</actionButtonLabel>
         <actionButtonLink>/lightning/n/Record_Lists</actionButtonLink>
         <body
-        >You can retrieve Salesforce data in JavaScript using LDS wire adapters. The &quot;View Record with Parent Record Data&quot; example uses getRecord to retrieve fields from a related record. Continue learning how to work with lists of records in the next tour.</body>
+        >You can retrieve Salesforce data in JavaScript using LDS wire adapters. The &quot;View Record with Parent Record Data&quot; example uses getRecord to retrieve fields from a related record. Continue learning about record lists in the next tour.</body>
         <dismissButtonLabel>Close</dismissButtonLabel>
         <displayPosition>BottomLeft</displayPosition>
         <displayType>FloatingPanel</displayType>
