@@ -44,10 +44,11 @@
         <versionNumber>1</versionNumber>
     </promptVersions>
     <promptVersions>
-        <actionButtonLabel>Next Tour</actionButtonLabel>
-        <actionButtonLink>/lightning/n/Error_Handling</actionButtonLink>
+        <actionButtonLabel>Code Tours</actionButtonLabel>
+        <actionButtonLink
+        >https://github.com/trailheadapps/visualforce-to-lwc#code-tours</actionButtonLink>
         <body
-        >At the bottom of the page, you can find some examples that have been reimplemented to use a LDS wire adapter, getListUi. getListUi allows to retrieve records from a specified listview. Note that this adapter is in beta.</body>
+        >You&#39;ve now completed the Visualforce to LWC sample app tour. &lt;b&gt;We hope you enjoyed the trip!&lt;/b&gt; Next you can take a look at the different tabs of the app or explore VSCode code tours to learn more about the app code.</body>
         <dismissButtonLabel>Close</dismissButtonLabel>
         <displayPosition>BottomCenter</displayPosition>
         <displayType>FloatingPanel</displayType>
