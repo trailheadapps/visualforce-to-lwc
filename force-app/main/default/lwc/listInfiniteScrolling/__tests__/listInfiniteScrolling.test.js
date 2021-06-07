@@ -3,9 +3,8 @@ import ListInfiniteScrolling from 'c/listInfiniteScrolling';
 import { registerApexTestWireAdapter } from '@salesforce/sfdx-lwc-jest';
 import getAccountsPaginated from '@salesforce/apex/PaginatedListControllerLwc.getAccountsPaginated';
 
-const getAccountsPaginatedAdapter = registerApexTestWireAdapter(
-    getAccountsPaginated
-);
+const getAccountsPaginatedAdapter =
+    registerApexTestWireAdapter(getAccountsPaginated);
 
 const mockGetAccountsPaginatedRecords = require('./data/mockGetAccountsPaginatedRecords.json');
 
@@ -45,9 +44,8 @@ describe('c-list-infinite-scrolling', () => {
         getAccountsPaginatedAdapter.error(MESSAGE);
 
         return Promise.resolve().then(() => {
-            const errorPanelEl = element.shadowRoot.querySelector(
-                'c-error-panel'
-            );
+            const errorPanelEl =
+                element.shadowRoot.querySelector('c-error-panel');
 
             expect(errorPanelEl).not.toBeNull();
             expect(errorPanelEl.errors.body).toBe(MESSAGE);

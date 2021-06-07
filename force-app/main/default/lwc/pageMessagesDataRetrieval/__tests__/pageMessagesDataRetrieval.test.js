@@ -20,9 +20,8 @@ describe('c-page-messages-data-retrieval', () => {
         document.body.appendChild(element);
         getAccountsAdapter.error('Error Message');
         return Promise.resolve().then(() => {
-            const errorPanelEl = element.shadowRoot.querySelector(
-                'c-error-panel'
-            );
+            const errorPanelEl =
+                element.shadowRoot.querySelector('c-error-panel');
             expect(errorPanelEl).not.toBeNull();
             expect(errorPanelEl.errors).toStrictEqual({
                 body: 'Error Message',

@@ -28,9 +28,8 @@ describe('c-example-wrapper', () => {
         element.visualforceHeight = VF_HEIGHT;
         document.body.appendChild(element);
 
-        const lightningCardEl = element.shadowRoot.querySelector(
-            'lightning-card'
-        );
+        const lightningCardEl =
+            element.shadowRoot.querySelector('lightning-card');
         expect(lightningCardEl).not.toBeNull();
         expect(lightningCardEl.title).toBe(TITLE);
         expect(lightningCardEl.iconName).toBe(ICON_NAME);

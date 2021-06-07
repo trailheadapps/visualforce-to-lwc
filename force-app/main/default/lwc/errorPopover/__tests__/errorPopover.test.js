@@ -41,9 +41,8 @@ describe('c-error-popover', () => {
 
         return Promise.resolve().then(() => {
             // check that the section is not rendered once close dialog button is clicked.
-            const reRenderedSectionEl = element.shadowRoot.querySelector(
-                'section'
-            );
+            const reRenderedSectionEl =
+                element.shadowRoot.querySelector('section');
             expect(reRenderedSectionEl).toBeNull();
         });
     });
@@ -61,9 +60,8 @@ describe('c-error-popover', () => {
 
         return Promise.resolve().then(() => {
             // check that the section that previously rendered no more renders once toggled.
-            const reRenderedSectionEl = element.shadowRoot.querySelector(
-                'section'
-            );
+            const reRenderedSectionEl =
+                element.shadowRoot.querySelector('section');
             expect(reRenderedSectionEl).toBeNull();
         });
     });

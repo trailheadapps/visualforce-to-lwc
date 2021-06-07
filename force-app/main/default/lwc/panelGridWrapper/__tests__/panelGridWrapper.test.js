@@ -19,9 +19,8 @@ describe('c-panel-grid-wrapper', () => {
         document.body.appendChild(element);
 
         //check if example Wrapper component exists
-        const exampleWrapperEl = element.shadowRoot.querySelector(
-            'c-example-wrapper'
-        );
+        const exampleWrapperEl =
+            element.shadowRoot.querySelector('c-example-wrapper');
         expect(exampleWrapperEl).not.toBeNull();
 
         // check if panel grid component exists
