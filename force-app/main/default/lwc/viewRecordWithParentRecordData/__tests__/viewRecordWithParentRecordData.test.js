@@ -24,7 +24,13 @@ describe('c-view-record-with-parent-record-data', () => {
         jest.clearAllMocks();
     });
 
-    it('contains one lightning-record-view-form with three lightning-output-fields and one lightning-formatted-text', () => {
+    // Helper function to wait until the microtask queue is empty.
+    // Used to wait for asynchronous DOM updates.
+    async function flushPromises() {
+        return Promise.resolve();
+    }
+
+    it('contains one lightning-record-view-form with three lightning-output-fields and one lightning-formatted-text', async () => {
         // Create initial element
         const element = createElement('c-view-record-with-parent-record-data', {
             is: ViewRecordWithParentRecordData
@@ -46,7 +52,7 @@ describe('c-view-record-with-parent-record-data', () => {
         expect(formattedTextEl).not.toBeNull();
     });
 
-    it('uses the account object and account field within lightning-record-view-form', () => {
+    it('uses the account object and account field within lightning-record-view-form', async () => {
         const ACCOUNT_FIELDS = [
             ACCOUNT_NAME_FIELD,
             ACCOUNT_TYPE_FIELD,
@@ -74,7 +80,7 @@ describe('c-view-record-with-parent-record-data', () => {
     });
 
     describe('@wire getRecord', () => {
-        it('gets called to query the account owner name field', () => {
+        it('gets called to query the account owner name field', async () => {
             const RECORD_ID = '0012100000rZPJFAA4';
 
             // Create initial element
@@ -91,18 +97,16 @@ describe('c-view-record-with-parent-record-data', () => {
             // Emit data from @wire
             getRecordAdapter.emit(mockGetRecord);
 
-            // Return a promise to wait for any asynchronous DOM updates. Jest
-            // will automatically wait for the Promise chain to complete before
-            // ending the test and fail the test if the promise rejects.
-            return Promise.resolve().then(() => {
-                expect(getRecordAdapter.getLastConfig()).toEqual({
-                    recordId: RECORD_ID,
-                    fields: [ACCOUNT_OWNER_NAME_FIELD]
-                });
+            // Wait for any asynchronous DOM updates
+            await flushPromises();
+
+            expect(getRecordAdapter.getLastConfig()).toEqual({
+                recordId: RECORD_ID,
+                fields: [ACCOUNT_OWNER_NAME_FIELD]
             });
         });
 
-        it('shows the account owner name on successful emit', () => {
+        it('shows the account owner name on successful emit', async () => {
             // Create initial element
             const element = createElement(
                 'c-view-record-with-parent-record-data',
@@ -115,20 +119,18 @@ describe('c-view-record-with-parent-record-data', () => {
             // Emit data from @wire
             getRecordAdapter.emit(mockGetRecord);
 
-            // Return a promise to wait for any asynchronous DOM updates. Jest
-            // will automatically wait for the Promise chain to complete before
-            // ending the test and fail the test if the promise rejects.
-            return Promise.resolve().then(() => {
-                const textEl = element.shadowRoot.querySelector(
-                    'lightning-formatted-text'
-                );
-                expect(textEl.value).toEqual(
-                    mockGetRecord.fields.Owner.value.fields.Name.value
-                );
-            });
+            // Wait for any asynchronous DOM updates
+            await flushPromises();
+
+            const textEl = element.shadowRoot.querySelector(
+                'lightning-formatted-text'
+            );
+            expect(textEl.value).toEqual(
+                mockGetRecord.fields.Owner.value.fields.Name.value
+            );
         });
 
-        it('shows an empty value for the account owner name on error emit', () => {
+        it('shows an empty value for the account owner name on error emit', async () => {
             // Create initial element
             const element = createElement(
                 'c-view-record-with-parent-record-data',
@@ -141,25 +143,23 @@ describe('c-view-record-with-parent-record-data', () => {
             // Emit data from @wire
             getRecordAdapter.error();
 
-            // Return a promise to wait for any asynchronous DOM updates. Jest
-            // will automatically wait for the Promise chain to complete before
-            // ending the test and fail the test if the promise rejects.
-            return Promise.resolve().then(() => {
-                const textEl = element.shadowRoot.querySelector(
-                    'lightning-formatted-text'
-                );
-                expect(textEl.value).toBe('');
-            });
+            // Wait for any asynchronous DOM updates
+            await flushPromises();
+
+            const textEl = element.shadowRoot.querySelector(
+                'lightning-formatted-text'
+            );
+            expect(textEl.value).toBe('');
         });
     });
 
-    it('is accessible', () => {
+    it('is accessible', async () => {
         const element = createElement('c-view-record-with-parent-record-data', {
             is: ViewRecordWithParentRecordData
         });
 
         document.body.appendChild(element);
 
-        return Promise.resolve().then(() => expect(element).toBeAccessible());
+        await expect(element).toBeAccessible();
     });
 });

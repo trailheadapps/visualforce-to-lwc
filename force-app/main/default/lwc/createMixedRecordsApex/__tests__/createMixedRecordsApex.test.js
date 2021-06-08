@@ -36,11 +36,10 @@ describe('c-create-mixed-records-apex', () => {
         jest.clearAllMocks();
     });
 
-    // Helper function to wait until the microtask queue is empty. This is needed for promise
-    // timing when calling imperative Apex.
-    function flushPromises() {
-        // eslint-disable-next-line no-undef
-        return new Promise((resolve) => setImmediate(resolve));
+    // Helper function to wait until the microtask queue is empty.
+    // Used to wait for asynchronous DOM updates.
+    async function flushPromises() {
+        return Promise.resolve();
     }
 
     it('initializes lightning-input values correctly', () => {
@@ -58,7 +57,7 @@ describe('c-create-mixed-records-apex', () => {
         expect(actualValues).toEqual(DEFAULT_VALUES);
     });
 
-    it('passes the user input to the Apex method correctly', () => {
+    it('passes the user input to the Apex method correctly', async () => {
         const CONTACT_FIRST_NAME = 'John';
         const CONTACT_LAST_NAME = 'Taylor';
         const OPPORTUNITY_NAME = 'Big deal!';
@@ -100,19 +99,16 @@ describe('c-create-mixed-records-apex', () => {
         const buttonEl = element.shadowRoot.querySelector('lightning-button');
         buttonEl.click();
 
-        // Return an immediate flushed promise (after the Apex call) to then
-        // wait for any asynchronous DOM updates. Jest will automatically wait
-        // for the Promise chain to complete before ending the test and fail
-        // the test if the promise ends in the rejected state.
-        return flushPromises().then(() => {
-            // Validate parameters of mocked Apex call
-            expect(createContactAndOpportunity.mock.calls[0][0]).toEqual(
-                APEX_PARAMETERS
-            );
-        });
+        // Wait for any asynchronous DOM updates
+        await flushPromises();
+
+        // Validate parameters of mocked Apex call
+        expect(createContactAndOpportunity.mock.calls[0][0]).toEqual(
+            APEX_PARAMETERS
+        );
     });
 
-    it('shows success toast message when records created successfully', () => {
+    it('shows success toast message when records created successfully', async () => {
         // Assign mock value for resolved Apex promise
         createContactAndOpportunity.mockResolvedValue(APEX_OPERATION_SUCCESS);
 
@@ -131,21 +127,18 @@ describe('c-create-mixed-records-apex', () => {
         const buttonEl = element.shadowRoot.querySelector('lightning-button');
         buttonEl.click();
 
-        // Return an immediate flushed promise (after the Apex call) to then
-        // wait for any asynchronous DOM updates. Jest will automatically wait
-        // for the Promise chain to complete before ending the test and fail
-        // the test if the promise ends in the rejected state.
-        return flushPromises().then(() => {
-            // Check if toast event has been fired
-            expect(handler).toHaveBeenCalled();
-            expect(handler.mock.calls[0][0].detail.variant).toBe('success');
-            expect(handler.mock.calls[0][0].detail.message).toBe(
-                'Contact & Opportunity created correctly'
-            );
-        });
+        // Wait for any asynchronous DOM updates
+        await flushPromises();
+
+        // Check if toast event has been fired
+        expect(handler).toHaveBeenCalled();
+        expect(handler.mock.calls[0][0].detail.variant).toBe('success');
+        expect(handler.mock.calls[0][0].detail.message).toBe(
+            'Contact & Opportunity created correctly'
+        );
     });
 
-    it('shows error toast message when there is an error', () => {
+    it('shows error toast message when there is an error', async () => {
         // Assign mock value for rejected Apex promise
         createContactAndOpportunity.mockRejectedValue(APEX_OPERATION_ERROR);
 
@@ -164,28 +157,25 @@ describe('c-create-mixed-records-apex', () => {
         const buttonEl = element.shadowRoot.querySelector('lightning-button');
         buttonEl.click();
 
-        // Return an immediate flushed promise (after the Apex call) to then
-        // wait for any asynchronous DOM updates. Jest will automatically wait
-        // for the Promise chain to complete before ending the test and fail
-        // the test if the promise ends in the rejected state.
-        return flushPromises().then(() => {
-            // Check if toast event has been fired
-            expect(handler).toHaveBeenCalled();
-            expect(handler.mock.calls[0][0].detail.variant).toBe('error');
-            expect(handler.mock.calls[0][0].detail.message).toBe(
-                'Error creating records: ' +
-                    reduceErrors(APEX_OPERATION_ERROR).join(', ')
-            );
-        });
+        // Wait for any asynchronous DOM updates
+        await flushPromises();
+
+        // Check if toast event has been fired
+        expect(handler).toHaveBeenCalled();
+        expect(handler.mock.calls[0][0].detail.variant).toBe('error');
+        expect(handler.mock.calls[0][0].detail.message).toBe(
+            'Error creating records: ' +
+                reduceErrors(APEX_OPERATION_ERROR).join(', ')
+        );
     });
 
-    it('is accessible', () => {
+    it('is accessible', async () => {
         const element = createElement('c-create-mixed-records-apex', {
             is: CreateMixedRecordsApex
         });
 
         document.body.appendChild(element);
 
-        return Promise.resolve().then(() => expect(element).toBeAccessible());
+        await expect(element).toBeAccessible();
     });
 });

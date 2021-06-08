@@ -16,26 +16,33 @@ describe('c-list-infinite-scrolling', () => {
         }
     });
 
-    it('displays a data table when records is true', () => {
+    // Helper function to wait until the microtask queue is empty.
+    // Used to wait for asynchronous DOM updates.
+    async function flushPromises() {
+        return Promise.resolve();
+    }
+
+    it('displays a data table when records is true', async () => {
         const element = createElement('c-list-infinite-scrolling', {
             is: ListInfiniteScrolling
         });
         document.body.appendChild(element);
         getAccountsPaginatedAdapter.emit(mockGetAccountsPaginatedRecords);
 
-        return Promise.resolve().then(() => {
-            const dataTableEl = element.shadowRoot.querySelector(
-                'lightning-datatable'
-            );
+        // Wait for any asynchronous DOM updates
+        await flushPromises();
 
-            expect(dataTableEl).not.toBeNull();
-            expect(dataTableEl.data).toEqual(
-                mockGetAccountsPaginatedRecords.records
-            );
-        });
+        const dataTableEl = element.shadowRoot.querySelector(
+            'lightning-datatable'
+        );
+
+        expect(dataTableEl).not.toBeNull();
+        expect(dataTableEl.data).toEqual(
+            mockGetAccountsPaginatedRecords.records
+        );
     });
 
-    it('displays the error panel when @wire returns error', () => {
+    it('displays the error panel when @wire returns error', async () => {
         const MESSAGE = 'Error with @wire';
         const element = createElement('c-list-infinite-scrolling', {
             is: ListInfiniteScrolling
@@ -43,32 +50,33 @@ describe('c-list-infinite-scrolling', () => {
         document.body.appendChild(element);
         getAccountsPaginatedAdapter.error(MESSAGE);
 
-        return Promise.resolve().then(() => {
-            const errorPanelEl =
-                element.shadowRoot.querySelector('c-error-panel');
+        // Wait for any asynchronous DOM updates
+        await flushPromises();
 
-            expect(errorPanelEl).not.toBeNull();
-            expect(errorPanelEl.errors.body).toBe(MESSAGE);
-        });
+        const errorPanelEl = element.shadowRoot.querySelector('c-error-panel');
+
+        expect(errorPanelEl).not.toBeNull();
+        expect(errorPanelEl.errors.body).toBe(MESSAGE);
     });
 
-    it('does not display a data table when @wire returns error', () => {
+    it('does not display a data table when @wire returns error', async () => {
         const element = createElement('c-list-infinite-scrolling', {
             is: ListInfiniteScrolling
         });
         document.body.appendChild(element);
         getAccountsPaginatedAdapter.error();
 
-        return Promise.resolve().then(() => {
-            const dataTableEl = element.shadowRoot.querySelector(
-                'lightning-datatable'
-            );
+        // Wait for any asynchronous DOM updates
+        await flushPromises();
 
-            expect(dataTableEl).toBeNull();
-        });
+        const dataTableEl = element.shadowRoot.querySelector(
+            'lightning-datatable'
+        );
+
+        expect(dataTableEl).toBeNull();
     });
 
-    it('requests more data when scrolling reaches the bottom', () => {
+    it('requests more data when scrolling reaches the bottom', async () => {
         const element = createElement('c-list-infinite-scrolling', {
             is: ListInfiniteScrolling
         });
@@ -76,34 +84,28 @@ describe('c-list-infinite-scrolling', () => {
 
         getAccountsPaginatedAdapter.emit(mockGetAccountsPaginatedRecords);
 
-        return Promise.resolve()
-            .then(() => {
-                const dataTableEl = element.shadowRoot.querySelector(
-                    'lightning-datatable'
-                );
+        // Wait for any asynchronous DOM updates
+        await flushPromises();
 
-                expect(dataTableEl).not.toBeNull();
-                expect(dataTableEl.data).toEqual(
-                    mockGetAccountsPaginatedRecords.records
-                );
-                expect(
-                    getAccountsPaginatedAdapter.getLastConfig().pageToken
-                ).toBe(0);
-            })
-            .then(() => {
-                const dataTableEl = element.shadowRoot.querySelector(
-                    'lightning-datatable'
-                );
-                dataTableEl.dispatchEvent(new CustomEvent('loadmore'));
-            })
-            .then(() => {
-                expect(
-                    getAccountsPaginatedAdapter.getLastConfig().pageToken
-                ).toBe(5);
-            });
+        const dataTableEl = element.shadowRoot.querySelector(
+            'lightning-datatable'
+        );
+
+        expect(dataTableEl).not.toBeNull();
+        expect(dataTableEl.data).toEqual(
+            mockGetAccountsPaginatedRecords.records
+        );
+        expect(getAccountsPaginatedAdapter.getLastConfig().pageToken).toBe(0);
+
+        dataTableEl.dispatchEvent(new CustomEvent('loadmore'));
+
+        // Wait for any asynchronous DOM updates
+        await flushPromises();
+
+        expect(getAccountsPaginatedAdapter.getLastConfig().pageToken).toBe(5);
     });
 
-    it('is accessible when data is returned', () => {
+    it('is accessible when data is returned', async () => {
         const element = createElement('c-list-infinite-scrolling', {
             is: ListInfiniteScrolling
         });
@@ -112,10 +114,13 @@ describe('c-list-infinite-scrolling', () => {
 
         getAccountsPaginatedAdapter.emit(mockGetAccountsPaginatedRecords);
 
-        return Promise.resolve().then(() => expect(element).toBeAccessible());
+        // Wait for any asynchronous DOM updates
+        await flushPromises();
+
+        await expect(element).toBeAccessible();
     });
 
-    it('is accessible when error is returned', () => {
+    it('is accessible when error is returned', async () => {
         const element = createElement('c-list-infinite-scrolling', {
             is: ListInfiniteScrolling
         });
@@ -124,6 +129,9 @@ describe('c-list-infinite-scrolling', () => {
 
         getAccountsPaginatedAdapter.error();
 
-        return Promise.resolve().then(() => expect(element).toBeAccessible());
+        // Wait for any asynchronous DOM updates
+        await flushPromises();
+
+        await expect(element).toBeAccessible();
     });
 });

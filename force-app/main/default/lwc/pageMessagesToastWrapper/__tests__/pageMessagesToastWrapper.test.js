@@ -26,13 +26,13 @@ describe('c-page-messages-toast-wrapper', () => {
         expect(innerEl).not.toBeNull();
     });
 
-    it('is accessible', () => {
+    it('is accessible', async () => {
         const element = createElement('c-page-messages-toast-wrapper', {
             is: PageMessagesToastWrapper
         });
 
         document.body.appendChild(element);
 
-        return Promise.resolve().then(() => expect(element).toBeAccessible());
+        await expect(element).toBeAccessible();
     });
 });

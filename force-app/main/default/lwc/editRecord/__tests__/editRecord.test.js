@@ -18,6 +18,13 @@ describe('c-edit-record', () => {
 
         jest.clearAllMocks();
     });
+
+    // Helper function to wait until the microtask queue is empty.
+    // Used to wait for asynchronous DOM updates.
+    async function flushPromises() {
+        return Promise.resolve();
+    }
+
     it('shows a lightning-record-form initialized', () => {
         // Create initial element
         const element = createElement('c-edit-record', {
@@ -40,7 +47,7 @@ describe('c-edit-record', () => {
     });
 
     describe('shows success toast message', () => {
-        it('when a record is created successfully', () => {
+        it('when a record is created successfully', async () => {
             // Create initial element
             const element = createElement('c-edit-record', {
                 is: EditRecord
@@ -58,20 +65,18 @@ describe('c-edit-record', () => {
             );
             recordForm.dispatchEvent(new CustomEvent('success'));
 
-            // Return a promise to wait for any asynchronous DOM updates. Jest
-            // will automatically wait for the Promise chain to complete before
-            // ending the test and fail the test if the promise rejects.
-            return Promise.resolve().then(() => {
-                // Check if toast event has been fired
-                expect(handler).toHaveBeenCalled();
-                expect(handler.mock.calls[0][0].detail.variant).toBe('success');
-                expect(handler.mock.calls[0][0].detail.message).toBe(
-                    'Account created'
-                );
-            });
+            // Wait for any asynchronous DOM updates
+            await flushPromises();
+
+            // Check if toast event has been fired
+            expect(handler).toHaveBeenCalled();
+            expect(handler.mock.calls[0][0].detail.variant).toBe('success');
+            expect(handler.mock.calls[0][0].detail.message).toBe(
+                'Account created'
+            );
         });
 
-        it('when a record is updated successfully', () => {
+        it('when a record is updated successfully', async () => {
             // Create initial element
             const element = createElement('c-edit-record', {
                 is: EditRecord
@@ -90,22 +95,20 @@ describe('c-edit-record', () => {
             );
             recordForm.dispatchEvent(new CustomEvent('success'));
 
-            // Return a promise to wait for any asynchronous DOM updates. Jest
-            // will automatically wait for the Promise chain to complete before
-            // ending the test and fail the test if the promise rejects.
-            return Promise.resolve().then(() => {
-                // Check if toast event has been fired
-                expect(handler).toHaveBeenCalled();
-                expect(handler.mock.calls[0][0].detail.variant).toBe('success');
-                expect(handler.mock.calls[0][0].detail.message).toBe(
-                    'Account updated'
-                );
-            });
+            // Wait for any asynchronous DOM updates
+            await flushPromises();
+
+            // Check if toast event has been fired
+            expect(handler).toHaveBeenCalled();
+            expect(handler.mock.calls[0][0].detail.variant).toBe('success');
+            expect(handler.mock.calls[0][0].detail.message).toBe(
+                'Account updated'
+            );
         });
     });
 
     describe('shows error toast message', () => {
-        it('when there is an error creating a record', () => {
+        it('when there is an error creating a record', async () => {
             // Create initial element
             const element = createElement('c-edit-record', {
                 is: EditRecord
@@ -123,20 +126,18 @@ describe('c-edit-record', () => {
             );
             recordForm.dispatchEvent(new CustomEvent('error'));
 
-            // Return a promise to wait for any asynchronous DOM updates. Jest
-            // will automatically wait for the Promise chain to complete before
-            // ending the test and fail the test if the promise rejects.
-            return Promise.resolve().then(() => {
-                // Check if toast event has been fired
-                expect(handler).toHaveBeenCalled();
-                expect(handler.mock.calls[0][0].detail.variant).toBe('error');
-                expect(handler.mock.calls[0][0].detail.message).toBe(
-                    'Error creating Account'
-                );
-            });
+            // Wait for any asynchronous DOM updates
+            await flushPromises();
+
+            // Check if toast event has been fired
+            expect(handler).toHaveBeenCalled();
+            expect(handler.mock.calls[0][0].detail.variant).toBe('error');
+            expect(handler.mock.calls[0][0].detail.message).toBe(
+                'Error creating Account'
+            );
         });
 
-        it('when there is an error updating a record', () => {
+        it('when there is an error updating a record', async () => {
             // Create initial element
             const element = createElement('c-edit-record', {
                 is: EditRecord
@@ -155,27 +156,25 @@ describe('c-edit-record', () => {
             );
             recordForm.dispatchEvent(new CustomEvent('error'));
 
-            // Return a promise to wait for any asynchronous DOM updates. Jest
-            // will automatically wait for the Promise chain to complete before
-            // ending the test and fail the test if the promise rejects.
-            return Promise.resolve().then(() => {
-                // Check if toast event has been fired
-                expect(handler).toHaveBeenCalled();
-                expect(handler.mock.calls[0][0].detail.variant).toBe('error');
-                expect(handler.mock.calls[0][0].detail.message).toBe(
-                    'Error updating Account'
-                );
-            });
+            // Wait for any asynchronous DOM updates
+            await flushPromises();
+
+            // Check if toast event has been fired
+            expect(handler).toHaveBeenCalled();
+            expect(handler.mock.calls[0][0].detail.variant).toBe('error');
+            expect(handler.mock.calls[0][0].detail.message).toBe(
+                'Error updating Account'
+            );
         });
     });
 
-    it('is accessible', () => {
+    it('is accessible', async () => {
         const element = createElement('c-edit-record', {
             is: EditRecord
         });
 
         document.body.appendChild(element);
 
-        return Promise.resolve().then(() => expect(element).toBeAccessible());
+        await expect(element).toBeAccessible();
     });
 });

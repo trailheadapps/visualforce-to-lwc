@@ -27,13 +27,13 @@ describe('c-list-record-links-wrapper', () => {
         expect(innerEl).not.toBeNull();
     });
 
-    it('is accessible', () => {
+    it('is accessible', async () => {
         const element = createElement('c-list-record-links-wrapper', {
             is: ListRecordLinksWrapper
         });
 
         document.body.appendChild(element);
 
-        return Promise.resolve().then(() => expect(element).toBeAccessible());
+        await expect(element).toBeAccessible();
     });
 });

@@ -14,6 +14,12 @@ describe('c-basic-list-get-list-ui-wrapper', () => {
             document.body.removeChild(document.body.firstChild);
         }
     });
+
+    // Helper function to wait until the microtask queue is empty.
+    // Used to wait for asynchronous DOM updates.
+    async function flushPromises() {
+        return Promise.resolve();
+    }
     it('shows inner component using c-example-wrapper', () => {
         // Create initial element
         const element = createElement('c-basic-list-get-list-ui-wrapper', {
@@ -28,13 +34,16 @@ describe('c-basic-list-get-list-ui-wrapper', () => {
         expect(innerEl).not.toBeNull();
     });
 
-    it('is accessible', () => {
+    it('is accessible', async () => {
         const element = createElement('c-basic-list-get-list-ui-wrapper', {
             is: BasicListGetListUiWrapper
         });
 
         document.body.appendChild(element);
 
-        return Promise.resolve().then(() => expect(element).toBeAccessible());
+        // Wait for any asynchronous DOM updates
+        await flushPromises();
+
+        await expect(element).toBeAccessible();
     });
 });

@@ -26,13 +26,13 @@ describe('c-page-blocks-wrapper', () => {
         expect(innerEl).not.toBeNull();
     });
 
-    it('is accessible', () => {
+    it('is accessible', async () => {
         const element = createElement('c-page-blocks-wrapper', {
             is: PageBlocksWrapper
         });
 
         document.body.appendChild(element);
 
-        return Promise.resolve().then(() => expect(element).toBeAccessible());
+        await expect(element).toBeAccessible();
     });
 });

@@ -30,7 +30,7 @@ describe('c-create-record-with-prepopulated-values-wrapper', () => {
         expect(innerEl).not.toBeNull();
     });
 
-    it('is accessible', () => {
+    it('is accessible', async () => {
         const element = createElement(
             'c-create-record-with-prepopulated-values-wrapper',
             {
@@ -40,6 +40,6 @@ describe('c-create-record-with-prepopulated-values-wrapper', () => {
 
         document.body.appendChild(element);
 
-        return Promise.resolve().then(() => expect(element).toBeAccessible());
+        await expect(element).toBeAccessible();
     });
 });

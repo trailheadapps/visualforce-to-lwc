@@ -48,7 +48,13 @@ describe('c-basic-list-get-list-ui', () => {
         jest.clearAllMocks();
     });
 
-    it('renders lightning-datatable when there is data', () => {
+    // Helper function to wait until the microtask queue is empty.
+    // Used to wait for asynchronous DOM updates.
+    async function flushPromises() {
+        return Promise.resolve();
+    }
+
+    it('renders lightning-datatable when there is data', async () => {
         // Create initial element
         const element = createElement('c-basic-list-get-list-ui', {
             is: BasicListGetListUi
@@ -61,21 +67,19 @@ describe('c-basic-list-get-list-ui', () => {
         // Emit data from @wire
         getListUiAdapter.emit(mockGetListUi);
 
-        // Return a promise to wait for any asynchronous DOM updates. Jest
-        // will automatically wait for the Promise chain to complete before
-        // ending the test and fail the test if the promise rejects.
-        return Promise.resolve().then(() => {
-            const datatableEl = element.shadowRoot.querySelector(
-                'lightning-datatable'
-            );
-            expect(formatGetListUiSObjects).toHaveBeenCalledWith(mockGetListUi);
-            expect(datatableEl).not.toBeNull();
-            expect(datatableEl.data).toStrictEqual(mockFormatGetListUiSObjects);
-            expect(datatableEl.columns).toStrictEqual(COLUMNS);
-        });
+        // Wait for any asynchronous DOM updates
+        await flushPromises();
+
+        const datatableEl = element.shadowRoot.querySelector(
+            'lightning-datatable'
+        );
+        expect(formatGetListUiSObjects).toHaveBeenCalledWith(mockGetListUi);
+        expect(datatableEl).not.toBeNull();
+        expect(datatableEl.data).toStrictEqual(mockFormatGetListUiSObjects);
+        expect(datatableEl.columns).toStrictEqual(COLUMNS);
     });
 
-    it('renders error panel when there is error', () => {
+    it('renders error panel when there is error', async () => {
         // Create initial element
         const element = createElement('c-basic-list-get-list-ui', {
             is: BasicListGetListUi
@@ -85,18 +89,15 @@ describe('c-basic-list-get-list-ui', () => {
         // Emit data from @wire
         getListUiAdapter.error();
 
-        // Return a promise to wait for any asynchronous DOM updates. Jest
-        // will automatically wait for the Promise chain to complete before
-        // ending the test and fail the test if the promise rejects.
-        return Promise.resolve().then(() => {
-            const errorPanelEl =
-                element.shadowRoot.querySelector('c-error-panel');
-            expect(errorPanelEl).not.toBeNull();
-            expect(errorPanelEl.errors).toBeTruthy();
-        });
+        // Wait for any asynchronous DOM updates
+        await flushPromises();
+
+        const errorPanelEl = element.shadowRoot.querySelector('c-error-panel');
+        expect(errorPanelEl).not.toBeNull();
+        expect(errorPanelEl.errors).toBeTruthy();
     });
 
-    it('is accessible when data is returned', () => {
+    it('is accessible when data is returned', async () => {
         // Create initial element
         const element = createElement('c-basic-list-get-list-ui', {
             is: BasicListGetListUi
@@ -109,10 +110,13 @@ describe('c-basic-list-get-list-ui', () => {
         // Emit data from @wire
         getListUiAdapter.emit(mockGetListUi);
 
-        return Promise.resolve().then(() => expect(element).toBeAccessible());
+        // Wait for any asynchronous DOM updates
+        await flushPromises();
+
+        await expect(element).toBeAccessible();
     });
 
-    it('is accessible when error is returned', () => {
+    it('is accessible when error is returned', async () => {
         // Create initial element
         const element = createElement('c-basic-list-get-list-ui', {
             is: BasicListGetListUi
@@ -122,6 +126,9 @@ describe('c-basic-list-get-list-ui', () => {
         // Emit data from @wire
         getListUiAdapter.error();
 
-        return Promise.resolve().then(() => expect(element).toBeAccessible());
+        // Wait for any asynchronous DOM updates
+        await flushPromises();
+
+        await expect(element).toBeAccessible();
     });
 });

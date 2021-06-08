@@ -8,27 +8,35 @@ describe('c-page-block', () => {
             document.body.removeChild(document.body.firstChild);
         }
     });
-    it('displays lightning-accordion-sections A and B', () => {
+
+    // Helper function to wait until the microtask queue is empty.
+    // Used to wait for asynchronous DOM updates.
+    async function flushPromises() {
+        return Promise.resolve();
+    }
+
+    it('displays lightning-accordion-sections A and B', async () => {
         const element = createElement('c-page-blocks', {
             is: PageBlocks
         });
         document.body.appendChild(element);
 
-        return Promise.resolve().then(() => {
-            const accordionEl = element.shadowRoot.querySelector(
-                'lightning-accordion'
-            );
-            expect(accordionEl).not.toBeNull();
-            expect(accordionEl.activeSectionName).toStrictEqual(['A', 'B']);
-        });
+        // Wait for any asynchronous DOM updates
+        await flushPromises();
+
+        const accordionEl = element.shadowRoot.querySelector(
+            'lightning-accordion'
+        );
+        expect(accordionEl).not.toBeNull();
+        expect(accordionEl.activeSectionName).toStrictEqual(['A', 'B']);
     });
 
-    it('is accessible', () => {
+    it('is accessible', async () => {
         const element = createElement('c-page-blocks', {
             is: PageBlocks
         });
         document.body.appendChild(element);
 
-        return Promise.resolve().then(() => expect(element).toBeAccessible());
+        await expect(element).toBeAccessible();
     });
 });

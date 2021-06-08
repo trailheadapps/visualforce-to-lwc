@@ -9,12 +9,12 @@ describe('c-tabs', () => {
         }
     });
 
-    it('is accessible', () => {
+    it('is accessible', async () => {
         const element = createElement('c-tabs', {
             is: Tabs
         });
         document.body.appendChild(element);
 
-        return Promise.resolve().then(() => expect(element).toBeAccessible());
+        await expect(element).toBeAccessible();
     });
 });

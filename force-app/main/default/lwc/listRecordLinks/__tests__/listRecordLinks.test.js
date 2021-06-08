@@ -46,7 +46,13 @@ describe('c-list-record-links', () => {
         jest.clearAllMocks();
     });
 
-    it('renders c-datatable-with-custom-types when there is data', () => {
+    // Helper function to wait until the microtask queue is empty.
+    // Used to wait for asynchronous DOM updates.
+    async function flushPromises() {
+        return Promise.resolve();
+    }
+
+    it('renders c-datatable-with-custom-types when there is data', async () => {
         // Create initial element
         const element = createElement('c-list-record-links', {
             is: ListRecordLinks
@@ -56,20 +62,18 @@ describe('c-list-record-links', () => {
         // Emit data from @wire
         getAccountsAdapter.emit(mockGetAccounts);
 
-        // Return a promise to wait for any asynchronous DOM updates. Jest
-        // will automatically wait for the Promise chain to complete before
-        // ending the test and fail the test if the promise rejects.
-        return Promise.resolve().then(() => {
-            const datatableEl = element.shadowRoot.querySelector(
-                'c-datatable-with-custom-types'
-            );
-            expect(datatableEl).not.toBeNull();
-            expect(datatableEl.data).toStrictEqual(mockGetAccounts);
-            expect(datatableEl.columns).toStrictEqual(COLUMNS);
-        });
+        // Wait for any asynchronous DOM updates
+        await flushPromises();
+
+        const datatableEl = element.shadowRoot.querySelector(
+            'c-datatable-with-custom-types'
+        );
+        expect(datatableEl).not.toBeNull();
+        expect(datatableEl.data).toStrictEqual(mockGetAccounts);
+        expect(datatableEl.columns).toStrictEqual(COLUMNS);
     });
 
-    it('renders error panel when there is error', () => {
+    it('renders error panel when there is error', async () => {
         const APEX_ERROR = {
             body: 'Error retrieving records',
             ok: false,
@@ -90,18 +94,15 @@ describe('c-list-record-links', () => {
             APEX_ERROR.statusText
         );
 
-        // Return a promise to wait for any asynchronous DOM updates. Jest
-        // will automatically wait for the Promise chain to complete before
-        // ending the test and fail the test if the promise rejects.
-        return Promise.resolve().then(() => {
-            const errorPanelEl =
-                element.shadowRoot.querySelector('c-error-panel');
-            expect(errorPanelEl).not.toBeNull();
-            expect(errorPanelEl.errors).toStrictEqual(APEX_ERROR);
-        });
+        // Wait for any asynchronous DOM updates
+        await flushPromises();
+
+        const errorPanelEl = element.shadowRoot.querySelector('c-error-panel');
+        expect(errorPanelEl).not.toBeNull();
+        expect(errorPanelEl.errors).toStrictEqual(APEX_ERROR);
     });
 
-    it('is accessible when data is returned', () => {
+    it('is accessible when data is returned', async () => {
         // Create initial element
         const element = createElement('c-list-record-links', {
             is: ListRecordLinks
@@ -111,10 +112,13 @@ describe('c-list-record-links', () => {
         // Emit data from @wire
         getAccountsAdapter.emit(mockGetAccounts);
 
-        return Promise.resolve().then(() => expect(element).toBeAccessible());
+        // Wait for any asynchronous DOM updates
+        await flushPromises();
+
+        await expect(element).toBeAccessible();
     });
 
-    it('is accessible when error is returned', () => {
+    it('is accessible when error is returned', async () => {
         const APEX_ERROR = {
             body: 'Error retrieving records',
             ok: false,
@@ -135,6 +139,9 @@ describe('c-list-record-links', () => {
             APEX_ERROR.statusText
         );
 
-        return Promise.resolve().then(() => expect(element).toBeAccessible());
+        // Wait for any asynchronous DOM updates
+        await flushPromises();
+
+        await expect(element).toBeAccessible();
     });
 });

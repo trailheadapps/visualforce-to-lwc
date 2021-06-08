@@ -30,7 +30,7 @@ describe('c-list-infinite-scrolling-get-list-ui-wrapper', () => {
         expect(innerEl).not.toBeNull();
     });
 
-    it('is accessible', () => {
+    it('is accessible', async () => {
         const element = createElement(
             'c-list-infinite-scrolling-get-list-ui-wrapper',
             {
@@ -40,6 +40,6 @@ describe('c-list-infinite-scrolling-get-list-ui-wrapper', () => {
 
         document.body.appendChild(element);
 
-        return Promise.resolve().then(() => expect(element).toBeAccessible());
+        await expect(element).toBeAccessible();
     });
 });
