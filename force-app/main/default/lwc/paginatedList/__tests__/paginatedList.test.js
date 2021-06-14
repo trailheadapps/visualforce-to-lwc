@@ -3,9 +3,8 @@ import PaginatedList from 'c/paginatedList';
 import getAccountsPaginated from '@salesforce/apex/PaginatedListControllerLwc.getAccountsPaginated';
 import { registerLdsTestWireAdapter } from '@salesforce/sfdx-lwc-jest';
 
-const getAccountsPaginatedAdapter = registerLdsTestWireAdapter(
-    getAccountsPaginated
-);
+const getAccountsPaginatedAdapter =
+    registerLdsTestWireAdapter(getAccountsPaginated);
 
 const mockGetAccountData = require('./data/mockGetAccountData.json');
 
@@ -38,7 +37,13 @@ describe('c-paginated-list', () => {
         jest.clearAllMocks();
     });
 
-    it('renders table with records fetched from wire', () => {
+    // Helper function to wait until the microtask queue is empty.
+    // Used to wait for asynchronous DOM updates.
+    async function flushPromises() {
+        return Promise.resolve();
+    }
+
+    it('renders table with records fetched from wire', async () => {
         // Create initial element
         const element = createElement('c-paginated-list', {
             is: PaginatedList
@@ -48,21 +53,19 @@ describe('c-paginated-list', () => {
         // Emit mock data
         getAccountsPaginatedAdapter.emit(mockGetAccountData);
 
-        // Return a promise to wait for any asynchronous DOM updates. Jest
-        // will automatically wait for the Promise chain to complete before
-        // ending the test and fail the test if the promise rejects.
-        return Promise.resolve().then(() => {
-            // Check that datatable contains the right data
-            const datatableEl = element.shadowRoot.querySelector(
-                'lightning-datatable'
-            );
-            expect(datatableEl).not.toBeNull();
-            expect(datatableEl.data).toStrictEqual(mockGetAccountData.records);
-            expect(datatableEl.columns).toStrictEqual(COLUMNS);
-        });
+        // Wait for any asynchronous DOM updates
+        await flushPromises();
+
+        // Check that datatable contains the right data
+        const datatableEl = element.shadowRoot.querySelector(
+            'lightning-datatable'
+        );
+        expect(datatableEl).not.toBeNull();
+        expect(datatableEl.data).toStrictEqual(mockGetAccountData.records);
+        expect(datatableEl.columns).toStrictEqual(COLUMNS);
     });
 
-    it('disables next button on last page', () => {
+    it('disables next button on last page', async () => {
         // Create initial element
         const element = createElement('c-paginated-list', {
             is: PaginatedList
@@ -73,17 +76,15 @@ describe('c-paginated-list', () => {
         delete mockGetAccountData.nextPageToken;
         getAccountsPaginatedAdapter.emit(mockGetAccountData);
 
-        // Return a promise to wait for any asynchronous DOM updates. Jest
-        // will automatically wait for the Promise chain to complete before
-        // ending the test and fail the test if the promise rejects.
-        return Promise.resolve().then(() => {
-            // Check that datatable contains the right data
-            const paginatorEl = element.shadowRoot.querySelector('c-paginator');
-            expect(paginatorEl.nextButtonDisabled).toBeTruthy();
-        });
+        // Wait for any asynchronous DOM updates
+        await flushPromises();
+
+        // Check that datatable contains the right data
+        const paginatorEl = element.shadowRoot.querySelector('c-paginator');
+        expect(paginatorEl.nextButtonDisabled).toBeTruthy();
     });
 
-    it('disables previous button on first page', () => {
+    it('disables previous button on first page', async () => {
         // Create initial element
         const element = createElement('c-paginated-list', {
             is: PaginatedList
@@ -93,17 +94,15 @@ describe('c-paginated-list', () => {
         // Emit mock data
         getAccountsPaginatedAdapter.emit(mockGetAccountData);
 
-        // Return a promise to wait for any asynchronous DOM updates. Jest
-        // will automatically wait for the Promise chain to complete before
-        // ending the test and fail the test if the promise rejects.
-        return Promise.resolve().then(() => {
-            // Check that datatable contains the right data
-            const paginatorEl = element.shadowRoot.querySelector('c-paginator');
-            expect(paginatorEl.previousButtonDisabled).toBeTruthy();
-        });
+        // Wait for any asynchronous DOM updates
+        await flushPromises();
+
+        // Check that datatable contains the right data
+        const paginatorEl = element.shadowRoot.querySelector('c-paginator');
+        expect(paginatorEl.previousButtonDisabled).toBeTruthy();
     });
 
-    it('requests next page when next button is clicked', () => {
+    it('requests next page when next button is clicked', async () => {
         const NEXT_PAGE_TOKEN = 5;
 
         // Create initial element
@@ -116,26 +115,23 @@ describe('c-paginated-list', () => {
         mockGetAccountData.nextPageToken = NEXT_PAGE_TOKEN;
         getAccountsPaginatedAdapter.emit(mockGetAccountData);
 
-        // Return a promise to wait for any asynchronous DOM updates. Jest
-        // will automatically wait for the Promise chain to complete before
-        // ending the test and fail the test if the promise rejects.
-        return Promise.resolve()
-            .then(() => {
-                // Request next page
-                const paginatorEl = element.shadowRoot.querySelector(
-                    'c-paginator'
-                );
-                paginatorEl.dispatchEvent(new CustomEvent('next'));
-            })
-            .then(() => {
-                // Check that wire was called to retrieve next page
-                expect(
-                    getAccountsPaginatedAdapter.getLastConfig().pageToken
-                ).toBe(NEXT_PAGE_TOKEN);
-            });
+        // Wait for any asynchronous DOM updates
+        await flushPromises();
+
+        // Request next page
+        const paginatorEl = element.shadowRoot.querySelector('c-paginator');
+        paginatorEl.dispatchEvent(new CustomEvent('next'));
+
+        // Wait for any asynchronous DOM updates
+        await flushPromises();
+
+        // Check that wire was called to retrieve next page
+        expect(getAccountsPaginatedAdapter.getLastConfig().pageToken).toBe(
+            NEXT_PAGE_TOKEN
+        );
     });
 
-    it('requests previous page when previous button is clicked', () => {
+    it('requests previous page when previous button is clicked', async () => {
         // Create initial element
         const element = createElement('c-paginated-list', {
             is: PaginatedList
@@ -145,26 +141,21 @@ describe('c-paginated-list', () => {
         // Emit mock data
         getAccountsPaginatedAdapter.emit(mockGetAccountData);
 
-        // Return a promise to wait for any asynchronous DOM updates. Jest
-        // will automatically wait for the Promise chain to complete before
-        // ending the test and fail the test if the promise rejects.
-        return Promise.resolve()
-            .then(() => {
-                // Request previous page
-                const paginatorEl = element.shadowRoot.querySelector(
-                    'c-paginator'
-                );
-                paginatorEl.dispatchEvent(new CustomEvent('previous'));
-            })
-            .then(() => {
-                // Check that wire was called to retrieve previous page
-                expect(
-                    getAccountsPaginatedAdapter.getLastConfig().pageToken
-                ).toBe(-5);
-            });
+        // Wait for any asynchronous DOM updates
+        await flushPromises();
+
+        // Request previous page
+        const paginatorEl = element.shadowRoot.querySelector('c-paginator');
+        paginatorEl.dispatchEvent(new CustomEvent('previous'));
+
+        // Wait for any asynchronous DOM updates
+        await flushPromises();
+
+        // Check that wire was called to retrieve previous page
+        expect(getAccountsPaginatedAdapter.getLastConfig().pageToken).toBe(-5);
     });
 
-    it('renders error panel when wire emits error', () => {
+    it('renders error panel when wire emits error', async () => {
         const ERROR = { message: 'An error message' };
 
         // Create initial element
@@ -176,19 +167,15 @@ describe('c-paginated-list', () => {
         // Emit error from @wire
         getAccountsPaginatedAdapter.error(ERROR);
 
-        // Return a promise to wait for any asynchronous DOM updates. Jest
-        // will automatically wait for the Promise chain to complete before
-        // ending the test and fail the test if the promise rejects.
-        return Promise.resolve().then(() => {
-            const errorPanelEl = element.shadowRoot.querySelector(
-                'c-error-panel'
-            );
-            expect(errorPanelEl).not.toBeNull();
-            expect(errorPanelEl.errors.body).toStrictEqual(ERROR);
-        });
+        // Wait for any asynchronous DOM updates
+        await flushPromises();
+
+        const errorPanelEl = element.shadowRoot.querySelector('c-error-panel');
+        expect(errorPanelEl).not.toBeNull();
+        expect(errorPanelEl.errors.body).toStrictEqual(ERROR);
     });
 
-    it('is accessible when data is returned', () => {
+    it('is accessible when data is returned', async () => {
         // Create initial element
         const element = createElement('c-paginated-list', {
             is: PaginatedList
@@ -198,10 +185,13 @@ describe('c-paginated-list', () => {
         // Emit mock data
         getAccountsPaginatedAdapter.emit(mockGetAccountData);
 
-        return Promise.resolve().then(() => expect(element).toBeAccessible());
+        // Wait for any asynchronous DOM updates
+        await flushPromises();
+
+        await expect(element).toBeAccessible();
     });
 
-    it('is accessible when error is returned', () => {
+    it('is accessible when error is returned', async () => {
         const ERROR = { message: 'An error message' };
 
         // Create initial element
@@ -213,6 +203,9 @@ describe('c-paginated-list', () => {
         // Emit error from @wire
         getAccountsPaginatedAdapter.error(ERROR);
 
-        return Promise.resolve().then(() => expect(element).toBeAccessible());
+        // Wait for any asynchronous DOM updates
+        await flushPromises();
+
+        await expect(element).toBeAccessible();
     });
 });

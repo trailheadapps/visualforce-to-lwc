@@ -32,7 +32,7 @@ describe('c-list-with-parent-record-data-wrapper', () => {
         expect(innerEl).not.toBeNull();
     });
 
-    it('is accessible', () => {
+    it('is accessible', async () => {
         const element = createElement(
             'c-list-with-parent-record-data-wrapper',
             {
@@ -42,6 +42,6 @@ describe('c-list-with-parent-record-data-wrapper', () => {
 
         document.body.appendChild(element);
 
-        return Promise.resolve().then(() => expect(element).toBeAccessible());
+        await expect(element).toBeAccessible();
     });
 });

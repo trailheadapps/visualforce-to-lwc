@@ -9,7 +9,13 @@ describe('c-paginator', () => {
         }
     });
 
-    it('sends "next" event on button click', () => {
+    // Helper function to wait until the microtask queue is empty.
+    // Used to wait for asynchronous DOM updates.
+    async function flushPromises() {
+        return Promise.resolve();
+    }
+
+    it('sends "next" event on button click', async () => {
         // Create initial element
         const element = createElement('c-paginator', {
             is: Paginator
@@ -27,16 +33,14 @@ describe('c-paginator', () => {
         expect(nextButtonEl.disabled).toBeFalsy();
         nextButtonEl.click();
 
-        // Return a promise to wait for any asynchronous DOM updates. Jest
-        // will automatically wait for the Promise chain to complete before
-        // ending the test and fail the test if the promise rejects.
-        return Promise.resolve().then(() => {
-            // Validate if mocked events got fired
-            expect(handlerNext.mock.calls.length).toBe(1);
-        });
+        // Wait for any asynchronous DOM updates
+        await flushPromises();
+
+        // Validate if mocked events got fired
+        expect(handlerNext.mock.calls.length).toBe(1);
     });
 
-    it('sends "previous" event on button click', () => {
+    it('sends "previous" event on button click', async () => {
         // Create initial element
         const element = createElement('c-paginator', {
             is: Paginator
@@ -54,16 +58,14 @@ describe('c-paginator', () => {
         expect(prevButtonEl.disabled).toBeFalsy();
         prevButtonEl.click();
 
-        // Return a promise to wait for any asynchronous DOM updates. Jest
-        // will automatically wait for the Promise chain to complete before
-        // ending the test and fail the test if the promise rejects.
-        return Promise.resolve().then(() => {
-            // Validate if mocked events got fired
-            expect(handlerPrevious.mock.calls.length).toBe(1);
-        });
+        // Wait for any asynchronous DOM updates
+        await flushPromises();
+
+        // Validate if mocked events got fired
+        expect(handlerPrevious.mock.calls.length).toBe(1);
     });
 
-    it('disables "next" button when attribute is set', () => {
+    it('disables "next" button when attribute is set', async () => {
         // Create initial element
         const element = createElement('c-paginator', {
             is: Paginator
@@ -71,17 +73,15 @@ describe('c-paginator', () => {
         element.nextButtonDisabled = true;
         document.body.appendChild(element);
 
-        // Return a promise to wait for any asynchronous DOM updates. Jest
-        // will automatically wait for the Promise chain to complete before
-        // ending the test and fail the test if the promise rejects.
-        return Promise.resolve().then(() => {
-            // Next button should be disabled
-            const nextButtonEl = element.shadowRoot.querySelector('.next');
-            expect(nextButtonEl.disabled).toBeTruthy();
-        });
+        // Wait for any asynchronous DOM updates
+        await flushPromises();
+
+        // Next button should be disabled
+        const nextButtonEl = element.shadowRoot.querySelector('.next');
+        expect(nextButtonEl.disabled).toBeTruthy();
     });
 
-    it('disables "previous" button when attribute is set', () => {
+    it('disables "previous" button when attribute is set', async () => {
         // Create initial element
         const element = createElement('c-paginator', {
             is: Paginator
@@ -89,23 +89,21 @@ describe('c-paginator', () => {
         element.previousButtonDisabled = true;
         document.body.appendChild(element);
 
-        // Return a promise to wait for any asynchronous DOM updates. Jest
-        // will automatically wait for the Promise chain to complete before
-        // ending the test and fail the test if the promise rejects.
-        return Promise.resolve().then(() => {
-            // Previous button should be disabled
-            const prevButtonEl = element.shadowRoot.querySelector('.previous');
-            expect(prevButtonEl.disabled).toBeTruthy();
-        });
+        // Wait for any asynchronous DOM updates
+        await flushPromises();
+
+        // Previous button should be disabled
+        const prevButtonEl = element.shadowRoot.querySelector('.previous');
+        expect(prevButtonEl.disabled).toBeTruthy();
     });
 
-    it('is accessible', () => {
+    it('is accessible', async () => {
         const element = createElement('c-paginator', {
             is: Paginator
         });
 
         document.body.appendChild(element);
 
-        return Promise.resolve().then(() => expect(element).toBeAccessible());
+        await expect(element).toBeAccessible();
     });
 });

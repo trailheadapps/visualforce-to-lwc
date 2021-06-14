@@ -9,12 +9,12 @@ describe('c-panel-grid', () => {
         }
     });
 
-    it('is accessible', () => {
+    it('is accessible', async () => {
         const element = createElement('c-panel-grid', {
             is: PanelGrid
         });
         document.body.appendChild(element);
 
-        return Promise.resolve().then(() => expect(element).toBeAccessible());
+        await expect(element).toBeAccessible();
     });
 });

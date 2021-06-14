@@ -21,7 +21,13 @@ describe('c-single-records', () => {
         jest.clearAllMocks();
     });
 
-    it('renders UI with record', () => {
+    // Helper function to wait until the microtask queue is empty.
+    // Used to wait for asynchronous DOM updates.
+    async function flushPromises() {
+        return Promise.resolve();
+    }
+
+    it('renders UI with record', async () => {
         // Create initial element
         const element = createElement('c-single-records', {
             is: SingleRecords
@@ -31,19 +37,15 @@ describe('c-single-records', () => {
         // Emit record from @wire adapter to make it available to the component
         getSingleAccountViaSOQLAdapter.emit(mockGetSingleAccountViaSOQL);
 
-        // Return a promise to wait for any asynchronous DOM updates. Jest
-        // will automatically wait for the Promise chain to complete before
-        // ending the test and fail the test if the promise rejects.
-        return Promise.resolve().then(() => {
-            // Select elements for validation
-            const buttonEl = element.shadowRoot.querySelector(
-                'lightning-button'
-            );
-            expect(buttonEl).not.toBeNull();
-        });
+        // Wait for any asynchronous DOM updates
+        await flushPromises();
+
+        // Select elements for validation
+        const buttonEl = element.shadowRoot.querySelector('lightning-button');
+        expect(buttonEl).not.toBeNull();
     });
 
-    it('Navigates to Account page when Take me there! button is clicked', () => {
+    it('Navigates to Account page when Take me there! button is clicked', async () => {
         // Identify test values
         const INPUT_OBJECT = 'Account';
         const INPUT_TYPE = 'standard__recordPage';
@@ -59,29 +61,25 @@ describe('c-single-records', () => {
         // Emit record from @wire adapter to make it available to the component
         getSingleAccountViaSOQLAdapter.emit(mockGetSingleAccountViaSOQL);
 
-        // Return a promise to wait for any asynchronous DOM updates. Jest
-        // will automatically wait for the Promise chain to complete before
-        // ending the test and fail the test if the promise rejects.
-        return Promise.resolve().then(() => {
-            // Get button from the DOM and simulate user click
-            const buttonEl = element.shadowRoot.querySelector(
-                'lightning-button'
-            );
-            buttonEl.click();
+        // Wait for any asynchronous DOM updates
+        await flushPromises();
 
-            const { pageReference } = getNavigateCalledWith();
+        // Get button from the DOM and simulate user click
+        const buttonEl = element.shadowRoot.querySelector('lightning-button');
+        buttonEl.click();
 
-            // Verify the page reference is invoked with correct attributes
-            // according to test values above.
-            expect(pageReference.type).toBe(INPUT_TYPE);
-            expect(pageReference.attributes.objectApiName).toBe(INPUT_OBJECT);
-            expect(pageReference.attributes.recordId).toBe(RECORD_ID);
-            expect(pageReference.attributes.actionName).toBe(ACTION_NAME);
-        });
+        const { pageReference } = getNavigateCalledWith();
+
+        // Verify the page reference is invoked with correct attributes
+        // according to test values above.
+        expect(pageReference.type).toBe(INPUT_TYPE);
+        expect(pageReference.attributes.objectApiName).toBe(INPUT_OBJECT);
+        expect(pageReference.attributes.recordId).toBe(RECORD_ID);
+        expect(pageReference.attributes.actionName).toBe(ACTION_NAME);
     });
 
     describe('getSingleContact @wire error', () => {
-        it('shows error panel element', () => {
+        it('shows error panel element', async () => {
             const ERROR = { message: 'An error message' };
 
             // Create initial element
@@ -93,21 +91,18 @@ describe('c-single-records', () => {
             // Emit error from @wire
             getSingleAccountViaSOQLAdapter.error(ERROR);
 
-            // Return a promise to wait for any asynchronous DOM updates. Jest
-            // will automatically wait for the Promise chain to complete before
-            // ending the test and fail the test if the promise rejects.
-            return Promise.resolve().then(() => {
-                const errorPanelEl = element.shadowRoot.querySelector(
-                    'c-error-panel'
-                );
-                // Ensure the error panel appears when there is an error state
-                expect(errorPanelEl).not.toBeNull();
-                expect(errorPanelEl.errors.body).toStrictEqual(ERROR);
-            });
+            // Wait for any asynchronous DOM updates
+            await flushPromises();
+
+            const errorPanelEl =
+                element.shadowRoot.querySelector('c-error-panel');
+            // Ensure the error panel appears when there is an error state
+            expect(errorPanelEl).not.toBeNull();
+            expect(errorPanelEl.errors.body).toStrictEqual(ERROR);
         });
     });
 
-    it('is accessible when data is returned', () => {
+    it('is accessible when data is returned', async () => {
         // Create initial element
         const element = createElement('c-single-records', {
             is: SingleRecords
@@ -117,10 +112,13 @@ describe('c-single-records', () => {
         // Emit record from @wire adapter to make it available to the component
         getSingleAccountViaSOQLAdapter.emit(mockGetSingleAccountViaSOQL);
 
-        return Promise.resolve().then(() => expect(element).toBeAccessible());
+        // Wait for any asynchronous DOM updates
+        await flushPromises();
+
+        await expect(element).toBeAccessible();
     });
 
-    it('is accessible when error is returned', () => {
+    it('is accessible when error is returned', async () => {
         const ERROR = { message: 'An error message' };
 
         // Create initial element
@@ -135,6 +133,9 @@ describe('c-single-records', () => {
         // Emit record from @wire adapter to make it available to the component
         getSingleAccountViaSOQLAdapter.emit(mockGetSingleAccountViaSOQL);
 
-        return Promise.resolve().then(() => expect(element).toBeAccessible());
+        // Wait for any asynchronous DOM updates
+        await flushPromises();
+
+        await expect(element).toBeAccessible();
     });
 });

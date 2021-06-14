@@ -54,7 +54,7 @@ describe('c-view-record-with-parent-record-data-wrapper', () => {
         expect(innerEl.recordId).toBe(RECORD_ID);
     });
 
-    it('is accessible', () => {
+    it('is accessible', async () => {
         const element = createElement(
             'c-view-record-with-parent-record-data-wrapper',
             {
@@ -64,6 +64,6 @@ describe('c-view-record-with-parent-record-data-wrapper', () => {
 
         document.body.appendChild(element);
 
-        return Promise.resolve().then(() => expect(element).toBeAccessible());
+        await expect(element).toBeAccessible();
     });
 });

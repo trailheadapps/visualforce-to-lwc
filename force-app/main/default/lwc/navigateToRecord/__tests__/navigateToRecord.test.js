@@ -10,7 +10,13 @@ describe('c-navigate-to-record', () => {
         }
     });
 
-    it('navigates to record view by ID', () => {
+    // Helper function to wait until the microtask queue is empty.
+    // Used to wait for asynchronous DOM updates.
+    async function flushPromises() {
+        return Promise.resolve();
+    }
+
+    it('navigates to record view by ID', async () => {
         const element = createElement('c-navigate-to-record', {
             is: NavigateToRecord
         });
@@ -18,36 +24,38 @@ describe('c-navigate-to-record', () => {
         element.recordId = '0031700000pJRRTAA4';
         document.body.appendChild(element);
 
-        return Promise.resolve().then(() => {
-            // Get handle to anchor and fire click event
-            const anchorEl = element.shadowRoot.querySelector('a');
-            expect(anchorEl).not.toBeNull();
-            anchorEl.click();
+        // Wait for any asynchronous DOM updates
+        await flushPromises();
 
-            const { pageReference } = getNavigateCalledWith();
+        // Get handle to anchor and fire click event
+        const anchorEl = element.shadowRoot.querySelector('a');
+        expect(anchorEl).not.toBeNull();
+        anchorEl.click();
 
-            expect(pageReference.type).toEqual('standard__recordPage');
-            expect(pageReference.attributes.recordId).toEqual(element.recordId);
-            expect(pageReference.attributes.actionName).toEqual('view');
-        });
+        const { pageReference } = getNavigateCalledWith();
+
+        expect(pageReference.type).toEqual('standard__recordPage');
+        expect(pageReference.attributes.recordId).toEqual(element.recordId);
+        expect(pageReference.attributes.actionName).toEqual('view');
     });
 
-    it('creates an anchor element with the right label', () => {
+    it('creates an anchor element with the right label', async () => {
         const element = createElement('c-navigate-to-record', {
             is: NavigateToRecord
         });
         element.label = 'foo';
         document.body.appendChild(element);
 
-        return Promise.resolve().then(() => {
-            // Get handle to anchor and fire click event
-            const anchorEl = element.shadowRoot.querySelector('a');
-            expect(anchorEl).not.toBeNull();
-            expect(anchorEl.textContent).toEqual(element.label);
-        });
+        // Wait for any asynchronous DOM updates
+        await flushPromises();
+
+        // Get handle to anchor and fire click event
+        const anchorEl = element.shadowRoot.querySelector('a');
+        expect(anchorEl).not.toBeNull();
+        expect(anchorEl.textContent).toEqual(element.label);
     });
 
-    it('is accessible', () => {
+    it('is accessible', async () => {
         const element = createElement('c-navigate-to-record', {
             is: NavigateToRecord
         });
@@ -56,6 +64,6 @@ describe('c-navigate-to-record', () => {
         element.recordId = '0031700000pJRRTAA4';
         document.body.appendChild(element);
 
-        return Promise.resolve().then(() => expect(element).toBeAccessible());
+        await expect(element).toBeAccessible();
     });
 });

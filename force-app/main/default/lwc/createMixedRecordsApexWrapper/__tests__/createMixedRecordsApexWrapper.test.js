@@ -11,6 +11,7 @@ describe('c-create-mixed-records-apex-wrapper', () => {
             document.body.removeChild(document.body.firstChild);
         }
     });
+
     it('shows inner component using c-example-wrapper', () => {
         // Create initial element
         const element = createElement('c-create-mixed-records-apex-wrapper', {
@@ -25,13 +26,13 @@ describe('c-create-mixed-records-apex-wrapper', () => {
         expect(innerEl).not.toBeNull();
     });
 
-    it('is accessible', () => {
+    it('is accessible', async () => {
         const element = createElement('c-create-mixed-records-apex-wrapper', {
             is: CreateMixedRecordsApexWrapper
         });
 
         document.body.appendChild(element);
 
-        return Promise.resolve().then(() => expect(element).toBeAccessible());
+        await expect(element).toBeAccessible();
     });
 });

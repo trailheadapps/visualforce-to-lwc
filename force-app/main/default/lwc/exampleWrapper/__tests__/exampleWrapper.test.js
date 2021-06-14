@@ -28,9 +28,8 @@ describe('c-example-wrapper', () => {
         element.visualforceHeight = VF_HEIGHT;
         document.body.appendChild(element);
 
-        const lightningCardEl = element.shadowRoot.querySelector(
-            'lightning-card'
-        );
+        const lightningCardEl =
+            element.shadowRoot.querySelector('lightning-card');
         expect(lightningCardEl).not.toBeNull();
         expect(lightningCardEl.title).toBe(TITLE);
         expect(lightningCardEl.iconName).toBe(ICON_NAME);
@@ -69,7 +68,7 @@ describe('c-example-wrapper', () => {
         expect(iframeEl.src).toContain(`/apex/${VISUALFORCE}`);
     });
 
-    it('is accessible', () => {
+    it('is accessible', async () => {
         const element = createElement('c-example-wrapper', {
             is: ExampleWrapper
         });
@@ -80,6 +79,6 @@ describe('c-example-wrapper', () => {
         const iframeEl = element.shadowRoot.querySelector('iframe');
         iframeEl.remove();
 
-        return Promise.resolve().then(() => expect(element).toBeAccessible());
+        await expect(element).toBeAccessible();
     });
 });

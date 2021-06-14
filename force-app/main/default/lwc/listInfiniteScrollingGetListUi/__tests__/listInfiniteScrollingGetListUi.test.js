@@ -18,7 +18,13 @@ describe('c-list-infinite-scrolling-get-list-ui', () => {
         jest.clearAllMocks();
     });
 
-    it('displays a data table when records is true', () => {
+    // Helper function to wait until the microtask queue is empty.
+    // Used to wait for asynchronous DOM updates.
+    async function flushPromises() {
+        return Promise.resolve();
+    }
+
+    it('displays a data table when records is true', async () => {
         // Create element
         const element = createElement('c-list-infinite-scrolling-get-list-ui', {
             is: ListInfiniteScrollingGetListUi
@@ -28,17 +34,18 @@ describe('c-list-infinite-scrolling-get-list-ui', () => {
         // Mock returned data
         getListUiAdapter.emit(mockGetAccountData);
 
-        return Promise.resolve().then(() => {
-            const dataTableEl = element.shadowRoot.querySelector(
-                'lightning-datatable'
-            );
-            expect(dataTableEl.data).toEqual(
-                formatGetListUiSObjects(mockGetAccountData)
-            );
-        });
+        // Wait for any asynchronous DOM updates
+        await flushPromises();
+
+        const dataTableEl = element.shadowRoot.querySelector(
+            'lightning-datatable'
+        );
+        expect(dataTableEl.data).toEqual(
+            formatGetListUiSObjects(mockGetAccountData)
+        );
     });
 
-    it('displays an error when the error variable is set', () => {
+    it('displays an error when the error variable is set', async () => {
         const MESSAGE = 'Error retrieving data';
 
         // Create element
@@ -50,44 +57,39 @@ describe('c-list-infinite-scrolling-get-list-ui', () => {
         // Emit error from wire adapter
         getListUiAdapter.error(MESSAGE);
 
-        return Promise.resolve().then(() => {
-            const errorPanelEl = element.shadowRoot.querySelector(
-                'c-error-panel'
-            );
-            expect(errorPanelEl.errors.body).toBe(MESSAGE);
-        });
+        // Wait for any asynchronous DOM updates
+        await flushPromises();
+
+        const errorPanelEl = element.shadowRoot.querySelector('c-error-panel');
+        expect(errorPanelEl.errors.body).toBe(MESSAGE);
     });
 
-    it('requests more data when scrolling reaches the bottom', () => {
+    it('requests more data when scrolling reaches the bottom', async () => {
         const element = createElement('c-list-infinite-scrolling-get-list-ui', {
             is: ListInfiniteScrollingGetListUi
         });
         document.body.appendChild(element);
 
-        return Promise.resolve()
-            .then(() => {
-                const dataTableEl = element.shadowRoot.querySelector(
-                    'lightning-datatable'
-                );
+        // Wait for any asynchronous DOM updates
+        await flushPromises();
 
-                expect(dataTableEl).not.toBeNull();
-                expect(getListUiAdapter.getLastConfig().pageToken).toBe(0);
-            })
-            .then(() => {
-                // Run the event load more to simulate scrolling
-                const dataTableEl = element.shadowRoot.querySelector(
-                    'lightning-datatable'
-                );
-                dataTableEl.dispatchEvent(new CustomEvent('loadmore'));
-            })
-            .then(() => {
-                // If the scroll worked, our new pageToken should have updated from
-                // 0 to 5.
-                expect(getListUiAdapter.getLastConfig().pageToken).toBe(5);
-            });
+        const dataTableEl = element.shadowRoot.querySelector(
+            'lightning-datatable'
+        );
+
+        expect(dataTableEl).not.toBeNull();
+        expect(getListUiAdapter.getLastConfig().pageToken).toBe(0);
+
+        dataTableEl.dispatchEvent(new CustomEvent('loadmore'));
+
+        // Wait for any asynchronous DOM updates
+        await flushPromises();
+        // If the scroll worked, our new pageToken should have updated from
+        // 0 to 5.
+        expect(getListUiAdapter.getLastConfig().pageToken).toBe(5);
     });
 
-    it('is accessible when data is returned', () => {
+    it('is accessible when data is returned', async () => {
         // Create element
         const element = createElement('c-list-infinite-scrolling-get-list-ui', {
             is: ListInfiniteScrollingGetListUi
@@ -97,10 +99,13 @@ describe('c-list-infinite-scrolling-get-list-ui', () => {
         // Mock returned data
         getListUiAdapter.emit(mockGetAccountData);
 
-        return Promise.resolve().then(() => expect(element).toBeAccessible());
+        // Wait for any asynchronous DOM updates
+        await flushPromises();
+
+        await expect(element).toBeAccessible();
     });
 
-    it('is accessible when error is returned', () => {
+    it('is accessible when error is returned', async () => {
         const MESSAGE = 'Error retrieving data';
 
         // Create element
@@ -112,6 +117,9 @@ describe('c-list-infinite-scrolling-get-list-ui', () => {
         // Emit error from wire adapter
         getListUiAdapter.error(MESSAGE);
 
-        return Promise.resolve().then(() => expect(element).toBeAccessible());
+        // Wait for any asynchronous DOM updates
+        await flushPromises();
+
+        await expect(element).toBeAccessible();
     });
 });

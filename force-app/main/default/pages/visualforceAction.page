@@ -2,7 +2,11 @@
     <apex:slds />
     <div class="slds-scope">
         <h1
-            class="slds-text-heading_medium slds-align_absolute-center slds-var-m-top_large"
+            class="
+                slds-text-heading_medium
+                slds-align_absolute-center
+                slds-var-m-top_large
+            "
         >
             This is a Visualforce Page!
         </h1>
