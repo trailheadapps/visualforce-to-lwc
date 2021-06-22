@@ -1,10 +1,7 @@
 import { createElement } from 'lwc';
 import ListInfiniteScrollingGetListUi from 'c/listInfiniteScrollingGetListUi';
-import { registerLdsTestWireAdapter } from '@salesforce/sfdx-lwc-jest';
 import { getListUi } from 'lightning/uiListApi';
 import { formatGetListUiSObjects } from 'c/ldsUtils';
-
-const getListUiAdapter = registerLdsTestWireAdapter(getListUi);
 
 const mockGetAccountData = require('./data/mockGetAccountData.json');
 
@@ -32,7 +29,7 @@ describe('c-list-infinite-scrolling-get-list-ui', () => {
         document.body.appendChild(element);
 
         // Mock returned data
-        getListUiAdapter.emit(mockGetAccountData);
+        getListUi.emit(mockGetAccountData);
 
         // Wait for any asynchronous DOM updates
         await flushPromises();
@@ -55,7 +52,7 @@ describe('c-list-infinite-scrolling-get-list-ui', () => {
         document.body.appendChild(element);
 
         // Emit error from wire adapter
-        getListUiAdapter.error(MESSAGE);
+        getListUi.error(MESSAGE);
 
         // Wait for any asynchronous DOM updates
         await flushPromises();
@@ -78,7 +75,7 @@ describe('c-list-infinite-scrolling-get-list-ui', () => {
         );
 
         expect(dataTableEl).not.toBeNull();
-        expect(getListUiAdapter.getLastConfig().pageToken).toBe(0);
+        expect(getListUi.getLastConfig().pageToken).toBe(0);
 
         dataTableEl.dispatchEvent(new CustomEvent('loadmore'));
 
@@ -86,7 +83,7 @@ describe('c-list-infinite-scrolling-get-list-ui', () => {
         await flushPromises();
         // If the scroll worked, our new pageToken should have updated from
         // 0 to 5.
-        expect(getListUiAdapter.getLastConfig().pageToken).toBe(5);
+        expect(getListUi.getLastConfig().pageToken).toBe(5);
     });
 
     it('is accessible when data is returned', async () => {
@@ -97,7 +94,7 @@ describe('c-list-infinite-scrolling-get-list-ui', () => {
         document.body.appendChild(element);
 
         // Mock returned data
-        getListUiAdapter.emit(mockGetAccountData);
+        getListUi.emit(mockGetAccountData);
 
         // Wait for any asynchronous DOM updates
         await flushPromises();
@@ -115,7 +112,7 @@ describe('c-list-infinite-scrolling-get-list-ui', () => {
         document.body.appendChild(element);
 
         // Emit error from wire adapter
-        getListUiAdapter.error(MESSAGE);
+        getListUi.error(MESSAGE);
 
         // Wait for any asynchronous DOM updates
         await flushPromises();

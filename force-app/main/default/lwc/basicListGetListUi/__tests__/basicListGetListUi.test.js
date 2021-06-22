@@ -6,7 +6,6 @@ import ACCOUNT_NAME_FIELD from '@salesforce/schema/Account.Name';
 import ACCOUNT_TYPE_FIELD from '@salesforce/schema/Account.Type';
 import ACCOUNT_PHONE_FIELD from '@salesforce/schema/Account.Phone';
 import ACCOUNT_EMPLOYEES_FIELD from '@salesforce/schema/Account.NumberOfEmployees';
-import { registerLdsTestWireAdapter } from '@salesforce/sfdx-lwc-jest';
 
 const COLUMNS = [
     {
@@ -30,9 +29,6 @@ const COLUMNS = [
 // Mock realistic data
 const mockGetListUi = require('./data/getListUi.json');
 const mockFormatGetListUiSObjects = require('./data/formatGetListUiSObjects.json');
-
-// Register as an LDS wire adapter. Some tests verify the provisioned values trigger desired behavior.
-const getListUiAdapter = registerLdsTestWireAdapter(getListUi);
 
 // Mock ldsUtils
 jest.mock('c/ldsUtils');
@@ -65,7 +61,7 @@ describe('c-basic-list-get-list-ui', () => {
         formatGetListUiSObjects.mockReturnValue(mockFormatGetListUiSObjects);
 
         // Emit data from @wire
-        getListUiAdapter.emit(mockGetListUi);
+        getListUi.emit(mockGetListUi);
 
         // Wait for any asynchronous DOM updates
         await flushPromises();
@@ -87,7 +83,7 @@ describe('c-basic-list-get-list-ui', () => {
         document.body.appendChild(element);
 
         // Emit data from @wire
-        getListUiAdapter.error();
+        getListUi.error();
 
         // Wait for any asynchronous DOM updates
         await flushPromises();
@@ -108,7 +104,7 @@ describe('c-basic-list-get-list-ui', () => {
         formatGetListUiSObjects.mockReturnValue(mockFormatGetListUiSObjects);
 
         // Emit data from @wire
-        getListUiAdapter.emit(mockGetListUi);
+        getListUi.emit(mockGetListUi);
 
         // Wait for any asynchronous DOM updates
         await flushPromises();
@@ -124,7 +120,7 @@ describe('c-basic-list-get-list-ui', () => {
         document.body.appendChild(element);
 
         // Emit data from @wire
-        getListUiAdapter.error();
+        getListUi.error();
 
         // Wait for any asynchronous DOM updates
         await flushPromises();

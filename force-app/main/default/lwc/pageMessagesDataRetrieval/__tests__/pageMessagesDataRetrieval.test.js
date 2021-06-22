@@ -1,9 +1,6 @@
 import { createElement } from 'lwc';
 import PageMessagesDataRetrieval from 'c/pageMessagesDataRetrieval';
-import { registerApexTestWireAdapter } from '@salesforce/sfdx-lwc-jest';
 import getAccounts from '@salesforce/apex/PageMessagesDataRetrievalControllerLwc.getAccounts';
-
-const getAccountsAdapter = registerApexTestWireAdapter(getAccounts);
 
 describe('c-page-messages-data-retrieval', () => {
     afterEach(() => {
@@ -25,7 +22,7 @@ describe('c-page-messages-data-retrieval', () => {
         });
         document.body.appendChild(element);
 
-        getAccountsAdapter.error('Error Message');
+        getAccounts.error('Error Message');
 
         // Wait for any asynchronous DOM updates
         await flushPromises();
@@ -46,7 +43,7 @@ describe('c-page-messages-data-retrieval', () => {
         });
         document.body.appendChild(element);
 
-        getAccountsAdapter.emit({ data: 'hello world' });
+        getAccounts.emit({ data: 'hello world' });
 
         // Wait for any asynchronous DOM updates
         await flushPromises();
@@ -63,7 +60,7 @@ describe('c-page-messages-data-retrieval', () => {
 
         document.body.appendChild(element);
 
-        getAccountsAdapter.emit({ data: 'hello world' });
+        getAccounts.emit({ data: 'hello world' });
 
         // Wait for any asynchronous DOM updates
         await flushPromises();
@@ -78,7 +75,7 @@ describe('c-page-messages-data-retrieval', () => {
 
         document.body.appendChild(element);
 
-        getAccountsAdapter.error('Error Message');
+        getAccounts.error('Error Message');
 
         // Wait for any asynchronous DOM updates
         await flushPromises();

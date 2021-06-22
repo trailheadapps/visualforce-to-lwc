@@ -1,10 +1,6 @@
 import { createElement } from 'lwc';
 import PaginatedList from 'c/paginatedList';
 import getAccountsPaginated from '@salesforce/apex/PaginatedListControllerLwc.getAccountsPaginated';
-import { registerLdsTestWireAdapter } from '@salesforce/sfdx-lwc-jest';
-
-const getAccountsPaginatedAdapter =
-    registerLdsTestWireAdapter(getAccountsPaginated);
 
 const mockGetAccountData = require('./data/mockGetAccountData.json');
 
@@ -51,7 +47,7 @@ describe('c-paginated-list', () => {
         document.body.appendChild(element);
 
         // Emit mock data
-        getAccountsPaginatedAdapter.emit(mockGetAccountData);
+        getAccountsPaginated.emit(mockGetAccountData);
 
         // Wait for any asynchronous DOM updates
         await flushPromises();
@@ -74,7 +70,7 @@ describe('c-paginated-list', () => {
 
         // Emit mock data that simulates last page
         delete mockGetAccountData.nextPageToken;
-        getAccountsPaginatedAdapter.emit(mockGetAccountData);
+        getAccountsPaginated.emit(mockGetAccountData);
 
         // Wait for any asynchronous DOM updates
         await flushPromises();
@@ -92,7 +88,7 @@ describe('c-paginated-list', () => {
         document.body.appendChild(element);
 
         // Emit mock data
-        getAccountsPaginatedAdapter.emit(mockGetAccountData);
+        getAccountsPaginated.emit(mockGetAccountData);
 
         // Wait for any asynchronous DOM updates
         await flushPromises();
@@ -113,7 +109,7 @@ describe('c-paginated-list', () => {
 
         // Emit mock data
         mockGetAccountData.nextPageToken = NEXT_PAGE_TOKEN;
-        getAccountsPaginatedAdapter.emit(mockGetAccountData);
+        getAccountsPaginated.emit(mockGetAccountData);
 
         // Wait for any asynchronous DOM updates
         await flushPromises();
@@ -126,7 +122,7 @@ describe('c-paginated-list', () => {
         await flushPromises();
 
         // Check that wire was called to retrieve next page
-        expect(getAccountsPaginatedAdapter.getLastConfig().pageToken).toBe(
+        expect(getAccountsPaginated.getLastConfig().pageToken).toBe(
             NEXT_PAGE_TOKEN
         );
     });
@@ -139,7 +135,7 @@ describe('c-paginated-list', () => {
         document.body.appendChild(element);
 
         // Emit mock data
-        getAccountsPaginatedAdapter.emit(mockGetAccountData);
+        getAccountsPaginated.emit(mockGetAccountData);
 
         // Wait for any asynchronous DOM updates
         await flushPromises();
@@ -152,7 +148,7 @@ describe('c-paginated-list', () => {
         await flushPromises();
 
         // Check that wire was called to retrieve previous page
-        expect(getAccountsPaginatedAdapter.getLastConfig().pageToken).toBe(-5);
+        expect(getAccountsPaginated.getLastConfig().pageToken).toBe(-5);
     });
 
     it('renders error panel when wire emits error', async () => {
@@ -165,7 +161,7 @@ describe('c-paginated-list', () => {
         document.body.appendChild(element);
 
         // Emit error from @wire
-        getAccountsPaginatedAdapter.error(ERROR);
+        getAccountsPaginated.error(ERROR);
 
         // Wait for any asynchronous DOM updates
         await flushPromises();
@@ -183,7 +179,7 @@ describe('c-paginated-list', () => {
         document.body.appendChild(element);
 
         // Emit mock data
-        getAccountsPaginatedAdapter.emit(mockGetAccountData);
+        getAccountsPaginated.emit(mockGetAccountData);
 
         // Wait for any asynchronous DOM updates
         await flushPromises();
@@ -201,7 +197,7 @@ describe('c-paginated-list', () => {
         document.body.appendChild(element);
 
         // Emit error from @wire
-        getAccountsPaginatedAdapter.error(ERROR);
+        getAccountsPaginated.error(ERROR);
 
         // Wait for any asynchronous DOM updates
         await flushPromises();
