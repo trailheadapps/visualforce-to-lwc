@@ -5,7 +5,6 @@ import ACCOUNT_NAME_FIELD from '@salesforce/schema/Account.Name';
 import ACCOUNT_TYPE_FIELD from '@salesforce/schema/Account.Type';
 import ACCOUNT_PHONE_FIELD from '@salesforce/schema/Account.Phone';
 import ACCOUNT_EMPLOYEES_FIELD from '@salesforce/schema/Account.NumberOfEmployees';
-import { registerApexTestWireAdapter } from '@salesforce/sfdx-lwc-jest';
 import getAccounts from '@salesforce/apex/ListRecordLinks.getAccounts';
 
 const COLUMNS = [
@@ -33,9 +32,6 @@ const COLUMNS = [
 // Realistic data with a list of accounts
 const mockGetAccounts = require('./data/getAccounts.json');
 
-// Register as Apex wire adapter. Some tests verify that provisioned values trigger desired behavior.
-const getAccountsAdapter = registerApexTestWireAdapter(getAccounts);
-
 describe('c-list-record-links', () => {
     afterEach(() => {
         // The jsdom instance is shared across test cases in a single file so reset the DOM
@@ -60,7 +56,7 @@ describe('c-list-record-links', () => {
         document.body.appendChild(element);
 
         // Emit data from @wire
-        getAccountsAdapter.emit(mockGetAccounts);
+        getAccounts.emit(mockGetAccounts);
 
         // Wait for any asynchronous DOM updates
         await flushPromises();
@@ -88,7 +84,7 @@ describe('c-list-record-links', () => {
         document.body.appendChild(element);
 
         // Emit data from @wire
-        getAccountsAdapter.error(
+        getAccounts.error(
             APEX_ERROR.body,
             APEX_ERROR.status,
             APEX_ERROR.statusText
@@ -110,7 +106,7 @@ describe('c-list-record-links', () => {
         document.body.appendChild(element);
 
         // Emit data from @wire
-        getAccountsAdapter.emit(mockGetAccounts);
+        getAccounts.emit(mockGetAccounts);
 
         // Wait for any asynchronous DOM updates
         await flushPromises();
@@ -133,7 +129,7 @@ describe('c-list-record-links', () => {
         document.body.appendChild(element);
 
         // Emit data from @wire
-        getAccountsAdapter.error(
+        getAccounts.error(
             APEX_ERROR.body,
             APEX_ERROR.status,
             APEX_ERROR.statusText

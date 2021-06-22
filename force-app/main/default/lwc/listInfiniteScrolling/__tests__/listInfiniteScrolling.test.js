@@ -1,10 +1,6 @@
 import { createElement } from 'lwc';
 import ListInfiniteScrolling from 'c/listInfiniteScrolling';
-import { registerApexTestWireAdapter } from '@salesforce/sfdx-lwc-jest';
 import getAccountsPaginated from '@salesforce/apex/PaginatedListControllerLwc.getAccountsPaginated';
-
-const getAccountsPaginatedAdapter =
-    registerApexTestWireAdapter(getAccountsPaginated);
 
 const mockGetAccountsPaginatedRecords = require('./data/mockGetAccountsPaginatedRecords.json');
 
@@ -27,7 +23,7 @@ describe('c-list-infinite-scrolling', () => {
             is: ListInfiniteScrolling
         });
         document.body.appendChild(element);
-        getAccountsPaginatedAdapter.emit(mockGetAccountsPaginatedRecords);
+        getAccountsPaginated.emit(mockGetAccountsPaginatedRecords);
 
         // Wait for any asynchronous DOM updates
         await flushPromises();
@@ -48,7 +44,7 @@ describe('c-list-infinite-scrolling', () => {
             is: ListInfiniteScrolling
         });
         document.body.appendChild(element);
-        getAccountsPaginatedAdapter.error(MESSAGE);
+        getAccountsPaginated.error(MESSAGE);
 
         // Wait for any asynchronous DOM updates
         await flushPromises();
@@ -64,7 +60,7 @@ describe('c-list-infinite-scrolling', () => {
             is: ListInfiniteScrolling
         });
         document.body.appendChild(element);
-        getAccountsPaginatedAdapter.error();
+        getAccountsPaginated.error();
 
         // Wait for any asynchronous DOM updates
         await flushPromises();
@@ -82,7 +78,7 @@ describe('c-list-infinite-scrolling', () => {
         });
         document.body.appendChild(element);
 
-        getAccountsPaginatedAdapter.emit(mockGetAccountsPaginatedRecords);
+        getAccountsPaginated.emit(mockGetAccountsPaginatedRecords);
 
         // Wait for any asynchronous DOM updates
         await flushPromises();
@@ -95,14 +91,14 @@ describe('c-list-infinite-scrolling', () => {
         expect(dataTableEl.data).toEqual(
             mockGetAccountsPaginatedRecords.records
         );
-        expect(getAccountsPaginatedAdapter.getLastConfig().pageToken).toBe(0);
+        expect(getAccountsPaginated.getLastConfig().pageToken).toBe(0);
 
         dataTableEl.dispatchEvent(new CustomEvent('loadmore'));
 
         // Wait for any asynchronous DOM updates
         await flushPromises();
 
-        expect(getAccountsPaginatedAdapter.getLastConfig().pageToken).toBe(5);
+        expect(getAccountsPaginated.getLastConfig().pageToken).toBe(5);
     });
 
     it('is accessible when data is returned', async () => {
@@ -112,7 +108,7 @@ describe('c-list-infinite-scrolling', () => {
 
         document.body.appendChild(element);
 
-        getAccountsPaginatedAdapter.emit(mockGetAccountsPaginatedRecords);
+        getAccountsPaginated.emit(mockGetAccountsPaginatedRecords);
 
         // Wait for any asynchronous DOM updates
         await flushPromises();
@@ -127,7 +123,7 @@ describe('c-list-infinite-scrolling', () => {
 
         document.body.appendChild(element);
 
-        getAccountsPaginatedAdapter.error();
+        getAccountsPaginated.error();
 
         // Wait for any asynchronous DOM updates
         await flushPromises();

@@ -11,7 +11,7 @@
             "title": "Retrieving parent record",
             "file": "force-app/main/default/lwc/viewRecordWithParentRecordData/viewRecordWithParentRecordData.js",
             "line": 17,
-            "description": "Next, we retrieve the owner data using the [getRecord](https://developer.salesforce.com/docs/component-library/documentation/en/lwc/reference_wire_adapters_record) Lightning Data Service (LDS) wire adapter. Note the adapter and the field references have been imported at the top.",
+            "description": "Next, we retrieve the owner data using the [getRecord](https://developer.salesforce.com/docs/component-library/documentation/en/lwc/reference_wire_adapters_record) Lightning Data Service (LDS) wire . Note the adapter and the field references have been imported at the top.",
             "selection": {
                 "start": {
                     "line": 17,

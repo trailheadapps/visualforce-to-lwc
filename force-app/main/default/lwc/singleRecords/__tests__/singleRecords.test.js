@@ -1,14 +1,9 @@
 import { createElement } from 'lwc';
 import SingleRecords from 'c/singleRecords';
-import { registerApexTestWireAdapter } from '@salesforce/sfdx-lwc-jest';
 import { getNavigateCalledWith } from 'lightning/navigation';
 import getSingleAccountViaSOQL from '@salesforce/apex/RecordPagesController.getSingleAccountViaSOQL';
 
 const mockGetSingleAccountViaSOQL = require('./data/getRecord.json');
-
-const getSingleAccountViaSOQLAdapter = registerApexTestWireAdapter(
-    getSingleAccountViaSOQL
-);
 
 describe('c-single-records', () => {
     afterEach(() => {
@@ -35,7 +30,7 @@ describe('c-single-records', () => {
         document.body.appendChild(element);
 
         // Emit record from @wire adapter to make it available to the component
-        getSingleAccountViaSOQLAdapter.emit(mockGetSingleAccountViaSOQL);
+        getSingleAccountViaSOQL.emit(mockGetSingleAccountViaSOQL);
 
         // Wait for any asynchronous DOM updates
         await flushPromises();
@@ -59,7 +54,7 @@ describe('c-single-records', () => {
         document.body.appendChild(element);
 
         // Emit record from @wire adapter to make it available to the component
-        getSingleAccountViaSOQLAdapter.emit(mockGetSingleAccountViaSOQL);
+        getSingleAccountViaSOQL.emit(mockGetSingleAccountViaSOQL);
 
         // Wait for any asynchronous DOM updates
         await flushPromises();
@@ -89,7 +84,7 @@ describe('c-single-records', () => {
             document.body.appendChild(element);
 
             // Emit error from @wire
-            getSingleAccountViaSOQLAdapter.error(ERROR);
+            getSingleAccountViaSOQL.error(ERROR);
 
             // Wait for any asynchronous DOM updates
             await flushPromises();
@@ -110,7 +105,7 @@ describe('c-single-records', () => {
         document.body.appendChild(element);
 
         // Emit record from @wire adapter to make it available to the component
-        getSingleAccountViaSOQLAdapter.emit(mockGetSingleAccountViaSOQL);
+        getSingleAccountViaSOQL.emit(mockGetSingleAccountViaSOQL);
 
         // Wait for any asynchronous DOM updates
         await flushPromises();
@@ -128,10 +123,10 @@ describe('c-single-records', () => {
         document.body.appendChild(element);
 
         // Emit error from @wire
-        getSingleAccountViaSOQLAdapter.error(ERROR);
+        getSingleAccountViaSOQL.error(ERROR);
 
         // Emit record from @wire adapter to make it available to the component
-        getSingleAccountViaSOQLAdapter.emit(mockGetSingleAccountViaSOQL);
+        getSingleAccountViaSOQL.emit(mockGetSingleAccountViaSOQL);
 
         // Wait for any asynchronous DOM updates
         await flushPromises();
