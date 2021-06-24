@@ -60,7 +60,7 @@
         <targetAppDeveloperName>Visualforce_to_LWC</targetAppDeveloperName>
         <targetPageKey1>Record_Lists</targetPageKey1>
         <targetPageType>standard__navItemPage</targetPageType>
-        <title>Using getListUi(beta) Wire Adapter</title>
+        <title>Wrapping Up</title>
         <userAccess>Everyone</userAccess>
         <userProfileAccess>Everyone</userProfileAccess>
         <versionNumber>1</versionNumber>

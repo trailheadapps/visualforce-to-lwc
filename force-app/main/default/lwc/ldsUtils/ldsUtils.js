@@ -33,25 +33,3 @@ export function reduceErrors(errors) {
             .filter((message) => !!message)
     );
 }
-
-/**
- * Formats a list of sObjects returned by a call to getListUi adapter
- * so that it can be used in lightning-datatable
- * @param {List UI} List UI in User Interface API
- * @return {Object[]} formattedObjects
- */
-export function formatGetListUiSObjects(sObjects) {
-    const formattedObjects = [];
-    sObjects.records.records.forEach((sObject) => {
-        formattedObjects.push(formatGetListUiSObject(sObject));
-    });
-    return formattedObjects;
-}
-
-function formatGetListUiSObject(sObject) {
-    const formattedObject = {};
-    Object.keys(sObject.fields).forEach((key) => {
-        formattedObject[key] = sObject.fields[key].value;
-    });
-    return formattedObject;
-}
