@@ -29,31 +29,7 @@
             "title": "formatApexSObjects in apexUtils",
             "file": "force-app/main/default/lwc/apexUtils/apexUtils.js",
             "line": 36,
-            "description": "We defined the formatApexSObjects function in this apexUtils module. Feel free to copy it!"
-        },
-        {
-            "title": "Retrieving records with getListUi",
-            "file": "force-app/main/default/lwc/basicListGetListUi/basicListGetListUi.js",
-            "line": 2,
-            "description": "Let's take a look at another example, \"Basic List using getListUi (beta)\". [getListUi](https://developer.salesforce.com/docs/component-library/documentation/en/lwc/reference_get_list_ui) is a wire adapter that you can use to retrieve records from a listview. First, we import the wire adapter at the top."
-        },
-        {
-            "title": "@wire getListUi",
-            "file": "force-app/main/default/lwc/basicListGetListUi/basicListGetListUi.js",
-            "line": 34,
-            "description": "Next, we call the adapter with @wire, specifying the object API name, and the listview name. Remember the wire adapter uses the LDS cache, and the wire service will provide new values when needed."
-        },
-        {
-            "title": "Formatting getListUi sObjects",
-            "file": "force-app/main/default/lwc/basicListGetListUi/basicListGetListUi.js",
-            "line": 40,
-            "description": "Finally, we transform the returned value to the format lightning-datatable expects using formatGetListUiSObjects, that was imported at the top."
-        },
-        {
-            "title": "formatGetListUiSObjects in apexUtils",
-            "file": "force-app/main/default/lwc/ldsUtils/ldsUtils.js",
-            "line": 45,
-            "description": "We defined the formatGetListUiSObjects function in this ldsUtils module. Copy it when you need it!\nWe hope that you enjoyed Visualforce to LWC code tours. If you want more information about the app, don't forget to activate [In-App Guidance](https://help.salesforce.com/articleView?id=customhelp_lexguid.htm) in your org and take a look at the guided tours we've created."
+            "description": "We defined the formatApexSObjects function in this apexUtils module. Feel free to copy it!\nWe hope that you enjoyed Visualforce to LWC code tours. If you want more information about the app, don't forget to activate [In-App Guidance](https://help.salesforce.com/articleView?id=customhelp_lexguid.htm) in your org and take a look at the guided tours we've created."
         }
     ]
 }

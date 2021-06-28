@@ -1,8 +1,4 @@
-import { reduceErrors, formatGetListUiSObjects } from 'c/ldsUtils';
-
-// Mock realistic data
-const mockGetListUi = require('./data/getListUi.json');
-const mockFormatGetListUiSObjects = require('./data/formatGetListUiSObjects.json');
+import { reduceErrors } from 'c/ldsUtils';
 
 describe('c-lds-utils', () => {
     describe('reduceErrors', () => {
@@ -60,14 +56,6 @@ describe('c-lds-utils', () => {
             const reduced = reduceErrors(FULL_ERROR);
 
             expect(reduced).toStrictEqual(REDUCED_ERROR);
-        });
-    });
-
-    describe('formatGetListUiSObjects', () => {
-        it('formats records', () => {
-            const formatted = formatGetListUiSObjects(mockGetListUi);
-
-            expect(formatted).toStrictEqual(mockFormatGetListUiSObjects);
         });
     });
 });

@@ -26,17 +26,6 @@
                 <componentName>paginatedListWrapper</componentName>
             </componentInstance>
         </itemInstances>
-        <itemInstances>
-            <componentInstance>
-                <componentName>basicListGetListUiWrapper</componentName>
-            </componentInstance>
-        </itemInstances>
-        <itemInstances>
-            <componentInstance>
-                <componentName
-                >listInfiniteScrollingGetListUiWrapper</componentName>
-            </componentInstance>
-        </itemInstances>
         <name>main</name>
         <type>Region</type>
     </flexiPageRegions>
