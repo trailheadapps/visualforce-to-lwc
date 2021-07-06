@@ -4,6 +4,20 @@ import getAccountsPaginated from '@salesforce/apex/PaginatedListControllerLwc.ge
 
 const mockGetAccountsPaginatedRecords = require('./data/mockGetAccountsPaginatedRecords.json');
 
+// Mock Apex wire adapter
+jest.mock(
+    '@salesforce/apex/PaginatedListControllerLwc.getAccountsPaginated',
+    () => {
+        const {
+            createApexTestWireAdapter
+        } = require('@salesforce/sfdx-lwc-jest');
+        return {
+            default: createApexTestWireAdapter(jest.fn())
+        };
+    },
+    { virtual: true }
+);
+
 describe('c-list-infinite-scrolling', () => {
     afterEach(() => {
         // The jsdom instance is shared across test cases in a single file so reset the DOM

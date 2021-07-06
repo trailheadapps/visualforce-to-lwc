@@ -2,6 +2,19 @@ import { createElement } from 'lwc';
 import PageMessagesDataRetrieval from 'c/pageMessagesDataRetrieval';
 import getAccounts from '@salesforce/apex/PageMessagesDataRetrievalControllerLwc.getAccounts';
 
+// Mock Apex wire adapter
+jest.mock(
+    '@salesforce/apex/PageMessagesDataRetrievalControllerLwc.getAccounts',
+    () => {
+        const {
+            createApexTestWireAdapter
+        } = require('@salesforce/sfdx-lwc-jest');
+        return {
+            default: createApexTestWireAdapter(jest.fn())
+        };
+    },
+    { virtual: true }
+);
 describe('c-page-messages-data-retrieval', () => {
     afterEach(() => {
         // The jsdom instance is shared across test cases in a single file so reset the DOM
