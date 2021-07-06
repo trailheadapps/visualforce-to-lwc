@@ -5,7 +5,7 @@ import ACCOUNT_NAME_FIELD from '@salesforce/schema/Account.Name';
 import ACCOUNT_TYPE_FIELD from '@salesforce/schema/Account.Type';
 import ACCOUNT_PHONE_FIELD from '@salesforce/schema/Account.Phone';
 import ACCOUNT_EMPLOYEES_FIELD from '@salesforce/schema/Account.NumberOfEmployees';
-import getAccounts from '@salesforce/apex/ListRecordLinks.getAccounts';
+import getAccounts from '@salesforce/apex/ListControllerLwc.getAccounts';
 
 const COLUMNS = [
     {
@@ -31,6 +31,20 @@ const COLUMNS = [
 
 // Realistic data with a list of accounts
 const mockGetAccounts = require('./data/getAccounts.json');
+
+// Mock  Apex wire adapter
+jest.mock(
+    '@salesforce/apex/ListControllerLwc.getAccounts',
+    () => {
+        const {
+            createApexTestWireAdapter
+        } = require('@salesforce/sfdx-lwc-jest');
+        return {
+            default: createApexTestWireAdapter(jest.fn())
+        };
+    },
+    { virtual: true }
+);
 
 describe('c-list-record-links', () => {
     afterEach(() => {

@@ -7,6 +7,20 @@ import ACCOUNT_OWNER_NAME_FIELD from '@salesforce/schema/Account.Owner.Name';
 import getAccounts from '@salesforce/apex/ListWithParentRecordDataControllerLwc.getAccounts';
 import { formatApexSObjects } from 'c/apexUtils';
 
+// Mock Apex wire adapter
+jest.mock(
+    '@salesforce/apex/ListWithParentRecordDataControllerLwc.getAccounts',
+    () => {
+        const {
+            createApexTestWireAdapter
+        } = require('@salesforce/sfdx-lwc-jest');
+        return {
+            default: createApexTestWireAdapter(jest.fn())
+        };
+    },
+    { virtual: true }
+);
+
 const COLUMNS = [
     {
         label: 'Account Name',

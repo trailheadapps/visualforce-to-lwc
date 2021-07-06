@@ -36,6 +36,20 @@ const COLUMNS = [
 // Realistic data with a list of accounts
 const mockGetAccounts = require('./data/getAccounts.json');
 
+// Mock Apex wire adapter
+jest.mock(
+    '@salesforce/apex/ListControllerLwc.getAccounts',
+    () => {
+        const {
+            createApexTestWireAdapter
+        } = require('@salesforce/sfdx-lwc-jest');
+        return {
+            default: createApexTestWireAdapter(jest.fn())
+        };
+    },
+    { virtual: true }
+);
+
 describe('c-editable-list', () => {
     afterEach(() => {
         // The jsdom instance is shared across test cases in a single file so reset the DOM
