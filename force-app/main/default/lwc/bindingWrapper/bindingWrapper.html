@@ -1,0 +1,19 @@
+<template>
+    <c-example-wrapper
+        icon-name="custom:custom62"
+        title="Binding"
+        lwc="binding"
+        visualforce="binding"
+        visualforce-height="100px"
+    >
+        <c-binding slot="lwc"></c-binding>
+
+        <!-- prettier-ignore -->
+        <p>
+            In contrast to LWC, property binding is unidirectional. Properties can pass information down, but 
+            not up. To pass information up, you use events. For instance, lightning-input passes information
+            up in the payload of the change event it fires. Note one more difference here: as in Visualforce rendering 
+            happens server-side, a server trip is needed to update the property. In LWC, rendering happens client-side.
+        </p>
+    </c-example-wrapper>
+</template>

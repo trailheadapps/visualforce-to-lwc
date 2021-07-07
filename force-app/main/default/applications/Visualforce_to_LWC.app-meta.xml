@@ -23,6 +23,7 @@
     <isNavPersonalizationDisabled>false</isNavPersonalizationDisabled>
     <label>Visualforce to LWC</label>
     <navType>Standard</navType>
+    <tabs>Basics</tabs>
     <tabs>Layout</tabs>
     <tabs>Single_Records</tabs>
     <tabs>standard-Account</tabs>
