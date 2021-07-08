@@ -11,8 +11,8 @@ const COLUMNS = [
     {
         label: 'Account Name',
         type: 'navigateToRecord',
+        fieldName: ACCOUNT_ID_FIELD.fieldApiName,
         typeAttributes: {
-            recordId: { fieldName: ACCOUNT_ID_FIELD.fieldApiName },
             label: { fieldName: ACCOUNT_NAME_FIELD.fieldApiName }
         }
     },
