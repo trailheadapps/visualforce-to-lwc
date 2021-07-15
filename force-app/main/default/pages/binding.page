@@ -1,0 +1,11 @@
+<apex:page controller="BindingController">
+    <apex:form style="margin-bottom: 10px">
+        <p>Enter course name:</p>
+        <apex:inputText value="{!courseName}">
+            <apex:actionSupport event="onchange" reRender="courseInfo" />
+        </apex:inputText>
+    </apex:form>
+    <apex:outputPanel id="courseInfo"
+        >Course name is: {!courseName}</apex:outputPanel
+    >
+</apex:page>
