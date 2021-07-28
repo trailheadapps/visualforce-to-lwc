@@ -1,5 +1,5 @@
 import { createElement } from 'lwc';
-import AfterRenderHookWrapper from 'c/AfterRenderHookWrapper';
+import AfterRenderHookWrapper from 'c/afterRenderHookWrapper';
 
 // Mock exampleWrapper component so that accessibility tests don't expect the visualforce iframe to load
 jest.mock('../../exampleWrapper/exampleWrapper');
