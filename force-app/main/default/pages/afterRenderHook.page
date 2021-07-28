@@ -1,0 +1,21 @@
+<apex:page controller="BeforeRenderHookController">
+    <apex:outputPanel id="coursesPanel">
+        <apex:repeat value="{!courses}" var="course">
+            <p>{!course}</p>
+        </apex:repeat>
+    </apex:outputPanel>
+
+    <apex:form>
+        <apex:actionFunction
+            name="populateCoursesAction"
+            action="{!populateCourses}"
+            reRender="coursesPanel"
+        ></apex:actionFunction>
+    </apex:form>
+
+    <script>
+        window.onload = () => {
+            populateCoursesAction();
+        };
+    </script>
+</apex:page>
