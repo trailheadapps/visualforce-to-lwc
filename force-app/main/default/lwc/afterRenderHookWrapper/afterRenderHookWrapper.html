@@ -1,0 +1,17 @@
+<template>
+    <c-example-wrapper
+        icon-name="custom:custom96"
+        lwc="afterRenderHook"
+        title="After Render Hook"
+        visualforce="afterRenderHook"
+        visualforce-height="90px"
+    >
+        <c-after-render-hook slot="lwc"></c-after-render-hook>
+
+        <!-- prettier-ignore -->
+        <p>
+            Use <a target="_blank" href="https://developer.salesforce.com/docs/component-library/documentation/en/lwc/lwc.create_lifecycle_hooks_rendered">
+            renderedCallback</a> to execute code after a component is rendered.
+        </p>
+    </c-example-wrapper>
+</template>
