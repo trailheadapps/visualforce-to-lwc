@@ -17,8 +17,7 @@
         "husky": "^7.0.0",
         "lint-staged": "^11.0.0",
         "prettier": "^2.3.2",
-        "prettier-plugin-apex": "^1.10.0",
-        "semver": "^7.3.5"
+        "prettier-plugin-apex": "^1.10.0"
     },
     "scripts": {
         "lint": "npm run lint:lwc",
@@ -30,7 +29,7 @@
         "test:unit:coverage": "sfdx-lwc-jest --coverage --skipApiVersionCheck",
         "prettier": "prettier --write \"**/*.{cls,cmp,component,css,html,js,json,md,page,trigger,xml,yaml,yml}\"",
         "prettier:verify": "prettier --list-different \"**/*.{cls,cmp,component,css,html,js,json,md,page,trigger,xml,yaml,yml}\"",
-        "postinstall": "node bin/check-version.js && husky install",
+        "postinstall": "husky install",
         "precommit": "lint-staged"
     },
     "lint-staged": {
@@ -48,14 +47,14 @@
         "type": "git",
         "url": "git+https://github.com/trailheadapps/visualforce-to-visualforce-to-lwc.git"
     },
-    "engines": {
-        "node": ">= 10.13.0",
-        "npm": ">= 6.5.0"
-    },
     "author": "salesforce.com",
     "license": "CC0-1.0",
     "bugs": {
         "url": "https://github.com/trailheadapps/visualforce-to-visualforce-to-lwc/issues"
     },
-    "homepage": "https://github.com/trailheadapps/visualforce-to-visualforce-to-lwc#readme"
+    "homepage": "https://github.com/trailheadapps/visualforce-to-visualforce-to-lwc#readme",
+    "volta": {
+        "node": "14.17.3",
+        "npm": "6.14.13"
+    }
 }

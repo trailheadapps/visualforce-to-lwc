@@ -5,7 +5,7 @@ export default class DatatableWithCustomTypes extends LightningDatatable {
     static customTypes = {
         navigateToRecord: {
             template: navigateToRecordTemplate,
-            typeAttributes: ['recordId', 'label']
+            typeAttributes: ['label']
         }
     };
 }
