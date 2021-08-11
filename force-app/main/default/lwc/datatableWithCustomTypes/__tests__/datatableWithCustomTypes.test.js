@@ -9,14 +9,10 @@ describe('c-datatable-with-custom-types', () => {
         expect(
             DatatableWithCustomTypes.customTypes.navigateToRecord.typeAttributes
                 .length
-        ).toBe(2);
+        ).toBe(1);
         expect(
             DatatableWithCustomTypes.customTypes.navigateToRecord
                 .typeAttributes[0]
-        ).toBe('recordId');
-        expect(
-            DatatableWithCustomTypes.customTypes.navigateToRecord
-                .typeAttributes[1]
         ).toBe('label');
     });
 });

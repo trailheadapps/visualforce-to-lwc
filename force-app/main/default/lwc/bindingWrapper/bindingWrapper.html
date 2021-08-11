@@ -1,0 +1,22 @@
+<template>
+    <c-example-wrapper
+        icon-name="custom:custom62"
+        title="Binding"
+        lwc="binding"
+        visualforce="binding"
+        visualforce-height="100px"
+    >
+        <c-binding slot="lwc"></c-binding>
+
+        <!-- prettier-ignore -->
+        <p>
+            In LWC, property binding is unidirectional. Properties are used to pass information down, but 
+            not up. To pass information up, use HTML events. For instance, lightning-input passes information
+            up firing a change event (information is carried in the payload of the event!).
+            To listen to an event that an element fires, define a handler in JavaScript and bind it to the event.
+            Another important difference is that Visualforce is rendered on the server side.
+            This means that a server roundtrip is required to update the property whereas, in LWC, rendering happens on the client-side.
+            Indeed, it happens automatically when a JavaScript property value changes.
+        </p>
+    </c-example-wrapper>
+</template>
