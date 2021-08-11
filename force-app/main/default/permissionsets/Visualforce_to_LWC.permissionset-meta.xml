@@ -52,6 +52,10 @@
         <viewAllRecords>false</viewAllRecords>
     </objectPermissions>
     <tabSettings>
+        <tab>Basics</tab>
+        <visibility>Visible</visibility>
+    </tabSettings>
+    <tabSettings>
         <tab>Error_Handling</tab>
         <visibility>Visible</visibility>
     </tabSettings>
