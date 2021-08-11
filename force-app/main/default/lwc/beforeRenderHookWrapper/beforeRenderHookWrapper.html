@@ -1,0 +1,18 @@
+<template>
+    <c-example-wrapper
+        icon-name="custom:custom96"
+        lwc="beforeRenderHook"
+        title="Before Render Hook"
+        visualforce="beforeRenderHook"
+        visualforce-height="90px"
+    >
+        <c-before-render-hook slot="lwc"></c-before-render-hook>
+
+        <!-- prettier-ignore -->
+        <p>
+            Use <a target="_blank" href="https://developer.salesforce.com/docs/component-library/documentation/en/lwc/lwc.create_lifecycle_hooks_dom">
+            connectedCallback</a> to execute code when the component is inserted into the page 
+            and before it is rendered.
+        </p>
+    </c-example-wrapper>
+</template>
