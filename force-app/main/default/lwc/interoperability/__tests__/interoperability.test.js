@@ -25,13 +25,13 @@ describe('c-interoperability', () => {
         element.label = 'My label';
         document.body.appendChild(element);
 
-        const buttonEl = element.shadowRoot.querySelector('lightning-button');
-        expect(buttonEl).not.toBeNull();
-        expect(buttonEl.label).toStrictEqual(element.label);
-
-        const pEl = element.shadowRoot.querySelector('p');
+        const pEl = element.shadowRoot.querySelector('p.label');
         expect(pEl).not.toBeNull();
-        expect(pEl.textContent).toStrictEqual('LWC Method invoked 0 times');
+        expect(pEl.textContent).toStrictEqual(element.label);
+
+        const pEl2 = element.shadowRoot.querySelector('p.message');
+        expect(pEl2).not.toBeNull();
+        expect(pEl2.textContent).toStrictEqual('LWC Method invoked 0 times');
     });
 
     it('increments counter when doWhatever called', async () => {
@@ -46,9 +46,26 @@ describe('c-interoperability', () => {
         // Wait for any asynchronous DOM updates
         await flushPromises();
 
-        const pEl = element.shadowRoot.querySelector('p');
+        const pEl = element.shadowRoot.querySelector('p.message');
         expect(pEl).not.toBeNull();
         expect(pEl.textContent).toStrictEqual('LWC Method invoked 1 times');
+    });
+
+    it('updates paragraph when property set', async () => {
+        // Create initial element
+        const element = createElement('c-interoperability', {
+            is: Interoperability
+        });
+        document.body.appendChild(element);
+
+        element.label = 'new label';
+
+        // Wait for any asynchronous DOM updates
+        await flushPromises();
+
+        const pEl = element.shadowRoot.querySelector('p.label');
+        expect(pEl).not.toBeNull();
+        expect(pEl.textContent).toStrictEqual(element.label);
     });
 
     it('dispatches buttonclicked event when button clicked', async () => {

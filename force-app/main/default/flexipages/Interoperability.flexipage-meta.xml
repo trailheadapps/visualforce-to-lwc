@@ -5,7 +5,7 @@
             <componentInstance>
                 <componentInstanceProperties>
                     <name>height</name>
-                    <value>400</value>
+                    <value>450</value>
                 </componentInstanceProperties>
                 <componentInstanceProperties>
                     <name>pageName</name>

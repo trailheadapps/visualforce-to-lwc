@@ -1,9 +1,8 @@
 import { LightningElement, api } from 'lwc';
 
 export default class Interoperability extends LightningElement {
-    @api label;
-    message = 'LWC Method invoked 0 times';
-    timesInvoked = 1;
+    @api label = 'This label property has its initial value';
+    timesInvoked = 0;
 
     handleClick() {
         this.dispatchEvent(
@@ -13,7 +12,10 @@ export default class Interoperability extends LightningElement {
 
     @api
     doWhatever() {
-        this.message = `LWC Method invoked ${this.timesInvoked} times`;
         this.timesInvoked++;
+    }
+
+    get message() {
+        return `LWC Method invoked ${this.timesInvoked} times`;
     }
 }
