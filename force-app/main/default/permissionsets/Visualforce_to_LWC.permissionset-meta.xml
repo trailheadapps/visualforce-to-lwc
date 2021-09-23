@@ -60,6 +60,10 @@
         <visibility>Visible</visibility>
     </tabSettings>
     <tabSettings>
+        <tab>Interoperability</tab>
+        <visibility>Visible</visibility>
+    </tabSettings>
+    <tabSettings>
         <tab>Layout</tab>
         <visibility>Visible</visibility>
     </tabSettings>

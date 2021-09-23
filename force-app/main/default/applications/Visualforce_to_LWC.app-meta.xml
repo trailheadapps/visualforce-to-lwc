@@ -30,5 +30,6 @@
     <tabs>Mixed_Records</tabs>
     <tabs>Record_Lists</tabs>
     <tabs>Error_Handling</tabs>
+    <tabs>Interoperability</tabs>
     <uiType>Lightning</uiType>
 </CustomApplication>

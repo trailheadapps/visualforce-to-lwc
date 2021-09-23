@@ -19,12 +19,6 @@ describe('c-edit-record', () => {
         jest.clearAllMocks();
     });
 
-    // Helper function to wait until the microtask queue is empty.
-    // Used to wait for asynchronous DOM updates.
-    async function flushPromises() {
-        return Promise.resolve();
-    }
-
     it('shows a lightning-record-form initialized', () => {
         // Create initial element
         const element = createElement('c-edit-record', {
@@ -65,9 +59,6 @@ describe('c-edit-record', () => {
             );
             recordForm.dispatchEvent(new CustomEvent('success'));
 
-            // Wait for any asynchronous DOM updates
-            await flushPromises();
-
             // Check if toast event has been fired
             expect(handler).toHaveBeenCalled();
             expect(handler.mock.calls[0][0].detail.variant).toBe('success');
@@ -94,9 +85,6 @@ describe('c-edit-record', () => {
                 'lightning-record-form'
             );
             recordForm.dispatchEvent(new CustomEvent('success'));
-
-            // Wait for any asynchronous DOM updates
-            await flushPromises();
 
             // Check if toast event has been fired
             expect(handler).toHaveBeenCalled();
@@ -126,9 +114,6 @@ describe('c-edit-record', () => {
             );
             recordForm.dispatchEvent(new CustomEvent('error'));
 
-            // Wait for any asynchronous DOM updates
-            await flushPromises();
-
             // Check if toast event has been fired
             expect(handler).toHaveBeenCalled();
             expect(handler.mock.calls[0][0].detail.variant).toBe('error');
@@ -155,9 +140,6 @@ describe('c-edit-record', () => {
                 'lightning-record-form'
             );
             recordForm.dispatchEvent(new CustomEvent('error'));
-
-            // Wait for any asynchronous DOM updates
-            await flushPromises();
 
             // Check if toast event has been fired
             expect(handler).toHaveBeenCalled();

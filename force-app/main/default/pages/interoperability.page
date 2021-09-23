@@ -1,0 +1,88 @@
+<apex:page lightningStyleSheets="true">
+    <apex:includeLightning />
+    <p>
+        You can include
+        <a
+            href="https://developer.salesforce.com/docs/component-library/documentation/en/lwc/use_visualforce"
+            >Lightning web components within Visualforce pages</a
+        >
+        using Lightning Out. You'll need to perform three steps:
+        <ul>
+            <li>
+                Add the Lightning Components for Visualforce JavaScript Library
+            </li>
+            <li>
+                Create and Reference a Standalone Aura Dependency App with
+                $Lightning.use
+            </li>
+            <li>
+                Create the Component on the Visualforce Page with
+                $Lightning.createComponent
+            </li>
+        </ul>
+    </p>
+    <div id="example-container">
+        <h2>VISUALFORCE</h2>
+        <apex:form>
+            <apex:commandButton
+                onclick="setLWCProperty();"
+                onComplete="return null;"
+                value="Press me and set a LWC property!"
+            >
+            </apex:commandButton>
+            <apex:commandButton
+                onclick="callLWCMethod();"
+                onComplete="return null;"
+                value="Press me and call a LWC method!"
+            >
+            </apex:commandButton>
+        </apex:form>
+        <p class="messages">0 messages listened from LWC</p>
+        <div id="lwc-container"></div>
+    </div>
+
+    <script>
+        var timesListened = 1;
+
+        $Lightning.use('c:LWCContainerApp', function () {
+            $Lightning.createComponent(
+                'c:interoperability',
+                { label: 'Initial label value' },
+                'lwc-container',
+                function (cmp) {
+                    console.log('LWC added to Visualforce page:' + cmp);
+                    var lwc = document.querySelector('c-interoperability');
+                    lwc.addEventListener('buttonclicked', handleLWCEvent);
+                }
+            );
+        });
+
+        function handleLWCEvent() {
+            document.querySelector('p.messages').textContent =
+                timesListened + ' messages listened from LWC';
+            timesListened++;
+        }
+
+        function callLWCMethod(event) {
+            var lwc = document.querySelector('c-interoperability');
+            lwc.doWhatever();
+        }
+
+        function setLWCProperty(event) {
+            var lwc = document.querySelector('c-interoperability');
+            lwc.label = 'The label property was updated from Visualforce';
+        }
+    </script>
+    <style>
+        #example-container {
+            border: 1px solid black;
+            padding: 10px;
+        }
+        form {
+            margin-top: 10px;
+        }
+        .messages {
+            padding: 10px;
+        }
+    </style>
+</apex:page>

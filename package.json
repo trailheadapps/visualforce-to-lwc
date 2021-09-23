@@ -8,6 +8,7 @@
         "@prettier/plugin-xml": "^0.13.1",
         "@sa11y/jest": "^1.0.0",
         "@salesforce/eslint-config-lwc": "^2.0.0",
+        "@salesforce/eslint-plugin-aura": "^2.0.0",
         "@salesforce/eslint-plugin-lightning": "^0.1.1",
         "@salesforce/sfdx-lwc-jest": "^0.14.0",
         "eslint": "^7.29.0",
@@ -20,8 +21,9 @@
         "prettier-plugin-apex": "^1.10.0"
     },
     "scripts": {
-        "lint": "npm run lint:lwc",
+        "lint": "npm run lint:lwc && npm run lint:aura",
         "lint:lwc": "eslint **/lwc/**",
+        "lint:aura": "eslint **/aura/**",
         "test": "npm run test:unit",
         "test:unit": "sfdx-lwc-jest --skipApiVersionCheck",
         "test:unit:watch": "sfdx-lwc-jest --watch --skipApiVersionCheck",
