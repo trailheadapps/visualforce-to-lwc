@@ -4,12 +4,12 @@
             "path": "force-app",
             "default": true,
             "package": "vf2lwc",
-            "versionName": "Summer '21",
-            "versionNumber": "52.0.0.NEXT"
+            "versionName": "Winter '22",
+            "versionNumber": "53.0.0.NEXT"
         }
     ],
     "namespace": "",
-    "sourceApiVersion": "52.0",
+    "sourceApiVersion": "53.0",
     "packageAliases": {
         "vf2lwc": "0Ho3h000000CaiBCAS",
         "vf2lwc@50.0.0-1": "04t3h0000045ruvAAA",
