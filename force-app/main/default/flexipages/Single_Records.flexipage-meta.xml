@@ -3,6 +3,7 @@
     <flexiPageRegions>
         <itemInstances>
             <componentInstance>
+                <identifier>singleRecords</identifier>
                 <componentName>singleRecords</componentName>
             </componentInstance>
         </itemInstances>

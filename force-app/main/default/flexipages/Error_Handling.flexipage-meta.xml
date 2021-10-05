@@ -3,11 +3,13 @@
     <flexiPageRegions>
         <itemInstances>
             <componentInstance>
+                <identifier>pageMessagesToastWrapper</identifier>
                 <componentName>pageMessagesToastWrapper</componentName>
             </componentInstance>
         </itemInstances>
         <itemInstances>
             <componentInstance>
+                <identifier>pageMessagesDataRetrievalWrapper</identifier>
                 <componentName>pageMessagesDataRetrievalWrapper</componentName>
             </componentInstance>
         </itemInstances>
@@ -17,6 +19,7 @@
     <flexiPageRegions>
         <itemInstances>
             <componentInstance>
+                <identifier>pageMessagesFormWrapper</identifier>
                 <componentName>pageMessagesFormWrapper</componentName>
             </componentInstance>
         </itemInstances>

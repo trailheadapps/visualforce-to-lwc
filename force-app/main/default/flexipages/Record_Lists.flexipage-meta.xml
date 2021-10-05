@@ -3,26 +3,31 @@
     <flexiPageRegions>
         <itemInstances>
             <componentInstance>
+                <identifier>listRecordLinksWrapper</identifier>
                 <componentName>listRecordLinksWrapper</componentName>
             </componentInstance>
         </itemInstances>
         <itemInstances>
             <componentInstance>
+                <identifier>listWithParentRecordDataWrapper</identifier>
                 <componentName>listWithParentRecordDataWrapper</componentName>
             </componentInstance>
         </itemInstances>
         <itemInstances>
             <componentInstance>
+                <identifier>editableListWrapper</identifier>
                 <componentName>editableListWrapper</componentName>
             </componentInstance>
         </itemInstances>
         <itemInstances>
             <componentInstance>
+                <identifier>listInfiniteScrollingWrapper</identifier>
                 <componentName>listInfiniteScrollingWrapper</componentName>
             </componentInstance>
         </itemInstances>
         <itemInstances>
             <componentInstance>
+                <identifier>paginatedListWrapper</identifier>
                 <componentName>paginatedListWrapper</componentName>
             </componentInstance>
         </itemInstances>

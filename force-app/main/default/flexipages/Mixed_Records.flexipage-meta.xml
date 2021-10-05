@@ -13,6 +13,7 @@
     <flexiPageRegions>
         <itemInstances>
             <componentInstance>
+                <identifier>createMixedRecordsApexWrapper</identifier>
                 <componentName>createMixedRecordsApexWrapper</componentName>
             </componentInstance>
         </itemInstances>
