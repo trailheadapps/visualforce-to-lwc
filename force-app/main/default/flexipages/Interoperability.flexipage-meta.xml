@@ -3,6 +3,7 @@
     <flexiPageRegions>
         <itemInstances>
             <componentInstance>
+                <identifier>visualforcePage</identifier>
                 <componentInstanceProperties>
                     <name>height</name>
                     <value>450</value>

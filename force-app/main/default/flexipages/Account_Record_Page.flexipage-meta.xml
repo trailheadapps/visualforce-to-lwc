@@ -13,6 +13,7 @@
         </itemInstances>
         <itemInstances>
             <componentInstance>
+                <identifier>viewRecordWithParentRecordDataWrapper</identifier>
                 <componentName
                 >viewRecordWithParentRecordDataWrapper</componentName>
             </componentInstance>
@@ -29,6 +30,8 @@
         </itemInstances>
         <itemInstances>
             <componentInstance>
+                <identifier
+                >createRecordWithPrepopulatedValuesWrapper</identifier>
                 <componentName
                 >createRecordWithPrepopulatedValuesWrapper</componentName>
             </componentInstance>
