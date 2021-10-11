@@ -36,13 +36,9 @@ jobs:
               if: steps.cache-npm.outputs.cache-hit != 'true'
               run: npm ci
 
-            # Prettier formatting
-            - name: 'Code formatting verification with Prettier'
-              run: npm run prettier:verify
-
-            # Lint LWC
-            - name: 'Lint Lightning Web Components'
-              run: npm run lint:lwc
+            # Lint LWC / Aura
+            - name: 'Lint Lightning Web Components / Aura Components'
+              run: npm run lint
 
             # LWC unit tests
             - name: 'Unit test Lightning Web Components'
