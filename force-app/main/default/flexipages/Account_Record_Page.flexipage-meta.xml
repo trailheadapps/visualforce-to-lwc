@@ -7,11 +7,13 @@
     <flexiPageRegions>
         <itemInstances>
             <componentInstance>
+                <identifier>viewRecordWrapper</identifier>
                 <componentName>viewRecordWrapper</componentName>
             </componentInstance>
         </itemInstances>
         <itemInstances>
             <componentInstance>
+                <identifier>viewRecordWithParentRecordDataWrapper</identifier>
                 <componentName
                 >viewRecordWithParentRecordDataWrapper</componentName>
             </componentInstance>
@@ -22,11 +24,14 @@
     <flexiPageRegions>
         <itemInstances>
             <componentInstance>
+                <identifier>editRecordWrapper</identifier>
                 <componentName>editRecordWrapper</componentName>
             </componentInstance>
         </itemInstances>
         <itemInstances>
             <componentInstance>
+                <identifier
+                >createRecordWithPrepopulatedValuesWrapper</identifier>
                 <componentName
                 >createRecordWithPrepopulatedValuesWrapper</componentName>
             </componentInstance>

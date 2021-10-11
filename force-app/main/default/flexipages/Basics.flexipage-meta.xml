@@ -3,6 +3,7 @@
     <flexiPageRegions>
         <itemInstances>
             <componentInstance>
+                <identifier>bindingWrapper</identifier>
                 <componentName>bindingWrapper</componentName>
             </componentInstance>
         </itemInstances>
@@ -12,6 +13,7 @@
     <flexiPageRegions>
         <itemInstances>
             <componentInstance>
+                <identifier>beforeRenderHookWrapper</identifier>
                 <componentName>beforeRenderHookWrapper</componentName>
             </componentInstance>
         </itemInstances>
@@ -21,6 +23,7 @@
     <flexiPageRegions>
         <itemInstances>
             <componentInstance>
+                <identifier>afterRenderHookWrapper</identifier>
                 <componentName>afterRenderHookWrapper</componentName>
             </componentInstance>
         </itemInstances>

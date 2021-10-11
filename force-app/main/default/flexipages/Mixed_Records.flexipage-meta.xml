@@ -3,6 +3,7 @@
     <flexiPageRegions>
         <itemInstances>
             <componentInstance>
+                <identifier>createMixedRecordsWireFunctionsWrapper</identifier>
                 <componentName
                 >createMixedRecordsWireFunctionsWrapper</componentName>
             </componentInstance>
@@ -13,6 +14,7 @@
     <flexiPageRegions>
         <itemInstances>
             <componentInstance>
+                <identifier>createMixedRecordsApexWrapper</identifier>
                 <componentName>createMixedRecordsApexWrapper</componentName>
             </componentInstance>
         </itemInstances>

@@ -7,16 +7,19 @@
     <flexiPageRegions>
         <itemInstances>
             <componentInstance>
+                <identifier>pageBlocksWrapper</identifier>
                 <componentName>pageBlocksWrapper</componentName>
             </componentInstance>
         </itemInstances>
         <itemInstances>
             <componentInstance>
+                <identifier>panelGridWrapper</identifier>
                 <componentName>panelGridWrapper</componentName>
             </componentInstance>
         </itemInstances>
         <itemInstances>
             <componentInstance>
+                <identifier>toolbarWrapper</identifier>
                 <componentName>toolbarWrapper</componentName>
             </componentInstance>
         </itemInstances>
@@ -26,11 +29,13 @@
     <flexiPageRegions>
         <itemInstances>
             <componentInstance>
+                <identifier>panelBarWrapper</identifier>
                 <componentName>panelBarWrapper</componentName>
             </componentInstance>
         </itemInstances>
         <itemInstances>
             <componentInstance>
+                <identifier>tabsWrapper</identifier>
                 <componentName>tabsWrapper</componentName>
             </componentInstance>
         </itemInstances>
