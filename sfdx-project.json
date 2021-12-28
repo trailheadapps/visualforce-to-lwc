@@ -4,28 +4,14 @@
             "path": "force-app",
             "default": true,
             "package": "vf2lwc",
-            "versionName": "Winter '22",
-            "versionNumber": "53.0.0.NEXT"
+            "versionName": "Spring '22",
+            "versionNumber": "54.0.0.NEXT"
         }
     ],
     "namespace": "",
-    "sourceApiVersion": "53.0",
+    "sourceApiVersion": "54.0",
     "packageAliases": {
         "vf2lwc": "0Ho3h000000CaiBCAS",
-        "vf2lwc@50.0.0-1": "04t3h0000045ruvAAA",
-        "vf2lwc@51.0.0-1": "04t3h0000045sbzAAA",
-        "vf2lwc@51.0.0-4": "04t3h0000045scdAAA",
-        "vf2lwc@52.0.0-1": "04t3h0000045svCAAQ",
-        "vf2lwc@52.0.0-3": "04t3h0000045sx3AAA",
-        "vf2lwc@52.0.0-5": "04t3h0000045sy1AAA",
-        "vf2lwc@52.0.0-7": "04t3h0000045syuAAA",
-        "vf2lwc@52.0.0-14": "04t3h0000045t3lAAA",
-        "vf2lwc@52.0.0-17": "04t3h0000045t40AAA",
-        "vf2lwc@52.0.0-23": "04t3h0000045t8vAAA",
-        "vf2lwc@52.0.0-26": "04t3h0000045t9AAAQ",
-        "vf2lwc@52.0.0-30": "04t3h0000045t9PAAQ",
-        "vf2lwc@52.0.0-34": "04t3h0000045tYFAAY",
-        "vf2lwc@53.0.0-1": "04t3h0000045tilAAA",
         "vf2lwc@53.0.0-3": "04t3h000004jt5sAAA"
     }
 }
