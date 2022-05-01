@@ -4,7 +4,7 @@
     "private": true,
     "description": "Visualforce to LWC Sample App",
     "devDependencies": {
-        "@lwc/eslint-plugin-lwc": "^1.1.1",
+        "@lwc/eslint-plugin-lwc": "^1.2.1",
         "@prettier/plugin-xml": "^1.1.0",
         "@sa11y/jest": "^3.1.0",
         "@salesforce/eslint-config-lwc": "^3.0.0",
