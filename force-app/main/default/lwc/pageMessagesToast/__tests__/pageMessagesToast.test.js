@@ -26,13 +26,11 @@ describe('c-page-messages-toast', () => {
     });
 
     // Helper function to wait until the microtask queue is empty.
-    // Used to wait for asynchronous DOM updates.
-    function flushPromises() {
-        // eslint-disable-next-line no-undef
-        return new Promise((resolve) => setImmediate(resolve));
+    async function flushPromises() {
+        return Promise.resolve();
     }
 
-    it('calls apex when button is clicked', () => {
+    it('calls apex when button is clicked', async () => {
         // Assign mock value for resolved Apex promise
         callApex.mockResolvedValue();
 
@@ -49,13 +47,13 @@ describe('c-page-messages-toast', () => {
         // wait for any asynchronous DOM updates. Jest will automatically wait
         // for the Promise chain to complete before ending the test and fail
         // the test if the promise ends in the rejected state.
-        return flushPromises().then(() => {
-            // Validate parameters of mocked Apex call
-            expect(callApex).toBeCalled();
-        });
+        await flushPromises();
+
+        // Validate parameters of mocked Apex call
+        expect(callApex).toBeCalled();
     });
 
-    it('shows toast when apex fails after button is clicked', () => {
+    it('shows toast when apex fails after button is clicked', async () => {
         // Assign mock value for rejected Apex promise
         const ERROR_OBJECT = { message: 'test error' };
         callApex.mockRejectedValue(ERROR_OBJECT);
@@ -78,15 +76,15 @@ describe('c-page-messages-toast', () => {
         // wait for any asynchronous DOM updates. Jest will automatically wait
         // for the Promise chain to complete before ending the test and fail
         // the test if the promise ends in the rejected state.
-        return flushPromises().then(() => {
-            // Check if toast event has been fired
-            expect(handler).toHaveBeenCalled();
-            expect(handler.mock.calls[0][0].detail.title).toBe('Error');
-            expect(handler.mock.calls[0][0].detail.message).toBe(
-                reduceErrors(ERROR_OBJECT).join(', ')
-            );
-            expect(handler.mock.calls[0][0].detail.variant).toBe('error');
-        });
+        await flushPromises();
+
+        // Check if toast event has been fired
+        expect(handler).toHaveBeenCalled();
+        expect(handler.mock.calls[0][0].detail.title).toBe('Error');
+        expect(handler.mock.calls[0][0].detail.message).toBe(
+            reduceErrors(ERROR_OBJECT).join(', ')
+        );
+        expect(handler.mock.calls[0][0].detail.variant).toBe('error');
     });
 
     it('is accessible', async () => {
