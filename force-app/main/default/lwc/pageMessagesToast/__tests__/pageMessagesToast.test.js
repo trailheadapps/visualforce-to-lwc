@@ -50,7 +50,7 @@ describe('c-page-messages-toast', () => {
         await flushPromises();
 
         // Validate parameters of mocked Apex call
-        expect(callApex).toBeCalled();
+        expect(callApex).toHaveBeenCalled();
     });
 
     it('shows toast when apex fails after button is clicked', async () => {
