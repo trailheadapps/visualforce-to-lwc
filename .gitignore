@@ -6,6 +6,7 @@
 .sf/
 .sfdx/
 .localdevserver/
+deploy-options.json
 
 # LWC VSCode autocomplete
 jsconfig.json
@@ -36,5 +37,8 @@ ehthumbs.db
 $RECYCLE.BIN/
 
 # VS Code project settings
-.vscode/
+.vscode/*
 !.vscode/extensions.json
+
+# Local environment variables
+.env
