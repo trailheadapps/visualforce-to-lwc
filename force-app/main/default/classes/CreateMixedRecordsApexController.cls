@@ -14,13 +14,13 @@ public with sharing class CreateMixedRecordsApexController {
             FirstName = contactFirstName,
             LastName = contactLastName
         );
-        insert newContact;
+        insert as user newContact;
 
         Opportunity newOpportunity = new Opportunity(
             Name = opportunityName,
             StageName = 'Prospecting',
             CloseDate = System.today()
         );
-        insert newOpportunity;
+        insert as user newOpportunity;
     }
 }

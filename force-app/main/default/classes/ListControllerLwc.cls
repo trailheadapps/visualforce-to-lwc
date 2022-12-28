@@ -6,6 +6,7 @@ public with sharing class ListControllerLwc {
             FROM Account
             WITH SECURITY_ENFORCED
             ORDER BY Name
+            LIMIT 10
         ];
     }
 }

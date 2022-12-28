@@ -10,14 +10,14 @@ public with sharing class CreateMixedRecordsApexControllerLwc {
                 FirstName = contactFirstName,
                 LastName = contactLastName
             );
-            insert newContact;
+            insert as user newContact;
 
             Opportunity newOpportunity = new Opportunity(
                 Name = opportunityName,
                 StageName = 'Prospecting',
                 CloseDate = System.today()
             );
-            insert newOpportunity;
+            insert as user newOpportunity;
         } catch (Exception e) {
             throw new MyException(e.getMessage());
         }
