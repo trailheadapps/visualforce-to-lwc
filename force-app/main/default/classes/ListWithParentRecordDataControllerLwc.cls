@@ -6,6 +6,7 @@ public with sharing class ListWithParentRecordDataControllerLwc {
             FROM Account
             WITH SECURITY_ENFORCED
             ORDER BY Name
+            LIMIT 10
         ];
     }
 }
