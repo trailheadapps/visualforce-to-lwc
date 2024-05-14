@@ -52,7 +52,6 @@
     },
     "homepage": "https://github.com/trailheadapps/visualforce-to-visualforce-to-lwc#readme",
     "volta": {
-        "node": "16.20.0",
-        "npm": "9.6.5"
+        "node": "20.13.1"
     }
 }
