@@ -1,5 +1,5 @@
 {
-    "name": "visualforce-to-lwc",
+    "name": "@salesforce/visualforce-to-lwc",
     "version": "1.0.0",
     "private": true,
     "description": "Visualforce to LWC Sample App",
