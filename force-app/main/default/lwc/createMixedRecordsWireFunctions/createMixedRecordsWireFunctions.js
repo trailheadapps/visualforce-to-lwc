@@ -60,7 +60,7 @@ export default class CreateMixedRecordsWireFunctions extends LightningElement {
             fields: {
                 [OPPORTUNITY_NAME_FIELD.fieldApiName]: this.opportunityName,
                 [OPPORTUNITY_STAGENAME_FIELD.fieldApiName]: 'Prospecting',
-                [OPPORTUNITY_CLOSEDATE_FIELD.fieldApiName]: new Date(2025, 1, 1)
+                [OPPORTUNITY_CLOSEDATE_FIELD.fieldApiName]: new Date().toISOString().split('T')[0]
             }
         };
 
