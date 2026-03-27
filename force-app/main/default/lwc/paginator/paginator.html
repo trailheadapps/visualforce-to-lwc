@@ -2,17 +2,19 @@
     <lightning-layout>
         <lightning-layout-item>
             <lightning-button
-                label="Previous"
+                label="Previous Page"
                 icon-name="utility:chevronleft"
                 onclick={handlePrevious}
                 class="previous"
                 disabled={previousButtonDisabled}
             ></lightning-button>
         </lightning-layout-item>
-        <lightning-layout-item flexibility="grow"></lightning-layout-item>
+        <lightning-layout-item flexibility="grow" class="status">
+            Viewing {statusLabel}
+        </lightning-layout-item>
         <lightning-layout-item>
             <lightning-button
-                label="Next"
+                label="Next Page"
                 icon-name="utility:chevronright"
                 icon-position="right"
                 onclick={handleNext}

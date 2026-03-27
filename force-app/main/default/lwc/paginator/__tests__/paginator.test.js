@@ -30,6 +30,7 @@ describe('c-paginator', () => {
 
         // Click the next(>) button
         const nextButtonEl = element.shadowRoot.querySelector('.next');
+        expect(nextButtonEl.label).toBe('Next Page');
         expect(nextButtonEl.disabled).toBeFalsy();
         nextButtonEl.click();
 
@@ -55,6 +56,7 @@ describe('c-paginator', () => {
 
         // Click the Previous(<) button
         const prevButtonEl = element.shadowRoot.querySelector('.previous');
+        expect(prevButtonEl.label).toBe('Previous Page');
         expect(prevButtonEl.disabled).toBeFalsy();
         prevButtonEl.click();
 
@@ -105,5 +107,21 @@ describe('c-paginator', () => {
         document.body.appendChild(element);
 
         await expect(element).toBeAccessible();
+    });
+
+    it('shows the active result summary', async () => {
+        const element = createElement('c-paginator', {
+            is: Paginator
+        });
+        element.pageNumber = 3;
+        element.itemLabel = 'records';
+
+        document.body.appendChild(element);
+        await flushPromises();
+
+        const statusEl = element.shadowRoot.querySelector('.status');
+        expect(statusEl.textContent.replace(/\s+/g, ' ').trim()).toBe(
+            'Viewing 3 records'
+        );
     });
 });
